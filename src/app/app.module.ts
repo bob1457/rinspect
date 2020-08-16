@@ -7,15 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CommonModule } from '@angular/common';
 import { ReportComponent } from './report/report.component';
-import { HomeComponent } from './home/home.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { SigninComponent } from './signin/signin.component';
-// import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
-    HomeComponent,
     SigninComponent
   ],
   imports: [
@@ -24,7 +24,9 @@ import { SigninComponent } from './signin/signin.component';
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    CoreModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$rinspect-primary: mat-palette($mat-indigo, 700, 300, 900);
+$rinspect-primary: mat-palette($mat-blue, 700, 300, 900);
 $rinspect-accent: mat-palette($mat-amber, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $rinspect-warn: mat-palette($mat-deep-orange, 200);
