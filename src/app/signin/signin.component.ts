@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  signinForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) { }
 
   ngOnInit(): void {
+
+    this.signinForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
+      rememberMe: [false]
+    });
+  }
+
+  submit() {
+    console.log('signin', this.signinForm.value);
+    this.router.navigateByUrl('home');
   }
 
 }

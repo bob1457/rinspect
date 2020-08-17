@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "rinspect": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rinspect"
+    }
+  },
+  "defaultProject": "rinspect",
+  "cli": {
+    "analytics": "b5f8520f-29c5-4a29-9d72-d3646532c2b7"
+  }
 }

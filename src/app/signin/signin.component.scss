@@ -1,0 +1,65 @@
+.signin-banner {
+    height: 45%;
+    // background-image: url('../../assets/images/home-banner.jpg');
+    background-color: #42a5f5;
+    background-size: cover;
+    margin-top: -65px;
+    // background: radial-gradient(#fff,#42a5f5); // gradient    
+    // background-image: radial-gradient(circle, #fff,#42a5f5);
+    background: radial-gradient(circle at 50%, #42a5f5, #101010);
+}
+
+.signin-card {
+    // max-width: 60%;
+    width: 60%;
+    margin-top: 15%;
+}
+
+.signin-header-image {
+    background-image: url('../../assets/images/signin.png');
+    background-size: cover;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.form-field {
+    width: 80%;
+}
+
+.mat-card {
+    padding: 0;
+    ;
+}
+
+.signin-button {
+    width: 95%;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+
+.input-margin {
+    margin-left: 5px;
+}
+
+.logo-container {
+    text-align: center;
+      // background: red;
+      // width: 100px;
+      // height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: -350px;
+  }
+  
+  .logo {
+    padding: 18px;
+    background: transparent;
+    border: 2px white solid;
+    color: white;
+    // background: #f44336;
+  }
