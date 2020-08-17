@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-variant-caps: small-caps;
+    padding-top: 15px;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .form-container > * {
+    width: 95%;
+  }
+
+  .report-card {
+    width:87%;
+  }
