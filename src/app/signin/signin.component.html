@@ -1,12 +1,17 @@
 <!-- <p>signin works!</p>
 <a routerLink="/home">Login</a>
 <a routerLink="/about">About</a> -->
-<div class="signin-banner"></div>
+<div class="signin-banner" fxLayout="column" fxLayoutAlign="center center">
+    <span class="logo" style="text-align: center;"></span>
+</div>
+<!-- <div >
+    <span class="logo" style="text-align: center;">LOGO</span>
+  </div> -->
 <div fxLayout="column" fxLayoutAlign="center center">
     <mat-card class="signin-card">
         <mat-card-header fxLayout="row" fxLayoutAlign="center center">
             <div mat-card-avatar>
-                <img src="../../assets/images/signin.png" style="margin-top: -10px;">
+                <img src="../../assets/images/signin.png" style="margin-top: -10px;margin-left: -20px;">
             </div>
             <mat-card-title style="text-transform: uppercase;color: #bf360c;">sign in</mat-card-title>
             <mat-card-subtitle>Signin to start</mat-card-subtitle>
@@ -15,13 +20,21 @@
             <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="signinForm" (ngSubmit)="submit()">
                 <mat-form-field class="form-content form-field">
                     <mat-icon matPrefix class="icon">email</mat-icon>
-                    <input type="email" formControlName="contactEmail" matInput placeholder="Email">
+                    <input type="email" formControlName="email" class="input-margin" matInput placeholder="Email">
                 </mat-form-field>
                 <mat-form-field class="form-content form-field">
                     <mat-icon matPrefix class="icon">lock</mat-icon>
-                    <input type="password" formControlName="contactEmail" matInput placeholder="Password">
+                    <input type="password" formControlName="password" class="input-margin" matInput placeholder="Password">
                 </mat-form-field>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" formControlName="rememberMe">Remember me</mat-checkbox>                    
+                </section>
+                <button mat-raised-button color="primary" class="signin-button">Sign In</button>
             </form>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <a style="margin-bottom: 25px;">Forgot password?</a>
+            </div>
+            
         </mat-card-content>
 
     </mat-card>

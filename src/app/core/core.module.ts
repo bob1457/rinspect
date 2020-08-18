@@ -6,16 +6,21 @@ import { ReportComponent } from './report/report.component';
 import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddReportComponent } from './add-report/add-report.component';
+import { ReportDetailsComponent } from './report-details/report-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [HomeComponent, ReportComponent],
+  declarations: [HomeComponent, ReportComponent, AddReportComponent, ReportDetailsComponent],
   imports: [
     AppMaterialModule,
     CommonModule,
     CoreRoutingModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
