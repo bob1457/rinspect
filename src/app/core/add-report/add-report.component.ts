@@ -12,6 +12,8 @@ export class AddReportComponent implements OnInit {
   addForm: FormGroup;
   final = false;
   notAgree = '';
+  notAgree1 = '';
+  agreeOk = false;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder) { }
@@ -32,9 +34,18 @@ export class AddReportComponent implements OnInit {
     this.final = event.checked;
   }
 
+  agreeToDeposit(event) {
+    this.agreeOk = event.checked;
+  }
+
   onChange(event) {
     console.log(event);
     this.notAgree = event.value;
+  }
+
+  onChange1(event) {
+    console.log(event);
+    this.notAgree1 = event.value;
   }
 
   submit() {
