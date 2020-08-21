@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-report-details',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private actRoute: ActivatedRoute,
+              private formBuilder: FormBuilder) { 
+
+              }
 
   ngOnInit(): void {
+    this.actRoute.paramMap.subscribe(params => {
+      console.log(params.get('id'));
+    })
   }
 
 }

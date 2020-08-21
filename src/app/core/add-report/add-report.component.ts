@@ -22,11 +22,12 @@ export class AddReportComponent implements OnInit {
   }
 
   Created() {
-    this.router.navigateByUrl('/home/report-details')
+    // this.router.navigateByUrl('/home/report-details')
   }
 
   submit() {
-    this.router.navigateByUrl('/home/report-details')
+    // this.router.navigateByUrl('/home/report-details');
+    this.router.navigate(['/home/report-details', 1]);
   }
 
 }
