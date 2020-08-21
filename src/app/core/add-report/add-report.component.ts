@@ -10,6 +10,8 @@ import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 export class AddReportComponent implements OnInit {
 
   addForm: FormGroup;
+  final = false;
+  notAgree = '';
 
   constructor(private router: Router,
               private formBuilder: FormBuilder) { }
@@ -23,6 +25,16 @@ export class AddReportComponent implements OnInit {
 
   Created() {
     // this.router.navigateByUrl('/home/report-details')
+  }
+
+  clicked(event) {
+    console.log(event.checked);
+    this.final = event.checked;
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.notAgree = event.value;
   }
 
   submit() {
