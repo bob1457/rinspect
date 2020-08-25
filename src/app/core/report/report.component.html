@@ -1,31 +1,48 @@
 <!-- <p>report works!</p> -->
+<mat-toolbar color="accent">
+    <span class="text-uppercase" style="color: #464444;
+    font-family: sans-serif;">
+        Reports
+        <span *ngIf="reports">({{reports.length}})</span>
+    </span>
+    <span class="spacer"></span>
+    <form class="search-form">  
+        <mat-form-field class="">
+            <!--<mat-placeholder><mat-icon>search</mat-icon></mat-placeholder> appAutofocus-->
+
+            <input #search type="text" placeholder="Find..." matInput  />
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </form>
+</mat-toolbar>
 <section fxLayout="row" fxLayoutAlign="start center">
-    <form class="serchFrom-container">
+    <!-- <form class="serchFrom-container">
         <mat-form-field appearance="fill">
-            <!-- <mat-label>Report Title</mat-label> -->
+            
             <input matInput placeholder="Find...">
             <mat-icon matSuffix>search</mat-icon>            
         </mat-form-field>         
-    </form>
+    </form>  *ngIf="visible" -->
+    
 </section>
 <div fxLayout="row" fxLayoutAlign="center center">
     <section fxLayout="row" fxLayoutAlign="start start" style="width: 95%;">
-        <mat-card style="margin-top: 25px; width: 100px; height: 90px;margin-left: 12px;" routerLink="/home/add">
-            <p style="text-align: center;">Add New</p>
+        <mat-card class="add-card" routerLink="/home/add">
+            <p style="text-align: center;font-weight: bold;">ADD NEW</p>
             <div fxLayout="row" fxLayoutAlign="center center">
-                <mat-icon>add</mat-icon>
+                <mat-icon>add_circle</mat-icon>
             </div>
         </mat-card> 
-        <ul style="list-style: none; width: 90%;" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="2%">
-            <li>
-                <mat-card style="margin-top: 10px;" class="rpt-card" [routerLink]="['/home/report-details',1]" >
-                    <p style="text-align: center;">Report 2</p>
+        <ul style="list-style: none; width: 90%;" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="2%">
+            <li *ngFor="let rpt of reports">
+                <mat-card style="margin-top: 10px;" class="rpt-card" [routerLink]="['/home/report-details',rpt.payload.doc.id]" >
+                    <p style="text-align: center;">{{rpt.payload.doc.data().title}}</p>
                     <div fxLayout="row" fxLayoutAlign="center center">
                         <mat-icon>add</mat-icon>
                     </div>
                 </mat-card>
             </li>
-            <li>
+            <!-- <li>
                 <mat-card style="margin-top: 10px;" class="rpt-card">
                     <p>Report 1</p>
                     <div fxLayout="row" fxLayoutAlign="center center">
@@ -48,7 +65,7 @@
                         <mat-icon>add</mat-icon>
                     </div>
                 </mat-card>
-            </li>
+            </li> -->
         </ul>
     </section>
 </div>
@@ -77,4 +94,3 @@
         </mat-card-content>
     </mat-card>
 </section> -->
-

@@ -1,9 +1,31 @@
 .rpt-card {
     width: 90px;
     height: 90px;
+    background: #81d4fa;
 }
 
 .serchFrom-container {
     margin-left: 18px;
     margin-top:15px;
 }
+
+.add-card {
+    background: #00c853;
+    color: white;
+    margin-top: 25px; 
+    width: 100px; 
+    height: 90px;
+    margin-left: 12px;
+}
+
+.search-form {
+    margin-left: 18px;;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+  }

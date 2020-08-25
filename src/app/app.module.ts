@@ -10,6 +10,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SigninComponent } from './signin/signin.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
