@@ -15,8 +15,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
       { path: 'report-details/:id', component: ReportDetailsComponent},
-      // { path: 'user/:id', component:UserProfileComponent},
-      { path: 'user', component:UserProfileComponent},
+      { path: 'user/:id', component:UserProfileComponent},
+      // { path: 'user', component:UserProfileComponent},
       { path: 'user/settings', component: UserSettingsComponent},
       { path: 'report', component: ReportComponent}
     ]

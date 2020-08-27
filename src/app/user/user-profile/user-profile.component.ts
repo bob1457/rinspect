@@ -20,7 +20,10 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+    this.actRoute.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      console.log(params.get('id'));
+    })
 
     this.userForm = this.formBuilder.group({
       userName: [''],
@@ -29,11 +32,11 @@ export class UserProfileComponent implements OnInit {
       password: ['']
     });
 
-    this.userService.getUserProfile()
+    this.userService.getUserProfile(this.id)
         .subscribe(user => {
-          console.log(user);
+          // console.log(user);
           this.user = user;
-          
+          console.log(user);
         })
   }
 
