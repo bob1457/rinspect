@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'report-details/:id', component: ReportDetailsComponent},
       { path: 'user/:id', component:UserProfileComponent},
       // { path: 'user', component:UserProfileComponent},
-      { path: 'user/settings', component: UserSettingsComponent},
+      { path: 'settings', component: UserSettingsComponent},
       { path: 'report', component: ReportComponent}
     ]
   }
