@@ -1,0 +1,94 @@
+<!-- <p>add-section works!</p> -->
+<div fxLayout="row" fxLayoutAlign="start center">
+    <span class="material-icons" style="padding:5px; color:#ff5722; font-size: 3em; margin-left: 27px;">
+      table_view
+  </span>
+    <h3 class="title">Inspection Report: <span>Sample Reeport</span><br>
+        <section fxLayoutAlign="start center">
+            <h5 style="margin-bottom: 20px;">Add inspection section</h5>
+        </section>
+        <!-- <section>
+          <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;">help</mat-icon> <span>Instructions for completing rental unit condition repport</span>
+        </section> -->
+    </h3>
+</div>
+<div fxLayout="row" fxLayoutAlign="start center">
+    <button mat-raised-button style="background-color: #26bf49;
+    color: wheat;
+    margin-left: 40px;" [matMenuTriggerFor]="menu">
+    <span class="material-icons">
+      add
+    </span> &nbsp;
+    Add Inspection Section
+  </button>
+    <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;">help</mat-icon> <span>Help</span>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="after">
+        <button mat-menu-item (click)="type='entry'"> <!-- passing parameters for testing only -->
+        <mat-icon style="color: black;">add_to_home_screen</mat-icon>
+        Entry
+      </button>
+        <button mat-menu-item (click)="type='kitchen'">
+      <mat-icon style="color:#2477f5;">kitchen</mat-icon>
+              Kitchen
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
+      Living Room
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">fastfood</mat-icon>
+                Dinning Room
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">stairs</mat-icon>
+        Stairwell and Hall
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">bathtub</mat-icon>
+                Main Bath Room
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">local_hotel</mat-icon>
+        Master Bedroom
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">house_siding</mat-icon>
+          Exterior
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
+        Utility Bedroom
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">hvac</mat-icon>
+         Garbage/Parking Area
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">account_tree</mat-icon>
+          Basement
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
+        Utility Bedroom
+      </button>
+        <button mat-menu-item>
+        <mat-icon style="color:#2477f5;">control_camera</mat-icon>
+          Keys and Controls
+      </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+      <mat-icon style="color: rgb(97, 8, 8);">account_tree</mat-icon>
+        Master Bedroom
+      </button>
+    </mat-menu>
+
+</div>
+<div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 25px;width: 100%;">
+    <app-inspection-entry *ngIf="type==='entry'" style="width:90%"></app-inspection-entry>
+    <app-inspection-kitchen *ngIf="type==='kitchen'" style="width:90%"></app-inspection-kitchen>
+</div>

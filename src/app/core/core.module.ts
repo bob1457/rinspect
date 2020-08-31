@@ -9,10 +9,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddReportComponent } from './add-report/add-report.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddSectionComponent } from './add-section/add-section.component';
+import { InspectionEntryComponent } from './sections/inspection-entry/inspection-entry.component';
+import { InspectionKitchenComponent } from './sections/inspection-kitchen/inspection-kitchen.component';
+import { InspectionLivingRoomComponent } from './sections/inspection-living-room/inspection-living-room.component';
+import { InspectionDinningRoomComponent } from './sections/inspection-dinning-room/inspection-dinning-room.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, ReportComponent, AddReportComponent, ReportDetailsComponent],
+  declarations: [HomeComponent, ReportComponent, AddReportComponent, ReportDetailsComponent, AddSectionComponent, InspectionEntryComponent, InspectionKitchenComponent, InspectionLivingRoomComponent, InspectionDinningRoomComponent],
   imports: [
     AppMaterialModule,
     CommonModule,

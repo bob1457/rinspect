@@ -50,7 +50,8 @@ export class AddReportComponent implements OnInit {
 
   submit() {
     // this.router.navigateByUrl('/home/report-details');
-    this.router.navigate(['/home/report-details', 1]);
+    // this.router.navigate(['/home/report-details', 1]);
+    this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
   }
 
 }

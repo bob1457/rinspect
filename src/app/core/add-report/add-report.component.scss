@@ -3,6 +3,7 @@
     margin-top: 20px;
     margin-left: 10px;
     font-variant-caps: small-caps;
+    font-weight: bold;
     padding-top: 15px;
 }
 
@@ -10,16 +11,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
-  
-  .form-container > * {
+}
+
+.form-container>* {
     width: 95%;
-  }
+}
 
-  .report-card {
-    width:87%;
-  }
+.report-card {
+    width: 87%;
+}
 
-  .text-uppercase {
+.text-uppercase {
     text-transform: uppercase;
-  }
+}

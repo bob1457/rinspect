@@ -1,324 +1,324 @@
 <!-- <p>add-report works!</p> -->
-<div fxLayout="row" fxLayoutAlign="center center">
-    <span class="material-icons" style="padding:5px; color:#4caf50; font-size: 3em;">
+<div fxLayout="row" fxLayoutAlign="start center">
+    <span class="material-icons" style="padding:5px; color:#4caf50; font-size: 3em; margin-left: 27px;">
         grading
     </span>
     <h3 class="title">Add New Inspection Report<br>
         <section fxLayoutAlign="start center">
             <h5 style="margin-bottom: 20px;">Create a new inspection form</h5>
         </section>
-        
+
     </h3>
-    
+
 </div>
 <section fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
     <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="width: 90%;">
         <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;">help</mat-icon> <span>Instructions for completing rental unit condition repport</span>
-    </div>   
+    </div>
     <mat-card class="report-card">
         <mat-card-content>
-       <form class="form-container" [formGroup]="addForm" (ngSubmit)="submit()" >
-            <mat-form-field appearance="outline">
-                <mat-label>Report Title</mat-label>
-                <input matInput placeholder="Report Title">
-                <mat-icon matSuffix>view_headline</mat-icon>
-                <!-- <mat-hint>Hint</mat-hint> -->
-                <!-- <mat-hint align="end">hint</mat-hint> -->
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label class="text-uppercase">legal name of landlord</mat-label>
-                <input matInput placeholder="Report Title">
-                <mat-icon matSuffix>person</mat-icon>
-                <!-- <mat-hint>Hint</mat-hint> -->
-                <!-- <mat-hint align="end">hint</mat-hint> -->
-            </mat-form-field>
-            <p class="text-uppercase">landlord's address for service</p>
-            <div fxLayout="row" fxLayoutAlign="start start">
-                <mat-form-field appearance="outline" style="width: 10%;">
-                    <mat-label >unit #</mat-label>
+            <form class="form-container" [formGroup]="addForm" (ngSubmit)="submit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Report Title</mat-label>
                     <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
+                    <mat-icon matSuffix>view_headline</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 30%;">
-                    <mat-label >street address</mat-label>
+                <mat-form-field appearance="outline">
+                    <mat-label class="text-uppercase">legal name of landlord</mat-label>
                     <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
+                    <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 25%;">
-                    <mat-label >city</mat-label>
+                <p class="text-uppercase">landlord's address for service</p>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" style="width: 10%;">
+                        <mat-label>unit #</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 30%;">
+                        <mat-label>street address</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 25%;">
+                        <mat-label>city</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 15%;">
+                        <mat-label>province</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 20%;">
+                        <mat-label>postal code</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label class="text-uppercase">legal name of tenant</mat-label>
                     <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
+                    <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 15%;">
-                    <mat-label >province</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 20%;">
-                    <mat-label >postal code</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                
-            </div>
-            <mat-form-field appearance="outline">
-                <mat-label class="text-uppercase">legal name of tenant</mat-label>
-                <input matInput placeholder="Report Title">
-                <mat-icon matSuffix>person</mat-icon>
-                <!-- <mat-hint>Hint</mat-hint> -->
-                <!-- <mat-hint align="end">hint</mat-hint> -->
-            </mat-form-field>
-            <p class="text-uppercase">address of rental unit</p>
-            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
-                <mat-form-field appearance="outline" style="width: 10%;">
-                    <mat-label >unit #</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 30%;">
-                    <mat-label >street address</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 25%;">
-                    <mat-label >city</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 15%;">
-                    <mat-label >province</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 20%;">
-                    <mat-label >postal code</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                
-            </div>
-            <p><span class="text-uppercase">legal name of tenant's agent</span><span style="font-style:italic;">(if applicable)</span></p>
-            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
-                <mat-form-field appearance="outline"  style="width: 50%;">
-                    <mat-label >On Move-In</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-                <mat-form-field appearance="outline"  style="width: 50%;">
-                    <mat-label >On Move-Out</mat-label>
-                    <input matInput placeholder="Report Title">
-                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                    <!-- <mat-hint>Hint</mat-hint> -->
-                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                </mat-form-field>
-            </div>
-            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="margin-bottom: 20px;">
-                <mat-form-field style="width: 25%;">
-                    <mat-label >Possession Date</mat-label>
-                    <input matInput [matDatepicker]="picker1" >
-                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field style="width: 25%;">
-                    <mat-label >Move-In Inspec. Date</mat-label>
-                    <input matInput [matDatepicker]="picker2">
-                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                    <mat-datepicker #picker2></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field style="width: 25%;">
-                    <mat-label>Move-Out Date</mat-label>
-                    <input matInput [matDatepicker]="picker3" >
-                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                    <mat-datepicker #picker3></mat-datepicker>
-                </mat-form-field>
-                <mat-form-field style="width: 25%;">
-                    <mat-label>Move-Out Inspec. Date</mat-label>
-                    <input matInput [matDatepicker]="picker4" >
-                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                    <mat-datepicker #picker4></mat-datepicker>
-                </mat-form-field>
-                
-            </div>
-            <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="final">Fianlize condition inspection report</mat-checkbox>
-            <div *ngIf="final">
-                <div [@.disabled]="true">
-                    <mat-tab-group>
-                        <mat-tab label="START OF TENANCY">
-                            <mat-form-field style="width: 95%;margin-top:20px;">
-                                <mat-label>Repairs to be completed at start of tenancy</mat-label>
-                                <textarea matInput ></textarea>
-                            </mat-form-field>
-                            <!-- formControlName="notes" [ngModel]="owner.notes" -->
-                            <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                            <mat-radio-group aria-label="Select an option" (change)="onChange($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;">
-                                <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
-                                <mat-radio-button value="notagree">Not Agree</mat-radio-button>
-                            </mat-radio-group>
-                            <div *ngIf="notAgree == 'notagree'">
-                                <mat-form-field  style="width: 95%;margin-top:20px;">
-                                <mat-label>The reason of not agree</mat-label>
-                                <textarea matInput ></textarea>
-                            </mat-form-field>
-                            </div>
-                            
-                        </mat-tab>
-                        <mat-tab label="END OF TENANCY">
-                            <mat-form-field style="width: 95%;margin-top:20px;">
-                                <mat-label>Damages to rental unit or residential property for which the tenant is responsible:</mat-label>
-                                <textarea matInput ></textarea>
-                            </mat-form-field>
-                            <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                                <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;">
+                <p class="text-uppercase">address of rental unit</p>
+                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" style="width: 10%;">
+                        <mat-label>unit #</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 30%;">
+                        <mat-label>street address</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 25%;">
+                        <mat-label>city</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 15%;">
+                        <mat-label>province</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 20%;">
+                        <mat-label>postal code</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+
+                </div>
+                <p><span class="text-uppercase">legal name of tenant's agent</span><span style="font-style:italic;">(if applicable)</span></p>
+                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" style="width: 50%;">
+                        <mat-label>On Move-In</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="width: 50%;">
+                        <mat-label>On Move-Out</mat-label>
+                        <input matInput placeholder="Report Title">
+                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="margin-bottom: 20px;">
+                    <mat-form-field style="width: 25%;">
+                        <mat-label>Possession Date</mat-label>
+                        <input matInput [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field style="width: 25%;">
+                        <mat-label>Move-In Inspec. Date</mat-label>
+                        <input matInput [matDatepicker]="picker2">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field style="width: 25%;">
+                        <mat-label>Move-Out Date</mat-label>
+                        <input matInput [matDatepicker]="picker3">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field style="width: 25%;">
+                        <mat-label>Move-Out Inspec. Date</mat-label>
+                        <input matInput [matDatepicker]="picker4">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker #picker4></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+                <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="final">Fianlize condition inspection report</mat-checkbox>
+                <div *ngIf="final">
+                    <div [@.disabled]="true">
+                        <mat-tab-group>
+                            <mat-tab label="START OF TENANCY">
+                                <mat-form-field style="width: 95%;margin-top:20px;">
+                                    <mat-label>Repairs to be completed at start of tenancy</mat-label>
+                                    <textarea matInput></textarea>
+                                </mat-form-field>
+                                <!-- formControlName="notes" [ngModel]="owner.notes" -->
+                                <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
+                                <mat-radio-group aria-label="Select an option" (change)="onChange($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
                                     <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
                                     <mat-radio-button value="notagree">Not Agree</mat-radio-button>
                                 </mat-radio-group>
-                            <div *ngIf="notAgree1 == 'notagree'">
-                                <mat-form-field  style="width: 95%;margin-top:20px;">
-                                    <mat-label>The reason of not agree</mat-label>
-                                    <textarea matInput ></textarea>
-                                </mat-form-field>
-                            </div>
-                            <p></p>
-                            <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Do you agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
-                            <p></p>
-                            <div *ngIf="agreeOk" fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
-                                <mat-form-field appearance="outline" style="width:50%">
-                                    <mat-label>Security Deposit</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <mat-icon matSuffix>view_headline</mat-icon>
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" style="width:50%">
-                                    <mat-label>Pet Deposit</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <mat-icon matSuffix>view_headline</mat-icon>
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                            </div>
-                            <p></p>
-                            <p>Tenant's Forwarding Address</p>
-                            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
-                                <mat-form-field appearance="outline" style="width: 10%;">
-                                    <mat-label >unit #</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 30%;">
-                                    <mat-label >street address</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 25%;">
-                                    <mat-label >city</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 15%;">
-                                    <mat-label >province</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 20%;">
-                                    <mat-label >postal code</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                
-                            </div>
+                                <div *ngIf="notAgree == 'notagree'">
+                                    <mat-form-field style="width: 95%;margin-top:20px;">
+                                        <mat-label>The reason of not agree</mat-label>
+                                        <textarea matInput></textarea>
+                                    </mat-form-field>
+                                </div>
 
-                            <p>Landlord's Name & Address at End of Tenancy</p>
-                            <mat-form-field appearance="outline" style="width: 100%;">
-                                <mat-label>last name, first & middle names (if entry for landlord is a business name, enter full legale business name)</mat-label>
-                                <input matInput >
-                                <mat-icon matSuffix>person</mat-icon>
-                                <!-- <mat-hint>Hint</mat-hint> -->
-                                <!-- <mat-hint align="end">hint</mat-hint> -->
-                            </mat-form-field>
-                            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
-                                <mat-form-field appearance="outline" style="width: 10%;">
-                                    <mat-label >unit #</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
+                            </mat-tab>
+                            <mat-tab label="END OF TENANCY">
+                                <mat-form-field style="width: 95%;margin-top:20px;">
+                                    <mat-label>Damages to rental unit or residential property for which the tenant is responsible:</mat-label>
+                                    <textarea matInput></textarea>
+                                </mat-form-field>
+                                <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
+                                <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
+                                    <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
+                                    <mat-radio-button value="notagree">Not Agree</mat-radio-button>
+                                </mat-radio-group>
+                                <div *ngIf="notAgree1 == 'notagree'">
+                                    <mat-form-field style="width: 95%;margin-top:20px;">
+                                        <mat-label>The reason of not agree</mat-label>
+                                        <textarea matInput></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <p></p>
+                                <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Do you agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
+                                <p></p>
+                                <div *ngIf="agreeOk" fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
+                                    <mat-form-field appearance="outline" style="width:50%">
+                                        <mat-label>Security Deposit</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <mat-icon matSuffix>view_headline</mat-icon>
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width:50%">
+                                        <mat-label>Pet Deposit</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <mat-icon matSuffix>view_headline</mat-icon>
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                </div>
+                                <p></p>
+                                <p>Tenant's Forwarding Address</p>
+                                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
+                                    <mat-form-field appearance="outline" style="width: 10%;">
+                                        <mat-label>unit #</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 30%;">
+                                        <mat-label>street address</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 25%;">
+                                        <mat-label>city</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 15%;">
+                                        <mat-label>province</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 20%;">
+                                        <mat-label>postal code</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+
+                                </div>
+
+                                <p>Landlord's Name & Address at End of Tenancy</p>
+                                <mat-form-field appearance="outline" style="width: 100%;">
+                                    <mat-label>last name, first & middle names (if entry for landlord is a business name, enter full legale business name)</mat-label>
+                                    <input matInput>
+                                    <mat-icon matSuffix>person</mat-icon>
                                     <!-- <mat-hint>Hint</mat-hint> -->
                                     <!-- <mat-hint align="end">hint</mat-hint> -->
                                 </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 30%;">
-                                    <mat-label >street address</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 25%;">
-                                    <mat-label >city</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 15%;">
-                                    <mat-label >province</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                <mat-form-field appearance="outline"  style="width: 20%;">
-                                    <mat-label >postal code</mat-label>
-                                    <input matInput placeholder="Report Title">
-                                    <!-- <mat-icon matSuffix>person</mat-icon> -->
-                                    <!-- <mat-hint>Hint</mat-hint> -->
-                                    <!-- <mat-hint align="end">hint</mat-hint> -->
-                                </mat-form-field>
-                                
-                            </div>
-                        </mat-tab>
-                    </mat-tab-group>
+                                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
+                                    <mat-form-field appearance="outline" style="width: 10%;">
+                                        <mat-label>unit #</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 30%;">
+                                        <mat-label>street address</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 25%;">
+                                        <mat-label>city</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 15%;">
+                                        <mat-label>province</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" style="width: 20%;">
+                                        <mat-label>postal code</mat-label>
+                                        <input matInput placeholder="Report Title">
+                                        <!-- <mat-icon matSuffix>person</mat-icon> -->
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <!-- <mat-hint align="end">hint</mat-hint> -->
+                                    </mat-form-field>
+
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
                 </div>
-            </div>
-            
 
-            <button type="submit" mat-raised-button color="primary" style="margin-top:20px">CREATE</button>
-            </form> 
+
+                <button type="submit" mat-raised-button color="primary" style="margin-top:20px">SAVE & CONTINUE</button>
+            </form>
         </mat-card-content>
     </mat-card>
-    
-    
 
-    
+
+
+
 </section>
 <!-- [routerLink]="['/home/report-details', 1]"-->

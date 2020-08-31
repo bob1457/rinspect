@@ -6,6 +6,7 @@ import { AddReportComponent } from './add-report/add-report.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
 import { UserSettingsComponent } from '../user/user-settings/user-settings.component';
+import { AddSectionComponent } from './add-section/add-section.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
       { path: 'report-details/:id', component: ReportDetailsComponent},
+      { path: 'addsection', component: AddSectionComponent},
       { path: 'user/:id', component:UserProfileComponent},
       // { path: 'user', component:UserProfileComponent},
       { path: 'settings', component: UserSettingsComponent},
