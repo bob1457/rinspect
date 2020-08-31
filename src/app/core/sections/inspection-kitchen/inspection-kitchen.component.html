@@ -7,7 +7,7 @@
         <!-- <mat-hint>Hint</mat-hint> -->
         <!-- <mat-hint align="end">hint</mat-hint> -->
     </mat-form-field>
-    <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center">
+    <form [formGroup]="addForm" style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
         <mat-tab-group style="width: 95%;">
         
             <mat-tab label="CONDITION AT BEGINNING OF TENANCY">
@@ -16,13 +16,13 @@
 
                         <mat-form-field appearance="outline" style="width:97%">
                             <mat-label>Description</mat-label>
-                            <input matInput placeholder="Specify type and description of the area">
+                            <input matInput formControlName="name" placeholder="Specify type and description of the area">
                             <mat-icon matSuffix>view_headline</mat-icon>
                         </mat-form-field>
                         <p></p>
                         <p></p>
                         <p style="width: 95%;">
-                            <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="addMore">Add More Kitchen</mat-checkbox>
+                            <mat-checkbox style="margin-bottom: 20px;" (change)="checked($event)" [checked]="addMore">Add More Kitchen</mat-checkbox>
                         </p>
 
                     </mat-card-content>

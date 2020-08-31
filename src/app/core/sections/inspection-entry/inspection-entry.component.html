@@ -7,8 +7,8 @@
         <!-- <mat-hint>Hint</mat-hint> -->
         <!-- <mat-hint align="end">hint</mat-hint> -->
     </mat-form-field>
-    <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center">
-    <mat-tab-group style="width: 95%;">
+    <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
+        <mat-tab-group style="width: 95%;">
         
             <mat-tab label="CONDITION AT BEGINNING OF TENANCY">
                 <mat-card class="section-card">
@@ -37,6 +37,6 @@
                 </mat-card>
             </mat-tab>        
         </mat-tab-group>
-        <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 95%;">SAVE & CONTINUE</button>
+        <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 95%;" >SAVE & CONTINUE</button>
     </form>
 </div>
