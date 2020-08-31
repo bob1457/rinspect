@@ -12,4 +12,8 @@ export class InspectionDinningRoomComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clicked(event) {
+    
+  }
+
 }

@@ -36,7 +36,7 @@
       <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
       Living Room
       </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='dinning'" >
         <mat-icon style="color:#2477f5;">fastfood</mat-icon>
                 Dinning Room
       </button>
@@ -61,7 +61,7 @@
         <mat-divider></mat-divider>
         <button mat-menu-item>
       <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
-        Utility Bedroom
+        Utility Room
       </button>
         <button mat-menu-item>
         <mat-icon style="color:#2477f5;">hvac</mat-icon>
@@ -71,24 +71,16 @@
         <mat-icon style="color:#2477f5;">account_tree</mat-icon>
           Basement
       </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item>
-      <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
-        Utility Bedroom
-      </button>
+        <mat-divider></mat-divider>        
         <button mat-menu-item>
         <mat-icon style="color:#2477f5;">control_camera</mat-icon>
           Keys and Controls
-      </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item>
-      <mat-icon style="color: rgb(97, 8, 8);">account_tree</mat-icon>
-        Master Bedroom
-      </button>
+      </button>        
     </mat-menu>
 
 </div>
 <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 25px;width: 100%;">
     <app-inspection-entry *ngIf="type==='entry'" style="width:90%"></app-inspection-entry>
     <app-inspection-kitchen *ngIf="type==='kitchen'" style="width:90%"></app-inspection-kitchen>
+    <app-inspection-dinning-room *ngIf="type==='dinning'" style="width:90%"></app-inspection-dinning-room>
 </div>

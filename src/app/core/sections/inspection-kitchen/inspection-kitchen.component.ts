@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InspectionKitchenComponent implements OnInit {
 
+  addMore = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clicked(event) {
+    
   }
 
 }
