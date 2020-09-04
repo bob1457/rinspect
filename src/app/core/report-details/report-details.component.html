@@ -1,11 +1,79 @@
 <!-- <p>report-details works!</p> -->
-<div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="details-card mat-elevation-z0">
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card class="details-card mat-elevation-z0" *ngIf="report">
         <mat-card-header>
             <div mat-card-avatar class="details-header-image"></div>
-            <mat-card-title>Shiba Inu <span style="font-size: .75em;">Rental Unit Address: 123 Main Street, Vancouver, BC V1V 1V1</span></mat-card-title>
-            <mat-card-subtitle>Status: Completed <span>Created on: 9/23/2020, Last Updated on: 9/27/2020</span></mat-card-subtitle>
+            <mat-card-title>{{report.title}} <span style="font-size: .75em;">
+                Rental Unit Address: {{report.tenant.address.street}} 
+                {{report.tenant.address.city}} 
+                {{report.tenant.address.province}} 
+                {{report.tenant.address.postcode}}
+            </span></mat-card-title>
+            <mat-card-subtitle>Status: {{report.completed}} <span>Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span></mat-card-subtitle>
         </mat-card-header>
+        <mat-card-content fxLayout="column" fxLayoutAlign="end center">
+            <span *ngIf="!edit" style="width: 95%;">
+                <span  class="material-icons" (click)="enableEdit()" style="cursor: pointer;color: green;">
+                    edit
+                </span>
+                <span style="vertical-align: top;"> &nbsp;Edit</span>
+            </span>
+            <span *ngIf="edit"  style="width: 95%;">
+                <span class="material-icons" (click)="cancelEdit()" style="cursor: pointer;color: red;">
+                clear
+            </span>
+            <span style="vertical-align: top;">&nbsp; Cancel</span>
+            </span>
+            
+            <!-- *ngIf="!edit" -->
+             <section  class="content">
+                <div fxLayout="column" fxLayoutAlign="end center"  fxLayoutGap="1%">
+                    <form class="form-container form-width" [formGroup]="detailForm" (ngSubmit)="submit()">
+                        <mat-form-field appearance="outline" class="field-width">
+                        <mat-label>Report Title</mat-label>
+                        <input [readonly]="!edit" matInput placeholder="Report Title" formControlName="title" [ngModel]="report.title">
+                        <mat-icon matSuffix>view_headline</mat-icon>                       
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="field-width">
+                            <mat-label class="text-uppercase">legal name of landlord</mat-label>
+                            <input [readonly]="!edit" matInput placeholder="First name middle name last name" formControlName="legalName" [ngModel]="report.landlord.legalName">
+                            <mat-icon matSuffix>person</mat-icon>                            
+                        </mat-form-field>
+                        <p class="text-uppercase field-width">landlord's address for service</p>
+                        <div fxLayout="row" fxLayoutAlign="start start" style="width: 100%;">
+                            <mat-form-field appearance="outline" style="width: 10%;">
+                                <mat-label>unit #</mat-label>
+                                <input [readonly]="!edit" matInput placeholder="Report Title">                                
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" style="width: 30%;">
+                                <mat-label>street address</mat-label>
+                                <input [readonly]="!edit" matInput placeholder="Report Title">                                
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" style="width: 25%;">
+                                <mat-label>city</mat-label>
+                                <input [readonly]="!edit" matInput placeholder="Report Title">                                
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" style="width: 15%;">
+                                <mat-label>province</mat-label>
+                                <input [readonly]="!edit" matInput placeholder="Report Title">                                
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" style="width: 20%;">
+                                <mat-label>postal code</mat-label>
+                                <input [readonly]="!edit" matInput placeholder="Report Title">                                
+                            </mat-form-field>
+        
+                        </div>
+                    </form>
+                    
+                </div>
+            </section>
+            <!-- <section *ngIf="edit">
+                Edit
+            </section> -->
+        </mat-card-content>
+        
     </mat-card>
+    
+    
     
 </div>

@@ -5,4 +5,30 @@
 .details-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
-  }
+}
+
+.report-card {
+    width: 87%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-width {
+    width: 95%;
+}
+
+.content {
+    width: 100%;
+}
+
+.field-width {
+    width: 100%;
+}
