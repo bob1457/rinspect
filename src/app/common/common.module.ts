@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TrueFalsePipe } from './true-false.pipe';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TrueFalsePipe],
   imports: [
     CommonModule
+  ],
+  exports: [
+    TrueFalsePipe
   ]
 })
 export class CommonModule { }

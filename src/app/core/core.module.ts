@@ -26,7 +26,26 @@ import { InspectionKeysControlsComponent } from './sections/inspection-keys-cont
 
 
 @NgModule({
-  declarations: [HomeComponent, ReportComponent, AddReportComponent, ReportDetailsComponent, AddSectionComponent, InspectionEntryComponent, InspectionKitchenComponent, InspectionLivingRoomComponent, InspectionDinningRoomComponent, InspectionStairwellHallComponent, InspectionMainBathRoomComponent, InspectionMainBedroomComponent, InspectionExteriorComponent, InspectionUtilityRoomComponent, InspectionGarbageParkingComponent, InspectionMasterBedroomComponent, InspectionBasementComponent, InspectionKeysControlsComponent],
+  declarations: [
+    HomeComponent,
+    ReportComponent,
+    AddReportComponent,
+    ReportDetailsComponent,
+    AddSectionComponent,
+    InspectionEntryComponent,
+    InspectionKitchenComponent,
+    InspectionLivingRoomComponent,
+    InspectionDinningRoomComponent,
+    InspectionStairwellHallComponent,
+    InspectionMainBathRoomComponent,
+    InspectionMainBedroomComponent,
+    InspectionExteriorComponent,
+    InspectionUtilityRoomComponent,
+    InspectionGarbageParkingComponent,
+    InspectionMasterBedroomComponent,
+    InspectionBasementComponent,
+    InspectionKeysControlsComponent
+  ],
   imports: [
     AppMaterialModule,
     CommonModule,
