@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-report-details',
@@ -21,6 +22,7 @@ export class ReportDetailsComponent implements OnInit {
   constructor(private router: Router,
               private actRoute: ActivatedRoute,
               public dataService: DataService,
+              // private firestore: AngularFirestore,
               private formBuilder: FormBuilder) {
 
               }
@@ -62,6 +64,13 @@ export class ReportDetailsComponent implements OnInit {
       this.id = params.get('id');
       console.log(params.get('id'));
     });
+
+    // this.firestore.collection('report').doc(this.id).collection('section').valueChanges() //get()
+    // .subscribe(snap => {
+    //   snap.forEach(doc => {
+    //     console.log('all', doc);
+    //   });
+    // });
 
     this.dataService.getReportDetails(this.id)
         .subscribe(res => {

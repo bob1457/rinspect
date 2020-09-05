@@ -9,10 +9,10 @@ export class DataService {
   constructor(private firestore: AngularFirestore) { }
 
   getAllReports() {
-    return this.firestore.collection("report").snapshotChanges();
+    return this.firestore.collection('report').snapshotChanges();
   }
 
   getReportDetails(id) {
-    return this.firestore.collection("report").doc(id).valueChanges();
+    return this.firestore.collection('report').doc(id).valueChanges();
   }
 }
