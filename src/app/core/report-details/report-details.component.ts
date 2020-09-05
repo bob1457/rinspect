@@ -28,8 +28,13 @@ export class ReportDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.detailForm = this.formBuilder.group({
+      active: [true],
+      agentName: [''],
       title: [''],
-      // legalName: [''],
+      moveInInspectDate: [''],
+      moveOutDate: [''],
+      possesionDate: [''],
+      moveOutInspectDate: [''],
       landlord: this.formBuilder.group({
         legalName: [''],
         address: this.formBuilder.group({
@@ -41,7 +46,14 @@ export class ReportDetailsComponent implements OnInit {
         })
       }),
       tenant: this.formBuilder.group({
-
+        legalName: [''],
+        address: this.formBuilder.group({
+          unit: [''],
+          street: [''],
+          city: [''],
+          province: [''],
+          postcode: ['']
+        })
       })
     });
 
@@ -64,6 +76,12 @@ export class ReportDetailsComponent implements OnInit {
           this.detailForm.get('landlord').get('address').get('city').setValue(this.report.landlord.address.city);
           this.detailForm.get('landlord').get('address').get('province').setValue(this.report.landlord.address.province);
           this.detailForm.get('landlord').get('address').get('postcode').setValue(this.report.landlord.address.postcode);
+          this.detailForm.get('tenant').get('legalName').setValue(this.report.tenant.legalName);
+          this.detailForm.get('tenant').get('address').get('street').setValue(this.report.tenant.address.street);
+          this.detailForm.get('tenant').get('address').get('unit').setValue(this.report.tenant.address.unit);
+          this.detailForm.get('tenant').get('address').get('city').setValue(this.report.tenant.address.city);
+          this.detailForm.get('tenant').get('address').get('province').setValue(this.report.tenant.address.province);
+          this.detailForm.get('tenant').get('address').get('postcode').setValue(this.report.tenant.address.postcode);
 
         });
   }

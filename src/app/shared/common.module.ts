@@ -13,4 +13,4 @@ import { TrueFalsePipe } from './true-false.pipe';
     TrueFalsePipe
   ]
 })
-export class CommonModule { }
+export class SharedModule { }

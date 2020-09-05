@@ -23,6 +23,7 @@ import { InspectionGarbageParkingComponent } from './sections/inspection-garbage
 import { InspectionMasterBedroomComponent } from './sections/inspection-master-bedroom/inspection-master-bedroom.component';
 import { InspectionBasementComponent } from './sections/inspection-basement/inspection-basement.component';
 import { InspectionKeysControlsComponent } from './sections/inspection-keys-controls/inspection-keys-controls.component';
+import { SharedModule } from '../shared/common.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { InspectionKeysControlsComponent } from './sections/inspection-keys-cont
     RouterModule,
     FlexLayoutModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule
   ]
 })

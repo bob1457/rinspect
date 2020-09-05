@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/common.module';
 
 
 @NgModule({
@@ -33,8 +34,9 @@ import { UserModule } from './user/user.module';
     FormsModule,
     ReactiveFormsModule,
     UserModule,
+    SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule 
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
