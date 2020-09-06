@@ -15,4 +15,8 @@ export class DataService {
   getReportDetails(id) {
     return this.firestore.collection('report').doc(id).valueChanges();
   }
+
+  getReportSections(id) {
+    return this.firestore.collection('report').doc(id).collection('section').valueChanges();
+  }
 }

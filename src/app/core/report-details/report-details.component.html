@@ -13,16 +13,17 @@
         </mat-card-header>
         <mat-card-content fxLayout="column" fxLayoutAlign="end center">
             <span *ngIf="!edit" style="width: 95%;">
-                <span  class="material-icons" (click)="enableEdit()" style="cursor: pointer;color: green;">
-                    edit
-                </span>
+              <span  class="material-icons" (click)="enableEdit()" style="cursor: pointer;color: green;">
+                  edit
+              </span>
             <span style="vertical-align: top;"> &nbsp;Edit</span>
             </span>
             <span *ngIf="edit" style="width: 95%;">
-                <span class="material-icons" (click)="cancelEdit()" style="cursor: pointer;color: red;">
+              <span class="material-icons" (click)="cancelEdit()" style="cursor: pointer;color: red;vertical-align: text-bottom;">
                 clear
-            </span>
-            <span style="vertical-align: top;">&nbsp; Cancel</span>
+              </span>
+            <span>&nbsp; Cancel</span>
+            <!-- <span style="margin-left: 20px;"><a mat-stroked-button type="submit">SAVE</a></span> -->
             </span>
 
             <!-- *ngIf="!edit" -->
@@ -128,8 +129,46 @@
                                 <mat-datepicker #picker4></mat-datepicker>  [matDatepicker]="picker4"-->
                             </mat-form-field>
                         </div>
-
+                        <div *ngIf="edit" style="margin-left: 20px;"><button mat-stroked-button type="submit">SAVE</button></div>
                     </form>
+                    <p class="text-uppercase" style="margin-left: 30px;width: 95%;">inpection report sections</p>
+                    <mat-accordion class="form-width" *ngIf="sections">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{sections[1].type}}
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    {{sections[1].name}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>This is the primary content of the panel.</p>
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Self aware panel
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>I'm visible because I am open</p>
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Self aware panel 2
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>I'm visible because I am open</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
 
                 </div>
             </section>

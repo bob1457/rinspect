@@ -12,8 +12,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class ReportDetailsComponent implements OnInit {
 
+  panelOpenState = false;
+
   id;
   report;
+  sections;
   edit = false;
 
   detailForm: FormGroup;
@@ -98,9 +101,17 @@ export class ReportDetailsComponent implements OnInit {
           this.detailForm.get('possesionDate').setValue(this.report.possesionDate);
           console.log('date', this.report.possesionDate);
         });
+
+    this.dataService.getReportSections(this.id)
+        .subscribe(sec => {
+          this.sections = sec;
+          console.log('sections', this.sections);
+        });
   }
 
-  submit() {}
+  submit() {
+    console.log('form', this.detailForm.value);
+  }
 
   clicked(event) {}
 

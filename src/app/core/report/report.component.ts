@@ -18,7 +18,7 @@ export class ReportComponent implements OnInit {
           // console.log(res);
           this.reports = res;
           console.log(this.reports);
-        })
+        });
   }
 
 }
