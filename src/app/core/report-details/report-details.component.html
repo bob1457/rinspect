@@ -132,8 +132,8 @@
                         <div *ngIf="edit" style="margin-left: 20px;"><button mat-stroked-button type="submit">SAVE</button></div>
                     </form>
                     <p class="text-uppercase" style="margin-left: 30px;width: 95%;">inpection report sections</p>
-                    <mat-accordion class="form-width" *ngIf="sections">
-                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-accordion class="form-width" *ngIf="entrySection">
+                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     {{sections[1].type}}
@@ -143,7 +143,8 @@
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>This is the primary content of the panel.</p>
-                        </mat-expansion-panel>
+                        </mat-expansion-panel> -->
+                        <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
 
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>

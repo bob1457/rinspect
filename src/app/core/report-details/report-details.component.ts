@@ -17,6 +17,11 @@ export class ReportDetailsComponent implements OnInit {
   id;
   report;
   sections;
+  entrySection;
+
+
+
+
   edit = false;
 
   detailForm: FormGroup;
@@ -107,6 +112,12 @@ export class ReportDetailsComponent implements OnInit {
           this.sections = sec;
           console.log('sections', this.sections);
         });
+
+    this.dataService.getReportSectionByType(this.id, 'Entry')
+        .subscribe(res => {
+          this.entrySection = res;
+          console.log('section', this.entrySection);
+        })
   }
 
   submit() {

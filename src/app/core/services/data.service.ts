@@ -19,4 +19,12 @@ export class DataService {
   getReportSections(id) {
     return this.firestore.collection('report').doc(id).collection('section').valueChanges();
   }
+
+  getReportSectionByType(id, type) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('type', '==', type))
+          .valueChanges();
+
+  }
 }
