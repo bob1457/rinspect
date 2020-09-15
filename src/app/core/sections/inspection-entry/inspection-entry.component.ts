@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-inspection-entry',
@@ -9,11 +10,29 @@ import { Router } from '@angular/router';
 export class InspectionEntryComponent implements OnInit {
 
   @Input() entrySectionDetails;
+  entryForm: FormGroup;
 
-  constructor(private router: Router) { }
+  codes = [
+    { 'name': 'G'},
+    { 'name': 'F'},
+    { 'name': 'P'},
+    { 'name': 'M'},
+    { 'name': 'D'},
+    { 'name': 'S'},
+    { 'name': 'B'},
+    { 'name': 'DT'},
+    { 'name': 'ST'}
+  ]
+
+  constructor(private router: Router,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log('section', this.entrySectionDetails);
+    // console.log('section', this.entrySectionDetails);
+    this.entryForm = this.formBuilder.group({
+      code: [''],
+      comments: ['']
+    })
   }
 
   submit() {
