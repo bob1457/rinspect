@@ -12,9 +12,9 @@ export class InspectionEntryComponent implements OnInit {
   @Input() entrySectionDetails;
   entryForm: FormGroup;
   // sectionTitle ="Walls and Trim";
-  sectionTitle = [
-    "Walls and Trim",
-    "Cellings"
+  sectionTitle: string[] = [
+    'Walls and Trim', 
+    'Cellings'
   ];
 
   codes = [
