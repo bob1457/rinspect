@@ -12,6 +12,18 @@ export class InspectionEntryComponent implements OnInit {
   @Input() entrySectionDetails;
   entryForm: FormGroup;
   // sectionTitle ="Walls and Trim";
+
+  
+  controlComments: string[] = [
+    'comments0',
+    'comments0'
+  ]
+
+  controlCodes: string[] = [
+    'code0',
+    'code1'
+  ];
+
   sectionTitle: string[] = [
     'Walls and Trim', 
     'Cellings'
