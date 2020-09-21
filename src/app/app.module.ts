@@ -15,12 +15,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
+// import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent
+    SigninComponent//,
+    // SectionItemComponent
   ],
   imports: [
     AppRoutingModule,

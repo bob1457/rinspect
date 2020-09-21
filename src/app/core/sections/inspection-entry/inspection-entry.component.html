@@ -21,9 +21,9 @@
                 <mat-tab-group style="width: 100%;">
 
                     <mat-tab label="BEGINNING OF TENANCY">
-                        <mat-card class="section-card">
+                        <mat-card class="section-card mat-elevation-z0">
                             <mat-card-content fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
-                                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%">
+                                <!-- <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;">
                                     <p style="width: 35%;text-align: left;margin-left: 5px;">Walls and Tim</p>
                                     <mat-form-field style="width: 15%;">
                                         <mat-label>Code</mat-label>
@@ -31,18 +31,15 @@
                                             <mat-option *ngFor="let code of codes" [value]="code.name">
                                                 {{ code.name }}
                                             </mat-option>
-                                            <!-- <mat-option value="G">Good</mat-option>
-                                            <mat-option value="F">Fair</mat-option>
-                                            <mat-option value="P">Poor</mat-option>
-                                            <mat-option value="M">Missing</mat-option> -->
                                         </mat-select>
                                     </mat-form-field>
                                     <mat-form-field appearance="outline" style="width: 50%;">
                                         <mat-label>Comments</mat-label>
                                         <input matInput placeholder="Comments" formControlName="comments">
                                     </mat-form-field>
-                                </div>
-                                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%">
+                                </div> -->
+                                <app-section-item style="width: 100%;" [codes]="codes" [sectionTitle]="sectionTitle[0]"></app-section-item>
+                                <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;">
                                     <p style="width: 35%;text-align: left;margin-left: 5px;">Cellings</p>
                                     <mat-form-field style="width: 15%;">
                                         <mat-label>Code</mat-label>
@@ -50,10 +47,6 @@
                                             <mat-option *ngFor="let code of codes" [value]="code.name">
                                                 {{ code.name }}
                                             </mat-option>
-                                            <!-- <mat-option value="G">Good</mat-option>
-                                            <mat-option value="F">Fair</mat-option>
-                                            <mat-option value="P">Poor</mat-option>
-                                            <mat-option value="M">Missing</mat-option> -->
                                         </mat-select>
                                     </mat-form-field>
                                     <mat-form-field appearance="outline" style="width: 50%;">

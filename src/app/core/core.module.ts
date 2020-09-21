@@ -24,6 +24,7 @@ import { InspectionMasterBedroomComponent } from './sections/inspection-master-b
 import { InspectionBasementComponent } from './sections/inspection-basement/inspection-basement.component';
 import { InspectionKeysControlsComponent } from './sections/inspection-keys-controls/inspection-keys-controls.component';
 import { SharedModule } from '../shared/common.module';
+import { SectionItemComponent } from './sections/section-item/section-item.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { SharedModule } from '../shared/common.module';
     InspectionGarbageParkingComponent,
     InspectionMasterBedroomComponent,
     InspectionBasementComponent,
-    InspectionKeysControlsComponent
+    InspectionKeysControlsComponent,
+    SectionItemComponent
   ],
   imports: [
     AppMaterialModule,
