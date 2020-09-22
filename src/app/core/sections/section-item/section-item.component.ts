@@ -20,10 +20,15 @@ export class SectionItemComponent implements OnInit {
 
   ngOnInit(): void {   
 
-    this.entryForm = <FormGroup>this.controlContainer.control;
+    this.entryForm = this.fb.group({
+      code: [this.code],
+      comments: [this.comments]
+    })
 
-    console.log('control from parent', this.code);
-    console.log('control from parent', this.comments);
+    // this.entryForm = <FormGroup>this.controlContainer.control;
+
+    // console.log('control from parent', this.code);
+    // console.log('control from parent', this.comments);
   }
 
 }

@@ -14,3 +14,7 @@
     width:100%;
     border: 1px solid;padding: 5px;
 }
+
+::ng-deep .mat-expansion-indicator::after {
+    color: white;
+}

@@ -16,7 +16,7 @@ export class InspectionEntryComponent implements OnInit {
   
   controlComments: string[] = [
     'comments0',
-    'comments0'
+    'comments1'
   ]
 
   controlCodes: string[] = [
@@ -47,8 +47,8 @@ export class InspectionEntryComponent implements OnInit {
   ngOnInit(): void {
     // console.log('section', this.entrySectionDetails);
     this.entryForm = this.formBuilder.group({
-      code: [''],
-      comments: ['']
+      code: ['G'],
+      comments: ['N/A']
     })
   }
 

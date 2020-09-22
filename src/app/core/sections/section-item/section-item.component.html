@@ -3,7 +3,7 @@
     <p style="width: 35%;text-align: left;margin-left: 5px;">{{sectionTitle}}</p>
     <mat-form-field style="width: 15%;">
         <mat-label>Code</mat-label>
-        <mat-select id="codeType" formControlName=code>
+        <mat-select id="codeType" formControlName="code">
             <mat-option *ngFor="let code of codes" [value]="code.name">
                 {{ code.name }}
             </mat-option>
@@ -11,6 +11,6 @@
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 50%;">
         <mat-label>Comments</mat-label>
-        <input matInput placeholder="Comments" formControlName=comments>
+        <input matInput placeholder="Comments" formControlName="comments">
     </mat-form-field>
 </div>
