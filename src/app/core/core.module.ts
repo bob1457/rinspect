@@ -26,6 +26,18 @@ import { InspectionKeysControlsComponent } from './sections/inspection-keys-cont
 import { SharedModule } from '../shared/common.module';
 import { SectionItemComponent } from './sections/section-item/section-item.component';
 import { AddSectionEntryComponent } from './add-section-items/add-section-entry/add-section-entry.component';
+import { AddSectionKitchenComponent } from './add-section-items/add-section-kitchen/add-section-kitchen.component';
+import { AddSectionBasementComponent } from './add-section-items/add-section-basement/add-section-basement.component';
+import { AddSectionDinningRoomComponent } from './add-section-items/add-section-dinning-room/add-section-dinning-room.component';
+import { AddSectionExteriorComponent } from './add-section-items/add-section-exterior/add-section-exterior.component';
+import { AddSectionGarbageParkingComponent } from './add-section-items/add-section-garbage-parking/add-section-garbage-parking.component';
+import { AddSectionKeysControlsComponent } from './add-section-items/add-section-keys-controls/add-section-keys-controls.component';
+import { AddSectionLivingRoomComponent } from './add-section-items/add-section-living-room/add-section-living-room.component';
+import { AddSectionStairewllHallComponent } from './add-section-items/add-section-stairewll-hall/add-section-stairewll-hall.component';
+import { AddSectionMasterBedroomComponent } from './add-section-items/add-section-master-bedroom/add-section-master-bedroom.component';
+import { AddSectionUtilityRoomComponent } from './add-section-items/add-section-utility-room/add-section-utility-room.component';
+import { AddSectionMainBathRoomComponent } from './add-section-items/add-section-main-bath-room/add-section-main-bath-room.component';
+import { AddSectionMainBedroomComponent } from './add-section-items/add-section-main-bedroom/add-section-main-bedroom.component';
 
 
 @NgModule({
@@ -49,7 +61,19 @@ import { AddSectionEntryComponent } from './add-section-items/add-section-entry/
     InspectionBasementComponent,
     InspectionKeysControlsComponent,
     SectionItemComponent,
-    AddSectionEntryComponent
+    AddSectionEntryComponent,
+    AddSectionKitchenComponent,
+    AddSectionBasementComponent,
+    AddSectionDinningRoomComponent,
+    AddSectionExteriorComponent,
+    AddSectionGarbageParkingComponent,
+    AddSectionKeysControlsComponent,
+    AddSectionLivingRoomComponent,    
+    AddSectionStairewllHallComponent,
+    AddSectionMasterBedroomComponent,
+    AddSectionUtilityRoomComponent,
+    AddSectionMainBathRoomComponent,
+    AddSectionMainBedroomComponent
   ],
   imports: [
     AppMaterialModule,
