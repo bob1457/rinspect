@@ -11,22 +11,12 @@ export class InspectionEntryComponent implements OnInit {
 
   @Input() entrySectionDetails;
   entryForm: FormGroup;
-  // sectionTitle ="Walls and Trim";
-
-  
-  controlComments: string[] = [
-    'comments0',
-    'comments1'
-  ]
-
-  controlCodes: string[] = [
-    'code0',
-    'code1'
-  ];
 
   sectionTitle: string[] = [
     'Walls and Trim', 
-    'Cellings'
+    'Cellings',
+    'Closets',
+    ''
   ];
 
   codes = [
@@ -47,9 +37,42 @@ export class InspectionEntryComponent implements OnInit {
   ngOnInit(): void {
     // console.log('section', this.entrySectionDetails);
     this.entryForm = this.formBuilder.group({
+      // Temp
       code: ['G'],
-      comments: ['N/A']
-    })
+      comments: ['N/A'],
+      // IN
+      cellingCmnts_in: [''],
+      cellingCode_in: [''],
+      electricCmnts_in: [''],
+      electricCode_in: [''],
+      floorCmnts_in: [''],
+      floorCode_in: [''],
+      lightingCmnts_in: [''],
+      lightingCode_in: [''],
+      wallTrimCmnts_in: [''],
+      wallTrimCode_in: [''],
+      windowsCmnts_in: [''],
+      windowsCode_in: [''],
+
+      //- OUT
+      cellingCmnts_out: [''],
+      cellingCode_out: [''],
+      electricCmnts_out: [''],
+      electricCode_out: [''],
+      floorCmnts_out: [''],
+      floorCode_out: [''],
+      lightingCmnts_out: [''],
+      lightingCode_out: [''],
+      wallTrimCmnts_out: [''],
+      wallTrimCode_out: [''],
+      windowsCmnts_out: [''],
+      windowsCode_out: ['']
+
+    });
+
+    // this.detailForm.get('title').setValue(this.report.title);
+    // this.detailForm.get('landlord').get('legalName').setValue(this.report.landlord.legalName);
+    this.entryForm.get('cellingCmnts_in').setValue(this.entrySectionDetails[0].conditionIn.cellingCmnts);
   }
 
   submit() {

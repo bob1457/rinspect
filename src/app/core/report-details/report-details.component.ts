@@ -17,7 +17,9 @@ export class ReportDetailsComponent implements OnInit {
   id;
   report;
   sections;
+
   entrySection;
+  kitchenSection;
 
 
 
@@ -107,16 +109,24 @@ export class ReportDetailsComponent implements OnInit {
           console.log('date', this.report.possesionDate);
         });
 
+    // Get all sections
     this.dataService.getReportSections(this.id)
         .subscribe(sec => {
           this.sections = sec;
           console.log('sections', this.sections);
         });
 
+    // Get each section
     this.dataService.getReportSectionByType(this.id, 'Entry')
         .subscribe(res => {
           this.entrySection = res;
           console.log('section', this.entrySection);
+        })
+
+    this.dataService.getReportSectionByType(this.id, 'Kitchen')
+        .subscribe( res => {
+          this.kitchenSection = res;
+          console.log('section', this.kitchenSection);
         })
   }
 
