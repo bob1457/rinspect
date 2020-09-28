@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-add-report',
@@ -16,7 +17,8 @@ export class AddReportComponent implements OnInit {
   agreeOk = false;
 
   constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private dataService: DataService) { }
 
   ngOnInit(): void {
 
@@ -35,7 +37,7 @@ export class AddReportComponent implements OnInit {
           unit: [''],
           street: [''],
           city: [''],
-          province: [''],
+          province: ['BC'],
           postcode: ['']
         })
       }),
@@ -46,9 +48,11 @@ export class AddReportComponent implements OnInit {
           street: [''],
           city: [''],
           province: [''],
-          postcode: ['']
+          postcode: ['BC']
         })
-      })
+      }),
+      created: [''],
+      updated: ['']
     });
   }
 
@@ -76,9 +80,15 @@ export class AddReportComponent implements OnInit {
   }
 
   submit() {
+    debugger;
     // this.router.navigateByUrl('/home/report-details');
     // this.router.navigate(['/home/report-details', 1]);
+    this.addForm.patchValue({
+      created: new Date(),
+      updated: new Date()
+    })
     console.log('form data', this.addForm.value);
+    this.dataService.createReport(this.addForm.value);
     this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
   }
 

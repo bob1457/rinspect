@@ -34,7 +34,7 @@ export class AddSectionEntryComponent implements OnInit {
   }
 
   submit() {
-    
+    console.log('add secton form', this.entryForm.value);
   }
 
 }

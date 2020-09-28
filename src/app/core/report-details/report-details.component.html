@@ -280,7 +280,15 @@
                         </div>
 
 
-                        <div *ngIf="edit" style="margin-left: 20px;"><button mat-stroked-button type="submit">SAVE</button></div>
+                        <div *ngIf="edit || final" style="width: 100%;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        background: green;
+                        color: white;">
+                            <button mat-stroked-button type="submit" style="width: 100%;">
+                                SAVE
+                            </button>
+                        </div>
                     </form>
                     <p class="text-uppercase" style="margin-left: 30px;width: 95%;">
                         inpection report sections
@@ -298,31 +306,35 @@
                             </mat-expansion-panel-header>
                             <p>This is the primary content of the panel.</p>
                         </mat-expansion-panel> -->
-                        <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
+                        <div *ngIf="sections.lenght > 0">
 
-                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    Self aware panel
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                                </mat-panel-description>
-                            </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
-                        </mat-expansion-panel>
+                        
+                            <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
 
-                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    Self aware panel 2
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                                </mat-panel-description>
-                            </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
-                        </mat-expansion-panel>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Self aware panel
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <p>I'm visible because I am open</p>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Self aware panel 2
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <p>I'm visible because I am open</p>
+                            </mat-expansion-panel>
+                        </div>
                     </mat-accordion>
 
                 </div>

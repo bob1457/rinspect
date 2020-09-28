@@ -45,6 +45,7 @@ export class ReportDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.detailForm = this.formBuilder.group({
+      id: [''],
       active: [true],
       agentName: [''],
       title: [''],
@@ -146,6 +147,9 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   submit() {
+    this.detailForm.patchValue({
+      id: this.id
+    })
     console.log('form', this.detailForm.value);
   }
 
