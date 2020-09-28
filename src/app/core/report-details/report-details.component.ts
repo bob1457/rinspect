@@ -71,7 +71,17 @@ export class ReportDetailsComponent implements OnInit {
           province: [''],
           postcode: ['']
         })
-      })
+      }),
+      moveInRepaireNote: [''],
+      moveInConditionAgreed: [true],
+      moveInConditionNotAgreedReason: [''],
+      moveOutConditionAgreed: [true],
+      moveOutConditionNotAgreedReason: [''],
+      depositDeducted: [false],
+      depositDeductedAmt: [''],
+      tenantForwordingAddress: [''],
+      moveOutLandlordFullName: [''],
+      moveOutLandlordAddress: ['']
     });
 
 

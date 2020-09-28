@@ -171,7 +171,8 @@
                     </mat-form-field>
 
                 </div>
-                <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report</mat-checkbox>
+                <!-- this section should be only on details page? -->
+                <!-- <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report</mat-checkbox> -->
                 <div *ngIf="final">
                     <div [@.disabled]="true">
                         <mat-tab-group>
