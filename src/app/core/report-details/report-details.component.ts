@@ -18,6 +18,11 @@ export class ReportDetailsComponent implements OnInit {
   report;
   sections;
 
+  final = false;
+  notAgree = '';
+  notAgree1 = '';
+  agreeOk = false;
+
   entrySection;
   kitchenSection;
 
@@ -134,7 +139,7 @@ export class ReportDetailsComponent implements OnInit {
     console.log('form', this.detailForm.value);
   }
 
-  clicked(event) {}
+  // clicked(event) {}
 
   enableEdit() {
     this.edit = true;
@@ -142,6 +147,25 @@ export class ReportDetailsComponent implements OnInit {
 
   cancelEdit() {
     this.edit = false;
+  }
+
+  clicked(event) {
+    console.log(event.checked);
+    this.final = event.checked;
+  }
+
+  agreeToDeposit(event) {
+    this.agreeOk = event.checked;
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.notAgree = event.value;
+  }
+
+  onChange1(event) {
+    console.log(event);
+    this.notAgree1 = event.value;
   }
 
 }

@@ -38,8 +38,10 @@ export class InspectionEntryComponent implements OnInit {
     // console.log('section', this.entrySectionDetails);
     this.entryForm = this.formBuilder.group({
       // Temp
-      code: ['G'],
-      comments: ['N/A'],
+      // code: ['G'],
+      // comments: ['N/A'],
+      name: [''],
+      type: [''],
       // IN
       cellingCmnts_in: [''],
       cellingCode_in: [''],
@@ -74,7 +76,7 @@ export class InspectionEntryComponent implements OnInit {
 
     });
 
-    
+    this.entryForm.get('name').setValue(this.entrySectionDetails[0].name);
     // Move In data
     this.entryForm.get('cellingCmnts_in').setValue(this.entrySectionDetails[0].conditionIn.cellingCmnts);
     this.entryForm.get('closetsCmnts_in').setValue(this.entrySectionDetails[0].conditionIn.closetsCmnts);

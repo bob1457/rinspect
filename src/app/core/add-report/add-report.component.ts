@@ -21,7 +21,34 @@ export class AddReportComponent implements OnInit {
   ngOnInit(): void {
 
     this.addForm = this.formBuilder.group({
-      title: ['', Validators.required]
+      // title: ['', Validators.required],
+      active: [true],
+      agentName: [''],
+      title: [''],
+      moveInInspectDate: [''],
+      moveOutDate: [''],
+      possesionDate: [''],
+      moveOutInspectDate: [''],
+      landlord: this.formBuilder.group({
+        legalName: [''],
+        address: this.formBuilder.group({
+          unit: [''],
+          street: [''],
+          city: [''],
+          province: [''],
+          postcode: ['']
+        })
+      }),
+      tenant: this.formBuilder.group({
+        legalName: [''],
+        address: this.formBuilder.group({
+          unit: [''],
+          street: [''],
+          city: [''],
+          province: [''],
+          postcode: ['']
+        })
+      })
     });
   }
 
@@ -51,6 +78,7 @@ export class AddReportComponent implements OnInit {
   submit() {
     // this.router.navigateByUrl('/home/report-details');
     // this.router.navigate(['/home/report-details', 1]);
+    console.log('form data', this.addForm.value);
     this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
   }
 

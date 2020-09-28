@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { report } from 'process';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,13 @@ export class DataService {
           .doc(id).collection('section', ref => ref.where('type', '==', type))
           .valueChanges();
 
+  }
+
+  createReport(report: any) {
+    return this.firestore.collection('report').add(report);
+  }
+
+  updateReport(report: any) {
+    // return this.firestore.collection('report').
   }
 }
