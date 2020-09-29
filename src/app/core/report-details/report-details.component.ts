@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { report } from 'process';
 
 @Component({
   selector: 'app-report-details',
@@ -118,10 +119,16 @@ export class ReportDetailsComponent implements OnInit {
           this.detailForm.get('tenant').get('address').get('province').setValue(this.report.tenant.address.province);
           this.detailForm.get('tenant').get('address').get('postcode').setValue(this.report.tenant.address.postcode);
 
-          this.detailForm.get('moveInInspectDate').setValue(this.report.moveInInspectDate);
-          this.detailForm.get('moveOutDate').setValue(this.report.moveOutDate);
-          this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDate);
-          this.detailForm.get('possesionDate').setValue(this.report.possesionDate);
+          this.detailForm.get('moveInInspectDate').setValue(this.report.moveInInspectDate.toDate().toDateString());
+          if (this.report.moveOutInspectDate) {
+            this.detailForm.get('moveOutDate').setValue(this.report.moveOutDate.toDate().toDateString());
+          }
+          
+          if (this.report.moveOutInspectDate) {
+             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDat.toDate().toDateString());
+          }
+         
+          this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
           console.log('date', this.report.possesionDate);
         });
 
