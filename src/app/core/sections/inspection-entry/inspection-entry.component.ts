@@ -112,8 +112,7 @@ export class InspectionEntryComponent implements OnInit {
     this.entryForm.get('wallTrimCmnts_out').setValue(this.entrySectionDetails[0].conditionOut.wallTrimCmnts);
   }
 
-  submit() {
-    console.log('submitted');
+  submit() {   
 
     // this.router.navigate(['/home/addsection']);
     this.reloadComponent();

@@ -106,17 +106,17 @@
                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="margin-bottom: 20px;" class="field-width">
                             <mat-form-field style="width: 25%;">
                                 <mat-label>Possession Date</mat-label>
-                                <input readonly matInput  formControlName="possesionDate">
-                                <!-- <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                                <mat-datepicker #picker1></mat-datepicker> -->
+                                <input readonly matInput [matDatepicker]="picker1" formControlName="possesionDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
                                 <!-- [matDatepicker]="picker1" -->
                                 <!-- [ngModel]="report.possesionDate.seconds*1000 | date: 'shortDate'" -->
                             </mat-form-field>
                             <mat-form-field style="width: 25%;">
                                 <mat-label>Move-In Inspec. Date</mat-label>
-                                <input readonly matInput formControlName="moveInInspectDate">
-                                <!-- <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                                <mat-datepicker #picker2></mat-datepicker>--> 
+                                <input readonly matInput [matDatepicker]="picker2" formControlName="moveInInspectDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker> 
                                 <!--[matDatepicker]="picker2"-->
                             </mat-form-field>
                             <mat-form-field style="width: 25%;">
@@ -309,35 +309,36 @@
                             </mat-expansion-panel-header>
                             <p>This is the primary content of the panel.</p>
                         </mat-expansion-panel> -->
-                        <div *ngIf="sections.lenght > 0">
 
-                        
+                        <!-- <div *ngIf="sections.length > 0"> -->
+                        <div *ngIf="entrySection.length > 0">
                             <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
-
-                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Self aware panel
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-                                <p>I'm visible because I am open</p>
-                            </mat-expansion-panel>
-
-                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Self aware panel 2
-                                    </mat-panel-title>
-                                    <mat-panel-description>
-                                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                                    </mat-panel-description>
-                                </mat-expansion-panel-header>
-                                <p>I'm visible because I am open</p>
-                            </mat-expansion-panel>
                         </div>
+
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Self aware panel
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>I'm visible because I am open</p>
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Self aware panel 2
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>I'm visible because I am open</p>
+                        </mat-expansion-panel>
+                        <!-- </div> -->
                     </mat-accordion>
 
                 </div>

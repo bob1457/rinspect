@@ -118,17 +118,18 @@ export class ReportDetailsComponent implements OnInit {
           this.detailForm.get('tenant').get('address').get('city').setValue(this.report.tenant.address.city);
           this.detailForm.get('tenant').get('address').get('province').setValue(this.report.tenant.address.province);
           this.detailForm.get('tenant').get('address').get('postcode').setValue(this.report.tenant.address.postcode);
-
-          this.detailForm.get('moveInInspectDate').setValue(this.report.moveInInspectDate.toDate().toDateString());
+// .toDateString()
+          this.detailForm.get('moveInInspectDate').setValue(this.report.moveInInspectDate.toDate());
           if (this.report.moveOutInspectDate) {
-            this.detailForm.get('moveOutDate').setValue(this.report.moveOutDate.toDate().toDateString());
+            this.detailForm.get('moveOutDate').setValue(this.report.moveOutDate.toDate());
           }
           
           if (this.report.moveOutInspectDate) {
-             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDat.toDate().toDateString());
+             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDat.toDate());
           }
          
-          this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
+          // this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
+          this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate());
           console.log('date', this.report.possesionDate);
         });
 
@@ -143,7 +144,7 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Entry')
         .subscribe(res => {
           this.entrySection = res;
-          console.log('section', this.entrySection);
+          console.log('section', this.entrySection.length);
         })
 
     this.dataService.getReportSectionByType(this.id, 'Kitchen')
