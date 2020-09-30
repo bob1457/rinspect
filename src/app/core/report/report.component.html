@@ -27,9 +27,9 @@
             <li *ngFor="let rpt of reports">
                 <mat-card style="margin-top: 10px;" class="rpt-card" [routerLink]="['/home/report-details',rpt.payload.doc.id]" >
                     <p style="text-align: center;">{{rpt.payload.doc.data().title}}</p>
-                    <div fxLayout="row" fxLayoutAlign="center center">
+                    <!-- <div fxLayout="row" fxLayoutAlign="center center">
                         <mat-icon>add</mat-icon>
-                    </div>
+                    </div> -->
                 </mat-card>
             </li>
             <!-- <li>

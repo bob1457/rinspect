@@ -10,7 +10,8 @@ export class DataService {
   constructor(private firestore: AngularFirestore) { }
 
   getAllReports() {
-    return this.firestore.collection('report').snapshotChanges();
+    return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', 'TrLS9eN8HnKQbhbcqiOU'))
+    .snapshotChanges();
   }
 
   getReportDetails(id) {
