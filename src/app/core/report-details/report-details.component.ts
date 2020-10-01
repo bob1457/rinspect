@@ -144,13 +144,13 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Entry')
         .subscribe(res => {
           this.entrySection = res;
-          console.log('section', this.entrySection.length);
+          console.log('entry-section', this.entrySection);
         })
 
     this.dataService.getReportSectionByType(this.id, 'Kitchen')
         .subscribe( res => {
           this.kitchenSection = res;
-          console.log('section', this.kitchenSection);
+          console.log('kitchen-section', this.kitchenSection);
         })
   }
 
