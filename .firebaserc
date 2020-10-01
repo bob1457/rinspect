@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rinspect-709ce": {
+      "hosting": {
+        "rinspect": [
+          "rinspect-709ce"
+        ]
+      }
+    }
+  }
+}

@@ -4,14 +4,44 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
    <mat-icon>menu</mat-icon>
   </button>
+<<<<<<< HEAD
   <span style="text-transform: uppercase;">
     <span style="color: red; font-weight: bold;">r</span>
   <span style="color: #bdbdbd;">inspect</span></span>
+=======
+  <span style="text-transform: uppercase;">    
+    <span style="color: #bdbdbd;">inspect</span>
+    <span style="color: red; font-weight: bold;">r</span>
+</span>
+>>>>>>> dev
   <span class="spacer"></span>
   <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button> -->
+<<<<<<< HEAD
   <img src="../../../assets/images/user.png" class="avatar" width="35px" height="35px" title="bob"> <!-- size can be removed when the images are in right size-->
+=======
+  <button mat-button [matMenuTriggerFor]="menu">
+    <img src="../../../assets/images/user.png" class="avatar" width="35px" height="35px" title="bob"> <!-- size can be removed when the images are in right size-->
+  </button>
+<!--  [routerLink]="['/home/user',rpt.payload.doc.id]"-->
+  <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
+    <button mat-menu-item [routerLink]="['/home/user', 'TrLS9eN8HnKQbhbcqiOU']"> <!-- passing parameters for testing only -->
+      <mat-icon style="color: black;">account_circle</mat-icon>
+      Account
+    </button>
+    <button mat-menu-item [routerLink]="['/home/settings']">
+      <mat-icon style="color:#2477f5;">settings_applications</mat-icon>
+                Settings
+      </button>
+    <mat-divider></mat-divider>    
+    <button mat-menu-item [routerLink]="['/']"> 
+      <mat-icon style="color: rgb(97, 8, 8);">subdirectory_arrow_righte</mat-icon>
+      Singout
+    </button>
+  </mat-menu>
+  
+>>>>>>> dev
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>more_vert</mat-icon>
   </button>

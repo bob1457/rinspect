@@ -3,6 +3,10 @@
     margin-top: 20px;
     margin-left: 10px;
     font-variant-caps: small-caps;
+<<<<<<< HEAD
+=======
+    font-weight: bold;
+>>>>>>> dev
     padding-top: 15px;
 }
 
@@ -10,6 +14,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+<<<<<<< HEAD
   }
   
   .form-container > * {
@@ -19,3 +24,18 @@
   .report-card {
     width:87%;
   }
+=======
+}
+
+.form-container>* {
+    width: 95%;
+}
+
+.report-card {
+    width: 87%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+>>>>>>> dev

@@ -10,12 +10,26 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SigninComponent } from './signin/signin.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
+=======
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/common.module';
+// import { SectionItemComponent } from './core/sections/section-item/section-item.component';
+>>>>>>> dev
 
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     SigninComponent
+=======
+    SigninComponent//,
+    // SectionItemComponent
+>>>>>>> dev
   ],
   imports: [
     AppRoutingModule,
@@ -27,7 +41,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     FlexLayoutModule,
     FormsModule,
+<<<<<<< HEAD
     ReactiveFormsModule
+=======
+    ReactiveFormsModule,
+    UserModule,
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+>>>>>>> dev
   ],
   providers: [],
   bootstrap: [AppComponent]
