@@ -20,7 +20,8 @@ const routes: Routes = [
       { path: 'user/:id', component:UserProfileComponent},
       // { path: 'user', component:UserProfileComponent},
       { path: 'settings', component: UserSettingsComponent},
-      { path: 'report', component: ReportComponent}
+      { path: 'report', component: ReportComponent},
+      { path: 'addSection/:id', component: AddSectionComponent}
     ]
   }
 ];

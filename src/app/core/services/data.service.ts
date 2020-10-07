@@ -34,6 +34,11 @@ export class DataService {
     return this.firestore.collection('report').add(report);
   }
 
+  createSection(rptSction: any, id: any) {
+    debugger;
+    return this.firestore.collection('report').doc(id).collection('section').add(rptSction);
+  }
+
   updateReport(report: any) {
     // return this.firestore.collection('report').
   }

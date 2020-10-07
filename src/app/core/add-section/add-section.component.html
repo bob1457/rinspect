@@ -80,7 +80,7 @@
 
 </div>
 <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 25px;width: 100%;">
-    <app-add-section-entry *ngIf="type==='entry'" style="width:90%"></app-add-section-entry>
+    <app-add-section-entry *ngIf="type==='entry'" [rptId]="id" style="width:90%"></app-add-section-entry>
     <app-inspection-kitchen *ngIf="type==='kitchen'" style="width:90%"></app-inspection-kitchen>
     <app-inspection-dinning-room *ngIf="type==='dinning'" style="width:90%"></app-inspection-dinning-room>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-section-entry.component.scss']
 })
 export class AddSectionEntryComponent implements OnInit {
+
+  @Input() rptId;
 
   entryForm: FormGroup;
 
@@ -27,6 +29,7 @@ export class AddSectionEntryComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    console.log(this.rptId);
     this.entryForm = this.formBuilder.group({
       code: ['G'],
       comments: ['N/A']
