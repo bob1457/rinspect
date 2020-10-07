@@ -293,10 +293,21 @@
                             </button>
                         </div>
                     </form>
-                    <p class="text-uppercase" style="margin-left: 30px;width: 95%;">
-                        inpection report sections
+                    <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" class="text-uppercase" style="margin-left: 30px;width: 95%;">
+                        <div>inpection report sections</div>
                         <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span>
-                    </p>
+                        <span class="spacer"></span>
+                        <button mat-raised-button style="background-color: #26bf49;
+                            color: wheat;
+                            margin-left: 40px;"
+                            routerLink="/home/addsection">
+                            <span class="material-icons">
+                            add
+                            </span> &nbsp;
+                            Add Inspection Section
+                        </button>
+                    </div>
+                     <!-- [matMenuTriggerFor]="menu" -->
                     <mat-accordion class="form-width">
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
@@ -347,6 +358,62 @@
                 Edit
             </section> -->
         </mat-card-content>
+
+        <!-- <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="after">
+            <button mat-menu-item (click)="type='entry'"> 
+            <mat-icon style="color: black;">add_to_home_screen</mat-icon>
+            Entry
+          </button>
+            <button mat-menu-item (click)="type='kitchen'">
+          <mat-icon style="color:#2477f5;">kitchen</mat-icon>
+                  Kitchen
+          </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+          <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
+          Living Room
+          </button>
+            <button mat-menu-item (click)="type='dinning'" >
+            <mat-icon style="color:#2477f5;">fastfood</mat-icon>
+                    Dinning Room
+          </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+          <mat-icon style="color: rgb(97, 8, 8);">stairs</mat-icon>
+            Stairwell and Hall
+          </button>
+            <button mat-menu-item>
+            <mat-icon style="color:#2477f5;">bathtub</mat-icon>
+                    Main Bath Room
+          </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+          <mat-icon style="color: rgb(97, 8, 8);">local_hotel</mat-icon>
+            Master Bedroom
+          </button>
+            <button mat-menu-item>
+            <mat-icon style="color:#2477f5;">house_siding</mat-icon>
+              Exterior
+          </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+          <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
+            Utility Room
+          </button>
+            <button mat-menu-item>
+            <mat-icon style="color:#2477f5;">hvac</mat-icon>
+             Garbage/Parking Area
+          </button>
+            <button mat-menu-item>
+            <mat-icon style="color:#2477f5;">account_tree</mat-icon>
+              Basement
+          </button>
+            <mat-divider></mat-divider>        
+            <button mat-menu-item>
+            <mat-icon style="color:#2477f5;">control_camera</mat-icon>
+              Keys and Controls
+          </button>        
+        </mat-menu> -->
 
     </mat-card>
 

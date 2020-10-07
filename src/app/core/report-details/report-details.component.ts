@@ -24,6 +24,8 @@ export class ReportDetailsComponent implements OnInit {
   notAgree1 = '';
   agreeOk = false;
 
+  type = '';
+
   entrySection;
   kitchenSection;
 
