@@ -29,7 +29,7 @@ export class AddSectionEntryComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log(this.rptId);
+    
     this.entryForm = this.formBuilder.group({
       code: ['G'],
       comments: ['N/A']
@@ -38,6 +38,8 @@ export class AddSectionEntryComponent implements OnInit {
 
   submit() {
     console.log('add secton form', this.entryForm.value);
+    // call service to add section
+    console.log(this.rptId);
   }
 
 }
