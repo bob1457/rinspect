@@ -12,6 +12,8 @@ export class AddSectionEntryComponent implements OnInit {
 
   @Input() rptId;
 
+  addMore = false;
+
   entryForm: FormGroup;
 
   codes = [
@@ -81,7 +83,25 @@ export class AddSectionEntryComponent implements OnInit {
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
-    this.dataServie.createSection(this.entryForm.value, this.rptId);
+    
+    this.dataServie.createSection(this.entryForm.value, this.rptId);    
+
+    if (this.addMore) {
+      this.reloadComponent();
+    }else {
+      this.router.navigate(['home/report-details', this.rptId]);
+    }
+  }
+
+  reloadComponent() {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/home/addSection', this.rptId]);
+  }
+
+  clicked(event) {
+    this.addMore = event.checked;
+    console.log(this.addMore);
   }
 
 }
