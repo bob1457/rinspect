@@ -31,8 +31,45 @@ export class AddSectionEntryComponent implements OnInit {
   ngOnInit(): void {
     
     this.entryForm = this.formBuilder.group({
-      code: ['G'],
-      comments: ['N/A']
+      name: [''],
+      type: [''],
+      // IN
+      conditionIn: this.formBuilder.group({
+        cellingCmnts: [''],
+        cellingCode: [''],
+        closetsCode: [''],
+        closetsCmnts: [''],
+        electricCmnts: [''],
+        electricCode: [''],
+        floorCmnts: [''],
+        floorCode: [''],
+        lightingCmnts: [''],
+        lightingCode: [''],
+        wallTrimCmnts: [''],
+        wallTrimCode: [''],
+        windowsCmnts: [''],
+        windowsCode: ['']
+      }),
+      //- OUT
+      conditionOut: this.formBuilder.group({
+        cellingCmnts: [''],
+        cellingCode: [''],
+        closetsCode: [''],
+        closetsCmnts: [''],      
+        electricCmnts: [''],
+        electricCode: [''],
+        floorCmnts: [''],
+        floorCode: [''],
+        lightingCmnts: [''],
+        lightingCode: [''],
+        wallTrimCmnts: [''],
+        wallTrimCode: [''],
+        windowsCmnts: [''],
+        windowsCode: ['']
+      })
+      
+      
+
     })
   }
 
