@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-add-section-entry',
@@ -26,7 +27,8 @@ export class AddSectionEntryComponent implements OnInit {
   ]
 
   constructor(private router: Router,
-    private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private dataServie: DataService) { }
 
   ngOnInit(): void {
     
@@ -75,9 +77,11 @@ export class AddSectionEntryComponent implements OnInit {
   }
 
   submit() {
+    this.entryForm.get('type').setValue('Entry');
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
+    this.dataServie.createSection(this.entryForm.value, this.rptId);
   }
 
 }
