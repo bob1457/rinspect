@@ -53,25 +53,25 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCode: [''],
         windowsCmnts: [''],
         windowsCode: ['']
-      }) // ,
-      //- OUT Not required when the section is first time added
+      }),
+      //- OUT 
 
-      // conditionOut: this.formBuilder.group({
-      //   cellingCmnts: [''],
-      //   cellingCode: [''],
-      //   closetsCode: [''],
-      //   closetsCmnts: [''],      
-      //   electricCmnts: [''],
-      //   electricCode: [''],
-      //   floorCmnts: [''],
-      //   floorCode: [''],
-      //   lightingCmnts: [''],
-      //   lightingCode: [''],
-      //   wallTrimCmnts: [''],
-      //   wallTrimCode: [''],
-      //   windowsCmnts: [''],
-      //   windowsCode: ['']
-      // })
+      conditionOut: this.formBuilder.group({
+        cellingCmnts: [''],
+        cellingCode: [''],
+        closetsCode: [''],
+        closetsCmnts: [''],      
+        electricCmnts: [''],
+        electricCode: [''],
+        floorCmnts: [''],
+        floorCode: [''],
+        lightingCmnts: [''],
+        lightingCode: [''],
+        wallTrimCmnts: [''],
+        wallTrimCode: [''],
+        windowsCmnts: [''],
+        windowsCode: ['']
+      })
       
       
 
@@ -83,7 +83,7 @@ export class AddSectionEntryComponent implements OnInit {
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
-    
+
     this.dataServie.createSection(this.entryForm.value, this.rptId);    
 
     if (this.addMore) {
