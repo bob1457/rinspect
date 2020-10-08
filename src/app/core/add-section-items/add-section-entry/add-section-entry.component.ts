@@ -49,24 +49,25 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCode: [''],
         windowsCmnts: [''],
         windowsCode: ['']
-      }),
-      //- OUT
-      conditionOut: this.formBuilder.group({
-        cellingCmnts: [''],
-        cellingCode: [''],
-        closetsCode: [''],
-        closetsCmnts: [''],      
-        electricCmnts: [''],
-        electricCode: [''],
-        floorCmnts: [''],
-        floorCode: [''],
-        lightingCmnts: [''],
-        lightingCode: [''],
-        wallTrimCmnts: [''],
-        wallTrimCode: [''],
-        windowsCmnts: [''],
-        windowsCode: ['']
-      })
+      }) // ,
+      //- OUT Not required when the section is first time added
+
+      // conditionOut: this.formBuilder.group({
+      //   cellingCmnts: [''],
+      //   cellingCode: [''],
+      //   closetsCode: [''],
+      //   closetsCmnts: [''],      
+      //   electricCmnts: [''],
+      //   electricCode: [''],
+      //   floorCmnts: [''],
+      //   floorCode: [''],
+      //   lightingCmnts: [''],
+      //   lightingCode: [''],
+      //   wallTrimCmnts: [''],
+      //   wallTrimCode: [''],
+      //   windowsCmnts: [''],
+      //   windowsCode: ['']
+      // })
       
       
 
