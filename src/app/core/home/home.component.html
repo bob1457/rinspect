@@ -26,12 +26,12 @@
                 Settings
       </button>
     <mat-divider></mat-divider>    
-    <button mat-menu-item [routerLink]="['/']"> 
+    <button mat-menu-item (click)="signOut()"> 
       <mat-icon style="color: rgb(97, 8, 8);">subdirectory_arrow_righte</mat-icon>
       Singout
     </button>
   </mat-menu>
-  
+  <!-- [routerLink]="['/']" -->
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>more_vert</mat-icon>
   </button>

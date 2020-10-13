@@ -25,9 +25,15 @@ export class AuthService {
               }
   
               async signIn(email: string, password: string) {
-                debugger;
+                // debugger;
                 var result = await this.afAuth.signInWithEmailAndPassword(email, password);
                 this.router.navigate(['home']);
+              }
+
+              async SignOut() {
+                await this.afAuth.signOut();
+                localStorage.removeItem('user');
+                this.router.navigate(['/']);  
               }
 
   

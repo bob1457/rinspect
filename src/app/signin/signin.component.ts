@@ -30,7 +30,7 @@ export class SigninComponent implements OnInit {
     // console.log('username', this.signinForm.value.email);
     // console.log('password', this.signinForm.value.password)
     try {
-      debugger;
+      // debugger;
       this.authService.signIn(this.signinForm.value.email, this.signinForm.value.password);
       this.router.navigateByUrl('home');
     } catch(err) {
