@@ -31,6 +31,12 @@
                 </section>
                 <button mat-raised-button color="primary" class="signin-button">Sign In</button>
             </form>
+            <div *ngIf="errMsg" style="text-align: center;color: red;">
+                {{errMsg}}
+            </div>
+            <div *ngIf="loading" style="text-align:center;">
+                <p>Sign in....</p>
+            </div>
             <div fxLayout="column" fxLayoutAlign="center center">
                 <a style="margin-bottom: 25px;">Forgot password?</a>
             </div>
