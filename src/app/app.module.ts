@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
+import { AngularFireAuthModule } from "@angular/fire/auth";
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
@@ -38,7 +39,8 @@ import { SharedModule } from './shared/common.module';
     UserModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
