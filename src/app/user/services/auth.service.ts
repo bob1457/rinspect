@@ -16,6 +16,7 @@ export class AuthService {
                 this.afAuth.authState.subscribe(user => {
                   if (user){
                     this.user = user;
+                    console.log('user info', this.user);
                     localStorage.setItem('user', JSON.stringify(this.user));
                   } else {
                     localStorage.setItem('user', null);
@@ -24,17 +25,18 @@ export class AuthService {
 
               }
   
-              async signIn(email: string, password: string) {
-                // debugger;
-                var result = await this.afAuth.signInWithEmailAndPassword(email, password);
-                this.router.navigate(['home']);
-              }
+  async signIn(email: string, password: string) {
+    // debugger;
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password);
+    console.log('login result', result);
+    this.router.navigate(['home']);
+  }
 
-              async SignOut() {
-                await this.afAuth.signOut();
-                localStorage.removeItem('user');
-                this.router.navigate(['/']);  
-              }
+  async SignOut() {
+    await this.afAuth.signOut();
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);  
+  }
 
   
 }

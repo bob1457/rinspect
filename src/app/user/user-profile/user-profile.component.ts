@@ -32,12 +32,17 @@ export class UserProfileComponent implements OnInit {
       password: ['']
     });
 
-    this.userService.getUserProfile(this.id)
-        .subscribe(user => {
-          // console.log(user);
-          this.user = user;
-          console.log(user);
-        })
+    // this.userService.getUserProfile(this.id)
+    //     .subscribe(user => {
+    //       // console.log(user);
+    //       this.user = user;
+    //       console.log(user);
+    //     })
+    this.userService.getCurrentUser()
+                    .subscribe(user => {
+                      console.log('user profile', user);
+                    })
+    
   }
 
   submit() {

@@ -17,7 +17,7 @@
   </button>
 <!--  [routerLink]="['/home/user',rpt.payload.doc.id]"-->
   <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
-    <button mat-menu-item [routerLink]="['/home/user', 'TrLS9eN8HnKQbhbcqiOU']"> <!-- passing parameters for testing only -->
+    <button mat-menu-item (click)="getUser()"> <!-- passing parameters for testing only [routerLink]="['/home/user', 'TrLS9eN8HnKQbhbcqiOU']"-->
       <mat-icon style="color: black;">account_circle</mat-icon>
       Account
     </button>

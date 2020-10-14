@@ -38,6 +38,7 @@ export class SigninComponent implements OnInit {
       return this.authService.signIn(this.signinForm.value.email, this.signinForm.value.password)
       .then( res => {
         this.loading = false;
+        
         this.router.navigateByUrl('home');
       })
       .catch(
