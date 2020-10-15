@@ -13,6 +13,7 @@ export class UserProfileComponent implements OnInit {
   userForm: FormGroup;
   user;
   id;
+  gravatar = false;
 
   constructor(private formBuilder: FormBuilder,
               private actRoute: ActivatedRoute,
@@ -40,9 +41,17 @@ export class UserProfileComponent implements OnInit {
     //     })
     this.userService.getCurrentUser()
                     .subscribe(user => {
+                      this.user = user;
                       console.log('user profile', user);
+                      console.log('meta-data', this.user.metadata.creationTime);
                     })
     
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.gravatar = event.value;
+    console.log('gravatr', this.gravatar);
   }
 
   submit() {
