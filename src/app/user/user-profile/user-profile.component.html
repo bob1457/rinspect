@@ -19,13 +19,13 @@
                             <mat-radio-button value="gravatar">Gravatar</mat-radio-button>
                         </mat-radio-group><br>
                         <p></p>
-                        <p  style="margin-left: 25px;">
+                        <p style="margin-left: 25px;">
                             <a >Custom Image</a>
                         </p>
                         <p></p>
                         <p style="margin-left: 25px;">
-                            Account Created on: {{user.metadata.creationTime}}<br>
-                            Last Login: {{user.metadata.lastSignInTime}}
+                            Account Created on: {{user.metadata.creationTime | slice: 0:17}}<br>
+                            Last Login: {{user.metadata.lastSignInTime | slice: 0:17}}
                         </p>
                                                 
                     </div>
