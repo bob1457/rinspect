@@ -33,16 +33,26 @@ export class UserProfileComponent implements OnInit {
       password: ['']
     });
 
+    // this.userForm.get('firstName').setValue(this.user.firstName);
+    // this.userForm.get('lastName').setValue(this.user.lastName);
+    // this.userForm.get('email').setValue(this.user.email);
+
     // this.userService.getUserProfile(this.id)
     //     .subscribe(user => {
     //       // console.log(user);
     //       this.user = user;
     //       console.log(user);
     //     })
+    
     this.userService.getCurrentUser()
                     .subscribe(user => {
                       if(user){
                         this.user = user;
+
+                        this.userForm.get('firstName').setValue(this.user.firstName);
+                        this.userForm.get('lastName').setValue(this.user.lastName);
+                        this.userForm.get('email').setValue(this.user.email);
+
                         console.log('user profile', user);
                         console.log('meta-data', this.user.metadata.creationTime);
                       }                      

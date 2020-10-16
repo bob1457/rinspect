@@ -14,6 +14,7 @@ export class SigninComponent implements OnInit {
 
   loading = false;
   errMsg = '';
+  forgotpassword = false;
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,

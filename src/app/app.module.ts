@@ -16,13 +16,15 @@ import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent//,
+    SigninComponent,
+    ForgotPasswordComponent//,
     // SectionItemComponent
   ],
   imports: [
