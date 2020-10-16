@@ -13,7 +13,7 @@ export class UserProfileComponent implements OnInit {
   userForm: FormGroup;
   user;
   id;
-  gravatar = false;
+  avatar = 'custom';
 
   constructor(private formBuilder: FormBuilder,
               private actRoute: ActivatedRoute,
@@ -26,8 +26,8 @@ export class UserProfileComponent implements OnInit {
       console.log(params.get('id'));
     })
 
-    this.userForm = this.formBuilder.group({
-      userName: [''],
+    this.userForm = this.formBuilder.group({ 
+      email: [''],
       firstName: [''],
       lastName: [''],
       password: ['']
@@ -41,21 +41,26 @@ export class UserProfileComponent implements OnInit {
     //     })
     this.userService.getCurrentUser()
                     .subscribe(user => {
-                      this.user = user;
-                      console.log('user profile', user);
-                      console.log('meta-data', this.user.metadata.creationTime);
+                      if(user){
+                        this.user = user;
+                        console.log('user profile', user);
+                        console.log('meta-data', this.user.metadata.creationTime);
+                      }                      
                     })
     
   }
 
   onChange(event) {
     console.log(event);
-    this.gravatar = event.value;
-    console.log('gravatr', this.gravatar);
+    this.avatar = event.value;
+    console.log('gravatr', this.avatar);
   }
 
   submit() {
     console.log('user form', this.userForm.value);
+    this.user.updateProfile({
+      displayName: this.userForm.value.firstName + " " + this.userForm.value.lastName
+    })
   }
 
 }

@@ -1,13 +1,13 @@
 <!-- <p>user-profile works!</p> -->
 <section fxLayout="column" fxLayoutAlign="center center">
-    <div class="profile-title" fxLayout="row" fxLayoutAlign="center center">
+    <div class="profile-title" fxLayout="row" fxLayoutAlign="center center" *ngIf="user">
         <h4><span class="material-icons" style="vertical-align: middle;color: rgb(30, 109, 199);">
             account_circle
             </span>
-            User Profile
+            User Profile: {{user.displayName}}
         </h4>
     </div>
-    <mat-card class="profile-card details-card mat-elevation-z0" *ngIf="user">
+    <mat-card class="profile-card details-card mat-elevation-z0"  *ngIf="user">
         <mat-card-content>
             <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="userForm" novalidate (ngSubmit)="submit()">
                 <div fxLayout="row" fxLayoutAlign="start start" style="width: 80%; margin-top: 25px;">
@@ -19,7 +19,7 @@
                             <mat-radio-button value="gravatar">Gravatar</mat-radio-button>
                         </mat-radio-group><br>
                         <p></p>
-                        <p style="margin-left: 25px;">
+                        <p *ngIf="avatar=='custom'" style="margin-left: 25px;">
                             <a >Custom Image</a>
                         </p>
                         <p></p>
@@ -32,26 +32,28 @@
                 </div>
 <!-- [routerLink]="['/home/addSection/', id]" -->
                     <p style="width:80%;margin-top: 25px;">
-                        <span style="font-weight: bold;">Display Name:</span> {{user.displayName}}
+                        <!-- <span style="font-weight: bold;">Display Name:</span> {{user.displayName}} -->
                     </p>
                 <mat-form-field appearance="outline" class="form-field" style="margin-top:20px ;">
                     <mat-label>First Name</mat-label>
-                    <input type="text" matInput placeholder="First Name">
+                    <input type="text" matInput placeholder="First Name" formControlName="firstName">
                     <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Last Name</mat-label>
-                    <input type="text" matInput placeholder="Last Name">
+                    <input type="text" matInput placeholder="Last Name" formControlName="lastName">
                     <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="Email" [value]="user.email">
+                    <input type="email" matInput placeholder="Email" formControlName="email" [ngModel]="user.email">
                     <mat-icon matSuffix>email</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
+
+                <button type="submit" mat-raised-button color="primary">Update</button>
 
             </form>
         </mat-card-content>
