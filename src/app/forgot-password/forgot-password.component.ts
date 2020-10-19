@@ -11,6 +11,8 @@ import { AuthService } from '../user/services/auth.service';
 export class ForgotPasswordComponent implements OnInit {
 
   restPssordForm: FormGroup;
+  fortPasswordMsg = '';
+  email = '';
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
@@ -22,9 +24,23 @@ export class ForgotPasswordComponent implements OnInit {
       email: ['']
     })
   }
-
-  submit() {
-    console.log('reset', this.restPssordForm.value);
+// 'bob.h.yuan@gmail.com'
+  submit(data) {
+    debugger;
+    
+    console.log(data);
+    
+    this.authService.ForgotPassword(data)
+      .then(() => {
+        setTimeout(() => {
+          this.fortPasswordMsg = 'Please check your email to reset your password';
+        }, 3000)
+        
+      })
+      .catch((err) => {
+        console.log('err', err);
+        this.fortPasswordMsg = 'Error occured, please try again!';
+      });
   }
 
 }

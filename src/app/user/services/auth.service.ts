@@ -9,7 +9,7 @@ import { User } from  'firebase';
 })
 export class AuthService {
 
-  user: User;
+  user: User;  
 
   constructor(public afAuth: AngularFireAuth, 
               public  router:  Router) { 
@@ -32,10 +32,19 @@ export class AuthService {
     this.router.navigate(['home']);
   }
 
+  ForgotPassword(email:string) {
+    debugger;
+    return this.afAuth.sendPasswordResetEmail(email, {url: 'http://localhost:4200/auth'});
+  }
+
   async SignOut() {
     await this.afAuth.signOut();
     localStorage.removeItem('user');
     this.router.navigate(['/']);  
+  }
+
+  async ResetPassword(password: any) {
+    return (await this.afAuth.currentUser).updatePassword(password);
   }
 
   
