@@ -37,6 +37,11 @@ export class AuthService {
     return this.afAuth.sendPasswordResetEmail(email, {url: 'http://localhost:4200/auth'});
   }
 
+  ChangePassword(password) {
+    debugger;
+    return this.afAuth.currentUser;
+  }
+
   async SignOut() {
     await this.afAuth.signOut();
     localStorage.removeItem('user');

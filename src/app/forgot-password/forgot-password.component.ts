@@ -25,7 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
     })
   }
 // 'bob.h.yuan@gmail.com'
-  submit(data) {
+  submit(data) { // rest password with email
     debugger;
     
     console.log(data);
