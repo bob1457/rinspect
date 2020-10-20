@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { DataService } from '../services/data.service';
+import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
   selector: 'app-add-report',
@@ -15,12 +16,19 @@ export class AddReportComponent implements OnInit {
   notAgree = '';
   notAgree1 = '';
   agreeOk = false;
+  user;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
+              private userService: UserService,
               private dataService: DataService) { }
 
   ngOnInit(): void {
+
+    this.userService.getCurrentUser()
+        .subscribe(res => {
+          this.user = res;
+        })
 
     this.addForm = this.formBuilder.group({
       // title: ['', Validators.required],
@@ -51,6 +59,7 @@ export class AddReportComponent implements OnInit {
           postcode: ['BC']
         })
       }),
+      reportOwnerId: [''],
       created: [''],
       updated: ['']
     });
@@ -83,7 +92,11 @@ export class AddReportComponent implements OnInit {
     debugger;
     // this.router.navigateByUrl('/home/report-details');
     // this.router.navigate(['/home/report-details', 1]);
+    var uid = this.user.uid;
+    // console.log('uid in report', this.user.uid);
+
     this.addForm.patchValue({
+      reportOwnerId: uid,
       created: new Date(),
       updated: new Date()
     })

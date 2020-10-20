@@ -62,6 +62,7 @@ export class UserProfileComponent implements OnInit {
                         this.userForm.get('email').setValue(this.user.email);
 
                         console.log('user profile', user);
+                        console.log('uid', user.uid);
                         console.log('meta-data', this.user.metadata.creationTime);
                       }                      
                     })
@@ -78,19 +79,12 @@ export class UserProfileComponent implements OnInit {
     debugger;
     console.log('new pass', newPassword);
 
-    // Re-authenticate user
-    
-
     if (this.newpassword != this.confirmpassword) { 
       // alert('New Password and Confirm Password do not match'); 
       this.msg = 'New Password and Confirm Password do not match';
       return; 
     } 
 
-
-
-
-    
     return this.userService.getCurrentUser()
                     .subscribe((user) => {
                       

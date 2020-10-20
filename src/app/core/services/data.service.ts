@@ -1,16 +1,31 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
+import { UserService } from 'src/app/user/services/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private firestore: AngularFirestore) { }
+  userId;
+  user;
+
+  constructor(private firestore: AngularFirestore,
+              private userService: UserService) { }
 
   getAllReports() {
-    return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', 'TrLS9eN8HnKQbhbcqiOU'))
+    // debugger;
+    this.userService.getCurrentUser()
+        .subscribe(res => {
+          if(res) {
+            this.userId = res.uid;
+          }          
+        });
+    // this.user = localStorage.getItem('user');
+        console.log('uid in report service',this.user);
+    // 'TrLS9eN8HnKQbhbcqiOU''0yQDaxLXNxXNEKXyUTpqBLBZcrw2'
+    return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', this.userId))
     .snapshotChanges();
   }
 

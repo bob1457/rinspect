@@ -13,6 +13,7 @@ export class ReportComponent implements OnInit {
   reports;
 
   ngOnInit(): void {
+    // debugger;
     this.dataService.getAllReports()
         .subscribe(res => {
           // console.log(res);
