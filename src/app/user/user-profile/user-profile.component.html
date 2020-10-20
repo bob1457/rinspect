@@ -63,25 +63,26 @@
                 <p style="margin-top: 25px;">Change Password</p>
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Existing Password</mat-label>
-                    <input type="text" matInput placeholder="Existing Password" [(ngModel)]="oldpassword">
+                    <input type="password" matInput placeholder="Existing Password" [(ngModel)]="oldpassword">
                     <mat-icon matSuffix>lock</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>New Password</mat-label>
-                    <input type="text" matInput placeholder="New Password" [(ngModel)]="newpassword">
+                    <input type="password" matInput placeholder="New Password" [(ngModel)]="newpassword">
                     <mat-icon matSuffix>lock</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Confirm New Password</mat-label>
-                    <input type="text" matInput placeholder="Confirm New Password" [(ngModel)]="confirmpassword">
+                    <input type="password" matInput placeholder="Confirm New Password" [(ngModel)]="confirmpassword">
                     <mat-icon matSuffix>lock</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
                 <div fxLayout="row" fxLayoutAlign="end end" style="width: 80%;"> 
                     <button type="submit" mat-raised-button (click)="changePassword(newpassword)">Change Password</button>
                 </div>
+                <p *ngIf="msg" style="margin-top: 25px;">{{msg}}</p>
                 
                 
 

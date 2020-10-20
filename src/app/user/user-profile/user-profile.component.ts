@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { firestore } from 'firebase';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-user-profile',
@@ -76,20 +78,37 @@ export class UserProfileComponent implements OnInit {
     debugger;
     console.log('new pass', newPassword);
 
+    // Re-authenticate user
+    
+
     if (this.newpassword != this.confirmpassword) { 
       // alert('New Password and Confirm Password do not match'); 
       this.msg = 'New Password and Confirm Password do not match';
       return; 
     } 
 
-    
 
 
+
     
-    // return this.userService.getCurrentUser()
-    //                 .subscribe((user) => {
-    //                   user.updatePassword(newPassword);
-    //                 });
+    return this.userService.getCurrentUser()
+                    .subscribe((user) => {
+                      
+                      var credetial = firebase.auth.EmailAuthProvider
+                                              .credential(user.email, this.oldpassword);
+                      user.reauthenticateWithCredential(credetial)
+                          .then(() => {
+                            user.updatePassword(newPassword);
+                            this.msg = 'Password has been changed successfully!'
+                            setTimeout(() => {
+                              this.msg = '';
+                            }, 3000)
+                          })
+                          .catch((err) => {
+                            this.msg = 'Incorrect username or passwrod. Please try again.'
+                          })
+                      
+                    });
   }
 
   submit() {

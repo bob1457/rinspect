@@ -32,8 +32,9 @@ export class ForgotPasswordComponent implements OnInit {
     
     this.authService.ForgotPassword(data)
       .then(() => {
+        this.fortPasswordMsg = 'Please check your email to reset your password';
         setTimeout(() => {
-          this.fortPasswordMsg = 'Please check your email to reset your password';
+          this.fortPasswordMsg = '';
         }, 3000)
         
       })
