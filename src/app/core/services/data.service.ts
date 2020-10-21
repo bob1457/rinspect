@@ -55,6 +55,11 @@ export class DataService {
   }
 
   updateReport(report: any) {
-    // return this.firestore.collection('report').
+    debugger;
+    return this.firestore.collection('report').doc(report.id).update(report);
+  }
+
+  updateSection(section: any) {
+
   }
 }

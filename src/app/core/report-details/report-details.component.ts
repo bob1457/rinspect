@@ -161,6 +161,7 @@ export class ReportDetailsComponent implements OnInit {
       id: this.id
     })
     console.log('form', this.detailForm.value);
+    this.dataService.updateReport(this.detailForm.value);
   }
 
   // clicked(event) {}
