@@ -77,47 +77,49 @@ export class InspectionEntryComponent implements OnInit {
     });
 
     this.entrySectionDetails.forEach(element => {
-        this.entryForm.get('name').setValue(element.name);
+        this.entryForm.get('name').setValue(element.payload.doc.data().name);
       // Move In data
-      this.entryForm.get('cellingCmnts_in').setValue(element.conditionIn.cellingCmnts);
-      this.entryForm.get('closetsCmnts_in').setValue(element.conditionIn.closetsCmnts);
-      this.entryForm.get('closetsCode_in').setValue(element.conditionIn.closetsCode);
-      this.entryForm.get('cellingCode_in').setValue(element.conditionIn.cellingCode);
+      this.entryForm.get('cellingCmnts_in').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
+      this.entryForm.get('closetsCmnts_in').setValue(element.payload.doc.data().conditionIn.closetsCmnts);
+      this.entryForm.get('closetsCode_in').setValue(element.payload.doc.data().conditionIn.closetsCode);
+      this.entryForm.get('cellingCode_in').setValue(element.payload.doc.data().conditionIn.cellingCode);
 
-      this.entryForm.get('electricCmnts_in').setValue(element.conditionIn.electricCmnts);
-      this.entryForm.get('electricCode_in').setValue(element.conditionIn.electricCode);
-      this.entryForm.get('floorCode_in').setValue(element.conditionIn.floorCode);
-      this.entryForm.get('floorCmnts_in').setValue(element.conditionIn.floorCmnts);
-      this.entryForm.get('lightingCmnts_in').setValue(element.conditionIn.lightingCmnts);
-      this.entryForm.get('lightingCode_in').setValue(element.conditionIn.lightingCode);
-      this.entryForm.get('windowsCmnts_in').setValue(element.conditionIn.windowsCmnts);
-      this.entryForm.get('windowsCode_in').setValue(element.conditionIn.windowsCode);
-      this.entryForm.get('wallTrimCode_in').setValue(element.conditionIn.wallTrimCode);
-      this.entryForm.get('wallTrimCmnts_in').setValue(element.conditionIn.wallTrimCmnts);
+      this.entryForm.get('electricCmnts_in').setValue(element.payload.doc.data().conditionIn.electricCmnts);
+      this.entryForm.get('electricCode_in').setValue(element.payload.doc.data().conditionIn.electricCode);
+      this.entryForm.get('floorCode_in').setValue(element.payload.doc.data().conditionIn.floorCode);
+      this.entryForm.get('floorCmnts_in').setValue(element.payload.doc.data().conditionIn.floorCmnts);
+      this.entryForm.get('lightingCmnts_in').setValue(element.payload.doc.data().conditionIn.lightingCmnts);
+      this.entryForm.get('lightingCode_in').setValue(element.payload.doc.data().conditionIn.lightingCode);
+      this.entryForm.get('windowsCmnts_in').setValue(element.payload.doc.data().conditionIn.windowsCmnts);
+      this.entryForm.get('windowsCode_in').setValue(element.payload.doc.data().conditionIn.windowsCode);
+      this.entryForm.get('wallTrimCode_in').setValue(element.payload.doc.data().conditionIn.wallTrimCode);
+      this.entryForm.get('wallTrimCmnts_in').setValue(element.payload.doc.data().conditionIn.wallTrimCmnts);
 
       // Move Out data
-      this.entryForm.get('cellingCmnts_out').setValue(element.conditionIn.cellingCmnts);
-      this.entryForm.get('closetsCmnts_out').setValue(element.conditionIn.closetsCmnts);
-      this.entryForm.get('closetsCode_out').setValue(element.conditionIn.closetsCode);
-      this.entryForm.get('cellingCode_out').setValue(element.conditionIn.cellingCode);
+      this.entryForm.get('cellingCmnts_out').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
+      this.entryForm.get('closetsCmnts_out').setValue(element.payload.doc.data().conditionIn.closetsCmnts);
+      this.entryForm.get('closetsCode_out').setValue(element.payload.doc.data().conditionIn.closetsCode);
+      this.entryForm.get('cellingCode_out').setValue(element.payload.doc.data().conditionIn.cellingCode);
 
-      this.entryForm.get('electricCmnts_out').setValue(element.conditionOut.electricCmnts);
-      this.entryForm.get('electricCode_out').setValue(element.conditionOut.electricCode);
-      this.entryForm.get('floorCode_out').setValue(element.conditionOut.floorCode);
-      this.entryForm.get('floorCmnts_out').setValue(element.conditionOut.floorCmnts);
-      this.entryForm.get('lightingCmnts_out').setValue(element.conditionOut.lightingCmnts);
-      this.entryForm.get('lightingCode_out').setValue(element.conditionOut.lightingCode);
-      this.entryForm.get('windowsCmnts_out').setValue(element.conditionOut.windowsCmnts);
-      this.entryForm.get('windowsCode_out').setValue(element.conditionOut.windowsCode);
-      this.entryForm.get('wallTrimCode_out').setValue(element.conditionOut.wallTrimCode);
-      this.entryForm.get('wallTrimCmnts_out').setValue(element.conditionOut.wallTrimCmnts);
+      this.entryForm.get('electricCmnts_out').setValue(element.payload.doc.data().conditionOut.electricCmnts);
+      this.entryForm.get('electricCode_out').setValue(element.payload.doc.data().conditionOut.electricCode);
+      this.entryForm.get('floorCode_out').setValue(element.payload.doc.data().conditionOut.floorCode);
+      this.entryForm.get('floorCmnts_out').setValue(element.payload.doc.data().conditionOut.floorCmnts);
+      this.entryForm.get('lightingCmnts_out').setValue(element.payload.doc.data().conditionOut.lightingCmnts);
+      this.entryForm.get('lightingCode_out').setValue(element.payload.doc.data().conditionOut.lightingCode);
+      this.entryForm.get('windowsCmnts_out').setValue(element.payload.doc.data().conditionOut.windowsCmnts);
+      this.entryForm.get('windowsCode_out').setValue(element.payload.doc.data().conditionOut.windowsCode);
+      this.entryForm.get('wallTrimCode_out').setValue(element.payload.doc.data().conditionOut.wallTrimCode);
+      this.entryForm.get('wallTrimCmnts_out').setValue(element.payload.doc.data().conditionOut.wallTrimCmnts);
+
+      console.log('sec id', element.payload.doc.id);
     });
 
     
   }
 
   submit() {   
-
+    console.log('sec', this.entryForm.value);
     // this.router.navigate(['/home/addsection']);
     this.reloadComponent();
   }

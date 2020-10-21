@@ -34,14 +34,14 @@ export class DataService {
   }
 
   getReportSections(id) {
-    return this.firestore.collection('report').doc(id).collection('section').valueChanges();
+    return this.firestore.collection('report').doc(id).collection('section').snapshotChanges();
   }
 
   getReportSectionByType(id, type) {
     return this.firestore
           .collection('report')
           .doc(id).collection('section', ref => ref.where('type', '==', type))
-          .valueChanges();
+          .snapshotChanges();
 
   }
 
