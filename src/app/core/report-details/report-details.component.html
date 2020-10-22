@@ -323,7 +323,7 @@
 
                         <!-- <div *ngIf="sections.length > 0"> -->
                         <div *ngIf="entrySection?.length > 0">
-                            <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
+                            <app-inspection-entry [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
                         </div>
 
                         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">

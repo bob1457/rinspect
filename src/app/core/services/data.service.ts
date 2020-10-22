@@ -59,7 +59,11 @@ export class DataService {
     return this.firestore.collection('report').doc(report.id).update(report);
   }
 
-  updateSection(section: any) {
+  updateSection(rptId: any, secId: any, section: any) {
+    debugger;
+    var toBeUpdated = this.firestore.collection('report').doc(rptId).collection('section').doc(secId);
+    console.log('update targeet',toBeUpdated);
 
+    return toBeUpdated.update(section);
   }
 }
