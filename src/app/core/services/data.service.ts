@@ -14,6 +14,11 @@ export class DataService {
   constructor(private firestore: AngularFirestore,
               private userService: UserService) { }
 
+  getAllReportsByUser(uid: any) {
+    return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', uid))
+    .snapshotChanges();
+  }
+
   getAllReports() {
     // debugger;
     this.userService.getCurrentUser()
