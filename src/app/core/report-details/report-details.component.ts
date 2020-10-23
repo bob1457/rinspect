@@ -170,6 +170,7 @@ export class ReportDetailsComponent implements OnInit {
                     .catch((err) => {
                       this.notificationService.errorNotification$.next('Error occured during update!');
                     });
+    this.edit = false;
   }
 
   // clicked(event) {}
