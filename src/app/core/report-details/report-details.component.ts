@@ -166,6 +166,9 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.updateReport(this.detailForm.value)
                     .then(() => {
                       this.notificationService.notification$.next('Report updated successfully!');
+                    })
+                    .catch((err) => {
+                      this.notificationService.errorNotification$.next('Error occured during update!');
                     });
   }
 

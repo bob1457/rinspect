@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataService } from '../../services/data.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-inspection-entry',
@@ -39,6 +40,7 @@ export class InspectionEntryComponent implements OnInit {
   constructor(private router: Router,
               private dataService: DataService,
               private _snackBar: MatSnackBar,
+              private notificationService: NotificationService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -176,11 +178,13 @@ export class InspectionEntryComponent implements OnInit {
                       // setTimeout(() => {
                       //   this.msg = '';
                       // }, 3000)
-                      this.openSnackBar(this.msg, 'close', 'snackbar-success');
+                      // this.openSnackBar(this.msg, 'close', 'snackbar-success');
+                      this.notificationService.notification$.next(this.msg);
                     })
                     .catch ((err) => {
                       this.msg = 'Error occured, please try it again!'
-                      this.openSnackBar(this.msg, 'close', 'snackbar-error');
+                      // this.openSnackBar(this.msg, 'close', 'snackbar-error');
+                      this.notificationService.errorNotification$.next(this.msg);
                     });
     // this.reloadComponent();
   }

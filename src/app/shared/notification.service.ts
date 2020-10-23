@@ -7,6 +7,8 @@ import { Subject } from 'rxjs';
 export class NotificationService {
 
   public notification$: Subject<string> = new Subject();
+  public errorNotification$: Subject<string> = new Subject();
 
   constructor() { }
+
 }

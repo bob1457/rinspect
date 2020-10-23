@@ -15,8 +15,15 @@ export class AppComponent {
       this.notificaiotnService.notification$.subscribe(message => {
         this.snackBar.open(message, 'close', {
           duration: 3000,
-          panelClass: []
+          panelClass: ['snackbar-success']
         });
+      });
+
+      this.notificaiotnService.errorNotification$.subscribe(message => {
+        this.snackBar.open(message, 'dismiss', {
+          duration: 3000,
+          panelClass: ['snackbar-error']
+        })
       })
     }
 }
