@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataService } from '../../services/data.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+// import {MatSnackBar} from '@angular/material/snack-bar';
 import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
@@ -39,7 +39,7 @@ export class InspectionEntryComponent implements OnInit {
 
   constructor(private router: Router,
               private dataService: DataService,
-              private _snackBar: MatSnackBar,
+              // private _snackBar: MatSnackBar,
               private notificationService: NotificationService,
               private formBuilder: FormBuilder) { }
 
@@ -195,10 +195,10 @@ export class InspectionEntryComponent implements OnInit {
     this.router.navigate(['/home/addsection']);
   }
 
-  openSnackBar(message: string, action: string, color: string) {
-    this._snackBar.open(message, action, {
-      duration: 3000,
-      panelClass: [color]
-    })
-  }
+  // openSnackBar(message: string, action: string, color: string) {
+  //   this._snackBar.open(message, action, {
+  //     duration: 3000,
+  //     panelClass: [color]
+  //   })
+  // }
 }
