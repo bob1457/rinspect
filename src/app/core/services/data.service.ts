@@ -19,20 +19,20 @@ export class DataService {
     .snapshotChanges();
   }
 
-  getAllReports() {
-    // debugger;
-    this.userService.getCurrentUser()
-        .subscribe(res => {
-          if(res) {
-            this.userId = res.uid;
-          }          
-        });
-    // this.user = localStorage.getItem('user');
-        console.log('uid in report service',this.user);
-    // 'TrLS9eN8HnKQbhbcqiOU''0yQDaxLXNxXNEKXyUTpqBLBZcrw2'
-    return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', this.userId))
-    .snapshotChanges();
-  }
+  // getAllReports() { // ***************** For future use to get ALL reports in Admin module
+  //   // debugger;
+  //   this.userService.getCurrentUser()
+  //       .subscribe(res => {
+  //         if(res) {
+  //           this.userId = res.uid;
+  //         }          
+  //       });
+  //   // this.user = localStorage.getItem('user');
+  //       console.log('uid in report service',this.user);
+  //   // 'TrLS9eN8HnKQbhbcqiOU''0yQDaxLXNxXNEKXyUTpqBLBZcrw2'
+  //   return this.firestore.collection('report', ref => ref.where('reportOwnerId', '==', this.userId))
+  //   .snapshotChanges();
+  // }
 
   getReportDetails(id) {
     return this.firestore.collection('report').doc(id).valueChanges();
