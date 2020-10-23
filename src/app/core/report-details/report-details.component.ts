@@ -5,6 +5,7 @@ import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-report-details',
@@ -40,6 +41,7 @@ export class ReportDetailsComponent implements OnInit {
   constructor(private router: Router,
               private actRoute: ActivatedRoute,
               public dataService: DataService,
+              private notificationService: NotificationService,
               // private firestore: AngularFirestore,
               private formBuilder: FormBuilder) {
 
@@ -161,7 +163,10 @@ export class ReportDetailsComponent implements OnInit {
       id: this.id
     })
     console.log('form', this.detailForm.value);
-    this.dataService.updateReport(this.detailForm.value);
+    this.dataService.updateReport(this.detailForm.value)
+                    .then(() => {
+                      this.notificationService.notification$.next('Report updated successfully!');
+                    });
   }
 
   // clicked(event) {}
