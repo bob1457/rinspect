@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DataService } from '../../services/data.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-inspection-entry',
@@ -14,6 +15,7 @@ export class InspectionEntryComponent implements OnInit {
   @Input() reportId;
   entryForm: FormGroup;
   sectionId;
+  msg = '';
 
   sectionTitle: string[] = [
     'Walls and Trim', 
@@ -36,6 +38,7 @@ export class InspectionEntryComponent implements OnInit {
 
   constructor(private router: Router,
               private dataService: DataService,
+              private _snackBar: MatSnackBar,
               private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -167,8 +170,19 @@ export class InspectionEntryComponent implements OnInit {
     this.entryForm.get('type').setValue('Entry');
     console.log('sec', this.entryForm.value);
     // this.router.navigate(['/home/addsection']);
-    this.dataService.updateSection(this.reportId, this.sectionId, this.entryForm.value);
-    this.reloadComponent();
+    this.dataService.updateSection(this.reportId, this.sectionId, this.entryForm.value)
+                    .then(() => {
+                      this.msg = 'Section has been updated successfully!';
+                      // setTimeout(() => {
+                      //   this.msg = '';
+                      // }, 3000)
+                      this.openSnackBar(this.msg, 'close', 'snackbar-success');
+                    })
+                    .catch ((err) => {
+                      this.msg = 'Error occured, please try it again!'
+                      this.openSnackBar(this.msg, 'close', 'snackbar-error');
+                    });
+    // this.reloadComponent();
   }
 
   reloadComponent() {
@@ -177,4 +191,10 @@ export class InspectionEntryComponent implements OnInit {
     this.router.navigate(['/home/addsection']);
   }
 
+  openSnackBar(message: string, action: string, color: string) {
+    this._snackBar.open(message, action, {
+      duration: 3000,
+      panelClass: [color]
+    })
+  }
 }

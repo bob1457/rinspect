@@ -127,7 +127,7 @@ export class ReportDetailsComponent implements OnInit {
           }
           
           if (this.report.moveOutInspectDate) {
-             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDat.toDate());
+             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDate.toDate());
           }
          
           // this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());

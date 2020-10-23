@@ -60,7 +60,7 @@ export class DataService {
   }
 
   updateSection(rptId: any, secId: any, section: any) {
-    debugger;
+    // debugger;
     var toBeUpdated = this.firestore.collection('report').doc(rptId).collection('section').doc(secId);
     console.log('update targeet',toBeUpdated);
 

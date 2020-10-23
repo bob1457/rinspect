@@ -121,13 +121,13 @@
                             </mat-form-field>
                             <mat-form-field style="width: 25%;">
                                 <mat-label>Move-Out Date</mat-label>
-                                <input matInput [matDatepicker]="picker3" formControlName="moveOutDate">
+                                <input [readonly]="!edit" matInput [matDatepicker]="picker3" formControlName="moveOutDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                                 <mat-datepicker #picker3></mat-datepicker>
                             </mat-form-field>
                             <mat-form-field style="width: 23%;">
                                 <mat-label>Move-Out Inspec. Date</mat-label>
-                                <input matInput [matDatepicker]="picker4" formControlName="moveOutInspectDate">
+                                <input [readonly]="!edit" matInput [matDatepicker]="picker4" formControlName="moveOutInspectDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                                 <mat-datepicker #picker4></mat-datepicker> 
                             </mat-form-field>
