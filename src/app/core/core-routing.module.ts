@@ -8,10 +8,14 @@ import { UserProfileComponent } from '../user/user-profile/user-profile.componen
 import { UserSettingsComponent } from '../user/user-settings/user-settings.component';
 import { AddSectionComponent } from './add-section/add-section.component';
 
+import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { AuthGuard } from '../shared/auth.guard';
+
+const rediretUnauthoirzedToLogin = () => redirectLoggedInTo(['/']);
 
 const routes: Routes = [
   { path: 'home',
-    component: HomeComponent,
+    component: HomeComponent,     
     children: [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
@@ -20,12 +24,14 @@ const routes: Routes = [
       { path: 'user/:id', component:UserProfileComponent},
       // { path: 'user', component:UserProfileComponent},
       { path: 'settings', component: UserSettingsComponent},
-      { path: 'report', component: ReportComponent},
+      // { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
+      { path: 'report', component: ReportComponent, canActivate: [AuthGuard]},
       { path: 'addSection/:id', component: AddSectionComponent}
     ]
   }
 ];
-
+// , canActivate: [AngularFireAuthGuard],
+      // data: { authGuardPipe: rediretUnauthoirzedToLogin},
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

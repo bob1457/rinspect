@@ -52,8 +52,12 @@
                 <div *ngIf="errMsg" style="text-align: center;color: red;">
                     {{errMsg}}
                 </div>
-                <div *ngIf="loading" style="text-align:center;">
-                    <p>Sign in....</p>
+                <div style="text-align:center;">
+                    <!-- <p>Sign in....</p>  -->
+                    <p *ngIf="loading">
+                        <mat-progress-spinner mode="indeterminate" color="accent" diameter="30" style="margin-left: auto;margin-right: auto;">
+                        </mat-progress-spinner>
+                    </p>
                 </div>
             </div>
             <div *ngIf="forgotpassword">

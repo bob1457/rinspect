@@ -17,6 +17,8 @@ import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AuthGuard } from './shared/auth.guard';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
@@ -44,7 +46,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AngularFireAuthGuard, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

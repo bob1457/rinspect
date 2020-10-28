@@ -52,3 +52,7 @@
     color: white;
     // background: #f44336;
 }
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: #0CC20C;
+}
