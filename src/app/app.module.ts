@@ -46,7 +46,8 @@ import { AuthGuard } from './shared/auth.guard';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [AngularFireAuthGuard, AuthGuard],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// AngularFireAuthGuard, 
