@@ -9,10 +9,10 @@ import { User } from  'firebase';
 })
 export class AuthService {
 
-  user: User;  
+  user: User;
 
-  constructor(public afAuth: AngularFireAuth, 
-              public  router:  Router) { 
+  constructor(public afAuth: AngularFireAuth,
+              public  router:  Router) {
                 this.afAuth.authState.subscribe(user => {
                   if (user){
                     this.user = user;
@@ -21,10 +21,10 @@ export class AuthService {
                   } else {
                     localStorage.setItem('user', null);
                   }
-                })
+                });
 
               }
-  
+
   async signIn(email: string, password: string) {
     // debugger;
     var result = await this.afAuth.signInWithEmailAndPassword(email, password);
@@ -45,7 +45,7 @@ export class AuthService {
   async SignOut() {
     await this.afAuth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['/']);  
+    this.router.navigate(['/']);
   }
 
   async ResetPassword(password: any) {
@@ -54,8 +54,9 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null) ? true : false;
+    // const user = JSON.parse(localStorage.getItem('user'));
+    // return (user !== null) ? true : false;
+    return this.user != null;
   }
-  
+
 }

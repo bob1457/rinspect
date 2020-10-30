@@ -15,7 +15,7 @@ import { AuthGuard } from '../shared/auth.guard';
 // canActivate: [AuthGuard]
 const routes: Routes = [
   { path: 'home',
-    component: HomeComponent,     
+    component: HomeComponent,
     children: [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
@@ -25,7 +25,7 @@ const routes: Routes = [
       // { path: 'user', component:UserProfileComponent},
       { path: 'settings', component: UserSettingsComponent},
       // { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
-      { path: 'report', component: ReportComponent},
+      { path: 'report', component: ReportComponent, canActivate: [AuthGuard]},
       { path: 'addSection/:id', component: AddSectionComponent}
     ]
   }

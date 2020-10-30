@@ -34,24 +34,23 @@ export class SigninComponent implements OnInit {
     // console.log('username', this.signinForm.value.email);
     // console.log('password', this.signinForm.value.password)
     // try {
-      debugger;
+      // debugger;
       this.loading = true;
       return this.authService.signIn(this.signinForm.value.email, this.signinForm.value.password)
       .then( res => {
         this.loading = false;
-        
+        console.log('loggedIn Ok');
         this.router.navigateByUrl('home');
       })
       .catch(
         error => {this.errMsg = 'Incorrect username or passwrod. Please try again.';
-                this.loading = false; 
-              }//error.message
+                  this.loading = false;
+              }// error.message
       );
       // this.router.navigateByUrl('home');
     // } catch(err) {
     //   console.log('error', err);
     // }
-    
   // }
 
   }
