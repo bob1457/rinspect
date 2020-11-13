@@ -31,10 +31,10 @@
       <mat-icon style="color:#2477f5;">kitchen</mat-icon>
               Kitchen
       </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item>
-      <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
-      Living Room
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="type='livingroom'">
+        <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
+        Living Room
       </button>
         <button mat-menu-item (click)="type='dinning'" >
         <mat-icon style="color:#2477f5;">fastfood</mat-icon>
@@ -82,6 +82,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 25px;width: 100%;">
     <app-add-section-entry *ngIf="type==='entry'" [rptId]="id" style="width:90%"></app-add-section-entry>
     <!-- <app-inspection-kitchen *ngIf="type==='kitchen'" style="width:90%"></app-inspection-kitchen> -->
-    <app-add-section-kitchen  *ngIf="type==='kitchen'" [rptId]="id" style="width:90%"></app-add-section-kitchen>
-    <app-inspection-dinning-room *ngIf="type==='dinning'" style="width:90%"></app-inspection-dinning-room>
+    <app-add-section-kitchen  *ngIf="type==='kitchen'" [rptId]="id" style="width:90%"></app-add-section-kitchen>    
+    <app-add-section-keys-living-room *ngIf="type==='livingroom'" [rptId]="id" style="width:90%"></app-add-section-keys-living-room>
+    <app-add-section-dinning-room *ngIf="type==='dinning'" [rptId]="id" style="width:90%"></app-add-section-dinning-room>
 </div>
