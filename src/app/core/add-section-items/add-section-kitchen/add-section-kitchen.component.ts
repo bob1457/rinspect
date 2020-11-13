@@ -39,7 +39,7 @@ export class AddSectionKitchenComponent implements OnInit {
     this.kitchenForm = this.formBuilder.group({
       name: [''],
       type: [''],
-      conditionIn: this.formBuilder.group({        
+      conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
         cellingCode: [''],
         wallTrimCode: [''],
@@ -69,9 +69,9 @@ export class AddSectionKitchenComponent implements OnInit {
         dishWasherCmnts: [''],
         dishWasherCode: [''],
         electricCmnts: [''],
-        electricCode: [''],        
+        electricCode: [''],
         lightingCmnts: [''],
-        lightingCode: [''],        
+        lightingCode: [''],
         windowsCmnts: [''],
         windowsCode: ['']
       }),
@@ -105,9 +105,9 @@ export class AddSectionKitchenComponent implements OnInit {
         dishWasherCmnts: [''],
         dishWasherCode: [''],
         electricCmnts: [''],
-        electricCode: [''],        
+        electricCode: [''],
         lightingCmnts: [''],
-        lightingCode: [''],        
+        lightingCode: [''],
         windowsCmnts: [''],
         windowsCode: ['']
       }),
@@ -121,7 +121,7 @@ export class AddSectionKitchenComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);    
+    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
@@ -136,9 +136,9 @@ export class AddSectionKitchenComponent implements OnInit {
     this.router.navigate(['/home/addSection', this.rptId]);
   }
 
-  // clicked(event) {
-  //   this.addMore = event.checked;
-  //   console.log(this.addMore);
-  // }
+  clicked(event) {
+    this.addMore = event.checked;
+    console.log(this.addMore);
+  }
 
 }
