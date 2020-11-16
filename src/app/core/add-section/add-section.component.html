@@ -41,11 +41,11 @@
                 Dinning Room
       </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='stair'">
       <mat-icon style="color: rgb(97, 8, 8);">stairs</mat-icon>
         Stairwell and Hall
       </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='main-bath'">
         <mat-icon style="color:#2477f5;">bathtub</mat-icon>
                 Main Bath Room
       </button>
@@ -85,4 +85,5 @@
     <app-add-section-kitchen  *ngIf="type==='kitchen'" [rptId]="id" style="width:90%"></app-add-section-kitchen>    
     <app-add-section-keys-living-room *ngIf="type==='livingroom'" [rptId]="id" style="width:90%"></app-add-section-keys-living-room>
     <app-add-section-dinning-room *ngIf="type==='dinning'" [rptId]="id" style="width:90%"></app-add-section-dinning-room>
+    <app-add-section-stairewll-hall  *ngIf="type==='stair'" [rptId]="id" style="width:90%"></app-add-section-stairewll-hall>
 </div>

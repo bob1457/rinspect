@@ -1,0 +1,20 @@
+.section-card {
+    width: 95%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.field-width {
+    width: 100%;
+}
+
+.section-item {
+    width:100%;
+    border: 1px solid;padding: 5px;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+    color: white;
+}
