@@ -45,16 +45,16 @@
       <mat-icon style="color: rgb(97, 8, 8);">stairs</mat-icon>
         Stairwell and Hall
       </button>
-        <button mat-menu-item (click)="type='main-bath'">
+      <button mat-menu-item (click)="type='main-bath'">
         <mat-icon style="color:#2477f5;">bathtub</mat-icon>
-                Main Bath Room
+          Bathroom
       </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item>
-      <mat-icon style="color: rgb(97, 8, 8);">local_hotel</mat-icon>
-        Master Bedroom
+      <button mat-menu-item (click)="type='master-bedroom'">
+        <mat-icon style="color: rgb(97, 8, 8);">local_hotel</mat-icon>
+          Bedroom
       </button>
-        <button mat-menu-item>
+      <button mat-menu-item (click)="type='exterior'">
         <mat-icon style="color:#2477f5;">house_siding</mat-icon>
           Exterior
       </button>
@@ -87,4 +87,6 @@
     <app-add-section-dinning-room *ngIf="type==='dinning'" [rptId]="id" style="width:90%"></app-add-section-dinning-room>
     <app-add-section-stairewll-hall  *ngIf="type==='stair'" [rptId]="id" style="width:90%"></app-add-section-stairewll-hall>
     <app-add-section-main-bath-room *ngIf="type==='main-bath'" [rptId]="id" style="width:90%"></app-add-section-main-bath-room>
+    <app-add-section-master-bedroom *ngIf="type==='master-bedroom'" [rptId]="id" style="width:90%"></app-add-section-master-bedroom>
+    <app-add-section-exterior *ngIf="type==='exterior'" [rptId]="id" style="width:90%"></app-add-section-exterior>
 </div>

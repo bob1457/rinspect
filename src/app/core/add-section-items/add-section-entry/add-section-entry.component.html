@@ -2,7 +2,7 @@
 <form style="width: 100%;" [formGroup]="entryForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
         <mat-form-field appearance="outline" style="width:100%">
-            <mat-label>Description</mat-label>
+            <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
             <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
             <!-- <mat-hint>Hint</mat-hint> -->

@@ -67,7 +67,7 @@ import { AddSectionMainBedroomComponent } from './add-section-items/add-section-
     AddSectionDinningRoomComponent,
     AddSectionExteriorComponent,
     AddSectionGarbageParkingComponent,
-    AddSectionKeysControlsComponent,
+    // AddSectionKeysControlsComponent,
     AddSectionLivingRoomComponent,    
     AddSectionStairewllHallComponent,
     AddSectionMasterBedroomComponent,
