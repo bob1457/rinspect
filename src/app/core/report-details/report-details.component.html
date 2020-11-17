@@ -4,10 +4,10 @@
         <mat-card-header>
             <div mat-card-avatar class="details-header-image"></div>
             <mat-card-title>{{report.title}} <span style="font-size: .75em;">
-                Rental Unit Address: {{report.tenant.address.street}}
+                Rental Unit Address: <span style="font-style: italic;">{{report.tenant.address.street}}
                 {{report.tenant.address.city}}
                 {{report.tenant.address.province}}
-                {{report.tenant.address.postcode}}
+                {{report.tenant.address.postcode}}</span>
             </span></mat-card-title>
             <mat-card-subtitle>Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span></mat-card-subtitle>
         </mat-card-header>
@@ -359,61 +359,6 @@
             </section> -->
         </mat-card-content>
 
-        <!-- <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="after">
-            <button mat-menu-item (click)="type='entry'"> 
-            <mat-icon style="color: black;">add_to_home_screen</mat-icon>
-            Entry
-          </button>
-            <button mat-menu-item (click)="type='kitchen'">
-          <mat-icon style="color:#2477f5;">kitchen</mat-icon>
-                  Kitchen
-          </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item>
-          <mat-icon style="color: rgb(97, 8, 8);">video_label</mat-icon>
-          Living Room
-          </button>
-            <button mat-menu-item (click)="type='dinning'" >
-            <mat-icon style="color:#2477f5;">fastfood</mat-icon>
-                    Dinning Room
-          </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item>
-          <mat-icon style="color: rgb(97, 8, 8);">stairs</mat-icon>
-            Stairwell and Hall
-          </button>
-            <button mat-menu-item>
-            <mat-icon style="color:#2477f5;">bathtub</mat-icon>
-                    Main Bath Room
-          </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item>
-          <mat-icon style="color: rgb(97, 8, 8);">local_hotel</mat-icon>
-            Master Bedroom
-          </button>
-            <button mat-menu-item>
-            <mat-icon style="color:#2477f5;">house_siding</mat-icon>
-              Exterior
-          </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item>
-          <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
-            Utility Room
-          </button>
-            <button mat-menu-item>
-            <mat-icon style="color:#2477f5;">hvac</mat-icon>
-             Garbage/Parking Area
-          </button>
-            <button mat-menu-item>
-            <mat-icon style="color:#2477f5;">account_tree</mat-icon>
-              Basement
-          </button>
-            <mat-divider></mat-divider>        
-            <button mat-menu-item>
-            <mat-icon style="color:#2477f5;">control_camera</mat-icon>
-              Keys and Controls
-          </button>        
-        </mat-menu> -->
 
     </mat-card>
 
@@ -422,24 +367,3 @@
 </div>
 
 
-
-<!-- <mat-form-field appearance="outline" style="width: 10%;">
-  <mat-label>unit #</mat-label>
-  <input matInput placeholder="Report Title">
-</mat-form-field>
-<mat-form-field appearance="outline" style="width: 30%;">
-  <mat-label>street address</mat-label>
-  <input matInput placeholder="Report Title">
-</mat-form-field>
-<mat-form-field appearance="outline" style="width: 25%;">
-  <mat-label>city</mat-label>
-  <input matInput placeholder="Report Title">
-</mat-form-field>
-<mat-form-field appearance="outline" style="width: 15%;">
-  <mat-label>province</mat-label>
-  <input matInput placeholder="Report Title">
-</mat-form-field>
-<mat-form-field appearance="outline" style="width: 20%;">
-  <mat-label>postal code</mat-label>
-  <input matInput placeholder="Report Title">
-</mat-form-field> -->

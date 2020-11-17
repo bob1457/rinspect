@@ -54,6 +54,7 @@ export class ReportDetailsComponent implements OnInit {
       active: [true],
       agentName: [''],
       title: [''],
+      completed: [false],
       moveInInspectDate: [''],
       moveOutDate: [''],
       possesionDate: [''],
@@ -88,6 +89,9 @@ export class ReportDetailsComponent implements OnInit {
       tenantForwordingAddress: [''],
       moveOutLandlordFullName: [''],
       moveOutLandlordAddress: ['']
+
+      // finalize report form data:
+      
     });
 
 

@@ -35,6 +35,7 @@ export class AddReportComponent implements OnInit {
       active: [true],
       agentName: [''],
       title: [''],
+      completed: [false],
       moveInInspectDate: [''],
       moveOutDate: [''],
       possesionDate: [''],
