@@ -59,15 +59,15 @@
           Exterior
       </button>
         <mat-divider></mat-divider>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='utility'">
       <mat-icon style="color: rgb(97, 8, 8);">foundation</mat-icon>
         Utility Room
       </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='garbage'">
         <mat-icon style="color:#2477f5;">hvac</mat-icon>
          Garbage/Parking Area
       </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="type='basement'">
         <mat-icon style="color:#2477f5;">account_tree</mat-icon>
           Basement
       </button>
@@ -89,4 +89,7 @@
     <app-add-section-main-bath-room *ngIf="type==='main-bath'" [rptId]="id" style="width:90%"></app-add-section-main-bath-room>
     <app-add-section-master-bedroom *ngIf="type==='master-bedroom'" [rptId]="id" style="width:90%"></app-add-section-master-bedroom>
     <app-add-section-exterior *ngIf="type==='exterior'" [rptId]="id" style="width:90%"></app-add-section-exterior>
+    <app-add-section-utility-room *ngIf="type==='utility'" [rptId]="id" style="width:90%"></app-add-section-utility-room>
+    <app-add-section-garbage-parking *ngIf="type==='garbage'" [rptId]="id" style="width:90%"></app-add-section-garbage-parking>
+    <app-add-section-basement *ngIf="type==='basement'" [rptId]="id" style="width:90%"></app-add-section-basement>
 </div>
