@@ -72,7 +72,7 @@
           Basement
       </button>
         <mat-divider></mat-divider>        
-        <button mat-menu-item>
+      <button mat-menu-item (click)="type='key'">
         <mat-icon style="color:#2477f5;">control_camera</mat-icon>
           Keys and Controls
       </button>        
@@ -92,4 +92,5 @@
     <app-add-section-utility-room *ngIf="type==='utility'" [rptId]="id" style="width:90%"></app-add-section-utility-room>
     <app-add-section-garbage-parking *ngIf="type==='garbage'" [rptId]="id" style="width:90%"></app-add-section-garbage-parking>
     <app-add-section-basement *ngIf="type==='basement'" [rptId]="id" style="width:90%"></app-add-section-basement>
+    <app-add-section-keys-controls *ngIf="type==='key'" [rptId]="id" style="width:90%"></app-add-section-keys-controls>
 </div>
