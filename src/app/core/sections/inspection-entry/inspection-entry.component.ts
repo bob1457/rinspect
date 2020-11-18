@@ -125,6 +125,7 @@ export class InspectionEntryComponent implements OnInit {
 
     this.entrySectionDetails.forEach(element => {
         this.entryForm.get('name').setValue(element.payload.doc.data().name);
+        // this.entryForm.get('type').disable(element.paayload.doc().data().type);
       // Move In data
       this.entryForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
       this.entryForm.get('conditionIn').get('closetsCmnts').setValue(element.payload.doc.data().conditionIn.closetsCmnts);

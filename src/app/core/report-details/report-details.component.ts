@@ -155,6 +155,13 @@ export class ReportDetailsComponent implements OnInit {
 
           this.detailForm.get('repairAtStart').setValue(this.report.repairAtStart);
           this.detailForm.get('damageAtEnd').setValue(this.report.damageAtEnd);
+          this.detailForm.get('depositDeducted').setValue(this.report.depositDeducted);
+          if(this.report.depositDeducted) {
+            this.agreeOk = true;
+          }
+          this.detailForm.get('depositDeductedAmt').setValue(this.report.depositDeductedAmt);
+          this.detailForm.get('petDepositDeductedAmt').setValue(this.report.petDepositDeductedAmt);
+
         });
 
     // Get all sections

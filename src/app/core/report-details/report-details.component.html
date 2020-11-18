@@ -172,18 +172,18 @@
                                             </mat-form-field>
                                         </div>
                                         <p></p>
-                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
+                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" formControlName="depositDeducted" [checked]="agreeOk">Agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
                                         <p></p>
                                         <div *ngIf="agreeOk" fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                                             <mat-form-field appearance="outline" style="width:50%">
-                                                <mat-label>Security Deposit</mat-label>
+                                                <mat-label>Security Deposit(CA$)</mat-label>
                                                 <input matInput formControlName="depositDeductedAmt" placeholder="Security Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width:50%">
-                                                <mat-label>Pet Deposit</mat-label>
+                                                <mat-label>Pet Deposit(CA$)</mat-label>
                                                 <input matInput formControlName="petDepositDeductedAmt" placeholder="Pet Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
@@ -294,8 +294,8 @@
                         </div>
                     </form>
                     <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" class="text-uppercase" style="margin-left: 30px;width: 95%;">
-                        <div>inpection report sections</div>
-                        <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span>
+                        <div style="color: rgb(28, 18, 177), 216);font-weight: bold;">inpection report sections</div>
+                        <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <!--<span>Help</span>-->
                         <span class="spacer"></span>
                         <button mat-raised-button style="background-color: #26bf49;
                             color: wheat;
@@ -307,6 +307,30 @@
                             Add Inspection Section
                         </button>
                     </div>
+                    <mat-menu #help="matMenu" yPosition="above" >
+                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="width: 250px;">
+                            <div fxFlex="50%">
+                                <span  style="margin-left: 10px;margin-top: 10px;">
+                                    <span style="font-weight: bold;">Condition Codes</span><br>
+                                    &nbsp; G = Good<br>
+                                    &nbsp; F = Fair<br>
+                                    &nbsp;  P = Poor<br>
+                                    &nbsp;  M = Missing
+                                </span>
+                            </div>
+                            <div fxFlex="50%" style="margin-left: 10px;margin-top: 10px;">
+                                <span>
+                                    &nbsp; D = Damaged<br>
+                                    &nbsp; S = Scratched<br>
+                                    &nbsp; B = Broken<br>
+                                    &nbsp; DT = Dirty<br>
+                                    &nbsp; ST = Stained  
+                                 </span>
+                                
+                            </div>
+                        </div>
+                        
+                    </mat-menu>
                      <!-- [matMenuTriggerFor]="menu" -->
                     <mat-accordion class="form-width">
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
