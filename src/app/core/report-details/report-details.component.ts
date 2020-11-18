@@ -6,6 +6,7 @@ import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-report-details',
@@ -85,13 +86,25 @@ export class ReportDetailsComponent implements OnInit {
       moveOutConditionAgreed: [true],
       moveOutConditionNotAgreedReason: [''],
       depositDeducted: [false],
-      depositDeductedAmt: [''],
+      depositDeductedAmt: [0],
+      petDepositDeductedAmt: [0],
       tenantForwordingAddress: [''],
       moveOutLandlordFullName: [''],
-      moveOutLandlordAddress: ['']
-
+      moveOutLandlordAddress: [''],
+      updated: [''],
       // finalize report form data:
-      
+      repairAtStart: [''],
+      damageAtEnd: [''],
+      agreeAtStart: ['agree'],
+      reasonNotAgreeAtStart: [''],
+      agreeAtEnd: ['agree'],
+      reasonNotAgreeAtEnd: [''] ,   
+      tenantForwardingAddressUnit: [''],
+      tenantForwardingAddressStreet: [''],
+      tenantForwardingAddressCity: [''],
+      tenantForwardingAddressProvince: [''],
+      tenantForwardingAddressPostCode: [''],
+      landloardNameAddress: ['']
     });
 
 
@@ -138,7 +151,10 @@ export class ReportDetailsComponent implements OnInit {
          
           // this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
           this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate());
-          console.log('date', this.report.possesionDate);
+          // console.log('date', this.report.possesionDate);
+
+          this.detailForm.get('repairAtStart').setValue(this.report.repairAtStart);
+          this.detailForm.get('damageAtEnd').setValue(this.report.damageAtEnd);
         });
 
     // Get all sections
@@ -163,8 +179,11 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   submit() {
+    let date = new Date();
+
     this.detailForm.patchValue({
-      id: this.id
+      id: this.id,
+      updated: formatDate(date, 'MMMM dd, yyyy hh:mm:ss a','en-US', 'UTC-0700')
     })
     console.log('form', this.detailForm.value);
     this.dataService.updateReport(this.detailForm.value)
@@ -194,6 +213,9 @@ export class ReportDetailsComponent implements OnInit {
 
   agreeToDeposit(event) {
     this.agreeOk = event.checked;
+    this.detailForm.patchValue({
+      depositDeducted: this.agreeOk
+    })
   }
 
   onChange(event) {

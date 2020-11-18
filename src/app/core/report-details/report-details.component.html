@@ -139,18 +139,18 @@
                                     <mat-tab label="START OF TENANCY">
                                         <mat-form-field style="width: 95%;margin-top:20px;">
                                             <mat-label>Repairs to be completed at start of tenancy</mat-label>
-                                            <textarea matInput></textarea>
+                                            <textarea matInput formControlName="repairAtStart"></textarea>
                                         </mat-form-field>
                                         <!-- formControlName="notes" [ngModel]="owner.notes" -->
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                                        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
-                                            <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
+                                        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="agreeAtStart" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
+                                            <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
                                                 <mat-label>The reason of not agree</mat-label>
-                                                <textarea matInput></textarea>
+                                                <textarea matInput formControlName="reasonNotAgreeAtStart"></textarea>
                                             </mat-form-field>
                                         </div>
         
@@ -158,33 +158,33 @@
                                     <mat-tab label="END OF TENANCY">
                                         <mat-form-field style="width: 95%;margin-top:20px;">
                                             <mat-label>Damages to rental unit or residential property for which the tenant is responsible:</mat-label>
-                                            <textarea matInput></textarea>
+                                            <textarea matInput formControlName="damageAtEnd"></textarea>
                                         </mat-form-field>
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                                        <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
-                                            <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
+                                        <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" formControlName="agreeAtEnd" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
+                                            <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree1 == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
                                                 <mat-label>The reason of not agree</mat-label>
-                                                <textarea matInput></textarea>
+                                                <textarea matInput formControlName="reasonNotAgreeAtEnd"></textarea>
                                             </mat-form-field>
                                         </div>
                                         <p></p>
-                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Do you agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
+                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
                                         <p></p>
                                         <div *ngIf="agreeOk" fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                                             <mat-form-field appearance="outline" style="width:50%">
                                                 <mat-label>Security Deposit</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput formControlName="depositDeductedAmt" placeholder="Security Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width:50%">
                                                 <mat-label>Pet Deposit</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput formControlName="petDepositDeductedAmt" placeholder="Pet Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -195,35 +195,35 @@
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                                             <mat-form-field appearance="outline" style="width: 10%;">
                                                 <mat-label>unit #</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Unit #" formControlName="tenantForwardingAddressUnit">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 30%;">
                                                 <mat-label>street address</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Street Address" formControlName="tenantForwardingAddressStreet">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 25%;">
                                                 <mat-label>city</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="City" formControlName="tenantForwardingAddressCity">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 15%;">
                                                 <mat-label>province</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Province" formControlName="tenantForwardingAddressProvince">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 20%;">
                                                 <mat-label>postal code</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Post Code" formControlName="tenantForwardingAddressPostCode">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
