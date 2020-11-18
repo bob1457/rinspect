@@ -21,7 +21,7 @@
     </span> &nbsp;
     Add Inspection Section
   </button>
-    <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;">help</mat-icon> <span>Help</span>
+    <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;">help</mat-icon> <span>Help</span>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="after">
         <button mat-menu-item (click)="type='entry'"> <!-- passing parameters for testing only -->
         <mat-icon style="color: black;">add_to_home_screen</mat-icon>
@@ -76,6 +76,31 @@
         <mat-icon style="color:#2477f5;">control_camera</mat-icon>
           Keys and Controls
       </button>        
+    </mat-menu>
+
+    <mat-menu #help="matMenu" yPosition="above" >
+      <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="width: 250px;">
+          <div fxFlex="50%">
+              <span  style="margin-left: 10px;margin-top: 10px;">
+                  <span style="font-weight: bold;">Condition Codes</span><br>
+                  &nbsp; G = Good<br>
+                  &nbsp; F = Fair<br>
+                  &nbsp;  P = Poor<br>
+                  &nbsp;  M = Missing
+              </span>
+          </div>
+          <div fxFlex="50%" style="margin-left: 10px;margin-top: 10px;">
+              <span>
+                  &nbsp; D = Damaged<br>
+                  &nbsp; S = Scratched<br>
+                  &nbsp; B = Broken<br>
+                  &nbsp; DT = Dirty<br>
+                  &nbsp; ST = Stained  
+               </span>
+              
+          </div>
+      </div>
+      
     </mat-menu>
 
 </div>
