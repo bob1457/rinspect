@@ -212,7 +212,7 @@ export class InspectionKitchenComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.kitchenForm.get('type').setValue('Entry');
+    this.kitchenForm.get('type').setValue('Kitchen');
     console.log('sec', this.kitchenForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.kitchenForm.value)
