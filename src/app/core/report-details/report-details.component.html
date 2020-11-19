@@ -9,7 +9,18 @@
                 {{report.tenant.address.province}}
                 {{report.tenant.address.postcode}}</span>
             </span></mat-card-title>
-            <mat-card-subtitle>Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span></mat-card-subtitle>
+            <mat-card-subtitle>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxFlex="80">
+                        Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span>
+                    </div>
+                    <div fxFlex="15">
+                        <span *ngIf="final" style="margin-left: 5px;"><button style="color: rgb(47, 82, 240);" mat-raised-button color="accent" (click)="viewReport()">View Report</button></span>
+                    </div>
+                </div>
+                
+                
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content fxLayout="column" fxLayoutAlign="end center">
             <span *ngIf="!edit" style="width: 95%;">
@@ -294,7 +305,7 @@
                         </div>
                     </form>
                     <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" class="text-uppercase" style="margin-left: 30px;width: 95%;">
-                        <div style="color: rgb(28, 18, 177), 216);font-weight: bold;">inpection report sections</div>
+                        <div style="color: rgb(28, 18, 177);font-weight: bold;">inpection report sections</div>
                         <!-- <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span> -->
                         <span class="spacer"></span>
                         <button mat-raised-button style="background-color: #26bf49;

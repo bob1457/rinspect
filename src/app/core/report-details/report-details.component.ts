@@ -163,6 +163,12 @@ export class ReportDetailsComponent implements OnInit {
           this.detailForm.get('depositDeductedAmt').setValue(this.report.depositDeductedAmt);
           this.detailForm.get('petDepositDeductedAmt').setValue(this.report.petDepositDeductedAmt);
 
+          if(this.report.completed) {
+            this.final = true;
+            console.log('completed', this.report.completed);
+            console.log('final', this.final);
+          }
+
         });
 
     // Get all sections
@@ -241,6 +247,12 @@ export class ReportDetailsComponent implements OnInit {
   onChange1(event) {
     console.log(event);
     this.notAgree1 = event.value;
+  }
+
+  viewReport() {
+    let url = '/home/report-view/' + this.id;
+
+    this.router.navigateByUrl(url);
   }
 
 }
