@@ -28,6 +28,7 @@ export class ReportDetailsComponent implements OnInit {
 
   type = '';
 
+  // All sections
   entrySection;
   kitchenSection;
 

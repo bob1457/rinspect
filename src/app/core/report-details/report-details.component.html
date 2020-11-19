@@ -347,10 +347,11 @@
 
                         <!-- <div *ngIf="sections.length > 0"> -->
                         <div *ngIf="entrySection?.length > 0">
-                            <app-inspection-entry [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
+                            <app-inspection-entry *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
+                            <app-inspection-kitchen *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-inspection-kitchen>
                         </div>
 
-                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     Self aware panel
@@ -372,7 +373,7 @@
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>I'm visible because I am open</p>
-                        </mat-expansion-panel>
+                        </mat-expansion-panel> -->
                         <!-- </div> -->
                     </mat-accordion>
 

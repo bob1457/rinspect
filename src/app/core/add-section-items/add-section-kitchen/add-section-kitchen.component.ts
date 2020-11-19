@@ -116,12 +116,13 @@ export class AddSectionKitchenComponent implements OnInit {
   }
 
   submit() {
+    debugger;
     this.kitchenForm.get('type').setValue('Kitchen');
     console.log('add secton form', this.kitchenForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);
+    this.dataServie.createSection(this.kitchenForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
