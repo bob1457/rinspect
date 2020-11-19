@@ -187,10 +187,17 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   submit() {
-    let date = new Date();
+    let date = new Date();  
+
+    let isFinal = false;
+
+    if(this.final) {
+      isFinal = true
+    }
 
     this.detailForm.patchValue({
       id: this.id,
+      completed: isFinal,
       updated: formatDate(date, 'MMMM dd, yyyy hh:mm:ss a','en-US', 'UTC-0700')
     })
     console.log('form', this.detailForm.value);
