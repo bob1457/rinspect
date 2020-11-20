@@ -7,6 +7,11 @@ import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
+<<<<<<< HEAD
+>>>>>>> dev
+=======
+import { NotificationService } from 'src/app/shared/notification.service';
+import { formatDate } from '@angular/common';
 >>>>>>> dev
 
 @Component({
@@ -32,6 +37,9 @@ export class ReportDetailsComponent implements OnInit {
   notAgree1 = '';
   agreeOk = false;
 
+  type = '';
+
+  // All sections
   entrySection;
   kitchenSection;
 
@@ -46,6 +54,7 @@ export class ReportDetailsComponent implements OnInit {
   constructor(private router: Router,
               private actRoute: ActivatedRoute,
               public dataService: DataService,
+              private notificationService: NotificationService,
               // private firestore: AngularFirestore,
               private formBuilder: FormBuilder) {
 
@@ -58,6 +67,7 @@ export class ReportDetailsComponent implements OnInit {
       active: [true],
       agentName: [''],
       title: [''],
+      completed: [false],
       moveInInspectDate: [''],
       moveOutDate: [''],
       possesionDate: [''],
@@ -88,10 +98,25 @@ export class ReportDetailsComponent implements OnInit {
       moveOutConditionAgreed: [true],
       moveOutConditionNotAgreedReason: [''],
       depositDeducted: [false],
-      depositDeductedAmt: [''],
+      depositDeductedAmt: [0],
+      petDepositDeductedAmt: [0],
       tenantForwordingAddress: [''],
       moveOutLandlordFullName: [''],
-      moveOutLandlordAddress: ['']
+      moveOutLandlordAddress: [''],
+      updated: [''],
+      // finalize report form data:
+      repairAtStart: [''],
+      damageAtEnd: [''],
+      agreeAtStart: ['agree'],
+      reasonNotAgreeAtStart: [''],
+      agreeAtEnd: ['agree'],
+      reasonNotAgreeAtEnd: [''] ,   
+      tenantForwardingAddressUnit: [''],
+      tenantForwardingAddressStreet: [''],
+      tenantForwardingAddressCity: [''],
+      tenantForwardingAddressProvince: [''],
+      tenantForwardingAddressPostCode: [''],
+      landloardNameAddress: ['']
     });
 
 
@@ -133,12 +158,28 @@ export class ReportDetailsComponent implements OnInit {
           }
           
           if (this.report.moveOutInspectDate) {
-             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDat.toDate());
+             this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDate.toDate());
           }
          
           // this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
           this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate());
-          console.log('date', this.report.possesionDate);
+          // console.log('date', this.report.possesionDate);
+
+          this.detailForm.get('repairAtStart').setValue(this.report.repairAtStart);
+          this.detailForm.get('damageAtEnd').setValue(this.report.damageAtEnd);
+          this.detailForm.get('depositDeducted').setValue(this.report.depositDeducted);
+          if(this.report.depositDeducted) {
+            this.agreeOk = true;
+          }
+          this.detailForm.get('depositDeductedAmt').setValue(this.report.depositDeductedAmt);
+          this.detailForm.get('petDepositDeductedAmt').setValue(this.report.petDepositDeductedAmt);
+
+          if(this.report.completed) {
+            this.final = true;
+            console.log('completed', this.report.completed);
+            console.log('final', this.final);
+          }
+
         });
 
     // Get all sections
@@ -163,10 +204,28 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   submit() {
+    let date = new Date();  
+
+    let isFinal = false;
+
+    if(this.final) {
+      isFinal = true
+    }
+
     this.detailForm.patchValue({
-      id: this.id
+      id: this.id,
+      completed: isFinal,
+      updated: formatDate(date, 'MMMM dd, yyyy hh:mm:ss a','en-US', 'UTC-0700')
     })
     console.log('form', this.detailForm.value);
+    this.dataService.updateReport(this.detailForm.value)
+                    .then(() => {
+                      this.notificationService.notification$.next('Report updated successfully!');
+                    })
+                    .catch((err) => {
+                      this.notificationService.errorNotification$.next('Error occured during update!');
+                    });
+    this.edit = false;
   }
 
   // clicked(event) {}
@@ -186,6 +245,9 @@ export class ReportDetailsComponent implements OnInit {
 
   agreeToDeposit(event) {
     this.agreeOk = event.checked;
+    this.detailForm.patchValue({
+      depositDeducted: this.agreeOk
+    })
   }
 
   onChange(event) {
@@ -197,6 +259,12 @@ export class ReportDetailsComponent implements OnInit {
     console.log(event);
     this.notAgree1 = event.value;
 >>>>>>> dev
+  }
+
+  viewReport() {
+    let url = '/home/report-view/' + this.id;
+
+    this.router.navigateByUrl(url);
   }
 
 }

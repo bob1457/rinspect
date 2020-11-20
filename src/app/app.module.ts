@@ -17,6 +17,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AuthGuard } from './shared/auth.guard';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 >>>>>>> dev
 
@@ -25,9 +29,14 @@ import { SharedModule } from './shared/common.module';
   declarations: [
     AppComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     SigninComponent
 =======
     SigninComponent//,
+=======
+    SigninComponent,
+    ForgotPasswordComponent//,
+>>>>>>> dev
     // SectionItemComponent
 >>>>>>> dev
   ],
@@ -48,10 +57,16 @@ import { SharedModule } from './shared/common.module';
     UserModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
+<<<<<<< HEAD
     AngularFirestoreModule
 >>>>>>> dev
+=======
+    AngularFirestoreModule,
+    AngularFireAuthModule
+>>>>>>> dev
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// AngularFireAuthGuard, 

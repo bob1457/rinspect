@@ -1,36 +1,92 @@
 <!-- <p>user-profile works!</p> -->
 <section fxLayout="column" fxLayoutAlign="center center">
-    <div class="profile-title" fxLayout="row" fxLayoutAlign="center center">
+    <div class="profile-title" fxLayout="row" fxLayoutAlign="center center" *ngIf="user">
         <h4><span class="material-icons" style="vertical-align: middle;color: rgb(30, 109, 199);">
             account_circle
             </span>
-            User Profile
+            User Profile: {{user.displayName}}
         </h4>
     </div>
-    <mat-card class="profile-card">
+    <mat-card class="profile-card details-card mat-elevation-z0"  *ngIf="user">
         <mat-card-content>
             <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="userForm" novalidate (ngSubmit)="submit()">
-
-                <mat-form-field appearance="standard" class="form-field" style="margin-top:20px ;">
+                <div fxLayout="row" fxLayoutAlign="start start" style="width: 80%; margin-top: 25px;">
+                    <div fxFlex="35%">
+                        <img src="../../../assets//images//user.png" width="100px" height="100px" style="border-radius: 50%;"></div>
+                    <div fxFlex="65%">
+                        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
+                            <mat-radio-button value="custom" checked style="padding-right: 10px;">Custom Avatar</mat-radio-button>
+                            <mat-radio-button value="gravatar">Gravatar</mat-radio-button>
+                        </mat-radio-group><br>
+                        <p></p>
+                        <p *ngIf="avatar=='custom'" style="margin-left: 25px;">
+                            <a >Custom Image</a>
+                        </p>
+                        <p></p>
+                        <p style="margin-left: 25px;">
+                            Account Created on: {{user.metadata.creationTime | slice: 0:17}}<br>
+                            Last Login: {{user.metadata.lastSignInTime | slice: 0:17}}
+                        </p>
+                                                
+                    </div>
+                </div>
+<!-- [routerLink]="['/home/addSection/', id]" -->
+                    <p style="width:80%;margin-top: 25px;">
+                        <!-- <span style="font-weight: bold;">Display Name:</span> {{user.displayName}} -->
+                    </p>
+                <mat-form-field appearance="outline" class="form-field" style="margin-top:20px ;">
                     <mat-label>First Name</mat-label>
-                    <input type="text" matInput placeholder="First Name">
+                    <input type="text" matInput placeholder="First Name" formControlName="firstName">
                     <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="standard" class="form-field">
-                    <mat-label>First Name</mat-label>
-                    <input type="text" matInput placeholder="Last Name">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput placeholder="Last Name" formControlName="lastName">
                     <mat-icon matSuffix>person</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="standard" class="form-field">
+                <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput placeholder="Email">
+                    <input type="email" matInput placeholder="Email" formControlName="email" >
                     <mat-icon matSuffix>email</mat-icon>
                     <!-- <mat-hint>Hint</mat-hint> -->
                 </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="end end" style="width: 80%;">
+                    <button type="submit" mat-raised-button>Update</button>
+                </div>
+                
 
             </form>
+            
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <p style="margin-top: 25px;">Change Password</p>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Existing Password</mat-label>
+                    <input type="password" matInput placeholder="Existing Password" [(ngModel)]="oldpassword">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>New Password</mat-label>
+                    <input type="password" matInput placeholder="New Password" [(ngModel)]="newpassword">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Confirm New Password</mat-label>
+                    <input type="password" matInput placeholder="Confirm New Password" [(ngModel)]="confirmpassword">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="end end" style="width: 80%;"> 
+                    <button type="submit" mat-raised-button (click)="changePassword(newpassword)">Change Password</button>
+                </div>
+                <p *ngIf="msg" style="margin-top: 25px;">{{msg}}</p>
+                
+                
+
+            </div>
         </mat-card-content>
     </mat-card>
     

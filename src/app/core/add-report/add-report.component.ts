@@ -4,6 +4,10 @@ import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 <<<<<<< HEAD
 =======
 import { DataService } from '../services/data.service';
+<<<<<<< HEAD
+>>>>>>> dev
+=======
+import { UserService } from 'src/app/user/services/user.service';
 >>>>>>> dev
 
 @Component({
@@ -23,13 +27,20 @@ export class AddReportComponent implements OnInit {
   notAgree = '';
   notAgree1 = '';
   agreeOk = false;
+  user;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
+              private userService: UserService,
               private dataService: DataService) { }
 >>>>>>> dev
 
   ngOnInit(): void {
+
+    this.userService.getCurrentUser()
+        .subscribe(res => {
+          this.user = res;
+        })
 
     this.addForm = this.formBuilder.group({
 <<<<<<< HEAD
@@ -39,6 +50,7 @@ export class AddReportComponent implements OnInit {
       active: [true],
       agentName: [''],
       title: [''],
+      completed: [false],
       moveInInspectDate: [''],
       moveOutDate: [''],
       possesionDate: [''],
@@ -63,6 +75,7 @@ export class AddReportComponent implements OnInit {
           postcode: ['BC']
         })
       }),
+      reportOwnerId: [''],
       created: [''],
       updated: ['']
 >>>>>>> dev
@@ -103,7 +116,11 @@ export class AddReportComponent implements OnInit {
     debugger;
     // this.router.navigateByUrl('/home/report-details');
     // this.router.navigate(['/home/report-details', 1]);
+    var uid = this.user.uid;
+    // console.log('uid in report', this.user.uid);
+
     this.addForm.patchValue({
+      reportOwnerId: uid,
       created: new Date(),
       updated: new Date()
     })

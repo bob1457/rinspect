@@ -44,6 +44,7 @@ import { AddSectionMasterBedroomComponent } from './add-section-items/add-sectio
 import { AddSectionUtilityRoomComponent } from './add-section-items/add-section-utility-room/add-section-utility-room.component';
 import { AddSectionMainBathRoomComponent } from './add-section-items/add-section-main-bath-room/add-section-main-bath-room.component';
 import { AddSectionMainBedroomComponent } from './add-section-items/add-section-main-bedroom/add-section-main-bedroom.component';
+import { ReeportViewComponent } from './reeport-view/reeport-view.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { AddSectionMainBedroomComponent } from './add-section-items/add-section-
     AddSectionMasterBedroomComponent,
     AddSectionUtilityRoomComponent,
     AddSectionMainBathRoomComponent,
-    AddSectionMainBedroomComponent
+    AddSectionMainBedroomComponent,
+    ReeportViewComponent
   ],
 >>>>>>> dev
   imports: [

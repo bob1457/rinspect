@@ -7,12 +7,23 @@
         <mat-card-header>
             <div mat-card-avatar class="details-header-image"></div>
             <mat-card-title>{{report.title}} <span style="font-size: .75em;">
-                Rental Unit Address: {{report.tenant.address.street}}
+                Rental Unit Address: <span style="font-style: italic;">{{report.tenant.address.street}}
                 {{report.tenant.address.city}}
                 {{report.tenant.address.province}}
-                {{report.tenant.address.postcode}}
+                {{report.tenant.address.postcode}}</span>
             </span></mat-card-title>
-            <mat-card-subtitle>Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span></mat-card-subtitle>
+            <mat-card-subtitle>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <div fxFlex="80">
+                        Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span>
+                    </div>
+                    <div fxFlex="15">
+                        <span *ngIf="final" style="margin-left: 5px;"><button style="color: rgb(47, 82, 240);" mat-raised-button color="accent" (click)="viewReport()">View Report</button></span>
+                    </div>
+                </div>
+                
+                
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content fxLayout="column" fxLayoutAlign="end center">
             <span *ngIf="!edit" style="width: 95%;">
@@ -124,13 +135,13 @@
                             </mat-form-field>
                             <mat-form-field style="width: 25%;">
                                 <mat-label>Move-Out Date</mat-label>
-                                <input matInput [matDatepicker]="picker3" formControlName="moveOutDate">
+                                <input [readonly]="!edit" matInput [matDatepicker]="picker3" formControlName="moveOutDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                                 <mat-datepicker #picker3></mat-datepicker>
                             </mat-form-field>
                             <mat-form-field style="width: 23%;">
                                 <mat-label>Move-Out Inspec. Date</mat-label>
-                                <input matInput [matDatepicker]="picker4" formControlName="moveOutInspectDate">
+                                <input [readonly]="!edit" matInput [matDatepicker]="picker4" formControlName="moveOutInspectDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                                 <mat-datepicker #picker4></mat-datepicker> 
                             </mat-form-field>
@@ -142,18 +153,18 @@
                                     <mat-tab label="START OF TENANCY">
                                         <mat-form-field style="width: 95%;margin-top:20px;">
                                             <mat-label>Repairs to be completed at start of tenancy</mat-label>
-                                            <textarea matInput></textarea>
+                                            <textarea matInput formControlName="repairAtStart"></textarea>
                                         </mat-form-field>
                                         <!-- formControlName="notes" [ngModel]="owner.notes" -->
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                                        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
-                                            <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
+                                        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="agreeAtStart" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
+                                            <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
                                                 <mat-label>The reason of not agree</mat-label>
-                                                <textarea matInput></textarea>
+                                                <textarea matInput formControlName="reasonNotAgreeAtStart"></textarea>
                                             </mat-form-field>
                                         </div>
         
@@ -161,33 +172,33 @@
                                     <mat-tab label="END OF TENANCY">
                                         <mat-form-field style="width: 95%;margin-top:20px;">
                                             <mat-label>Damages to rental unit or residential property for which the tenant is responsible:</mat-label>
-                                            <textarea matInput></textarea>
+                                            <textarea matInput formControlName="damageAtEnd"></textarea>
                                         </mat-form-field>
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
-                                        <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
-                                            <mat-radio-button value="agree" checked style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
+                                        <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" formControlName="agreeAtEnd" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
+                                            <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree1 == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
                                                 <mat-label>The reason of not agree</mat-label>
-                                                <textarea matInput></textarea>
+                                                <textarea matInput formControlName="reasonNotAgreeAtEnd"></textarea>
                                             </mat-form-field>
                                         </div>
                                         <p></p>
-                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" [checked]="agreeOk">Do you agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
+                                        <mat-checkbox style="margin-bottom: 20px;margin-top: 15px;" (change)="agreeToDeposit($event)" formControlName="depositDeducted" [checked]="agreeOk">Agree to the following deductions from my security and/or pet deposit:</mat-checkbox>
                                         <p></p>
                                         <div *ngIf="agreeOk" fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                                             <mat-form-field appearance="outline" style="width:50%">
-                                                <mat-label>Security Deposit</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <mat-label>Security Deposit(CA$)</mat-label>
+                                                <input matInput formControlName="depositDeductedAmt" placeholder="Security Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width:50%">
-                                                <mat-label>Pet Deposit</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <mat-label>Pet Deposit(CA$)</mat-label>
+                                                <input matInput formControlName="petDepositDeductedAmt" placeholder="Pet Deposit">
                                                 <mat-icon matSuffix>view_headline</mat-icon>
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -198,35 +209,35 @@
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                                             <mat-form-field appearance="outline" style="width: 10%;">
                                                 <mat-label>unit #</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Unit #" formControlName="tenantForwardingAddressUnit">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 30%;">
                                                 <mat-label>street address</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Street Address" formControlName="tenantForwardingAddressStreet">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 25%;">
                                                 <mat-label>city</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="City" formControlName="tenantForwardingAddressCity">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 15%;">
                                                 <mat-label>province</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Province" formControlName="tenantForwardingAddressProvince">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 20%;">
                                                 <mat-label>postal code</mat-label>
-                                                <input matInput placeholder="Report Title">
+                                                <input matInput placeholder="Post Code" formControlName="tenantForwardingAddressPostCode">
                                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -296,10 +307,45 @@
                             </button>
                         </div>
                     </form>
-                    <p class="text-uppercase" style="margin-left: 30px;width: 95%;">
-                        inpection report sections
-                        <mat-icon matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span>
-                    </p>
+                    <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" class="text-uppercase" style="margin-left: 30px;width: 95%;">
+                        <div style="color: rgb(28, 18, 177);font-weight: bold;">inpection report sections</div>
+                        <!-- <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span> -->
+                        <span class="spacer"></span>
+                        <button mat-raised-button style="background-color: #26bf49;
+                            color: wheat;
+                            margin-left: 40px;"
+                            [routerLink]="['/home/addSection/', id]">
+                            <span class="material-icons">
+                            add
+                            </span> &nbsp;
+                            Add Inspection Section
+                        </button>
+                    </div>
+                    <!-- <mat-menu #help="matMenu" yPosition="above" >
+                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="width: 250px;">
+                            <div fxFlex="50%">
+                                <span  style="margin-left: 10px;margin-top: 10px;">
+                                    <span style="font-weight: bold;">Condition Codes</span><br>
+                                    &nbsp; G = Good<br>
+                                    &nbsp; F = Fair<br>
+                                    &nbsp;  P = Poor<br>
+                                    &nbsp;  M = Missing
+                                </span>
+                            </div>
+                            <div fxFlex="50%" style="margin-left: 10px;margin-top: 10px;">
+                                <span>
+                                    &nbsp; D = Damaged<br>
+                                    &nbsp; S = Scratched<br>
+                                    &nbsp; B = Broken<br>
+                                    &nbsp; DT = Dirty<br>
+                                    &nbsp; ST = Stained  
+                                 </span>
+                                
+                            </div>
+                        </div>
+                        
+                    </mat-menu> -->
+                     <!-- [matMenuTriggerFor]="menu" -->
                     <mat-accordion class="form-width">
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
@@ -315,10 +361,11 @@
 
                         <!-- <div *ngIf="sections.length > 0"> -->
                         <div *ngIf="entrySection?.length > 0">
-                            <app-inspection-entry [entrySectionDetails]="entrySection"></app-inspection-entry>
+                            <app-inspection-entry *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
+                            <app-inspection-kitchen *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-inspection-kitchen>
                         </div>
 
-                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     Self aware panel
@@ -340,7 +387,7 @@
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>I'm visible because I am open</p>
-                        </mat-expansion-panel>
+                        </mat-expansion-panel> -->
                         <!-- </div> -->
                     </mat-accordion>
 
@@ -351,6 +398,7 @@
             </section> -->
         </mat-card-content>
 
+
     </mat-card>
 
 
@@ -358,6 +406,7 @@
 </div>
 
 
+<<<<<<< HEAD
 
 <!-- <mat-form-field appearance="outline" style="width: 10%;">
   <mat-label>unit #</mat-label>
@@ -379,4 +428,6 @@
   <mat-label>postal code</mat-label>
   <input matInput placeholder="Report Title">
 </mat-form-field> -->
+>>>>>>> dev
+=======
 >>>>>>> dev
