@@ -360,6 +360,7 @@
                         <div *ngIf="entrySection?.length > 0">
                             <app-inspection-entry *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
                             <app-inspection-kitchen *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-inspection-kitchen>
+                            <app-inspection-living-room *ngIf="livingRoomSection" [LivingroomSectionDetails]="livingRoomSection" [reportId]='id'></app-inspection-living-room>
                         </div>
 
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">

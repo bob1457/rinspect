@@ -97,7 +97,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
   }
 
   submit() {
-    this.livingForm.get('type').setValue('Entry');
+    this.livingForm.get('type').setValue('Living-Room');
     console.log('add secton form', this.livingForm.value);
     // call service to add section
     console.log(this.rptId);
