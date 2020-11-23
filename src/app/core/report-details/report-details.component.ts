@@ -33,6 +33,7 @@ export class ReportDetailsComponent implements OnInit {
   kitchenSection;
   livingRoomSection;
   diningRoomSEction;
+  stairwellSection;
 
 
 
@@ -203,6 +204,12 @@ export class ReportDetailsComponent implements OnInit {
     .subscribe( res => {
       this.diningRoomSEction = res;
       console.log('Dinning-section', this.diningRoomSEction);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Stairwell')
+    .subscribe( res => {
+      this.stairwellSection = res;
+      console.log('Dinning-section', this.stairwellSection);
     })
 
   }

@@ -80,12 +80,12 @@ export class AddSectionStairewllHallComponent implements OnInit {
   }
 
   submit() {
-    this.stairForm.get('type').setValue('Kitchen');
+    this.stairForm.get('type').setValue('Stairwell');
     console.log('add secton form', this.stairForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);
+    this.dataServie.createSection(this.stairForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();

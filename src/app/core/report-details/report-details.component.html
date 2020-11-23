@@ -354,7 +354,7 @@
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <p>This is the primary content of the panel.</p>
-                        </mat-expansion-panel>  *ngIf="entrySection"-->
+                        </mat-expansion-panel>  *ngIf="entrySection" -->
 
                         <!-- <div *ngIf="sections.length > 0"> -->
                         <div *ngIf="entrySection?.length > 0">
@@ -362,6 +362,7 @@
                             <app-inspection-kitchen *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-inspection-kitchen>
                             <app-inspection-living-room *ngIf="livingRoomSection" [LivingroomSectionDetails]="livingRoomSection" [reportId]='id'></app-inspection-living-room>
                             <app-inspection-dinning-room *ngIf="diningRoomSEction" [dinningroomSectionDetails]="diningRoomSEction" [reportId]='id'></app-inspection-dinning-room>
+                            <app-inspection-stairwell-hall *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-inspection-stairwell-hall>
                         </div>
 
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
