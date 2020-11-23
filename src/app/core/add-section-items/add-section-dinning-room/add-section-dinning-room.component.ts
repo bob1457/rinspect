@@ -75,7 +75,7 @@ export class AddSectionDinningRoomComponent implements OnInit {
   }
 
   submit() {
-    this.dinningForm.get('type').setValue('Entry');
+    this.dinningForm.get('type').setValue('Dinning-Room');
     console.log('add secton form', this.dinningForm.value);
     // call service to add section
     console.log(this.rptId);
