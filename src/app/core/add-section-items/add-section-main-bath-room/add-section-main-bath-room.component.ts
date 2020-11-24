@@ -37,6 +37,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
     this.mainBathForm = this.formBuilder.group({
       name: [''],
       type: [''],
+      isMain: [false],
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -95,7 +96,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   }
 
   submit() {
-    this.mainBathForm.get('type').setValue('mainbath');
+    this.mainBathForm.get('type').setValue('Bathroom');
     console.log('add secton form', this.mainBathForm.value);
     // call service to add section
     console.log(this.rptId);

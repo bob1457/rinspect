@@ -3,7 +3,7 @@
     <span class="material-icons" style="padding:5px; color:#ff5722; font-size: 3em; margin-left: 27px;">
       table_view
   </span>
-    <h3 class="title">Inspection Report: <span>Sample Reeport</span><br>
+    <h3 class="title">Inspection Report: <span *ngIf="report">{{report.title}}</span><br>
         <section fxLayoutAlign="start center">
             <h5 style="margin-bottom: 20px;">Add inspection section</h5>
         </section>
