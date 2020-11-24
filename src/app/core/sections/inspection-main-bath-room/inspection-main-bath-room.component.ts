@@ -106,6 +106,7 @@ export class InspectionMainBathRoomComponent implements OnInit {
     this.bathroomSectionDetails.forEach(element => {
         this.bathroomForm.get('name').setValue(element.payload.doc.data().name);
         // this.bathroomForm.get('type').disable(element.paayload.doc().data().type);
+        this.bathroomForm.get('isMain').setValue(element.payload.doc.data().isMain);
       // Move In data
       this.bathroomForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
       this.bathroomForm.get('conditionIn').get('tubShowerTapStopperCmnts').setValue(element.payload.doc.data().conditionIn.tubShowerTapStopperCmnts);
@@ -169,7 +170,7 @@ export class InspectionMainBathRoomComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.bathroomForm.get('type').setValue('Kitchen');
+    this.bathroomForm.get('type').setValue('Bathroom');
     console.log('sec', this.bathroomForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.bathroomForm.value)
