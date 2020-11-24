@@ -37,7 +37,7 @@ export class AddSectionExteriorComponent implements OnInit {
     this.exteriorForm = this.formBuilder.group({
       name: [''],
       type: [''],
-      isMaster: [false],
+      // isMaster: [false],
       // IN
       conditionIn: this.formBuilder.group({
         frontRearEmtranceCmnts: [''],
