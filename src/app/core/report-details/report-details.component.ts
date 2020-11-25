@@ -39,6 +39,7 @@ export class ReportDetailsComponent implements OnInit {
   exteriorSection;
   utilitySection;
   garbageParkingSection;
+  basementSection;
 
 
 
@@ -246,6 +247,12 @@ export class ReportDetailsComponent implements OnInit {
     .subscribe( res => {
       this.garbageParkingSection = res;
       console.log('garbage-section', this.garbageParkingSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Basement')
+    .subscribe( res => {
+      this.basementSection = res;
+      console.log('garbage-section', this.basementSection);
     })
   }
 
