@@ -43,7 +43,9 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         washerDryerCode: [''],
         wahserDryerCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -51,7 +53,9 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         washerDryerCode: [''],
         wahserDryerCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       
