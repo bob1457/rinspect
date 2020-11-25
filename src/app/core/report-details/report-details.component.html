@@ -367,9 +367,10 @@
                             <app-inspection-master-bedroom *ngIf="bedroomSection" [bedroomSectionDetails]="bedroomSection" [reportId]='id'></app-inspection-master-bedroom>
                             <app-inspection-exterior *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-inspection-exterior>
                             <app-inspection-utility-room *ngIf="utilitySection" [utilityRoomSectionDetails]="utilitySection" [reportId]='id'></app-inspection-utility-room>
+                            <app-inspection-garbage-parking *ngIf="garbageParkingSection" [garbageParkingSectionDetails]="garbageParkingSection" [reportId]='id'></app-inspection-garbage-parking>
                         </div>
 
-                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"> 
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     Self aware panel

@@ -41,13 +41,17 @@ export class AddSectionGarbageParkingComponent implements OnInit {
       // IN
       conditionIn: this.formBuilder.group({        
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''], 
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
       conditionOut: this.formBuilder.group({        
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       

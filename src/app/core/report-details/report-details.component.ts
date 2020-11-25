@@ -38,6 +38,7 @@ export class ReportDetailsComponent implements OnInit {
   bedroomSection;
   exteriorSection;
   utilitySection;
+  garbageParkingSection;
 
 
 
@@ -240,6 +241,12 @@ export class ReportDetailsComponent implements OnInit {
       console.log('utility-section', this.utilitySection);
     })
 
+
+    this.dataService.getReportSectionByType(this.id, 'Garbage-Parking')
+    .subscribe( res => {
+      this.garbageParkingSection = res;
+      console.log('garbage-section', this.garbageParkingSection);
+    })
   }
 
   submit() {
