@@ -75,7 +75,11 @@
       <button mat-menu-item (click)="type='key'">
         <mat-icon style="color:#2477f5;">control_camera</mat-icon>
           Keys and Controls
-      </button>        
+      </button> 
+      <button mat-menu-item (click)="type='other'">
+        <mat-icon style="color:#2477f5;">add_task</mat-icon>
+          Other
+      </button>       
     </mat-menu>
 
     <mat-menu #help="matMenu" yPosition="above" >
@@ -118,4 +122,5 @@
     <app-add-section-garbage-parking *ngIf="type==='garbage'" [rptId]="id" style="width:90%"></app-add-section-garbage-parking>
     <app-add-section-basement *ngIf="type==='basement'" [rptId]="id" style="width:90%"></app-add-section-basement>
     <app-add-section-keys-controls *ngIf="type==='key'" [rptId]="id" style="width:90%"></app-add-section-keys-controls>
+    <app-add-section-other *ngIf="type==='other'" [rptId]="id" style="width:90%"></app-add-section-other>
 </div>

@@ -37,8 +37,9 @@ import { AddSectionStairewllHallComponent } from './add-section-items/add-sectio
 import { AddSectionMasterBedroomComponent } from './add-section-items/add-section-master-bedroom/add-section-master-bedroom.component';
 import { AddSectionUtilityRoomComponent } from './add-section-items/add-section-utility-room/add-section-utility-room.component';
 import { AddSectionMainBathRoomComponent } from './add-section-items/add-section-main-bath-room/add-section-main-bath-room.component';
-import { AddSectionMainBedroomComponent } from './add-section-items/add-section-main-bedroom/add-section-main-bedroom.component';
+// import { AddSectionMainBedroomComponent } from './add-section-items/add-section-main-bedroom/add-section-main-bedroom.component';
 import { ReeportViewComponent } from './reeport-view/reeport-view.component';
+import { AddSectionOtherComponent } from './add-section-items/add-section-other/add-section-other.component';
 
 
 @NgModule({
@@ -74,8 +75,9 @@ import { ReeportViewComponent } from './reeport-view/reeport-view.component';
     AddSectionMasterBedroomComponent,
     AddSectionUtilityRoomComponent,
     AddSectionMainBathRoomComponent,
-    AddSectionMainBedroomComponent,
-    ReeportViewComponent
+    // AddSectionMainBedroomComponent,
+    ReeportViewComponent,
+    AddSectionOtherComponent
   ],
   imports: [
     AppMaterialModule,
