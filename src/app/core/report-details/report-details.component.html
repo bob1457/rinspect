@@ -368,7 +368,8 @@
                             <app-inspection-exterior *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-inspection-exterior>
                             <app-inspection-utility-room *ngIf="utilitySection" [utilityRoomSectionDetails]="utilitySection" [reportId]='id'></app-inspection-utility-room>
                             <app-inspection-garbage-parking *ngIf="garbageParkingSection" [garbageParkingSectionDetails]="garbageParkingSection" [reportId]='id'></app-inspection-garbage-parking>
-                            <app-inspection-basement *ngIf="basementSection" [basementSectionDetails]="basementSection"></app-inspection-basement>
+                            <app-inspection-basement *ngIf="basementSection" [basementSectionDetails]="basementSection"  [reportId]='id'></app-inspection-basement>
+                            <app-inspection-keys-controls *ngIf="keyControlSection" [keyControlSectionDetails]="keyControlSection"  [reportId]='id'></app-inspection-keys-controls>
                         </div>
 
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"> 

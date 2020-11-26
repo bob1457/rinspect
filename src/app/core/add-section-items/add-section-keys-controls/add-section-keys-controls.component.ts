@@ -48,7 +48,9 @@ export class AddSectionKeysControlsComponent implements OnInit {
         rentalUnityDeadBoltKey: [0],
         rentalUnityDeadBoltCmnts: [''],
         parkginRemoteControlKey: [0],
-        parkginRemoteControlCmnts: ['']
+        parkginRemoteControlCmnts: [''],
+        otherKey: [0],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -60,7 +62,9 @@ export class AddSectionKeysControlsComponent implements OnInit {
         rentalUnityDeadBoltKey: [0],
         rentalUnityDeadBoltCmnts: [''],
         parkginRemoteControlKey: [0],
-        parkginRemoteControlCmnts: ['']
+        parkginRemoteControlCmnts: [''],
+        otherKey: [0],
+        otherCmnts: ['']
       })
       
       
