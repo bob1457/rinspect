@@ -41,6 +41,7 @@ import { AddSectionMainBathRoomComponent } from './add-section-items/add-section
 import { ReeportViewComponent } from './reeport-view/reeport-view.component';
 import { AddSectionOtherComponent } from './add-section-items/add-section-other/add-section-other.component';
 import { InspectionOtherComponent } from './sections/inspection-other/inspection-other.component';
+import { ReportViewHeaderComponent } from './report-view-header/report-view-header.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { InspectionOtherComponent } from './sections/inspection-other/inspection
     // AddSectionMainBedroomComponent,
     ReeportViewComponent,
     AddSectionOtherComponent,
-    InspectionOtherComponent
+    InspectionOtherComponent,
+    ReportViewHeaderComponent
   ],
   imports: [
     AppMaterialModule,
