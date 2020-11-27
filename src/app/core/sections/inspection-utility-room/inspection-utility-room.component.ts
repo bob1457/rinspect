@@ -104,7 +104,7 @@ export class InspectionUtilityRoomComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.utilityForm.get('type').setValue('Stairwell');
+    this.utilityForm.get('type').setValue('Utility-Room');
     console.log('sec', this.utilityForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.utilityForm.value)

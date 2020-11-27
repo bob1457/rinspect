@@ -146,7 +146,7 @@ export class InspectionExteriorComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.exteriorForm.get('type').setValue('Kitchen');
+    this.exteriorForm.get('type').setValue('Exterior');
     console.log('sec', this.exteriorForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.exteriorForm.value)

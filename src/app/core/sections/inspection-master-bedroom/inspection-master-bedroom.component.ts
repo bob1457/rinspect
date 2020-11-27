@@ -146,7 +146,7 @@ export class InspectionMasterBedroomComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.bedroomForm.get('type').setValue('Bathroom');
+    this.bedroomForm.get('type').setValue('Bedroom');
     console.log('sec', this.bedroomForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.bedroomForm.value)

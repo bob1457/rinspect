@@ -61,7 +61,9 @@ export class InspectionBasementComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],        
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -77,7 +79,9 @@ export class InspectionBasementComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],        
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });
@@ -127,7 +131,7 @@ export class InspectionBasementComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.basementForm.get('type').setValue('Kitchen');
+    this.basementForm.get('type').setValue('Basement');
     console.log('sec', this.basementForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.basementForm.value)

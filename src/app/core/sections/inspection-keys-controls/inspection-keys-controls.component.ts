@@ -124,7 +124,7 @@ export class InspectionKeysControlsComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.keyControlForm.get('type').setValue('Kitchen');
+    this.keyControlForm.get('type').setValue('Key-Control');
     console.log('sec', this.keyControlForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.keyControlForm.value)

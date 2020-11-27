@@ -130,7 +130,7 @@ export class InspectionDinningRoomComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.dinningForm.get('type').setValue('Kitchen');
+    this.dinningForm.get('type').setValue('Dinning-Room');
     console.log('sec', this.dinningForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.dinningForm.value)

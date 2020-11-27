@@ -41,6 +41,7 @@ export class ReportDetailsComponent implements OnInit {
   garbageParkingSection;
   basementSection;
   keyControlSection;
+  otherSection;
 
 
 
@@ -253,13 +254,19 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Basement')
     .subscribe( res => {
       this.basementSection = res;
-      console.log('garbage-section', this.basementSection);
+      console.log('basement-section', this.basementSection);
     })
 
     this.dataService.getReportSectionByType(this.id, 'Key-Control')
     .subscribe( res => {
       this.keyControlSection = res;
-      console.log('garbage-section', this.keyControlSection);
+      console.log('key-section', this.keyControlSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Other')
+    .subscribe( res => {
+      this.otherSection = res;
+      console.log('other-section', this.otherSection);
     })
   }
 

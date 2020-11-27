@@ -370,6 +370,7 @@
                             <app-inspection-garbage-parking *ngIf="garbageParkingSection" [garbageParkingSectionDetails]="garbageParkingSection" [reportId]='id'></app-inspection-garbage-parking>
                             <app-inspection-basement *ngIf="basementSection" [basementSectionDetails]="basementSection"  [reportId]='id'></app-inspection-basement>
                             <app-inspection-keys-controls *ngIf="keyControlSection" [keyControlSectionDetails]="keyControlSection"  [reportId]='id'></app-inspection-keys-controls>
+                            <app-inspection-other *ngIf="otherSection" [otherSectionDetails]="otherSection"  [reportId]='id'></app-inspection-other>
                         </div>
 
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"> 

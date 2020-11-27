@@ -160,7 +160,7 @@ export class InspectionLivingRoomComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.livingForm.get('type').setValue('Kitchen');
+    this.livingForm.get('type').setValue('Living-Room');
     console.log('sec', this.livingForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.livingForm.value)

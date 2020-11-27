@@ -96,7 +96,7 @@ export class InspectionGarbageParkingComponent implements OnInit {
 
   // Update section
   submit() { 
-    this.garbageParkingForm.get('type').setValue('Stairwell');
+    this.garbageParkingForm.get('type').setValue('Garbage-Parking');
     console.log('sec', this.garbageParkingForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.garbageParkingForm.value)
