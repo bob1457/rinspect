@@ -40,6 +40,22 @@ label {
     font-size: .75em;
 }
 
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+td {
+    height: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+th {
+    height: 15px;
+}
+
+
 .spacer {
     flex: 1 1 auto;
 }

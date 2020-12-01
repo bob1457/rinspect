@@ -18,7 +18,7 @@
             </div>
             <div fxFlex="25%">
                 <span>E. POSSESSION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -52,7 +52,7 @@
             </div>
             <div fxFlex="25%">
                 <span>F. MOVE-IN INSPECTION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -66,7 +66,7 @@
             </div>
             <div fxFlex="25%">
                 <span>G.MOVE-OUT DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -100,10 +100,68 @@
             </div>
             <div fxFlex="25%">
                 <span style="font-size: .95EM;"> H.MOVE-OUT INSPECTION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style="    font-size: .8em;">
+            <div fxFlex="34%">
+                <table style="width: 100%;">
+                    <tr style="height: 15px;">
+                        <td ><span style="font-weight: bold;">Condition Codes:</span></td>
+                        <td>D=Damaged</td>
+                    </tr>
+                    <tr style="height: 15px;">
+                        <td >&#10003;=Good</td>
+                        <td>S=Scratched</td>
+                    </tr>
+                    <tr style="height: 15px;">
+                        <td>F=Fair</td>
+                        <td>B=Broken</td>
+                    </tr>
+                    <tr style="height: 15px;">
+                        <td>P=Porr</td>
+                        <td>DI=Dirty</td>
+                    </tr>
+                    <tr style="height: 15px;">
+                        <td>M=Missing</td>
+                        <td>ST=Stained</td>
+                    </tr>
+                </table>
+            </div>
+            <div fxFlex="33%">
+                <table style="width: 100%;border: 1px solid black;margin-left: -1px;">                    
+                    <tr>
+                        <td colspan="2" style="border: 1px solid black;text-align: center;font-size: 1.25em;padding-top: 5px;padding-bottom: 5px;">
+                        Condition at<br> Beginning of Tenancy
+                        </td>
+                    </tr>
+                    <!-- <tr style="border-bottom: 1px solid black;">
+                        <td></td>
+                        <td style="border-right: 1px solid black;"></td>
+                    </tr> -->
+                    <tr style="border: 1px solid black;height: 50px;">
+                        <td style="border: 1px solid black;text-align: center;font-size: 1.25em;">COMMENT</td>
+                        <td style="border: 1px solid black;text-align: center;font-size: 1.25em;">CODE</td>
+                    </tr>
+                    <!-- <tr style="border: 1px solid black;">
+                    <td style="border: 1px solid black;"></td></tr> -->
+                </table>
+            </div>
+            <div fxFlex="33%">
+                <table style="width: 100%;border: 1px solid black;margin-left: -3px;">                    
+                    <tr>
+                        <td colspan="2" style="border: 1px solid black;text-align: center;font-size: 1.25em;padding-top: 5px;padding-bottom: 5px;">
+                        Condition at<br> End of Tenancy
+                        </td>
+                    </tr>                    
+                    <tr style="border: 1px solid black;height: 50px;">
+                        <td style="border: 1px solid black;text-align: center;font-size: 1.25em;">COMMENT</td>
+                        <td style="border: 1px solid black;text-align: center;font-size: 1.25em;">CODE</td>
+                    </tr>                   
+                </table>
             </div>
         </div>
         
