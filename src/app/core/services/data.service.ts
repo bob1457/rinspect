@@ -50,6 +50,14 @@ export class DataService {
 
   }
 
+  getReportViewSectionByType(id, type) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('type', '==', type))
+          .snapshotChanges();
+
+  }
+
   createReport(report: any) {
     return this.firestore.collection('report').add(report);
   }

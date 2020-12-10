@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-entry-view-item',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryViewItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() entrySectionDetails;
+  @Input() reportId;
 
-  ngOnInit(): void {
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(): void {    
+
   }
 
 }

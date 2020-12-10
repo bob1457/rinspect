@@ -9,11 +9,11 @@
             #RTB – 27 
         </div>
     </div>
-    <form style="width: 100%;">
+    <form style="width: 100%;" *ngIf="report">
         <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
             <div fxFlex="80%">
                 <span>A. LEGAL NAME OF LANDLORD</span>  <span style="font-size: .8em;font-style: italic;">(if entry is a business name, enter the full legal business name)</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" [value]="report.landlord.legalName"></span><br>
                 <div style="margin-left: 25px;font-size: .75em;margin-top: -13px;">last name, first & middle names</div>
             </div>
             <div fxFlex="25%">
@@ -196,7 +196,10 @@
                 </table>
             </div>
         </div>
-        <app-entry-view-item></app-entry-view-item>
+        <!-- ************************* -->
+        <!-- Sections -->
+        <!-- ************************* -->
+        <app-entry-view-item *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-entry-view-item>
         <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
             <div fxFlex="34%" style="margin-top: -4px;">
                 <table style="width: 100%;margin-top: 3px;">

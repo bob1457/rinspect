@@ -1,10 +1,10 @@
 <!-- <p>entry-view-item works!</p> -->
-<div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+<div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;" *ngIf="entrySectionDetails">
     <div fxFlex="34%">
         <table style="width: 100%;margin-top: 3px;">
             <tr>
                 <td rowspan="8" style="vertical-align: top;width: 160px;">
-                    <span style="font-weight: bold;">J. ENTR</span>
+                    <span style="font-weight: bold;text-transform: uppercase;">J. {{entrySectionDetails.type}}</span>
                 </td>
                 <td style="widows: 100%;border: 1px solid black;text-align: left;">
                     Walls and Trim</td>
