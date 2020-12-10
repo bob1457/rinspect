@@ -43,6 +43,7 @@ import { AddSectionOtherComponent } from './add-section-items/add-section-other/
 import { InspectionOtherComponent } from './sections/inspection-other/inspection-other.component';
 import { ReportViewHeaderComponent } from './report-view-header/report-view-header.component';
 import { ReportViewContentComponent } from './report-view-content/report-view-content.component';
+import { EntryViewItemComponent } from './report-view-content-items/entry-view-item/entry-view-item.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { ReportViewContentComponent } from './report-view-content/report-view-co
     AddSectionOtherComponent,
     InspectionOtherComponent,
     ReportViewHeaderComponent,
-    ReportViewContentComponent
+    ReportViewContentComponent,
+    EntryViewItemComponent
   ],
   imports: [
     AppMaterialModule,
