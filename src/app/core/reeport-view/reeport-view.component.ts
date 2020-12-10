@@ -27,7 +27,7 @@ export class ReeportViewComponent implements OnInit {
 
 
   download() {
-    debugger;
+    // debugger;
 
     const element = document.getElementById('pdfdoc');
 
@@ -35,7 +35,8 @@ export class ReeportViewComponent implements OnInit {
       margin:       0.2,
       filename:     'Inspection_Report', // this.contract.managementContractTitle + '_' + timestamp + '_contract.pdf',
       image:        { type: 'jpeg', quality: 0.99 },
-      html2canvas:  { scale: 0.7 },
+      // pagebreak:    { mode: '', before: '#page2el'},
+      html2canvas:  { scale: 2 },
       jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
