@@ -53,23 +53,18 @@ export class ReportViewContentComponent implements OnInit {
           console.log('rpt', this.report)
         })
 
-    // Get each section
-    this.dataService.getReportSectionByType(this.id, 'Entry')
-        .subscribe(res => {
-          this.entrySection = res;
-          console.log('entry-section', this.entrySection);
-        })
+    // Get each section   
     
-        this.dataService.getReportViewSectionByType(this.id, 'Entry')
-            .subscribe( res => {
-              res.map(a => {
-                const data = a.payload.doc.data();
-                const id = a.payload.doc.id;
-                this.entrySection = data;
-                console.log('section view', this.entrySection);
-                return {id, ...data}
-              } )
-            })
+    this.dataService.getReportViewSectionByType(this.id, 'Entry')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.entrySection = data;
+            console.log('section view', this.entrySection);
+            return {id, ...data}
+          } )
+        })
   }
 
 }
