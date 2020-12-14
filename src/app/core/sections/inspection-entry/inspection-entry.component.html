@@ -6,7 +6,7 @@
         <mat-expansion-panel-header style="background-color: #5c6bc0">
         <mat-panel-title style="color:white">
             <mat-icon>input</mat-icon> &nbsp;
-        Section Type: Entry 
+        Section Type: {{item.payload.doc.data().type}}: <span style="font-size: .9em;font-style: italic;color: yellowgreen;"> - {{item.payload.doc.data().name}}</span>
         </mat-panel-title>
         <mat-panel-description>
             <!-- {{entrySectionDetails.name}}  - {{entrySectionDetails[0].type}} {{item.type}}-->
@@ -15,15 +15,15 @@
         
         
         <form style="width: 100%;" [formGroup]="entryForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
-            <div [@.disabled]="true" style="width:100%">
+            <div [@.disabled]="true" style="width:100%" >
                 <mat-form-field appearance="outline" style="width:100%; margin-top: 8px;">
                     <mat-label>Entry</mat-label>
-                    <input matInput placeholder="Specify type and description of the area" formControlName="name">
+                    <input matInput placeholder="Specify type and description of the area" formControlName="name" >
                     <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <!-- <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()"> -->
+                <!-- <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()"> [(ngModel)]="item.payload.doc.data().name"-->
                     <mat-tab-group style="width: 100%;">
 
                         <mat-tab label="BEGINNING OF TENANCY">
@@ -31,7 +31,7 @@
                                 <div formGroupName="conditionIn">
                                     <mat-card-content fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
-                                            <p style="width: 35%;text-align: left;margin-left: 5px;">{{sectionTitle[0]}}</p>
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Walls and Trim</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
                                                 <mat-select id="propertyType1" formControlName="wallTrimCode">
@@ -67,7 +67,7 @@
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Closet</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="closetsCode">
+                                                <mat-select id="propertyType1" formControlName="closetsCode" >
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -75,7 +75,7 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="closetsCmnts">
+                                                <input matInput placeholder="Comments" formControlName="closetsCmnts" >
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
