@@ -29,7 +29,8 @@ export class ReportDetailsComponent implements OnInit {
   type = '';
 
   // All sections
-  entrySection;
+  mainEntrySection;
+  secondaryEntrySection;
   kitchenSection;
   livingRoomSection;
   diningRoomSEction;
@@ -190,11 +191,29 @@ export class ReportDetailsComponent implements OnInit {
         });
 
     // Get each section
-    this.dataService.getReportSectionByType(this.id, 'Entry')
+
+    this.dataService.getReportSectionBySubType(this.id, 'MainEntry')
         .subscribe(res => {
-          this.entrySection = res;
-          console.log('entry-section', this.entrySection);
+          this.mainEntrySection = res;
+          console.log('main-entry-section', this.mainEntrySection);
         })
+
+    this.dataService.getReportSectionBySubType(this.id, 'SecondaryEntry')
+    .subscribe(res => {
+      this.secondaryEntrySection = res;
+      console.log('-secondary-entry-section', this.secondaryEntrySection);
+    })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'MainEntry')
+    // .subscribe( res => {
+    //   res.map(a => {
+    //     const data = a.payload.doc.data();
+    //     const id = a.payload.doc.id;
+    //     this.mainEntrySection = data;
+    //     console.log('section view', this.mainEntrySection);
+    //     return {id, ...data}
+    //   } )
+    // })
 
     this.dataService.getReportSectionByType(this.id, 'Kitchen')
         .subscribe( res => {

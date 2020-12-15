@@ -99,7 +99,7 @@ export class AddSectionEntryComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    // this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
+    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
 
     if (this.addMore) {
       this.reloadComponent();
