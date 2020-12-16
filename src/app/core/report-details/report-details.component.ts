@@ -38,7 +38,14 @@ export class ReportDetailsComponent implements OnInit {
   diningRoomSEction;
   stairwellSection;
   bathroomSection;
-  bedroomSection;
+
+  bedroomSection2;
+  masterBedroomSection;
+  bedroomSection3;
+  bedroomSection4;
+  bedroomSection5;
+
+
   exteriorSection;
   utilitySection;
   garbageParkingSection;
@@ -253,17 +260,74 @@ export class ReportDetailsComponent implements OnInit {
       console.log('Stair-section', this.stairwellSection);
     })
 
+
+
+    
+
     this.dataService.getReportSectionByType(this.id, 'Bathroom')
     .subscribe( res => {
       this.bathroomSection = res;
       console.log('Bath-section', this.bathroomSection);
     })
 
-    this.dataService.getReportSectionByType(this.id, 'Bedroom')
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+    
+
+    this.dataService.getReportSectionBySubType(this.id, 'Fifth Bedroom')
     .subscribe( res => {
-      this.bedroomSection = res;
-      console.log('Bed-section', this.bedroomSection);
+      this.bedroomSection5 = res;
+      console.log('Bed-section', this.bedroomSection5);
     })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Master Bedroom')
+    .subscribe( res => {
+      this.masterBedroomSection = res;
+      console.log('Bed-section', this.masterBedroomSection);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Second Bedroom')
+    .subscribe( res => {
+      this.bedroomSection2 = res;
+      console.log('Bed-section', this.bedroomSection2);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Third Bedroom')
+    .subscribe( res => {
+      this.bedroomSection3 = res;
+      console.log('Bed-section', this.bedroomSection3);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Forth Bedroom')
+    .subscribe( res => {
+      this.bedroomSection4 = res;
+      console.log('Bed-section', this.bedroomSection4);
+    })
+
+
+
+
 
     this.dataService.getReportSectionByType(this.id, 'Exterior')
     .subscribe( res => {

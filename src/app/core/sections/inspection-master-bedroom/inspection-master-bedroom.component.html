@@ -5,7 +5,7 @@
         <mat-expansion-panel-header style="background-color: #5c6bc0">
         <mat-panel-title style="color:white">
             <mat-icon>local_hotel</mat-icon> &nbsp;
-        Section Type:  Bed Room 
+        Section Type:  Bed Room: <span style="font-size: .9em;font-style: italic;color: yellow;"> - {{item.payload.doc.data().subtype}}</span>
         </mat-panel-title>
         <mat-panel-description>
             <!-- {{entrySectionDetails.name}}  - {{entrySectionDetails[0].type}} {{item.type}}-->
@@ -22,7 +22,7 @@
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <mat-checkbox style="margin-bottom: 20px;width: 100%;" formControlName="isMaster">Main Bathroom</mat-checkbox>
+                <!-- <mat-checkbox style="margin-bottom: 20px;width: 100%;" formControlName="isMaster">Main Bathroom</mat-checkbox> -->
                 <!-- <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()"> -->
                     <mat-tab-group style="width: 100%;">
 

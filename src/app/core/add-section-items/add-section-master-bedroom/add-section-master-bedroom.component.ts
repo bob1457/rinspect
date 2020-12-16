@@ -15,6 +15,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   addMore = false;
 
   bedroomForm: FormGroup;
+  bedroomType = 'Master Bedrooom';
 
   codes = [
     { 'name': 'G'},
@@ -38,6 +39,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
       name: [''],
       type: [''],
       isMaster: [false],
+      subtype: ['Master Bedroom'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -85,6 +87,34 @@ export class AddSectionMasterBedroomComponent implements OnInit {
 
   submit() {
     this.bedroomForm.get('type').setValue('Bedroom');
+
+    switch(this.bedroomType) { 
+      case 'Master Bedroom': { 
+        this.bedroomForm.get('subtype').setValue('Master Bedroom');
+         break; 
+      } 
+      case 'Second Bdedroom': { 
+        this.bedroomForm.get('subtype').setValue('Second Bedroom');
+         break; 
+      } 
+      case 'Third Bedroom': { 
+        this.bedroomForm.get('subtype').setValue('Third Bedroom');
+         break; 
+      } 
+      case 'Forth Bedroom': { 
+        this.bedroomForm.get('subtype').setValue('Forth Bedroom');
+         break; 
+      } 
+      case 'Fifth Bedroom': { 
+        this.bedroomForm.get('subtype').setValue('Fifth Bedroom');
+         break; 
+      } 
+      default: { 
+        this.bedroomForm.get('subtype').setValue('Master Bdedroom'); 
+         break; 
+      } 
+   } 
+
     console.log('add secton form', this.bedroomForm.value);
     // call service to add section
     console.log(this.rptId);
@@ -108,5 +138,10 @@ export class AddSectionMasterBedroomComponent implements OnInit {
     this.addMore = event.checked;
     console.log(this.addMore);
   }  
+
+  onChange(event) {
+    console.log(event);
+    this.bedroomType = event.value;
+  }
 
 }
