@@ -128,6 +128,7 @@ export class InspectionKitchenComponent implements OnInit {
 
     this.kitchenSectionDetails.forEach(element => {
         this.kitchenForm.get('name').setValue(element.payload.doc.data().name);
+        this.kitchenForm.get('subtype').setValue(element.payload.doc.data().subtype);
         // this.kitchenForm.get('type').disable(element.paayload.doc().data().type);
       // Move In data
       this.kitchenForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);

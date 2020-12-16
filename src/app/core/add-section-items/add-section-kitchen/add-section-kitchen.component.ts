@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionKitchenComponent implements OnInit {
 
+  kitchenType = 'MainKitchen';
   kitchenForm: FormGroup;
 
   @Input() rptId;
@@ -39,6 +40,7 @@ export class AddSectionKitchenComponent implements OnInit {
     this.kitchenForm = this.formBuilder.group({
       name: [''],
       type: [''],
+      subtype: ['MainKitchen'], // new attribute
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
         cellingCode: [''],
@@ -118,11 +120,20 @@ export class AddSectionKitchenComponent implements OnInit {
   submit() {
     debugger;
     this.kitchenForm.get('type').setValue('Kitchen');
+
+    //Check if main entry
+    if(this.kitchenType == 'MainKitchen') {
+      this.kitchenForm.get('subtype').setValue('MainKitchen');
+    }
+    else {
+      this.kitchenForm.get('subtype').setValue('SecondaryKitchen');
+    }
+
     console.log('add secton form', this.kitchenForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.kitchenForm.value, this.rptId);
+    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
@@ -140,6 +151,11 @@ export class AddSectionKitchenComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.kitchenType = event.value;
   }
 
 }
