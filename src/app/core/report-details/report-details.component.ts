@@ -304,7 +304,7 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionBySubType(this.id, 'Master Bedroom')
     .subscribe( res => {
       this.masterBedroomSection = res;
-      console.log('Bed-section', this.masterBedroomSection);
+      console.log('Master Bed-section', this.masterBedroomSection);
     })
 
     this.dataService.getReportSectionBySubType(this.id, 'Second Bedroom')

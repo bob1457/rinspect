@@ -96,7 +96,7 @@ export class InspectionMasterBedroomComponent implements OnInit {
         this.bedroomForm.get('name').setValue(element.payload.doc.data().name);
         // this.bedroomForm.get('type').disable(element.paayload.doc().data().type);
         // this.bedroomForm.get('isMaster').setValue(element.payload.doc.data().isMaster);
-        this.bedroomForm.get('subtype').setValue(this.bedroomForm.value.subtype);
+        this.bedroomForm.get('subtype').setValue(element.payload.doc.data().subtype);
       // Move In data
       this.bedroomForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
       this.bedroomForm.get('conditionIn').get('closetsCmnts').setValue(element.payload.doc.data().conditionIn.closetsCmnts);
@@ -166,6 +166,8 @@ export class InspectionMasterBedroomComponent implements OnInit {
                       // this.openSnackBar(this.msg, 'close', 'snackbar-error');
                       this.notificationService.errorNotification$.next(this.msg);
                     });
+
+
     // this.reloadComponent();
   }
 
