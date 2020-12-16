@@ -118,7 +118,7 @@ export class AddSectionKitchenComponent implements OnInit {
   }
 
   submit() {
-    debugger;
+    // debugger;
     this.kitchenForm.get('type').setValue('Kitchen');
 
     //Check if main entry

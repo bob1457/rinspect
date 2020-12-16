@@ -48,6 +48,7 @@ export class InspectionKitchenComponent implements OnInit {
       
       name: [''],
       type: [''],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -214,6 +215,7 @@ export class InspectionKitchenComponent implements OnInit {
   // Update section
   submit() { 
     this.kitchenForm.get('type').setValue('Kitchen');
+    this.kitchenForm.get('subtype').setValue(this.kitchenForm.value.subtype);
     console.log('sec', this.kitchenForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.kitchenForm.value)
