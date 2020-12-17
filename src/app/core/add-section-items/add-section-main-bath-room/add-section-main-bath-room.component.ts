@@ -15,6 +15,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   addMore = false;
 
   mainBathForm: FormGroup;
+  bathroomType = 'Main Bathrooom';
 
   codes = [
     { 'name': 'G'},
@@ -38,6 +39,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
       name: [''],
       type: [''],
       isMain: [false],
+      subtype: ['Main Bathroom'],
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -97,6 +99,35 @@ export class AddSectionMainBathRoomComponent implements OnInit {
 
   submit() {
     this.mainBathForm.get('type').setValue('Bathroom');
+
+    switch(this.bathroomType) { 
+      case 'Main Bathroom': { 
+        this.mainBathForm.get('subtype').setValue('Main Bathroom');
+         break; 
+      } 
+      case 'Second Bathroom': { 
+        this.mainBathForm.get('subtype').setValue('Second Bathroom');
+         break; 
+      } 
+      case 'Third Bathroom': { 
+        this.mainBathForm.get('subtype').setValue('Third Bathroom');
+         break; 
+      } 
+      case 'Forth Bathroom': { 
+        this.mainBathForm.get('subtype').setValue('Forth Bathroom');
+         break; 
+      } 
+      // case 'Fifth Bedroom': { 
+      //   this.mainBathForm.get('subtype').setValue('Fifth Bedroom');
+      //    break; 
+      // } 
+      default: { 
+        this.mainBathForm.get('subtype').setValue('Main Bathroom'); 
+         break; 
+      } 
+   }
+
+
     console.log('add secton form', this.mainBathForm.value);
     // call service to add section
     console.log(this.rptId);
@@ -119,6 +150,11 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.bathroomType = event.value;
   }
 
 }
