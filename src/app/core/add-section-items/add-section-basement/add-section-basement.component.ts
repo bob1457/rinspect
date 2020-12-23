@@ -68,7 +68,9 @@ export class AddSectionBasementComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],        
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       
