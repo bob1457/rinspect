@@ -1,6 +1,7 @@
 <!-- <p>add-section-exterior works!</p> -->
 <form style="width: 100%;" [formGroup]="exteriorForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
+        <p>Section Type: <span style="font-weight:bold;">Exterior</span></p>
         <mat-form-field appearance="outline" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
