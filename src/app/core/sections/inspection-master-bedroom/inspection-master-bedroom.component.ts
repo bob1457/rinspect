@@ -49,6 +49,7 @@ export class InspectionMasterBedroomComponent implements OnInit {
       name: [''],
       type: [''],
       isMaster: [false],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -94,7 +95,8 @@ export class InspectionMasterBedroomComponent implements OnInit {
     this.bedroomSectionDetails.forEach(element => {
         this.bedroomForm.get('name').setValue(element.payload.doc.data().name);
         // this.bedroomForm.get('type').disable(element.paayload.doc().data().type);
-        this.bedroomForm.get('isMaster').setValue(element.payload.doc.data().isMaster);
+        // this.bedroomForm.get('isMaster').setValue(element.payload.doc.data().isMaster);
+        this.bedroomForm.get('subtype').setValue(element.payload.doc.data().subtype);
       // Move In data
       this.bedroomForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
       this.bedroomForm.get('conditionIn').get('closetsCmnts').setValue(element.payload.doc.data().conditionIn.closetsCmnts);
@@ -147,6 +149,7 @@ export class InspectionMasterBedroomComponent implements OnInit {
   // Update section
   submit() { 
     this.bedroomForm.get('type').setValue('Bedroom');
+    this.bedroomForm.get('subtype').setValue(this.bedroomForm.value.subtype);
     console.log('sec', this.bedroomForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.bedroomForm.value)
@@ -163,6 +166,8 @@ export class InspectionMasterBedroomComponent implements OnInit {
                       // this.openSnackBar(this.msg, 'close', 'snackbar-error');
                       this.notificationService.errorNotification$.next(this.msg);
                     });
+
+
     // this.reloadComponent();
   }
 

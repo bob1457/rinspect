@@ -353,14 +353,26 @@
                         </mat-expansion-panel>  *ngIf="entrySection" -->
 
                         <!-- <div *ngIf="sections.length > 0"> -->
-                        <div *ngIf="entrySection?.length > 0">
-                            <app-inspection-entry *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-inspection-entry>
-                            <app-inspection-kitchen *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-inspection-kitchen>
+                        <div *ngIf="mainEntrySection?.length > 0">
+                            <app-inspection-entry *ngIf="mainEntrySection" [entrySectionDetails]="mainEntrySection" [reportId]='id'></app-inspection-entry>
+                            <app-inspection-entry *ngIf="secondaryEntrySection" [entrySectionDetails]="secondaryEntrySection" [reportId]='id'></app-inspection-entry>
+                            <app-inspection-kitchen *ngIf="mainkitchenSection" [kitchenSectionDetails]="mainkitchenSection" [reportId]='id'></app-inspection-kitchen>
+                            <app-inspection-kitchen *ngIf="secondarykitchenSection" [kitchenSectionDetails]="secondarykitchenSection" [reportId]='id'></app-inspection-kitchen>
+
                             <app-inspection-living-room *ngIf="livingRoomSection" [LivingroomSectionDetails]="livingRoomSection" [reportId]='id'></app-inspection-living-room>
+                            <app-inspection-living-room *ngIf="familyRoomSection" [LivingroomSectionDetails]="familyRoomSection" [reportId]='id'></app-inspection-living-room>
+
                             <app-inspection-dinning-room *ngIf="diningRoomSEction" [dinningroomSectionDetails]="diningRoomSEction" [reportId]='id'></app-inspection-dinning-room>
                             <app-inspection-stairwell-hall *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-inspection-stairwell-hall>
                             <app-inspection-main-bath-room *ngIf="bathroomSection" [bathroomSectionDetails]="bathroomSection" [reportId]='id'></app-inspection-main-bath-room>
-                            <app-inspection-master-bedroom *ngIf="bedroomSection" [bedroomSectionDetails]="bedroomSection" [reportId]='id'></app-inspection-master-bedroom>
+
+                            <app-inspection-master-bedroom *ngIf="masterBedroomSection" [bedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection2" [bedroomSectionDetails]="bedroomSection2" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection3" [bedroomSectionDetails]="bedroomSection3" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection4" [bedroomSectionDetails]="bedroomSection4" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection5" [bedroomSectionDetails]="bedroomSection5" [reportId]='id'></app-inspection-master-bedroom>
+
+
                             <app-inspection-exterior *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-inspection-exterior>
                             <app-inspection-utility-room *ngIf="utilitySection" [utilityRoomSectionDetails]="utilitySection" [reportId]='id'></app-inspection-utility-room>
                             <app-inspection-garbage-parking *ngIf="garbageParkingSection" [garbageParkingSectionDetails]="garbageParkingSection" [reportId]='id'></app-inspection-garbage-parking>

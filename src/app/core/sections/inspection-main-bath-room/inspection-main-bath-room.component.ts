@@ -49,6 +49,7 @@ export class InspectionMainBathRoomComponent implements OnInit {
       name: [''],
       type: [''],
       isMain: [],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -106,7 +107,8 @@ export class InspectionMainBathRoomComponent implements OnInit {
     this.bathroomSectionDetails.forEach(element => {
         this.bathroomForm.get('name').setValue(element.payload.doc.data().name);
         // this.bathroomForm.get('type').disable(element.paayload.doc().data().type);
-        this.bathroomForm.get('isMain').setValue(element.payload.doc.data().isMain);
+        // this.bathroomForm.get('isMain').setValue(element.payload.doc.data().isMain);
+        this.bathroomForm.get('subtype').setValue(element.payload.doc.data().subtype);
       // Move In data
       this.bathroomForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
       this.bathroomForm.get('conditionIn').get('tubShowerTapStopperCmnts').setValue(element.payload.doc.data().conditionIn.tubShowerTapStopperCmnts);

@@ -48,6 +48,7 @@ export class InspectionLivingRoomComponent implements OnInit {
       
       name: [''],
       type: [''],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -100,6 +101,7 @@ export class InspectionLivingRoomComponent implements OnInit {
 
     this.LivingroomSectionDetails.forEach(element => {
         this.livingForm.get('name').setValue(element.payload.doc.data().name);
+        this.livingForm.get('subtype').setValue(element.payload.doc.data().subtype);
         // this.livingForm.get('type').disable(element.paayload.doc().data().type);
       // Move In data
       this.livingForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
@@ -161,6 +163,7 @@ export class InspectionLivingRoomComponent implements OnInit {
   // Update section
   submit() { 
     this.livingForm.get('type').setValue('Living-Room');
+    this.livingForm.get('subtype').setValue(this.livingForm.value.subtype);
     console.log('sec', this.livingForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.livingForm.value)

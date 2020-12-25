@@ -5,4 +5,9 @@
         <!-- <app-agreement-content [lease]="agreement$ | async"></app-agreement-content> -->
         <app-report-view-content></app-report-view-content>
     </div>
+    
 </div>
+<div fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="end center" class="button" style="margin-top: 30px;">
+        <button type="button" mat-raised-button color="primary" (click)="download()">Download PDF</button>
+        <!-- <button mat-raised-button color="accent" (click)="Ok()">Ok</button> -->
+    </div>

@@ -13,6 +13,11 @@ export class AddSectionEntryComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  
+  // newly added attributes
+  entryType = 'MainEntry'; 
+  main = '';
+  secondary = '';
 
   entryForm: FormGroup;
 
@@ -36,7 +41,8 @@ export class AddSectionEntryComponent implements OnInit {
     
     this.entryForm = this.formBuilder.group({
       name: [''],
-      type: [''],
+      type: [''], 
+      subtype: ['MainEntry'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -79,12 +85,21 @@ export class AddSectionEntryComponent implements OnInit {
   }
 
   submit() {
+
     this.entryForm.get('type').setValue('Entry');
+    //Check if main entry
+    if(this.entryType == 'MainEntry') {
+      this.entryForm.get('subtype').setValue('MainEntry');
+    }
+    else {
+      this.entryForm.get('subtype').setValue('SecondaryEntry');
+    }
+    
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.entryForm.value, this.rptId);    
+    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
 
     if (this.addMore) {
       this.reloadComponent();
@@ -102,6 +117,11 @@ export class AddSectionEntryComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.entryType = event.value;
   }
 
 }

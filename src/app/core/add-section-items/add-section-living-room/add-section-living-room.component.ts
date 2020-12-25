@@ -21,6 +21,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
   addMore = false;
 
   livingForm: FormGroup;
+  livingRoomType = 'LivingRoom';
 
   codes = [
     { 'name': 'G'},
@@ -43,6 +44,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
     this.livingForm = this.formBuilder.group({
       name: [''],
       type: [''],
+      subtype: ['Living Room'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -98,6 +100,16 @@ export class AddSectionLivingRoomComponent implements OnInit {
 
   submit() {
     this.livingForm.get('type').setValue('Living-Room');
+
+    //Check if main entry
+    if(this.livingRoomType == 'LivingRoom') {
+      this.livingForm.get('subtype').setValue('Living Room');
+    }
+    else {
+      this.livingForm.get('subtype').setValue('Family Room');
+    }
+
+
     console.log('add secton form', this.livingForm.value);
     // call service to add section
     console.log(this.rptId);
@@ -120,6 +132,11 @@ export class AddSectionLivingRoomComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.livingRoomType = event.value;
   }
 
 }

@@ -2,6 +2,10 @@
 <form style="width: 100%;" [formGroup]="kitchenForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
         <p>Section Type: <span style="font-weight:bold;">Kitchen</span></p>
+        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
+            <mat-radio-button value="MainKitchen" style="padding-right: 10px;">Main Kitchen</mat-radio-button>
+            <mat-radio-button value="secondaryKitchen" >Secondary Kitchen</mat-radio-button>
+        </mat-radio-group>
         <mat-form-field appearance="outline" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">

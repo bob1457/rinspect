@@ -1,14 +1,25 @@
 <!-- <p>add-section-main-bath-room works!</p> -->
 <form style="width: 100%;" [formGroup]="mainBathForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
-        <mat-form-field appearance="outline" style="width:100%">
+        <p>Section Type: <span style="font-weight:bold;">Bathroom</span></p>
+        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
+            <mat-radio-button value="Main Bathroom" style="padding-right: 10px;">Main Bathroom</mat-radio-button>
+            <mat-radio-button value="Second Bathroom" style="padding-right: 10px;">2nd Bathroom</mat-radio-button>
+            <mat-radio-button value="Third Bathroom" style="padding-right: 10px;">3rd Bathroom</mat-radio-button>
+            <mat-radio-button value="Forth Bathroom" style="padding-right: 10px;">4th Bathroom</mat-radio-button>
+            <!-- <mat-radio-button value="Fifth Bedroom" style="padding-right: 10px;">5th Bedroom</mat-radio-button> -->
+            <!-- <mat-radio-button value="Family Room" >Family Room</mat-radio-button>
+            <mat-radio-button value="Living Room" style="padding-right: 10px;">Living Room</mat-radio-button> -->            
+        </mat-radio-group>       
+            
+        <mat-form-field appearance="outline" style="width:100%; margin-top: 10px;">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
             <!-- <mat-icon matSuffix>view_headline</mat-icon> -->
             <!-- <mat-hint>Hint</mat-hint> -->
             <!-- <mat-hint align="end">hint</mat-hint> -->
         </mat-form-field>
-        <mat-checkbox style="margin-bottom: 20px;width: 100%;" formControlName="isMain">Main Bathroom</mat-checkbox>
+        <!-- <mat-checkbox style="margin-bottom: 20px;width: 100%;" formControlName="isMain">Main Bathroom</mat-checkbox> -->
         <!-- <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()"> -->
             <mat-tab-group style="width: 100%;">
 

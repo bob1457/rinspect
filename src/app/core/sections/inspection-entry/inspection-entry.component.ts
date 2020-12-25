@@ -45,46 +45,11 @@ export class InspectionEntryComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log('section', this.entrySectionDetails);
-    this.entryForm = this.formBuilder.group({
-      // Temp
-      // code: ['G'],
-      // comments: ['N/A'],
-      // name: [''],
-      // type: [''],
-      // // IN
-      // cellingCmnts_in: [''],
-      // cellingCode_in: [''],
-      // closetsCode_in: [''],
-      // closetsCmnts_in: [''],
-      // electricCmnts_in: [''],
-      // electricCode_in: [''],
-      // floorCmnts_in: [''],
-      // floorCode_in: [''],
-      // lightingCmnts_in: [''],
-      // lightingCode_in: [''],
-      // wallTrimCmnts_in: [''],
-      // wallTrimCode_in: [''],
-      // windowsCmnts_in: [''],
-      // windowsCode_in: [''],
-
-      // //- OUT
-      // cellingCmnts_out: [''],
-      // cellingCode_out: [''],
-      // closetsCode_out: [''],
-      // closetsCmnts_out: [''],      
-      // electricCmnts_out: [''],
-      // electricCode_out: [''],
-      // floorCmnts_out: [''],
-      // floorCode_out: [''],
-      // lightingCmnts_out: [''],
-      // lightingCode_out: [''],
-      // wallTrimCmnts_out: [''],
-      // wallTrimCode_out: [''],
-      // windowsCmnts_out: [''],
-      // windowsCode_out: ['']
+    this.entryForm = this.formBuilder.group({     
 
       name: [''],
       type: [''],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -120,11 +85,12 @@ export class InspectionEntryComponent implements OnInit {
         windowsCmnts: [''],
         windowsCode: ['']
       })
-
     });
 
+    // debugger;
     this.entrySectionDetails.forEach(element => {
-        this.entryForm.get('name').setValue(element.payload.doc.data().name);
+      this.entryForm.get('name').setValue(element.payload.doc.data().name);
+      this.entryForm.get('subtype').setValue(element.payload.doc.data().subtype);
         // this.entryForm.get('type').disable(element.paayload.doc().data().type);
       // Move In data
       this.entryForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
@@ -161,16 +127,18 @@ export class InspectionEntryComponent implements OnInit {
 
       this.sectionId = element.payload.doc.id;
       console.log('sec id', element.payload.doc.id);
-      console.log('sec id to password', element.payload.doc.id);
+      // console.log('sec id to password', element.payload.doc.id);
       console.log('report id', this.reportId);
     });
 
-    
+    console.log('entry-details', this.entrySectionDetails);
   }
 
   // Update section
   submit() { 
+    debugger;
     this.entryForm.get('type').setValue('Entry');
+    this.entryForm.get('subtype').setValue(this.entryForm.value.subtype);
     console.log('sec', this.entryForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.entryForm.value)
