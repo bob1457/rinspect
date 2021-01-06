@@ -55,13 +55,13 @@ export class ReportViewContentComponent implements OnInit {
 
     // Get each section   
     
-    this.dataService.getReportViewSectionByType(this.id, 'Entry')
+    this.dataService.getReportViewSectionBySubType(this.id, 'MainEntry')
         .subscribe( res => {
           res.map(a => {
             const data = a.payload.doc.data();
             const id = a.payload.doc.id;
             this.entrySection = data;
-            console.log('section view', this.entrySection);
+            console.log('main section view', this.entrySection);
             return {id, ...data}
           } )
         })

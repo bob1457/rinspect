@@ -58,8 +58,9 @@
                 <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode == 'G'">&#10003;</td>
+                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td>
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
