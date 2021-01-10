@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrueFalsePipe } from './true-false.pipe';
+import { CodePipe } from './code.pipe';
 
 
 
 @NgModule({
-  declarations: [TrueFalsePipe],
+  declarations: [TrueFalsePipe, CodePipe],
   imports: [
     CommonModule
   ],
   exports: [
-    TrueFalsePipe
+    TrueFalsePipe,
+    CodePipe
   ]
 })
 export class SharedModule { }
