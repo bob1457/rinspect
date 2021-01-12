@@ -2,7 +2,7 @@
 <form style="width: 100%;" [formGroup]="keyControlForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
         <p>Section Type: <span style="font-weight:bold;">Keys and Controls</span></p>
-        <mat-form-field appearance="outline" style="width:100%">
+        <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
         </mat-form-field>
@@ -21,9 +21,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="buildingEntrandeKeyCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="buildingEntrandeKeyCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -36,9 +36,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="rentalUnitEntranceCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="rentalUnitEntranceCmnts">
                                 </mat-form-field>
                             </div>
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;">
@@ -51,9 +51,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="rentalUnityDeadBoltCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="rentalUnityDeadBoltCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -66,9 +66,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="parkginRemoteControlCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="parkginRemoteControlCmnts">
                                 </mat-form-field>
                             </div>
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -81,9 +81,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="otherCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                 </mat-form-field>
                             </div>
                         </mat-card-content>
@@ -104,9 +104,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="buildingEntrandeKeyCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="buildingEntrandeKeyCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -119,9 +119,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="rentalUnitEntranceCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="rentalUnitEntranceCmnts">
                                 </mat-form-field>
                             </div>
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;">
@@ -134,9 +134,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="rentalUnityDeadBoltCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="rentalUnityDeadBoltCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -149,9 +149,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="parkginRemoteControlCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="parkginRemoteControlCmnts">
                                 </mat-form-field>
                             </div>
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -164,9 +164,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 45%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 45%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="otherCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                 </mat-form-field>
                             </div>
                         </mat-card-content>

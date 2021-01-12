@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -9,6 +9,8 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./add-section-keys-controls.component.scss']
 })
 export class AddSectionKeysControlsComponent implements OnInit {
+
+  floatLabelControl = new FormControl('auto');
 
   @Input() rptId;
 
