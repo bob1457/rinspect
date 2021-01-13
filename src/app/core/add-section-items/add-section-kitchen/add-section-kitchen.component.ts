@@ -77,7 +77,9 @@ export class AddSectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -113,7 +115,9 @@ export class AddSectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
 
     });

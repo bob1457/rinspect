@@ -57,7 +57,9 @@ export class AddSectionStairewllHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -75,7 +77,9 @@ export class AddSectionStairewllHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
 
     });

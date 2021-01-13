@@ -40,16 +40,16 @@ label {
     font-size: .75em;
 }
 
-table {
+table, th, td {
     border: 1px solid;
     border-collapse: collapse;
 }
 
 td, th {
-    height: 21px;
+    // height: 21px;
     // padding-top: 0;
     // padding-bottom: 0;
-    padding: 0;
+    padding: 0px;
 }
 
 th {
