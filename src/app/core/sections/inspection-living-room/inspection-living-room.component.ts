@@ -70,7 +70,9 @@ export class InspectionLivingRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -94,7 +96,9 @@ export class InspectionLivingRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });

@@ -84,7 +84,9 @@ export class InspectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -122,7 +124,9 @@ export class InspectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });

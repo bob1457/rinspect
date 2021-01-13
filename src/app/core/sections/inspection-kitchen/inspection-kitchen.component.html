@@ -285,6 +285,21 @@
                                                 <input matInput placeholder="Comments" formControlName="electricCmnts">
                                             </mat-form-field>
                                         </div>
+                                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                            <mat-form-field style="width: 15%;">
+                                                <mat-label>Code</mat-label>
+                                                <mat-select id="propertyType1" formControlName="otherCode">
+                                                    <mat-option *ngFor="let code of codes" [value]="code.name">
+                                                        {{ code.name }}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" style="width: 50%;">
+                                                <mat-label>Comments</mat-label>
+                                                <input matInput placeholder="Comments" formControlName="otherCmnts">
+                                            </mat-form-field>
+                                        </div>
                                     </mat-card-content>
                                 </div>
                                 
@@ -548,6 +563,21 @@
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
                                                 <input matInput placeholder="Comments" formControlName="electricCmnts">
+                                            </mat-form-field>
+                                        </div>
+                                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                            <mat-form-field style="width: 15%;">
+                                                <mat-label>Code</mat-label>
+                                                <mat-select id="propertyType1" formControlName="otherCode">
+                                                    <mat-option *ngFor="let code of codes" [value]="code.name">
+                                                        {{ code.name }}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" style="width: 50%;">
+                                                <mat-label>Comments</mat-label>
+                                                <input matInput placeholder="Comments" formControlName="otherCmnts">
                                             </mat-form-field>
                                         </div>
                                     </mat-card-content>
