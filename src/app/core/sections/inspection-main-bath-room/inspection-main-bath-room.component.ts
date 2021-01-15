@@ -73,7 +73,9 @@ export class InspectionMainBathRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -99,7 +101,9 @@ export class InspectionMainBathRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });

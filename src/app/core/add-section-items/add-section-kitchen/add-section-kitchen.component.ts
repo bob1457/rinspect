@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,6 +10,8 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionKitchenComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+  
   kitchenType = 'MainKitchen';
   kitchenForm: FormGroup;
 
@@ -75,7 +77,9 @@ export class AddSectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -111,7 +115,9 @@ export class AddSectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
 
     });

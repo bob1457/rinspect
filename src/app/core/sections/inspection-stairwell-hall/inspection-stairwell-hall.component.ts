@@ -65,7 +65,9 @@ export class InspectionStairwellHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -85,7 +87,9 @@ export class InspectionStairwellHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });

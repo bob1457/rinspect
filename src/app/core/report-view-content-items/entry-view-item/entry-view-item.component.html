@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
-                    Ceilings
+                   <span>Ceilings</span> 
                 </td>
                 
             </tr>
@@ -22,7 +22,7 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left; font-size: .8em;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em; line-height:1.9">Lighting Fixtures/Ceiling Fan/Bulbs</td>
                 
             </tr>
             <tr>
@@ -34,7 +34,9 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;">Other</td>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span>Other</span>
+                </td>
                 
             </tr>
             
@@ -44,34 +46,35 @@
         <table style="width: 100%;margin-top: 3px;margin-left: -1px;" >
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;" >{{entrySectionDetails.conditionIn.wallTrimCmnts}}</td>                
-                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode == 'G'">&#10003;</td>
-                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.wallTrimCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td> -->
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.cellingCmnts}}</td>
-                <td style="border: 1px solid black;text-align: center;"  *ngIf="entrySectionDetails.conditionIn.cellingCode == 'G'">&#10003;</td>
-                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.cellingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td> -->
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.closetsCmnts}}</td>
-                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode == 'G'">&#10003;</td>
-                <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.closetsCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.lightingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.windowsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;"></td>
+                <td style="border: 1px solid black;text-align: center;">N/A</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
@@ -83,32 +86,36 @@
     <div fxFlex="33">
         <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{entrySectionDetails.conditionOut.wallTrimCmnts}}</td>                
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.wallTrimCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.cellingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.cellingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.closetsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.closetsCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.lightingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.windowsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">n/a</td>
-                <td style="border: 1px solid black;text-align: center;">n/a</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;"></td>
+                <td style="border: 1px solid black;text-align: center;">N/A</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>

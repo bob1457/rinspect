@@ -65,7 +65,9 @@ export class InspectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -85,7 +87,9 @@ export class InspectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });

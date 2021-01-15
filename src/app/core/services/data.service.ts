@@ -66,6 +66,14 @@ export class DataService {
 
   }
 
+  getReportViewSectionBySubType(id, subtype) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('subtype', '==', subtype))
+          .snapshotChanges();
+
+  }
+
   createReport(report: any) {
     return this.firestore.collection('report').add(report);
   }
