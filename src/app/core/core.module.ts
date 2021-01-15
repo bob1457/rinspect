@@ -44,6 +44,8 @@ import { InspectionOtherComponent } from './sections/inspection-other/inspection
 import { ReportViewHeaderComponent } from './report-view-header/report-view-header.component';
 import { ReportViewContentComponent } from './report-view-content/report-view-content.component';
 import { EntryViewItemComponent } from './report-view-content-items/entry-view-item/entry-view-item.component';
+import { KitchenViewItemComponent } from './report-view-content-items/kitchen-view-item/kitchen-view-item.component';
+import { LivingroomViewItemComponent } from './report-view-content-items/livingroom-view-item/livingroom-view-item.component';
 
 
 @NgModule({
@@ -85,7 +87,9 @@ import { EntryViewItemComponent } from './report-view-content-items/entry-view-i
     InspectionOtherComponent,
     ReportViewHeaderComponent,
     ReportViewContentComponent,
-    EntryViewItemComponent
+    EntryViewItemComponent,
+    KitchenViewItemComponent,
+    LivingroomViewItemComponent
   ],
   imports: [
     AppMaterialModule,
