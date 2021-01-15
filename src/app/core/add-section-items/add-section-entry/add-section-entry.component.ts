@@ -11,13 +11,13 @@ import { DataService } from '../../services/data.service';
 export class AddSectionEntryComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
-  
+
   // newly added attributes
-  entryType = 'MainEntry'; 
+  entryType = 'MainEntry';
   main = '';
   secondary = '';
 
@@ -40,10 +40,10 @@ export class AddSectionEntryComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
-    
+
     this.entryForm = this.formBuilder.group({
       name: [''],
-      type: [''], 
+      type: [''],
       subtype: ['MainEntry'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
@@ -60,15 +60,17 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
         cellingCode: [''],
         closetsCode: [''],
-        closetsCmnts: [''],      
+        closetsCmnts: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -78,10 +80,12 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -96,12 +100,12 @@ export class AddSectionEntryComponent implements OnInit {
     else {
       this.entryForm.get('subtype').setValue('SecondaryEntry');
     }
-    
+
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
+    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input
 
     if (this.addMore) {
       this.reloadComponent();

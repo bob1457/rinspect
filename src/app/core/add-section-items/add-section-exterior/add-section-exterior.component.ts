@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class AddSectionExteriorComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
@@ -35,7 +35,7 @@ export class AddSectionExteriorComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
-    
+
     this.exteriorForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -47,7 +47,7 @@ export class AddSectionExteriorComponent implements OnInit {
         patioBalconyDoorsCode: [''],
         patioBalconyDoorsCmnts: [''],
         garbabageContainerCode: [''],
-        garbabageContainerCmnts: [''],        
+        garbabageContainerCmnts: [''],
         galssAndFramesCmnts: [''],
         galssAndFramesCode: [''],
         stucoAndSidingCmnts: [''],
@@ -57,9 +57,11 @@ export class AddSectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         frontRearEmtranceCmnts: [''],
@@ -67,7 +69,7 @@ export class AddSectionExteriorComponent implements OnInit {
         patioBalconyDoorsCode: [''],
         patioBalconyDoorsCmnts: [''],
         garbabageContainerCode: [''],
-        garbabageContainerCmnts: [''],        
+        garbabageContainerCmnts: [''],
         galssAndFramesCmnts: [''],
         galssAndFramesCode: [''],
         stucoAndSidingCmnts: [''],
@@ -77,10 +79,12 @@ export class AddSectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -91,7 +95,7 @@ export class AddSectionExteriorComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.exteriorForm.value, this.rptId);    
+    this.dataServie.createSection(this.exteriorForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
@@ -106,6 +110,6 @@ export class AddSectionExteriorComponent implements OnInit {
     this.router.navigate(['/home/addSection', this.rptId]);
   }
 
-  
+
 
 }
