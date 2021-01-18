@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-kitchen-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen-view-item.component.scss']
 })
 export class KitchenViewItemComponent implements OnInit {
+
+  @Input() kitchenSectionDetails: any;
+  @Input() reportId: any;
 
   constructor() { }
 
