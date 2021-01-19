@@ -52,7 +52,7 @@
             </div>
             <div fxFlex="25%" style="margin-top: -5px;">
                 <span>F. MOVE-IN INSPECTION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" [value]="moveInInsDate"></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -66,7 +66,7 @@
             </div>
             <div fxFlex="25%" style="margin-top: -5px;">
                 <span>G.MOVE-OUT DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" [value]="moveOutDate"></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -100,7 +100,7 @@
             </div>
             <div fxFlex="25%" style="margin-top: -5px;">
                 <span style="font-size: .95EM;" > H.MOVE-OUT INSPECTION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;"  [value]="moveOutInsDaste"></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -109,12 +109,12 @@
         <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
             <div fxFlex="50%" style="margin-top: -5px;">
                 <span>I. LEGAL NAME OF TENANT’S AGENT </span>  <span style="font-size: .8em;font-style: italic;">(if applicable)</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" [value]="report.agentName"></span><br>
                 <div style="margin-left: 25px;font-size: .75em;margin-top: -13px;">last name, first & middle names</div>
             </div>
             <div fxFlex="50%" style="margin-top: -5px;">
                 <span style="visibility: hidden;">I. LEGAL NAME OF TENANT’S AGENT <span style="font-size: .8em;font-style: italic;">(if applicable)</span></span><br>                
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 95%;margin-top: 0;" [value]="report.agentName" ></span><br>
                 <!-- <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div> -->

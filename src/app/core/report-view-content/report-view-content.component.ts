@@ -19,7 +19,7 @@ export class ReportViewContentComponent implements OnInit {
   agreeOk = false;
 
   possessionDate;
-  movingDate;
+  moveOutDate;
   moveInInsDate;
   moveOutInsDaste;
 
@@ -57,6 +57,11 @@ export class ReportViewContentComponent implements OnInit {
           this.report = res;
           // this.possessionDate = this.report.possesionDate.toDate().getDate() + "          " + this.report.possesionDate.toDate().getMonth() +  "             " +  this.report.possesionDate.toDate().getFullYear();
           this.possessionDate = "  " + this.getDate(this.report.possesionDate)  + "       " + this.getMonth(this.report.possesionDate) +  "        " +  this.report.possesionDate.toDate().getFullYear();
+
+          this.moveInInsDate = "  " + this.getDate(this.report.moveInInspectDate)  + "       " + this.getMonth(this.report.moveInInspectDate) +  "        " +  this.report.moveInInspectDate.toDate().getFullYear();
+          this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate)  + "       " + this.getMonth(this.report.moveOutInspectDate) +  "        " +  this.report.moveOutInspectDate.toDate().getFullYear();
+          this.moveOutDate = "  " + this.getDate(this.report.moveOutDate)  + "       " + this.getMonth(this.report.moveOutDate) +  "        " +  this.report.moveOutDate.toDate().getFullYear();
+          
           console.log('rpt', this.report)
           console.log('possesiion date', this.possessionDate);
           
