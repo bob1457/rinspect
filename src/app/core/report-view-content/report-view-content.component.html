@@ -18,7 +18,7 @@
             </div>
             <div fxFlex="25%">
                 <span>E. POSSESSION DATE</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 90%;margin-top: 0;" [value]="possessionDate" ></span><br>
                 <div  style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span style="margin-left: 5px;">day <span style="margin-left: 15px;">month</span>> <span style="margin-left: 15px;">year</span></span>
                 </div>
@@ -28,19 +28,19 @@
             <div fxFlex="80%" style="margin-top: -5px;">
                 <span>B. LANDLORD’S ADDRESS FOR SERVICE</span>  <span style="font-size: .8em;font-style: italic;">(if entry is a business name, enter the full legal business name)</span><br>
                 <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 10%;margin-top: 0;" >
+                    <input type="text" style="width: 10%;margin-top: 0;" [value]="report.landlord.address.unit">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 34%;margin-top: 0;" >
+                    <input type="text" style="width: 34%;margin-top: 0;"  [value]="report.landlord.address.street">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 15%;margin-top: 0;" >
+                    <input type="text" style="width: 15%;margin-top: 0;" [value]="report.landlord.address.city">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 10%;margin-top: 0;" >
+                    <input type="text" style="width: 10%;margin-top: 0;"[value]="report.landlord.address.province" >
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 20%;margin-top: 0;" >
+                    <input type="text" style="width: 20%;margin-top: 0;" [value]="report.landlord.address.postcode">
                 </span><br>
                 <div style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span >unit#</span>
@@ -61,7 +61,7 @@
         <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
             <div fxFlex="80%" style="margin-top: -5px;">
                 <span>C. LEGAL NAME OF TENANT</span>  <span style="font-size: .8em;font-style: italic;">(if entry is a business name, enter the full legal business name)</span><br>
-                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" ></span><br>
+                <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;"><input type="text" style="width: 96%;margin-top: 0;" [value]="report.tenant.legalName" ></span><br>
                 <div style="margin-left: 25px;font-size: .75em;margin-top: -13px;">last name, first & middle names</div>
             </div>
             <div fxFlex="25%" style="margin-top: -5px;">
@@ -76,19 +76,19 @@
             <div fxFlex="80%" style="margin-top: -5px;">
                 <span>D. ADDRESS FO RENTAL UNIT</span><br>
                 <span style="margin-left: 15px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 10%;margin-top: 0;" >
+                    <input type="text" style="width: 10%;margin-top: 0;" [value]="report.tenant.address.unit">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 34%;margin-top: 0;" >
+                    <input type="text" style="width: 34%;margin-top: 0;" [value]="report.tenant.address.street">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 15%;margin-top: 0;" >
+                    <input type="text" style="width: 15%;margin-top: 0;" [value]="report.tenant.address.city">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 10%;margin-top: 0;" >
+                    <input type="text" style="width: 10%;margin-top: 0;" [value]="report.tenant.address.province">
                 </span>
                 <span style="margin-left: 0px;margin-right: 8px;margin-bottom: -10px;">
-                    <input type="text" style="width: 20%;margin-top: 0;" >
+                    <input type="text" style="width: 20%;margin-top: 0;" [value]="report.tenant.address.postcode">
                 </span><br>
                 <div style="margin-left: 25px;font-size: .75em;margin-top: -13px;">
                     <span >unit#</span>
