@@ -10,9 +10,18 @@ export class KitchenViewItemComponent implements OnInit {
   @Input() kitchenSectionDetails: any;
   @Input() reportId: any;
 
+  empty = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    // this.isEmptyString();
   }
+
+
+  // isEmptyString() {
+  //   this.kitchenSectionDetails.conditionOut.cellingCmnts.length == 0 ? this.empty = true :this.empty = false;
+  //   console.log('empty', this.empty);
+  // }
 
 }

@@ -111,7 +111,7 @@
     <div fxFlex="33%" style="margin-top: -4px;">
         <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.cellingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.cellingCmnts | empty}}</td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.cellingCode | code}}</td>
             </tr>
             <tr>
@@ -198,10 +198,10 @@
         </table>
     </div>
     <div fxFlex="33" style="margin-top: -4px;">
-        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;"> <!--visibility: hidden;[class.emptyCell]="empty"-->
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.cellingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.cellingCode  | code}}</td>
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>

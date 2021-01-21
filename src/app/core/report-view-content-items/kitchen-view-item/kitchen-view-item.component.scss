@@ -59,6 +59,9 @@ td, th {
 //     height: 15px;
 // }
 
+.emptyCell {
+    visibility: hidden;
+}
 
 .spacer {
     flex: 1 1 auto;
