@@ -46,6 +46,15 @@ import { ReportViewContentComponent } from './report-view-content/report-view-co
 import { EntryViewItemComponent } from './report-view-content-items/entry-view-item/entry-view-item.component';
 import { KitchenViewItemComponent } from './report-view-content-items/kitchen-view-item/kitchen-view-item.component';
 import { LivingroomViewItemComponent } from './report-view-content-items/livingroom-view-item/livingroom-view-item.component';
+import { DinningroomViewItemComponent } from './report-view-content-items/dinningroom-view-item/dinningroom-view-item.component';
+import { BasementViewItemComponent } from './report-view-content-items/basement-view-item/basement-view-item.component';
+import { ExteriorViewItemComponent } from './report-view-content-items/exterior-view-item/exterior-view-item.component';
+import { GarbageViewItemComponent } from './report-view-content-items/garbage-view-item/garbage-view-item.component';
+import { KeysViewItemComponent } from './report-view-content-items/keys-view-item/keys-view-item.component';
+import { MainbathroomViewItemComponent } from './report-view-content-items/mainbathroom-view-item/mainbathroom-view-item.component';
+import { MaasterbedroomViewItemComponent } from './report-view-content-items/maasterbedroom-view-item/maasterbedroom-view-item.component';
+import { StairwellViewItemComponent } from './report-view-content-items/stairwell-view-item/stairwell-view-item.component';
+import { UtilityViewItemComponent } from './report-view-content-items/utility-view-item/utility-view-item.component';
 
 
 @NgModule({
@@ -89,7 +98,16 @@ import { LivingroomViewItemComponent } from './report-view-content-items/livingr
     ReportViewContentComponent,
     EntryViewItemComponent,
     KitchenViewItemComponent,
-    LivingroomViewItemComponent
+    LivingroomViewItemComponent,
+    DinningroomViewItemComponent,
+    BasementViewItemComponent,
+    ExteriorViewItemComponent,
+    GarbageViewItemComponent,
+    KeysViewItemComponent,
+    MainbathroomViewItemComponent,
+    MaasterbedroomViewItemComponent,
+    StairwellViewItemComponent,
+    UtilityViewItemComponent
   ],
   imports: [
     AppMaterialModule,
