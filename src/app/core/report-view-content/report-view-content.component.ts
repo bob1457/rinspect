@@ -91,6 +91,17 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+        this.dataService.getReportViewSectionBySubType(this.id, 'LivingRoom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.livingRoomSection = data;
+            console.log('Livingroom view', this.livingRoomSection);
+            return {id, ...data}
+          } )
+        })
+
 
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-livingroom-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./livingroom-view-item.component.scss']
 })
 export class LivingroomViewItemComponent implements OnInit {
+
+  @Input() livingRoomSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 
