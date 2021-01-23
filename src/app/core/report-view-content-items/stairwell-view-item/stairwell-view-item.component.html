@@ -1,1 +1,154 @@
-<p>stairwell-view-item works!</p>
+<div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;" *ngIf="stairwellSectionDetails
+">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="9" style="vertical-align: top;width: 160px;">
+                    <span style="font-weight: bold;">N. STAIRWELL and HALL</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Treads and Landings</td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span>Railing/Bannister</span> 
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span>Walls and Trim</span> 
+                </td>
+                
+            </tr>
+
+
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span>Ceilings</span> 
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Closets
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em; line-height:1.9">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Other</td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;" >
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{stairwellSectionDetails.conditionIn.treadAndLandingsCmnts}}</td>                
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.treadAndLandingsCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.railingBannisterCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.railingBannisterCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{stairwellSectionDetails.conditionIn.wallTrimCmnts}}</td>                
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.wallTrimCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.cellingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.cellingCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.closetsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.closetsCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{stairwellSectionDetails.conditionIn.lightingCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.windowsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{stairwellSectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionIn.otherCode | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionIn.otherCmnts | empty}}</td>
+            </tr>            
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{stairwellSectionDetails.conditionOut.treadAndLandingsCmnts | empty}}</td>                
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.treadAndLandingsCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.railingBannisterCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.railingBannisterCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{stairwellSectionDetails.conditionOut.wallTrimCmnts | empty}}</td>                
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.wallTrimCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.cellingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.cellingCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.closetsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.closetsCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.lightingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{stairwellSectionDetails.conditionOut.lightingCode | code}}</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.windowsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{stairwellSectionDetails.conditionOut.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.electricCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;" >{{stairwellSectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{stairwellSectionDetails.conditionOut.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center">{{stairwellSectionDetails.conditionOut.otherCode}}</td>
+                
+            </tr>
+            
+
+        </table>
+    </div>
+</div>

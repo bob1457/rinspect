@@ -202,26 +202,12 @@
         <app-entry-view-item *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-entry-view-item>
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
         <app-livingroom-view-item *ngIf="livingRoomSection" [livingRoomSectionDetails]="livingRoomSection" [reportId]='id'></app-livingroom-view-item>
-        
+        <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>
+        <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
         <!-- id="page2el" -->
         
         
         
-    </form>
-    <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
-        <div style="width:50%;">
-            <span style="font-weight:bold;font-style: italic;">
-                Residential Tenancy Branch
-            </span><br>
-            <span style="font-style:italic;">
-            Office of Housing and Construction Standards<br>
-            #RTB-27 (2011/03)
-            </span>
-        </div>
-        <div class="spacer"></div>
-        <div>
-            <span style="font-weight:bold;font-style: italic;">page 1 of 4 pages</span>
-        </div>
-    </div>
+    </form>   
     
 </div>

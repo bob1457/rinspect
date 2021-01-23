@@ -91,7 +91,7 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
-        this.dataService.getReportViewSectionBySubType(this.id, 'LivingRoom')
+    this.dataService.getReportViewSectionBySubType(this.id, 'LivingRoom')
         .subscribe( res => {
           res.map(a => {
             const data = a.payload.doc.data();
@@ -102,7 +102,27 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+    this.dataService.getReportViewSectionByType(this.id, 'Dinning-Room')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.diningRoomSEction = data;
+            console.log('Dinning room view', this.diningRoomSEction);
+            return {id, ...data}
+          } )
+        })
 
+        this.dataService.getReportViewSectionByType(this.id, 'Stairwell')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.stairwellSection = data;
+            console.log('Stairewell view', this.stairwellSection);
+            return {id, ...data}
+          } )
+        })
 
 
 

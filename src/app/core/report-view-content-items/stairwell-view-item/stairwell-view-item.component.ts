@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stairwell-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stairwell-view-item.component.scss']
 })
 export class StairwellViewItemComponent implements OnInit {
+
+  @Input() stairwellSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 
