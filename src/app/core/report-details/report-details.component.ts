@@ -236,7 +236,7 @@ export class ReportDetailsComponent implements OnInit {
       console.log('-secondary-kitchen-section', this.secondarykitchenSection);
     })
 
-    this.dataService.getReportSectionBySubType(this.id, 'Living Room')
+    this.dataService.getReportSectionBySubType(this.id, 'LivingRoom')
     .subscribe( res => {
       this.livingRoomSection = res;
       console.log('Living room section', this.livingRoomSection);

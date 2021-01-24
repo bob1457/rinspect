@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-kitchen-view-item',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KitchenViewItemComponent implements OnInit {
 
+  @Input() kitchenSectionDetails: any;
+  @Input() reportId: any;
+
+  empty = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    // this.isEmptyString();
   }
+
+
+  // isEmptyString() {
+  //   this.kitchenSectionDetails.conditionOut.cellingCmnts.length == 0 ? this.empty = true :this.empty = false;
+  //   console.log('empty', this.empty);
+  // }
 
 }

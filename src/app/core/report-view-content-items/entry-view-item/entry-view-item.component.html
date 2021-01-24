@@ -34,9 +34,7 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;">
-                    <span>Other</span>
-                </td>
+                <td style="border: 1px solid black;text-align: left;">Other</td>
                 
             </tr>
             
@@ -73,12 +71,12 @@
                 <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;"></td>
-                <td style="border: 1px solid black;text-align: center;">N/A</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.otherCode | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.otherCmnts | empty}}</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>{{entrySectionDetails.conditionIn.otherCode | empty}}
             </tr> -->
 
         </table>
@@ -114,8 +112,8 @@
                 <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;"></td>
-                <td style="border: 1px solid black;text-align: center;">N/A</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.otherCode | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.otherCmnts | empty}}</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
