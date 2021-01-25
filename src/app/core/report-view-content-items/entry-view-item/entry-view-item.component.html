@@ -34,7 +34,9 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;">Other</td>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span style="visibility:hidden;">Other</span>
+                </td>
                 
             </tr>
             
@@ -71,8 +73,8 @@
                 <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionIn.otherCode | empty}}</td>
-                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" [class.hide]="entrySectionDetails.conditionIn.otherCmnts == ''">{{entrySectionDetails.conditionIn.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.otherCode}}</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
@@ -84,36 +86,50 @@
     <div fxFlex="33">
         <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;" >{{entrySectionDetails.conditionOut.wallTrimCmnts}}</td>                
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionOut.wallTrimCmnts == ''">{{entrySectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>                
                 <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.wallTrimCode | code}}</td>
                 <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.cellingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.cellingCmnts == ''">{{entrySectionDetails.conditionOut.cellingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.cellingCode | code}}</td>
                 <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.closetsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.closetsCmnts == ''">{{entrySectionDetails.conditionOut.closetsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.closetsCode | code}}</td>
                 <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.lightingCmnts == ''">{{entrySectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.lightingCode | code}}</td>
                 <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td> -->
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.windowsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.windowsCmnts == ''">{{entrySectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.electricCmnts == ''">{{entrySectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{entrySectionDetails.conditionOut.otherCode | empty}}</td>
-                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionOut.otherCmnts == ''">{{entrySectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.otherCode}}</td>
             </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>

@@ -103,7 +103,7 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;">Other</td>                
+                <td style="border: 1px solid black;text-align: left;"><span style="visibility: hidden;">Other</span></td>                
             </tr>
             
         </table>
@@ -111,11 +111,13 @@
     <div fxFlex="33%" style="margin-top: -4px;">
         <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.cellingCmnts | empty}}</td>
-                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.cellingCode | code}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.cellingCmnts == ''">{{kitchenSectionDetails.conditionIn.cellingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;" >{{kitchenSectionDetails.conditionIn.cellingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.wallTrimCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" [class.hide]="kitchenSectionDetails.conditionIn.wallTrimCmnts == ''">{{kitchenSectionDetails.conditionIn.wallTrimCmnts}}</td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.wallTrimCode | code}}</td>
             </tr>
             <tr>
@@ -152,7 +154,7 @@
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.frigeSelvesCmnts}}</td>
-                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeSelvesCode | code}}></td>
+                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeSelvesCode | code}}/td>
             </tr>            
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.frigeFreezerCmnts}}</td>
@@ -200,7 +202,7 @@
     <div fxFlex="33" style="margin-top: -4px;">
         <table style="width: 100%;margin-top: 3px;margin-left: -3px;"> <!--visibility: hidden;[class.emptyCell]="empty"-->
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.cellingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.cellingCmnts | empty}}</td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.cellingCode  | code}}</td>
             </tr>
             <tr>
