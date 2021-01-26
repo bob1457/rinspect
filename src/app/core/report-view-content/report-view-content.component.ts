@@ -31,8 +31,8 @@ export class ReportViewContentComponent implements OnInit {
   livingRoomSection;
   diningRoomSEction;
   stairwellSection;
-  bathroomSection;
-  bedroomSection;
+  mainBathroomSection;
+  masterBedroomSection;
   exteriorSection;
   utilitySection;
   garbageParkingSection;
@@ -124,7 +124,27 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+        this.dataService.getReportViewSectionBySubType(this.id, 'Main Bathroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.mainBathroomSection = data;
+            console.log('Main Bathroom view', this.mainBathroomSection);
+            return {id, ...data}
+          } )
+        })
 
+        this.dataService.getReportViewSectionBySubType(this.id, 'Master Bedroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.masterBedroomSection = data;
+            console.log('Master Bedroom view', this.masterBedroomSection);
+            return {id, ...data}
+          } )
+        })
 
 
     // format dates

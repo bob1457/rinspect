@@ -1,1 +1,247 @@
-<p>mainbathroom-view-item works!</p>
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="12" style="vertical-align: top;width: 160px;">
+                    <span style="font-weight: bold;">O. MAIN BATHROOM</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Ceilings</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Walls and Trim
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Floor/Carpet
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Cabinets and Mirror
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Tub/Shower/Taps/Stopper
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Sink/Stopper/Taps
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Toilet
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Door
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em;line-height: 1.9;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden">Other</span>
+                </td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.cellingCmnts == ''">{{mainBathroomSectionDetails.conditionIn.cellingCmnts  | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.cellingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.wallTrimCmnts == ''">{{mainBathroomSectionDetails.conditionIn.wallTrimCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.wallTrimCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.floorCmnts == ''">{{mainBathroomSectionDetails.conditionIn.floorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.floorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.cabinetsMirrorCmnts == ''">{{mainBathroomSectionDetails.conditionIn.cabinetsMirrorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.cabinetsMirrorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.tubShowerTapStopperCmnts == ''">{{mainBathroomSectionDetails.conditionIn.tubShowerTapStopperCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.tubShowerTapStopperCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.sinkStopperTapsCmnts == ''">{{mainBathroomSectionDetails.conditionIn.sinkStopperTapsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.sinkStopperTapsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.toiletCmnts == ''">{{mainBathroomSectionDetails.conditionIn.toiletCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.toiletCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.doorCmnts == ''">{{mainBathroomSectionDetails.conditionIn.doorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.doorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.lightingCmnts == ''">{{mainBathroomSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.windowsCmnts == ''">{{mainBathroomSectionDetails.conditionIn.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.electricCmnts == ''">{{mainBathroomSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionIn.otherCmnts == ''">{{mainBathroomSectionDetails.conditionIn.otherCmnts | empty}}</span></td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionIn.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.cellingCmnts == ''">{{mainBathroomSectionDetails.conditionOut.cellingCmnts  | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.cellingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.wallTrimCmnts == ''">{{mainBathroomSectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.wallTrimCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.floorCmnts == ''">{{mainBathroomSectionDetails.conditionOut.floorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.floorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.cabinetsMirrorCmnts == ''">{{mainBathroomSectionDetails.conditionOut.cabinetsMirrorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.cabinetsMirrorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.tubShowerTapStopperCmnts == ''">{{mainBathroomSectionDetails.conditionOut.tubShowerTapStopperCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.tubShowerTapStopperCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.sinkStopperTapsCmnts == ''">{{mainBathroomSectionDetails.conditionOut.sinkStopperTapsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.sinkStopperTapsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.toiletCmnts == ''">{{mainBathroomSectionDetails.conditionOut.toiletCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.toiletCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.doorCmnts == ''">{{mainBathroomSectionDetails.conditionOut.doorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.doorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.lightingCmnts == ''">{{mainBathroomSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.windowsCmnts == ''">{{mainBathroomSectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.electricCmnts == ''">{{mainBathroomSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="mainBathroomSectionDetails.conditionOut.otherCmnts == ''">{{mainBathroomSectionDetails.conditionOut.otherCmnts | empty}}</span></td>
+                <td style="border: 1px solid black;text-align: center;">{{mainBathroomSectionDetails.conditionOut.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>
+<!-- <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+    <div style="width:50%;">
+        <span style="font-weight:bold;font-style: italic;">
+            Residential Tenancy Branch
+        </span><br>
+        <span style="font-style:italic;">
+        Office of Housing and Construction Standards<br>
+        #RTB-27 (2011/03)
+        </span>
+    </div>
+    <div class="spacer"></div>
+    <div>
+        <span style="font-weight:bold;font-style: italic;">page 1 of 4 pages</span>
+    </div>
+</div> -->
+

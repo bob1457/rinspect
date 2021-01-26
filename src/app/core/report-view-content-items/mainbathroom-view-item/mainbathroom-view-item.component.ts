@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mainbathroom-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainbathroom-view-item.component.scss']
 })
 export class MainbathroomViewItemComponent implements OnInit {
+
+  @Input() mainBathroomSectionDetails: any;
+  @Input() reportId: any;
 
   constructor() { }
 

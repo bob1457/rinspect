@@ -114,38 +114,56 @@
                 <td style="border: 1px solid black;text-align: left;width: 151px;" >
                     <span [class.hide]="kitchenSectionDetails.conditionIn.cellingCmnts == ''">{{kitchenSectionDetails.conditionIn.cellingCmnts | empty}}</span>
                 </td>
-                <td style="border: 1px solid black;text-align: center;" >{{kitchenSectionDetails.conditionIn.cellingCode | code}}</td>
+                <td style="border: 1px solid black;text-align: center;" >
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.cellingCmnts == ''">{{kitchenSectionDetails.conditionIn.cellingCode | code}}</span>
+                </td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;" [class.hide]="kitchenSectionDetails.conditionIn.wallTrimCmnts == ''">{{kitchenSectionDetails.conditionIn.wallTrimCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.wallTrimCmnts == ''">{{kitchenSectionDetails.conditionIn.wallTrimCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.wallTrimCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.floorCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.floorCmnts == ''">{{kitchenSectionDetails.conditionIn.floorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.floorCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.counterTopCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.counterTopCmnts == ''">{{kitchenSectionDetails.conditionIn.counterTopCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.counterTopCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.cabnetsAndDoorsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.cabnetsAndDoorsCmnts == ''">{{kitchenSectionDetails.conditionIn.cabnetsAndDoorsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.cabnetsAndDoorsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.stoveAndStoveTopCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.stoveAndStoveTopCmnts == ''">{{kitchenSectionDetails.conditionIn.stoveAndStoveTopCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.stoveAndStoveTopCode | code}}</td>
             </tr>   
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.ovenCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.ovenCmnts == ''">{{kitchenSectionDetails.conditionIn.ovenCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.ovenCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.exhaustHoodAndFanCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.exhaustHoodAndFanCmnts == ''">{{kitchenSectionDetails.conditionIn.exhaustHoodAndFanCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.exhaustHoodAndFanCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.tapSinkCmnts}}></td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.tapSinkCmnts == ''">{{kitchenSectionDetails.conditionIn.tapSinkCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.tapSinkCode | code}}</td>
             </tr>
             <tr>
@@ -153,88 +171,121 @@
                 <td style="border: 1px solid black;text-align: center;"></td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.frigeSelvesCmnts}}</td>
-                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeSelvesCode | code}}/td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.frigeSelvesCmnts == ''">{{kitchenSectionDetails.conditionIn.frigeSelvesCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeSelvesCode | code}}</td>
             </tr>            
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.frigeFreezerCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.frigeFreezerCmnts == ''">{{kitchenSectionDetails.conditionIn.frigeFreezerCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeFreezerCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.frigeExteriorCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.frigeExteriorCmnts == ''">{{kitchenSectionDetails.conditionIn.frigeExteriorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.frigeExteriorCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.closetsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.closetsCmnts == ''">{{kitchenSectionDetails.conditionIn.closetsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.closetsCode | code}}</td>
             </tr>
             
             
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.dishWasherCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.dishWasherCmnts == ''">{{kitchenSectionDetails.conditionIn.dishWasherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.dishWasherCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.lightingCmnts == ''">{{kitchenSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.lightingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.windowsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.windowsCmnts == ''">{{kitchenSectionDetails.conditionIn.windowsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.electricCmnts == ''">{{kitchenSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionIn.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionIn.otherCmnts == ''">{{kitchenSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionIn.otherCmnts | code}}</td>
             </tr>
            
             
-            <!-- <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
-            </tr> -->
+            
 
         </table>
     </div>
     <div fxFlex="33" style="margin-top: -4px;">
         <table style="width: 100%;margin-top: 3px;margin-left: -3px;"> <!--visibility: hidden;[class.emptyCell]="empty"-->
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;" [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.cellingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.cellingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.cellingCode  | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.wallTrimCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.wallTrimCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.floorCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.floorCmnts == ''">{{kitchenSectionDetails.conditionOut.floorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.floorCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.counterTopCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.counterTopCmnts == ''">{{kitchenSectionDetails.conditionOut.counterTopCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.counterTopCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.cabnetsAndDoorsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.cabnetsAndDoorsCmnts == ''">{{kitchenSectionDetails.conditionOut.cabnetsAndDoorsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.cabnetsAndDoorsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.stoveAndStoveTopCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.stoveAndStoveTopCmnts == ''">{{kitchenSectionDetails.conditionOut.stoveAndStoveTopCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.stoveAndStoveTopCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.ovenCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.ovenCmnts == ''">{{kitchenSectionDetails.conditionOut.ovenCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.ovenCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.exhaustHoodAndFanCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.exhaustHoodAndFanCmnts == ''">{{kitchenSectionDetails.conditionOut.exhaustHoodAndFanCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.exhaustHoodAndFanCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.tapSinkCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.tapSinkCmnts == ''">{{kitchenSectionDetails.conditionOut.tapSinkCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.tapSinkCode | code}}</td>
             </tr>
             <tr>
@@ -242,46 +293,61 @@
                 <td style="border: 1px solid black;text-align: center;"></td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.frigeSelvesCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.frigeSelvesCmnts == ''">{{kitchenSectionDetails.conditionOut.frigeSelvesCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.frigeSelvesCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.frigeFreezerCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.frigeFreezerCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.frigeFreezerCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.frigeExteriorCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.frigeExteriorCmnts == ''">{{kitchenSectionDetails.conditionOut.frigeExteriorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.frigeExteriorCode | code}}</td>
             </tr>
             
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.closetsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.cellingCmnts == ''">{{kitchenSectionDetails.conditionOut.closetsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.closetsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.dishWasherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.dishWasherCmnts == ''">{{kitchenSectionDetails.conditionOut.dishWasherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.dishWasherCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.lightingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.lightingCmnts == ''">{{kitchenSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.lightingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.windowsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.windowsCmnts == ''">{{kitchenSectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.electricCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.electricCmnts == ''">{{kitchenSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{kitchenSectionDetails.conditionOut.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="kitchenSectionDetails.conditionOut.otherCmnts == ''">{{kitchenSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{kitchenSectionDetails.conditionOut.otherCode | code}}</td>
             </tr>
-            <!-- <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
-                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
-            </tr> -->
+            
 
         </table>
     </div>

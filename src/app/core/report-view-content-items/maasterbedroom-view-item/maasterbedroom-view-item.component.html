@@ -1,1 +1,181 @@
-<p>maasterbedroom-view-item works!</p>
+<!-- <p>dinningroom-view-item works!</p> -->
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="9" style="vertical-align: top;width: 160px;">
+                    <span style="font-weight: bold;">P. MASTER BEDROOM</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Ceilings</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Walls and Trim
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Floor/Carpet
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Closet(s)
+                </td>                        
+            </tr>             
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Door
+                </td>                        
+            </tr>           
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em;line-height: 1.9;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.cellingCmnts == ''">{{masterBedroomSectionDetails.conditionIn.cellingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.cellingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.wallTrimCmnts == ''">{{masterBedroomSectionDetails.conditionIn.wallTrimCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.wallTrimCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.floorCmnts == ''">{{masterBedroomSectionDetails.conditionIn.floorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.floorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.closetsCmnts == ''">{{masterBedroomSectionDetails.conditionIn.closetsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.closetsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.doorCmnts == ''">{{masterBedroomSectionDetails.conditionIn.doorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.doorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.lightingCmnts == ''">{{masterBedroomSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.windowsCmnts == ''">{{masterBedroomSectionDetails.conditionIn.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.electricCmnts == ''">{{masterBedroomSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionIn.otherCmnts == ''">{{masterBedroomSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionIn.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.cellingCmnts == ''">{{masterBedroomSectionDetails.conditionOut.cellingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.cellingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.wallTrimCmnts == ''">{{masterBedroomSectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.wallTrimCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.floorCmnts == ''">{{masterBedroomSectionDetails.conditionOut.floorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.floorCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.closetsCmnts == ''">{{masterBedroomSectionDetails.conditionOut.closetsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.closetsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.doorCmnts == ''">{{masterBedroomSectionDetails.conditionOut.doorCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.doorCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.lightingCmnts == ''">{{masterBedroomSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.windowsCmnts == ''">{{masterBedroomSectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.electricCmnts == ''">{{masterBedroomSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="masterBedroomSectionDetails.conditionOut.otherCmnts == ''">{{masterBedroomSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>
+
