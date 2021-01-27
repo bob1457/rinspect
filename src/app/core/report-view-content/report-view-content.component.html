@@ -206,8 +206,13 @@
         <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
         <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id'></app-mainbathroom-view-item>
         <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
-        <!-- id="page2el" -->
         
+        <!-- this is for an empty bedroom in case only one bedroom -->
+        <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
+        
+        <app-exterior-view-item *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-exterior-view-item>
+        <app-utility-view-item *ngIf="utilitySection" [utilityRoomectionDetails]="utilitySection" [reportId]='id'></app-utility-view-item>
+        <app-garbage-view-item *ngIf="garbageParkingSection" [garbageSectionDetails]="garbageParkingSection" [reportId]='id'></app-garbage-view-item>
         
         
     </form>   

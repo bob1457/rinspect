@@ -45,7 +45,9 @@ export class AddSectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''], 
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       }),
       //- OUT 
 
@@ -53,7 +55,9 @@ export class AddSectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''],
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       })
       
       

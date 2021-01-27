@@ -1,1 +1,183 @@
-<p>exterior-view-item works!</p>
+<!-- <p>dinningroom-view-item works!</p> -->
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="9" style="vertical-align: top;width: 108px;">
+                    <span style="font-weight: bold;">R. EXTERIOR</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Front and Rear Entrances</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Patio/Balcony Doors
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Garbage Containers 
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Glass and Frames 
+                </td>                        
+            </tr>             
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Stucco and/or Siding 
+                </td>                        
+            </tr>           
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em;line-height: 1.9;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Grounds and Walks</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.frontRearEmtranceCmnts == ''">{{exteriorSectionDetails.conditionIn.frontRearEmtranceCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.frontRearEmtranceCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.patioBalconyDoorsCmnts == ''">{{exteriorSectionDetails.conditionIn.patioBalconyDoorsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.patioBalconyDoorsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.garbabageContainerCmnts == ''">{{exteriorSectionDetails.conditionIn.garbabageContainerCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.garbabageContainerCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.galssAndFramesCmnts == ''">{{exteriorSectionDetails.conditionIn.galssAndFramesCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.galssAndFramesCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.stucoAndSidingCmnts == ''">{{exteriorSectionDetails.conditionIn.stucoAndSidingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.stucoAndSidingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.lightingCmnts == ''">{{exteriorSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.groundsAndWallsCmnts == ''">{{exteriorSectionDetails.conditionIn.groundsAndWallsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.groundsAndWallsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.electricCmnts == ''">{{exteriorSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionIn.otherCmnts == ''">{{exteriorSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionIn.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.frontRearEmtranceCmnts == ''">{{exteriorSectionDetails.conditionOut.frontRearEmtranceCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.frontRearEmtranceCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.patioBalconyDoorsCmnts == ''">{{exteriorSectionDetails.conditionOut.patioBalconyDoorsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.patioBalconyDoorsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.garbabageContainerCmnts == ''">{{exteriorSectionDetails.conditionOut.garbabageContainerCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.garbabageContainerCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.galssAndFramesCmnts == ''">{{exteriorSectionDetails.conditionOut.galssAndFramesCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.galssAndFramesCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.stucoAndSidingCmnts == ''">{{exteriorSectionDetails.conditionOut.stucoAndSidingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.stucoAndSidingCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.lightingCmnts == ''">{{exteriorSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.lightingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.groundsAndWallsCmnts == ''">{{exteriorSectionDetails.conditionOut.groundsAndWallsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.groundsAndWallsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.electricCmnts == ''">{{exteriorSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="exteriorSectionDetails.conditionOut.otherCmnts == ''">{{exteriorSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{exteriorSectionDetails.conditionOut.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>
+
+

@@ -146,6 +146,43 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+        // Extract all bedrooms to find out how many hedrooms are avaiable
+
+        //
+
+        this.dataService.getReportViewSectionByType(this.id, 'Exterior')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.exteriorSection = data;
+            console.log('Exterior view', this.exteriorSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionByType(this.id, 'Utility-Room')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.utilitySection = data;
+            console.log('Utility room view', this.utilitySection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionByType(this.id, 'Garbage-Parking')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.garbageParkingSection = data;
+            console.log('Utility room view', this.garbageParkingSection);
+            return {id, ...data}
+          } )
+        })
+
 
     // format dates
 
