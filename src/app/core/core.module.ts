@@ -55,6 +55,7 @@ import { MainbathroomViewItemComponent } from './report-view-content-items/mainb
 import { MaasterbedroomViewItemComponent } from './report-view-content-items/maasterbedroom-view-item/maasterbedroom-view-item.component';
 import { StairwellViewItemComponent } from './report-view-content-items/stairwell-view-item/stairwell-view-item.component';
 import { UtilityViewItemComponent } from './report-view-content-items/utility-view-item/utility-view-item.component';
+import { StorageViewItemComponent } from './report-view-content-items/storage-view-item/storage-view-item.component';
 
 
 @NgModule({
@@ -107,7 +108,8 @@ import { UtilityViewItemComponent } from './report-view-content-items/utility-vi
     MainbathroomViewItemComponent,
     MaasterbedroomViewItemComponent,
     StairwellViewItemComponent,
-    UtilityViewItemComponent
+    UtilityViewItemComponent,
+    StorageViewItemComponent
   ],
   imports: [
     AppMaterialModule,

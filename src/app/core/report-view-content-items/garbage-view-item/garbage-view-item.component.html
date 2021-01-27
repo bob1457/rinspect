@@ -3,13 +3,18 @@
     <div fxFlex="34%">
         <table style="width: 100%;margin-top: 3px;">
             <tr>
-                <td rowspan="2" style="vertical-align: top;width: 108px;">
+                <td rowspan="3" style="vertical-align: top;width: 108px;">
                     <span style="font-weight: bold;">T. GARAGE OR PARKING AREA</span>
                 </td>
                 <td style="widows: 100%;border: 1px solid black;text-align: left;">
                     Electrical Outlets</td>
             </tr>
             
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
                     <span style="visibility: hidden;">Other</span></td>
@@ -33,6 +38,12 @@
                 </td>
                 <td style="border: 1px solid black;text-align: center;">{{garbageSectionDetails.conditionIn.otherCode | code}}</td>
             </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="garbageSectionDetails.conditionIn.otherCmnts == ''">{{garbageSectionDetails.conditionIn.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{garbageSectionDetails.conditionIn.other2Code | code}}</td>
+            </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
                 <td style="border: 1px solid black;text-align: center;">&#10003;</td>
@@ -55,12 +66,29 @@
                 </td>
                 <td style="border: 1px solid black;text-align: center;">{{garbageSectionDetails.conditionOut.otherCode | code}}</td>
             </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="garbageSectionDetails.conditionOut.otherCmnts == ''">{{garbageSectionDetails.conditionOut.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{garbageSectionDetails.conditionOut.other2Code | code}}</td>
+            </tr>
             <!-- <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
                 <td style="border: 1px solid black;text-align: center;">&#10003;</td>
             </tr> -->
 
         </table>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+    <div style="width:50%;">
+        <span style="font-weight:bold;font-style: italic;">            
+        #RTB-27 (2011/03)
+        </span>
+    </div>
+    <div class="spacer"></div>
+    <div>
+        <span style="font-weight:bold;font-style: italic;">page 1 of 4 pages</span>
     </div>
 </div>
 

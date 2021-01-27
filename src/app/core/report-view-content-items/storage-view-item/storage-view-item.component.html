@@ -1,0 +1,88 @@
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="2" style="vertical-align: top;width: 108px;">
+                    <span style="font-weight: bold;">V. STORAGE</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span>
+                </td>
+            </tr>
+            
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr> -->
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails.conditionIn.other1Cmnts == ''">{{storageOtherSectionDetails.conditionIn.other1Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails.conditionIn.other1Code | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails.conditionIn.other2Cmnts == ''">{{storageOtherSectionDetails.conditionIn.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails.conditionIn.othe2rCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails
+.conditionIn.otherCmnts == ''">{{storageOtherSectionDetails
+.conditionIn.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails
+.conditionIn.other2Code | code}}</td> 
+            </tr>-->
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails.conditionOut.other1Cmnts == ''">{{storageOtherSectionDetails.conditionOut.other1Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails.conditionOut.other1Code | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails.conditionOut.other2Cmnts == ''">{{storageOtherSectionDetails.conditionOut.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails.conditionOut.other2Code | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="storageOtherSectionDetails
+.conditionOut.otherCmnts == ''">{{storageOtherSectionDetails
+.conditionOut.other2Cmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{storageOtherSectionDetails
+.conditionOut.other2Code | code}}</td>
+            </tr> -->
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>

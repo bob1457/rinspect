@@ -1,1 +1,150 @@
-<p>basement-view-item works!</p>
+<!-- <p>dinningroom-view-item works!</p> -->
+<p style="margin-top: 50px;"></p>
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="11" style="vertical-align: top;width: 160px;">
+                    <span style="font-weight: bold;">U. BASEMENT</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Stair and Stairwell</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Walls and Floor/Carpet
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;font-size: .85em;line-height:18px">
+                    Furnace, Water Heater, Plumbing
+                </td>                        
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
+                
+            </tr>            
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.stairWayCmnts == ''">{{basementSectionDetails.conditionIn.stairWayCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.stairWayCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.wallAndCarpetCmnts == ''">{{basementSectionDetails.conditionIn.wallAndCarpetCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.wallAndCarpetCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.furnaceWaterPlumbingCmnts == ''">{{basementSectionDetails.conditionIn.furnaceWaterPlumbingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.furnaceWaterPlumbingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.windowsCmnts == ''">{{basementSectionDetails.conditionIn.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.lightingCmnts == ''">{{basementSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.lightingCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.electricCmnts == ''">{{basementSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionIn.otherCmnts == ''">{{basementSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionIn.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.stairWayCmnts == ''">{{basementSectionDetails.conditionOut.stairWayCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.stairWayCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.wallAndCarpetCmnts == ''">{{basementSectionDetails.conditionOut.wallAndCarpetCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.wallAndCarpetCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.furnaceWaterPlumbingCmnts == ''">{{basementSectionDetails.conditionOut.furnaceWaterPlumbingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.furnaceWaterPlumbingCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.windowsCmnts == ''">{{basementSectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.lightingCmnts == ''">{{basementSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.lightingCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.electricCmnts == ''">{{basementSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="basementSectionDetails.conditionOut.otherCmnts == ''">{{basementSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{basementSectionDetails.conditionOut.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>
+

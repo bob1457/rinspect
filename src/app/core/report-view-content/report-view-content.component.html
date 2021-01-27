@@ -213,7 +213,9 @@
         <app-exterior-view-item *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-exterior-view-item>
         <app-utility-view-item *ngIf="utilitySection" [utilityRoomectionDetails]="utilitySection" [reportId]='id'></app-utility-view-item>
         <app-garbage-view-item *ngIf="garbageParkingSection" [garbageSectionDetails]="garbageParkingSection" [reportId]='id'></app-garbage-view-item>
-        
+        <app-basement-view-item *ngIf="basementSection" [basementSectionDetails]="basementSection" [reportId]='id'></app-basement-view-item>
+        <app-storage-view-item *ngIf="otherSection" [storageOtherSectionDetails]="otherSection" [reportId]='id'></app-storage-view-item>
+        <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
     </form>   
     

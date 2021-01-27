@@ -183,6 +183,39 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+        this.dataService.getReportViewSectionByType(this.id, 'Basement')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.basementSection = data;
+            console.log('Basement view', this.basementSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionByType(this.id, 'Other')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.otherSection = data;
+            console.log('Storage/Other view', this.otherSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionByType(this.id, 'Key-Control')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.keyControlSection = data;
+            console.log('Storage/Other view', this.keyControlSection);
+            return {id, ...data}
+          } )
+        })
+
 
     // format dates
 

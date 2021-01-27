@@ -26,7 +26,7 @@ export class AddSectionComponent implements OnInit {
     {'img': '../../../assets/images/garage.png', 'caption': 'Gabg/Parking', 'type': 'garbage'},
     {'img': '../../../assets/images/basement.png', 'caption': 'Basement', 'type': 'basement'},
     {'img': '../../../assets/images/keys.png', 'caption': 'Key/Controls', 'type': 'key'},
-    {'img': '../../../assets/images/other.png', 'caption': 'Others', 'type': 'other'}
+    {'img': '../../../assets/images/storage.png', 'caption': 'Storage', 'type': 'storage'}
   ]
 
   constructor(private actRoute: ActivatedRoute,
