@@ -218,5 +218,192 @@
         <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
     </form>   
-    
+    <p style="margin-bottom: 0;">
+        START OF TENANCY
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">X. Repairs to be completed at start of tenancy:</span> <span style="font-size: .8em;">(list repairs)</span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-top: -10px;margin-bottom: 0;">
+        <span style="font-weight: bold;">Y.</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+        </span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-bottom: 0;margin-top: -10px;">
+        End OF TENANCY
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">Z. Damage to rental unit or residential property for which the tenant is responsible:</span>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%; margin-top: -10px;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">1. &nbsp;</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+        </span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-top: -10px;">
+        <span style="font-weight: bold;">2. &nbsp;</span> I, ____________________________<span> agree to the following deductions from my security and/or pet damage deposit:
+        </span>
+    </p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="50%">
+            Security Deposit:______________________________________ 
+        </div>
+        <div fxFlex="50%">
+            Pet Damage Deposit: ____________________________________
+        </div>
+    </div>
+    <p ></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="50%">
+            Date (dd/mm/yy)______________________________________ 
+        </div>
+        <div fxFlex="50%">
+            Signature of Tenant: ____________________________________
+        </div>
+    </div>
+    <p></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="60%">
+            <span style="font-weight: bold;">3.  Landlord’s Signature: (on Move-In)</span> _______________________________
+        </div>        
+        <div fxFlex="45%">
+            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
+        </div>
+    </div>
+    <p></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="60%">
+            <span style="font-weight: bold;">4.  Tenant’s Signature: (on Move-In)</span> _______________________________
+        </div>
+        <div fxFlex="45%">
+            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
+        </div>
+    </div>
+    <p></p>
+    <p style="margin-bottom:-5px;">
+        <span style="font-weight: bold;">5. Tenant’s Forwarding Address:</span>
+    </p>
+    <div fxLayout="row" fxLayoutAlign="start start" >
+        <mat-form-field appearance="outline" style="width: 5%;">
+            <mat-label>unit #</mat-label>
+            <input matInput placeholder="Unit #" formControlName="unit">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 30%;">
+            <mat-label>street address</mat-label>
+            <input matInput placeholder="Street address" formControlName="street">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>city</mat-label>
+            <input matInput placeholder="Street address" formControlName="city">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>province</mat-label>
+            <input matInput placeholder="Province" formControlName="province">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>postal code</mat-label>
+            <input matInput placeholder="Postal Code" formControlName="postcode">            
+        </mat-form-field>
+
+    </div>
+    <p style="margin-top:-20px;"></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="15%" style="line-height: 1.2;">
+            <span style="font-weight: bold;">Landlord Name<br>& Addresses at<br>End of Tenancy</span>
+        </div>
+        <div fxFlex="85%">
+            <mat-form-field appearance="outline" style="width:95%;margin-left: 15px;">            
+                <input matInput >
+            </mat-form-field>
+            <!-- <mat-label>Last Name, first & middle names  (if entry for landlord is a business name, enter full legal business name)</mat-label> -->
+            <div  style="margin-left: 20px;font-size: .9em;margin-top: -40px;color: grey;">
+                <span style="font-size:.8em ;"> last name, first & middle names <span font-style="italic">(if entry for landlord is a business name, enter full legal business name)</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start start" >
+        <mat-form-field appearance="outline" style="width: 5%;">
+            <mat-label>unit #</mat-label>
+            <input matInput placeholder="Unit #" formControlName="unit">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 30%;">
+            <mat-label>street address</mat-label>
+            <input matInput placeholder="Street address" formControlName="street">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>city</mat-label>
+            <input matInput placeholder="Street address" formControlName="city">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>province</mat-label>
+            <input matInput placeholder="Province" formControlName="province">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>postal code</mat-label>
+            <input matInput placeholder="Postal Code" formControlName="postcode">            
+        </mat-form-field>
+
+    </div>
+        <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+        <div style="width:50%;">
+            <span style="font-weight:bold;font-style: italic;">            
+            #RTB-27 (2011/03)
+            </span>
+        </div>
+        <div class="spacer"></div>
+        <div>
+            <span style="font-weight:bold;font-style: italic;">page 3 of 4 pages</span>
+        </div>
+    </div>
 </div>
