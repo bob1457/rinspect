@@ -3,8 +3,8 @@
     <div [@.disabled]="true" style="width:100%">
         <p>Section Type: <span style="font-weight:bold;">Kitchen</span></p>
         <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
-            <mat-radio-button value="MainKitchen" style="padding-right: 10px;">Main Kitchen</mat-radio-button>
-            <mat-radio-button value="secondaryKitchen" >Secondary Kitchen</mat-radio-button>
+            <mat-radio-button [disabled]="mainKitchenExists" value="MainKitchen" style="padding-right: 10px;">Main Kitchen</mat-radio-button>
+            <mat-radio-button [disabled]="secKitchenExists" value="secondaryKitchen" >Secondary Kitchen</mat-radio-button>
         </mat-radio-group>
         <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->

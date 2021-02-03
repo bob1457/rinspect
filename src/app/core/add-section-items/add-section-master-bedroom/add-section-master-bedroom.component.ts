@@ -19,12 +19,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   bedroomForm: FormGroup;
   bedroomType = 'Master Bedrooom';
 
-  maasterBedExists = false;
-
-  sectionExists = {
-    'secondBedRoomExists': false,
-    'thirdBedRoomExists': false
-  }
+  maasterBedExists = false;  
   secondBedRoomExists = false;
   thirdBedRoomExists = false;
   forthBedRoomExists = false;
@@ -82,9 +77,53 @@ export class AddSectionMasterBedroomComponent implements OnInit {
       this.dataServie.getReportSectionBySubType(this.rptId, value)
           .subscribe( res => {
             if(res.length > 0) {
-              console.log(value + ' exists');
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.maasterBedExists = true;
+                  break;
+                case 'S':
+                  this.secondBedRoomExists = true;
+                  break;
+                case 'T':
+                  this.thirdBedRoomExists = true;
+                  break;
+                case 'F':
+                  this.forthBedRoomExists = true;
+                  break;
+                case 'V':
+                  this.fifthBedRoomExists = true;
+                  break;
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.maasterBedExists = false;
+                  break;
+                case 'S':
+                  this.secondBedRoomExists = false;
+                  break;
+                case 'T':
+                  this.thirdBedRoomExists = false;
+                  break;
+                case 'F':
+                  this.forthBedRoomExists = false;
+                  break;
+                case 'V':
+                  this.fifthBedRoomExists = false;
+                  break;
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
             }
-            console.log(value + ' not exists');
+           
           })
     }
     
