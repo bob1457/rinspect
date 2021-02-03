@@ -19,6 +19,27 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   bedroomForm: FormGroup;
   bedroomType = 'Master Bedrooom';
 
+  maasterBedExists = false;
+
+  sectionExists = {
+    'secondBedRoomExists': false,
+    'thirdBedRoomExists': false
+  }
+  secondBedRoomExists = false;
+  thirdBedRoomExists = false;
+  forthBedRoomExists = false;
+  fifthBedRoomExists = false;
+
+  queryResult;
+
+  // bedroomSubType = {
+  //   'M':'Master Bedrooom', 
+  //   'S':'Second Bedroom',
+  //   'T':'Third Bedroom',
+  //   'F':'Forth Bedroom',
+  //   'V':'Fifth Bedroom'
+  // }
+
   codes = [
     { 'name': 'G'},
     { 'name': 'F'},
@@ -36,6 +57,36 @@ export class AddSectionMasterBedroomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    // Find out if any of the bedrrom already fifthBedRoomExists
+
+    let bedroomSubType = {
+      'M':'Master Bedroom', 
+      'S':'Second Bedroom',
+      'T':'Third Bedroom',
+      'F':'Forth Bedroom',
+      'V':'Fifth Bedroom'
+    }
+
+    console.log('reptID:', this.rptId);
+
+    // this.dataServie.getReportSectionBySubType(this.rptId, 'Master Bedroom')
+    // .subscribe( res => {
+      
+    //   console.log('Master Bed-section check:', res);
+    // })
+
+    for (let [key, value] of Object.entries(bedroomSubType)) {
+      console.log('subtype of bedrrom---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              console.log(value + ' exists');
+            }
+            console.log(value + ' not exists');
+          })
+    }
     
     this.bedroomForm = this.formBuilder.group({
       name: [''],

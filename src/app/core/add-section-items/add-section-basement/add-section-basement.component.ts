@@ -18,6 +18,9 @@ export class AddSectionBasementComponent implements OnInit {
 
   basementForm: FormGroup;
 
+  existing;
+  alreadyAdded = false;;
+
   codes = [
     { 'name': 'G'},
     { 'name': 'F'},
@@ -35,6 +38,16 @@ export class AddSectionBasementComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Basement")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('basement added', this.alreadyAdded);
+                    })
     
     this.basementForm = this.formBuilder.group({
       name: [''],
