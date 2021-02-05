@@ -19,7 +19,7 @@ export class AddSectionDinningRoomComponent implements OnInit {
   dinningForm: FormGroup;
 
   existing;
-  alreadyAdded = false;;
+  alreadyAdded = false;
 
   codes = [
     { 'name': 'G'},
