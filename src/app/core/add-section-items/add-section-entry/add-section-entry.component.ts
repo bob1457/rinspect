@@ -71,6 +71,7 @@ export class AddSectionEntryComponent implements OnInit {
               // console.log(value + ' exists');
               if( this.mainEntryExists == true && this.secEntryExists == true) {
                 this.alreadyAdded = true;
+                this.entryForm.disable();
               }
           
               console.log('status:', this.alreadyAdded);

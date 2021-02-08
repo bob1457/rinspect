@@ -21,6 +21,10 @@ export class AddSectionLivingRoomComponent implements OnInit {
 
   addMore = false;
 
+  livingroomExists = false;
+  familyExists = false;
+  alreadyAdded = false;
+
   livingForm: FormGroup;
   livingRoomType = 'LivingRoom';
 
@@ -41,6 +45,53 @@ export class AddSectionLivingRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    let kitchenSubType = {
+      'M':'Livingroom', 
+      'S':'Familyroom'      
+    }
+
+    for (let [key, value] of Object.entries(kitchenSubType)) {
+      console.log('subtype of kitchen---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.livingroomExists = true;
+                  break;
+                case 'S':
+                  this.familyExists = true;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+              if( this.livingroomExists == true && this.familyExists == true) {
+                this.alreadyAdded = true;
+                this.livingForm.disable();
+              }
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.livingroomExists = false;
+                  break;
+                case 'S':
+                  this.familyExists = false;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
     
     this.livingForm = this.formBuilder.group({
       name: [''],

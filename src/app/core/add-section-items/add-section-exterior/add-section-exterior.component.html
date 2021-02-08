@@ -1,8 +1,8 @@
 <!-- <p>add-section-exterior works!</p> -->
 <form style="width: 100%;" [formGroup]="exteriorForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
-        <p>Section Type: <span style="font-weight:bold;">Exterior<span style="font-weight:bold;color:red;" *ngIf="alreadyAdded"><mat-icon style="vertical-align: bottom;margin-left: 15px;">warning</mat-icon> Exterior section already exists!</span></span></p>
-            <div *ngIf="!alreadyAdded">
+        <p>Section Type: <span style="font-weight:bold;">Exterior<span style="font-weight:bold;color:red;" *ngIf="alreadyAdded"> &nbsp; <mat-icon style="vertical-align: bottom;margin-left: 15px;">warning</mat-icon> Exterior section already exists!</span></span></p>
+            
             <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width:100%">
                 <!-- <mat-label>Description</mat-label> -->
                 <input matInput placeholder="Specify type and description of the area" formControlName="name">
@@ -298,7 +298,7 @@
                 </mat-tab>
             </mat-tab-group>
             <!-- <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="addMore">Add more section</mat-checkbox> -->
-            <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
-        </div>
+            <button [disabled]="alreadyAdded" type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
+        
     </div>
 </form>

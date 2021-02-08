@@ -43,7 +43,8 @@ export class AddSectionBasementComponent implements OnInit {
                     .subscribe(result => {
                       this.existing = result;
                       if(this.existing.length !=0) {
-                        this.alreadyAdded = true;                        
+                        this.alreadyAdded = true; 
+                        this.basementForm.disable();
                       }
 
                       console.log('basement added', this.alreadyAdded);

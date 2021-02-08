@@ -15,6 +15,8 @@ export class AddSectionUtilityRoomComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   utilityForm: FormGroup;
 
@@ -35,6 +37,20 @@ export class AddSectionUtilityRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Utility-Room")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('Utility room added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.utilityForm.disable();
+                      }
+                    })
     
     this.utilityForm = this.formBuilder.group({
       name: [''],

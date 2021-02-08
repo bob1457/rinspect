@@ -17,6 +17,7 @@ export class AddSectionKitchenComponent implements OnInit {
 
   mainKitchenExists = false;
   secKitchenExists = false;
+  alreadyAdded = false;
 
   @Input() rptId;
 
@@ -66,6 +67,10 @@ export class AddSectionKitchenComponent implements OnInit {
               }
               // console.log('status:', key);
               // console.log(value + ' exists');
+              if( this.mainKitchenExists == true && this.secKitchenExists == true) {
+                this.alreadyAdded = true;
+                this.kitchenForm.disable();
+              }
             } else {
               // key = key + "N";
               switch (key) {

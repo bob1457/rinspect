@@ -43,7 +43,8 @@ export class AddSectionDinningRoomComponent implements OnInit {
                     .subscribe(result => {
                       this.existing = result;
                       if(this.existing.length !=0) {
-                        this.alreadyAdded = true;                        
+                        this.alreadyAdded = true;  
+                        this.dinningForm.disable();                      
                       }
 
                       console.log('dinningroomt added', this.alreadyAdded);

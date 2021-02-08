@@ -17,6 +17,8 @@ export class AddSectionStairewllHallComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   codes = [
     { 'name': 'G'},
@@ -37,6 +39,20 @@ export class AddSectionStairewllHallComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('report id:',this.rptId);
+
+    this.dataServie.getReportSectionByType(this.rptId, "Stairwell")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('Stairwell added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.stairForm.disable();
+                      }
+                    })
 
     this.stairForm = this.formBuilder.group({
       name: [''],

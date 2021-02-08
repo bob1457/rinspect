@@ -45,6 +45,10 @@ export class AddSectionExteriorComponent implements OnInit {
                         this.alreadyAdded = true;                        
                       }
 
+                      if (this.alreadyAdded) {
+                        this.exteriorForm.disable();
+                      }
+
                       console.log('exterior added', this.alreadyAdded);
                     })
     

@@ -18,6 +18,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
 
   bedroomForm: FormGroup;
   bedroomType = 'Master Bedrooom';
+  alreadyAdded = false;
 
   maasterBedExists = false;  
   secondBedRoomExists = false;
@@ -96,6 +97,10 @@ export class AddSectionMasterBedroomComponent implements OnInit {
                   break;
                 default:
                   break;
+              }
+              if( this.maasterBedExists == true && this.secondBedRoomExists == true && this.thirdBedRoomExists == true && this.forthBedRoomExists == true && this.fifthBedRoomExists == true) {
+                this.alreadyAdded = true;
+                this.bedroomForm.disable();
               }
               // console.log('status:', key);
               // console.log(value + ' exists');

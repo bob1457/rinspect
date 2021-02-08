@@ -320,7 +320,7 @@
                 </mat-tab>
             </mat-tab-group>
             <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="addMore">Add more section</mat-checkbox>
-            <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
+            <button [disabled]="alreadyAdded" type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
         <!-- </form> -->
     </div>
 </form>
