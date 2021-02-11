@@ -203,7 +203,9 @@
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
         <app-livingroom-view-item *ngIf="livingRoomSection" [livingRoomSectionDetails]="livingRoomSection" [reportId]='id'></app-livingroom-view-item>
         <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>
+        <app-dinningroom-view-empty-item *ngIf="!diningRoomSEction"></app-dinningroom-view-empty-item>
         <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
+        <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item>
         <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id'></app-mainbathroom-view-item>
         <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
         
@@ -211,10 +213,29 @@
         <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
         
         <app-exterior-view-item *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-exterior-view-item>
+        <app-exterior-view-empty-item *ngIf="!exteriorSection"></app-exterior-view-empty-item>
         <app-utility-view-item *ngIf="utilitySection" [utilityRoomectionDetails]="utilitySection" [reportId]='id'></app-utility-view-item>
+        <app-utility-view-empty-item *ngIf="!utilitySection"></app-utility-view-empty-item>
         <app-garbage-view-item *ngIf="garbageParkingSection" [garbageSectionDetails]="garbageParkingSection" [reportId]='id'></app-garbage-view-item>
+        <app-garbage-view-empty-item *ngIf="!garbageParkingSection"></app-garbage-view-empty-item>
+        
+        <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+            <div style="width:50%;">
+                <span style="font-style: italic;">            
+                #RTB-27 (2011/03)
+                </span>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                <span style="font-weight:bold;font-style: italic;">page 2 of 4 pages</span>
+            </div>
+        </div>
+
+
         <app-basement-view-item *ngIf="basementSection" [basementSectionDetails]="basementSection" [reportId]='id'></app-basement-view-item>
+        <app-basement-view-empty-item  *ngIf="!basementSection"></app-basement-view-empty-item>
         <app-storage-view-item *ngIf="otherSection" [storageOtherSectionDetails]="otherSection" [reportId]='id'></app-storage-view-item>
+        <app-storage-view-empty-item *ngIf="!otherSection"></app-storage-view-empty-item>
         <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
     </form>   

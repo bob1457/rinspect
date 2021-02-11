@@ -58,9 +58,19 @@ export class ReportViewContentComponent implements OnInit {
           // this.possessionDate = this.report.possesionDate.toDate().getDate() + "          " + this.report.possesionDate.toDate().getMonth() +  "             " +  this.report.possesionDate.toDate().getFullYear();
           this.possessionDate = "  " + this.getDate(this.report.possesionDate)  + "       " + this.getMonth(this.report.possesionDate) +  "        " +  this.report.possesionDate.toDate().getFullYear();
 
+          if(this.report.moveOutInspectDate) {
+             this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate)  + "       " + this.getMonth(this.report.moveOutInspectDate) +  "        " +  this.report.moveOutInspectDate.toDate().getFullYear();
+          } else {
+            this.moveOutInsDaste = "";
+          }
+
           this.moveInInsDate = "  " + this.getDate(this.report.moveInInspectDate)  + "       " + this.getMonth(this.report.moveInInspectDate) +  "        " +  this.report.moveInInspectDate.toDate().getFullYear();
-          this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate)  + "       " + this.getMonth(this.report.moveOutInspectDate) +  "        " +  this.report.moveOutInspectDate.toDate().getFullYear();
-          this.moveOutDate = "  " + this.getDate(this.report.moveOutDate)  + "       " + this.getMonth(this.report.moveOutDate) +  "        " +  this.report.moveOutDate.toDate().getFullYear();
+         
+          if(this.report.moveOutDate) {
+            this.moveOutDate = "  " + this.getDate(this.report.moveOutDate)  + "       " + this.getMonth(this.report.moveOutDate) +  "        " +  this.report.moveOutDate.toDate().getFullYear();
+          } else {
+            this.moveOutDate = "";
+          }
           
           console.log('rpt', this.report)
           console.log('possesiion date', this.possessionDate);

@@ -56,6 +56,13 @@ import { MaasterbedroomViewItemComponent } from './report-view-content-items/maa
 import { StairwellViewItemComponent } from './report-view-content-items/stairwell-view-item/stairwell-view-item.component';
 import { UtilityViewItemComponent } from './report-view-content-items/utility-view-item/utility-view-item.component';
 import { StorageViewItemComponent } from './report-view-content-items/storage-view-item/storage-view-item.component';
+import { GarbageViewEmptyItemComponent } from './report-view-content-items/garbage-view-empty-item/garbage-view-empty-item.component';
+import { BasementViewEmptyItemComponent } from './report-view-content-items/basement-view-empty-item/basement-view-empty-item.component';
+import { DinningroomViewEmptyItemComponent } from './report-view-content-items/dinningroom-view-empty-item/dinningroom-view-empty-item.component';
+import { ExteriorViewEmptyItemComponent } from './report-view-content-items/exterior-view-empty-item/exterior-view-empty-item.component';
+import { StairwellViewEmptyItemComponent } from './report-view-content-items/stairwell-view-empty-item/stairwell-view-empty-item.component';
+import { StorageViewEmptyItemComponent } from './report-view-content-items/storage-view-empty-item/storage-view-empty-item.component';
+import { UtilityViewEmptyItemComponent } from './report-view-content-items/utility-view-empty-item/utility-view-empty-item.component';
 
 
 @NgModule({
@@ -109,7 +116,14 @@ import { StorageViewItemComponent } from './report-view-content-items/storage-vi
     MaasterbedroomViewItemComponent,
     StairwellViewItemComponent,
     UtilityViewItemComponent,
-    StorageViewItemComponent
+    StorageViewItemComponent,
+    GarbageViewEmptyItemComponent,
+    BasementViewEmptyItemComponent,
+    DinningroomViewEmptyItemComponent,
+    ExteriorViewEmptyItemComponent,
+    StairwellViewEmptyItemComponent,
+    StorageViewEmptyItemComponent,
+    UtilityViewEmptyItemComponent
   ],
   imports: [
     AppMaterialModule,
