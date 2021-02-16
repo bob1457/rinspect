@@ -33,6 +33,7 @@ export class ReportViewContentComponent implements OnInit {
   stairwellSection;
   mainBathroomSection;
   masterBedroomSection;
+  secondBedroomSection;
   exteriorSection;
   utilitySection;
   garbageParkingSection;
@@ -152,6 +153,17 @@ export class ReportViewContentComponent implements OnInit {
             const id = a.payload.doc.id;
             this.masterBedroomSection = data;
             console.log('Master Bedroom view', this.masterBedroomSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionBySubType(this.id, 'Second Bedroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.secondBedroomSection = data;
+            console.log('Second Bedroom view', this.secondBedroomSection);
             return {id, ...data}
           } )
         })

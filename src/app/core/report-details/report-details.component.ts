@@ -403,6 +403,8 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   clicked(event) {
+    // Need to check all required sections are done if changed to TRUE.
+
     console.log(event.checked);
     this.final = event.checked;
   }
