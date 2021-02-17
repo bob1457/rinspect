@@ -26,6 +26,10 @@ export class ReportDetailsComponent implements OnInit {
   notAgree1 = '';
   agreeOk = false;
 
+  sectionMissing = false;
+
+  missingSections = [];
+
   type = '';
 
   // All sections
@@ -204,6 +208,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionBySubType(this.id, 'MainEntry')
         .subscribe(res => {
           this.mainEntrySection = res;
+          if(this.mainEntrySection.length == 0) {
+            this.sectionMissing = true;
+            this.missingSections.push('Main Entry');
+          }
           console.log('main-entry-section', this.mainEntrySection);
         })
 
@@ -227,6 +235,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionBySubType(this.id, 'MainKitchen')
         .subscribe( res => {
           this.mainkitchenSection = res;
+          if(this.mainkitchenSection.length == 0) {
+            this.sectionMissing = true;
+            this.missingSections.push('Main Kitchen');
+          }
           console.log('Main-kitchen-section', this.mainkitchenSection);
         })
 
@@ -239,6 +251,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionBySubType(this.id, 'LivingRoom')
     .subscribe( res => {
       this.livingRoomSection = res;
+      if(this.livingRoomSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Living Room');
+      }
       console.log('Living room section', this.livingRoomSection);
     })
 
@@ -251,6 +267,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Dinning-Room')
     .subscribe( res => {
       this.diningRoomSEction = res;
+      if(this.diningRoomSEction.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Dinning Room');
+      }
       console.log('Dinning-section', this.diningRoomSEction);
     })
 
@@ -267,6 +287,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Bathroom')
     .subscribe( res => {
       this.bathroomSection = res;
+      if(this.bathroomSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Bathroom');
+      }
       console.log('Bath-section', this.bathroomSection);
     })
 
@@ -304,6 +328,9 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionBySubType(this.id, 'Master Bedroom')
     .subscribe( res => {
       this.masterBedroomSection = res;
+      if(this.masterBedroomSection.length == 0) {
+        this.sectionMissing = true;
+      }
       console.log('Master Bed-section', this.masterBedroomSection);
     })
 
@@ -357,6 +384,10 @@ export class ReportDetailsComponent implements OnInit {
     this.dataService.getReportSectionByType(this.id, 'Key-Control')
     .subscribe( res => {
       this.keyControlSection = res;
+      if(this.keyControlSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Keys & Control');
+      }
       console.log('key-section', this.keyControlSection);
     })
 
@@ -365,6 +396,8 @@ export class ReportDetailsComponent implements OnInit {
       this.otherSection = res;
       console.log('other-section', this.otherSection);
     })
+
+    console.log('Missing Sections', this.missingSections);
   }
 
   submit() {
