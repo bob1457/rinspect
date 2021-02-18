@@ -12,6 +12,7 @@ export class ReportViewContentComponent implements OnInit {
   id;
   report;
   sections;
+  additionalSections = false;
 
   final = false;
   notAgree = '';
@@ -41,7 +42,14 @@ export class ReportViewContentComponent implements OnInit {
   keyControlSection;
   otherSection;
 
+  secondBathroom;
+  thirdBathRoom;
+  forthBathroom;
 
+  secondEntrySection;
+
+
+  
   constructor(private actRoute: ActivatedRoute,
               public dataService: DataService) {
                 this.actRoute.paramMap.subscribe(params => {
@@ -51,6 +59,13 @@ export class ReportViewContentComponent implements OnInit {
                }
 
   ngOnInit(): void {
+
+    let bathroomSubType = {       
+      'S':'Second Bathroom',
+      'T':'Third Bathroom',
+      'F':'Forth Bathroom',
+      // 'E':'SecondaryEntry'
+    }
 
     // Get report details
     this.dataService.getReportDetails(this.id)
@@ -239,7 +254,88 @@ export class ReportViewContentComponent implements OnInit {
         })
 
 
-    // format dates
+    // Get additional Sections
+
+
+
+
+    for (let [key, value] of Object.entries(bathroomSubType)) {
+      this.dataService.getReportSectionBySubType(this.id, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              this.additionalSections = true;
+              switch (key) {                
+                case 'S':
+                  res.map(a => {
+                    const data = a.payload.doc.data();
+                    const id = a.payload.doc.id;
+                    this.secondBathroom = data;
+                    console.log('2nd Bathroom view', this.secondBathroom);
+                    return {id, ...data}
+                  } )                 
+                  break;
+                case 'T':
+                  res.map(a => {
+                    const data = a.payload.doc.data();
+                    const id = a.payload.doc.id;
+                    this.thirdBathRoom = data;
+                    console.log('3rd Bathroom view', this.thirdBathRoom);
+                    return {id, ...data} 
+                  } )
+                  break;
+                case 'F':
+                  res.map(a => {
+                    const data = a.payload.doc.data();
+                    const id = a.payload.doc.id;
+                    this.forthBathroom = data;
+                    console.log('4th Bathroom view', this.forthBathroom);
+                    return {id, ...data} 
+                  } )
+                  break;
+                  case 'E':
+                    res.map(a => {
+                      const data = a.payload.doc.data();
+                      const id = a.payload.doc.id;
+                      this.secondEntrySection = data;
+                      console.log('2nd Entry view', this.secondEntrySection);
+                      return {id, ...data} 
+                    } )
+                    break;                
+                default:
+                  break;
+              }
+              // if(this.secondEntrySection || this.secondBathroom || this.thirdBathRoom  || this.forthBathroom) {
+              //   this.additionalSections = true;
+              // }
+            // } else {
+            //   // key = key + "N";
+            //   switch (key) {
+            //     case 'M':
+            //       this.mainBathExists = false;
+            //       break;
+            //     case 'S':
+            //       this.secondBathExists = false;
+            //       break;
+            //     case 'T':
+            //       this.thirdBathExists = false;
+            //       break;
+            //     case 'F':
+            //       this.forthBathExists = false;
+            //       break;                
+            //     default:
+            //       break;
+            //   }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
+
+    // if(this.secondEntrySection || this.secondBathroom || this.thirdBathRoom  || this.forthBathroom) {
+    //   this.additionalSections = true;
+    // }
 
     
   }

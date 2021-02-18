@@ -64,6 +64,7 @@ import { StairwellViewEmptyItemComponent } from './report-view-content-items/sta
 import { StorageViewEmptyItemComponent } from './report-view-content-items/storage-view-empty-item/storage-view-empty-item.component';
 import { UtilityViewEmptyItemComponent } from './report-view-content-items/utility-view-empty-item/utility-view-empty-item.component';
 import { BedroomViewEmptyItemComponent } from './report-view-content-items/bedroom-view-empty-item/bedroom-view-empty-item.component';
+import { ReportViewAdditionalContentComponent } from './report-view-additional-content/report-view-additional-content.component';
 
 
 @NgModule({
@@ -125,7 +126,8 @@ import { BedroomViewEmptyItemComponent } from './report-view-content-items/bedro
     StairwellViewEmptyItemComponent,
     StorageViewEmptyItemComponent,
     UtilityViewEmptyItemComponent,
-    BedroomViewEmptyItemComponent
+    BedroomViewEmptyItemComponent,
+    ReportViewAdditionalContentComponent
   ],
   imports: [
     AppMaterialModule,
