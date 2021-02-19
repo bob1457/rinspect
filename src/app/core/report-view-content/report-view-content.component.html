@@ -645,4 +645,17 @@
         </div>
     </div>
 </div>
-<app-report-view-additional-content *ngIf="additionalSections"></app-report-view-additional-content>
+<app-report-view-additional-content
+ *ngIf="additionalSections"
+ [id]="id"
+ [secondBathroom]="secondBathroom"
+ [thirdBathRoom]="thirdBathRoom"
+ [forthBathroom]="forthBathroom"
+ [familyRoomSection]="familyRoomSection"
+ [secondKitchenSection]="secondKitchenSection"
+ [thirdBedroom]="thirdBedroom"
+ [forthBedroom]="forthBedroom"
+ [fiftBedroom]="fiftBedroom"
+ [secondEntrySection]="secondEntrySection"
+ >
+</app-report-view-additional-content>

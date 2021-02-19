@@ -45,6 +45,11 @@ export class ReportViewContentComponent implements OnInit {
   secondBathroom;
   thirdBathRoom;
   forthBathroom;
+  familyRoomSection;
+  secondKitchenSection;
+  thirdBedroom;
+  forthBedroom;
+  fiftBedroom;
 
   secondEntrySection;
 
@@ -64,7 +69,12 @@ export class ReportViewContentComponent implements OnInit {
       'S':'Second Bathroom',
       'T':'Third Bathroom',
       'F':'Forth Bathroom',
-      // 'E':'SecondaryEntry'
+      'E':'SecondaryEntry',
+      'L':'Familyroom',
+      'K':'SecondaryKitchen',
+      'D':'Third Bedroom',
+      'U':'Forth Bedroom',
+      'V':'Fifth Bedroom'
     }
 
     // Get report details
@@ -301,7 +311,52 @@ export class ReportViewContentComponent implements OnInit {
                       console.log('2nd Entry view', this.secondEntrySection);
                       return {id, ...data} 
                     } )
-                    break;                
+                    break;
+                    case 'L':
+                      res.map(a => {
+                        const data = a.payload.doc.data();
+                        const id = a.payload.doc.id;
+                        this.familyRoomSection = data;
+                        console.log('Family room view', this.familyRoomSection);
+                        return {id, ...data}
+                      } )                 
+                      break; 
+                    case 'K':
+                      res.map(a => {
+                        const data = a.payload.doc.data();
+                        const id = a.payload.doc.id;
+                        this.secondKitchenSection = data;
+                        console.log('2nd Kitchen view', this.secondKitchenSection);
+                        return {id, ...data}
+                      } )                 
+                      break; 
+                    case 'D':
+                      res.map(a => {
+                        const data = a.payload.doc.data();
+                        const id = a.payload.doc.id;
+                        this.thirdBedroom = data;
+                        console.log('3rdd Bedroom view', this.thirdBedroom);
+                        return {id, ...data}
+                      } )                 
+                      break; 
+                    case 'U':
+                      res.map(a => {
+                        const data = a.payload.doc.data();
+                        const id = a.payload.doc.id;
+                        this.forthBedroom = data;
+                        console.log('4thd Bedroom view', this.forthBathroom);
+                        return {id, ...data}
+                      } )                 
+                      break; 
+                    case 'V':
+                      res.map(a => {
+                        const data = a.payload.doc.data();
+                        const id = a.payload.doc.id;
+                        this.fiftBedroom = data;
+                        console.log('5thd Bedroom view', this.fiftBedroom);
+                        return {id, ...data}
+                      } )                 
+                      break;            
                 default:
                   break;
               }
