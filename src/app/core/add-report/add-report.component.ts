@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
-<<<<<<< HEAD
-=======
+
 import { DataService } from '../services/data.service';
-<<<<<<< HEAD
->>>>>>> dev
-=======
+
 import { UserService } from 'src/app/user/services/user.service';
->>>>>>> dev
+
 
 @Component({
   selector: 'app-add-report',
@@ -18,11 +15,6 @@ import { UserService } from 'src/app/user/services/user.service';
 export class AddReportComponent implements OnInit {
 
   addForm: FormGroup;
-<<<<<<< HEAD
-
-  constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
-=======
   final = false;
   notAgree = '';
   notAgree1 = '';
@@ -33,7 +25,6 @@ export class AddReportComponent implements OnInit {
               private formBuilder: FormBuilder,
               private userService: UserService,
               private dataService: DataService) { }
->>>>>>> dev
 
   ngOnInit(): void {
 
@@ -43,9 +34,6 @@ export class AddReportComponent implements OnInit {
         })
 
     this.addForm = this.formBuilder.group({
-<<<<<<< HEAD
-      title: ['', Validators.required]
-=======
       // title: ['', Validators.required],
       active: [true],
       agentName: [''],
@@ -78,18 +66,10 @@ export class AddReportComponent implements OnInit {
       reportOwnerId: [''],
       created: [''],
       updated: ['']
->>>>>>> dev
     });
   }
 
   Created() {
-<<<<<<< HEAD
-    this.router.navigateByUrl('/home/report-details')
-  }
-
-  submit() {
-    this.router.navigateByUrl('/home/report-details')
-=======
     // this.router.navigateByUrl('/home/report-details')
   }
 
@@ -127,7 +107,6 @@ export class AddReportComponent implements OnInit {
     console.log('form data', this.addForm.value);
     this.dataService.createReport(this.addForm.value);
     this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
->>>>>>> dev
   }
 
 }

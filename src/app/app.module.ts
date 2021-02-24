@@ -10,8 +10,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SigninComponent } from './signin/signin.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -22,23 +20,21 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
->>>>>>> dev
 
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    SigninComponent
-=======
-    SigninComponent//,
-=======
+
     SigninComponent,
+
+    // SigninComponent//,
+
+    // SigninComponent,
     ForgotPasswordComponent//,
->>>>>>> dev
+
     // SectionItemComponent
->>>>>>> dev
+
   ],
   imports: [
     AppRoutingModule,
@@ -49,21 +45,16 @@ import { AuthGuard } from './shared/auth.guard';
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    FormsModule,
-<<<<<<< HEAD
-    ReactiveFormsModule
-=======
+    FormsModule,    
+
     ReactiveFormsModule,
     UserModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
-<<<<<<< HEAD
-    AngularFirestoreModule
->>>>>>> dev
-=======
+    AngularFireModule.initializeApp(environment.firebase),    
+
     AngularFirestoreModule,
     AngularFireAuthModule
->>>>>>> dev
+
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

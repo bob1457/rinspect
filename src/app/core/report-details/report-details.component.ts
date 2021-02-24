@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
+
 import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
-<<<<<<< HEAD
->>>>>>> dev
-=======
+
 import { NotificationService } from 'src/app/shared/notification.service';
 import { formatDate } from '@angular/common';
->>>>>>> dev
+
 
 @Component({
   selector: 'app-report-details',
@@ -21,11 +18,6 @@ import { formatDate } from '@angular/common';
 })
 export class ReportDetailsComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit(): void {
-=======
   panelOpenState = false;
 
   id;
@@ -468,7 +460,6 @@ export class ReportDetailsComponent implements OnInit {
   onChange1(event) {
     console.log(event);
     this.notAgree1 = event.value;
->>>>>>> dev
   }
 
   viewReport() {

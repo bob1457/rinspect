@@ -4,12 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { ReportComponent } from '../core/report/report.component';
 import { AddReportComponent } from './add-report/add-report.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
-<<<<<<< HEAD
-=======
 import { UserProfileComponent } from '../user/user-profile/user-profile.component';
 import { UserSettingsComponent } from '../user/user-settings/user-settings.component';
 import { AddSectionComponent } from './add-section/add-section.component';
->>>>>>> dev
 
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { AuthGuard } from '../shared/auth.guard';
@@ -23,23 +20,19 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
-<<<<<<< HEAD
+
       { path: 'report-details', component: ReportDetailsComponent},
-=======
+
       { path: 'report-details/:id', component: ReportDetailsComponent},
       { path: 'addsection', component: AddSectionComponent},
       { path: 'user/:id', component:UserProfileComponent},
       // { path: 'user', component:UserProfileComponent},
       { path: 'settings', component: UserSettingsComponent},
-<<<<<<< HEAD
->>>>>>> dev
-      { path: 'report', component: ReportComponent}
-=======
       // { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
       { path: 'report', component: ReportComponent, canActivate: [AuthGuard]},
       { path: 'report-view/:id', component: ReeportViewComponent},
       { path: 'addSection/:id', component: AddSectionComponent}
->>>>>>> dev
+
     ]
   }
 ];

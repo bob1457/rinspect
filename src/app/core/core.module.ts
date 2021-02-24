@@ -9,12 +9,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddReportComponent } from './add-report/add-report.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
-
-
-@NgModule({
-  declarations: [HomeComponent, ReportComponent, AddReportComponent, ReportDetailsComponent],
-=======
 import { AddSectionComponent } from './add-section/add-section.component';
 import { InspectionEntryComponent } from './sections/inspection-entry/inspection-entry.component';
 import { InspectionKitchenComponent } from './sections/inspection-kitchen/inspection-kitchen.component';
@@ -135,7 +129,6 @@ import { ReportViewAdditionalContentComponent } from './report-view-additional-c
     BedroomViewEmptyItemComponent,
     ReportViewAdditionalContentComponent
   ],
->>>>>>> dev
   imports: [
     AppMaterialModule,
     CommonModule,
@@ -143,10 +136,7 @@ import { ReportViewAdditionalContentComponent } from './report-view-additional-c
     RouterModule,
     FlexLayoutModule,
     FormsModule,
-<<<<<<< HEAD
-=======
     SharedModule,
->>>>>>> dev
     ReactiveFormsModule
   ]
 })
