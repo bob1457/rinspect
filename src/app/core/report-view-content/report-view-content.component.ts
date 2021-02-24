@@ -65,7 +65,7 @@ export class ReportViewContentComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let bathroomSubType = {       
+    let additionalSubType = {       
       'S':'Second Bathroom',
       'T':'Third Bathroom',
       'F':'Forth Bathroom',
@@ -269,7 +269,7 @@ export class ReportViewContentComponent implements OnInit {
 
 
 
-    for (let [key, value] of Object.entries(bathroomSubType)) {
+    for (let [key, value] of Object.entries(additionalSubType)) {
       this.dataService.getReportSectionBySubType(this.id, value)
           .subscribe( res => {
             if(res.length > 0) {
