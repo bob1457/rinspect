@@ -1,7 +1,8 @@
 <!-- <p>add-section-utility-room works!</p> -->
 <form style="width: 100%;" [formGroup]="utilityForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
-        <mat-form-field appearance="outline" style="width:100%">
+        <p>Section Type: <span style="font-weight:bold;">Utility Room</span><span style="font-weight:bold;color:red;" *ngIf="alreadyAdded"><mat-icon style="vertical-align: bottom;margin-left: 15px;">warning</mat-icon> Utility room section already exists!</span></p>
+        <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
         </mat-form-field>
@@ -20,9 +21,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 50%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="wahserDryerCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="wahserDryerCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -35,9 +36,24 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 50%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="electricCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="electricCmnts">
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                <mat-form-field style="width: 15%;">
+                                    <mat-label>Code</mat-label>
+                                    <mat-select id="propertyType1" formControlName="otherCode">
+                                        <mat-option *ngFor="let code of codes" [value]="code.name">
+                                            {{ code.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
+                                    <mat-label>Comments</mat-label>
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                 </mat-form-field>
                             </div>
                         </mat-card-content>
@@ -59,9 +75,9 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 50%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="wahserDryerCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="wahserDryerCmnts">
                                 </mat-form-field>
                             </div>                            
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -74,9 +90,24 @@
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" style="width: 50%;">
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
                                     <mat-label>Comments</mat-label>
-                                    <input matInput placeholder="Comments" formControlName="electricCmnts">
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="electricCmnts">
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                <mat-form-field style="width: 15%;">
+                                    <mat-label>Code</mat-label>
+                                    <mat-select id="propertyType1" formControlName="otherCode">
+                                        <mat-option *ngFor="let code of codes" [value]="code.name">
+                                            {{ code.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width: 50%;">
+                                    <mat-label>Comments</mat-label>
+                                    <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                 </mat-form-field>
                             </div>
                         </mat-card-content>
@@ -86,6 +117,6 @@
             </mat-tab>
         </mat-tab-group>
         <!-- <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="addMore">Add more section</mat-checkbox> -->
-        <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
+        <button [disabled]="alreadyAdded" type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
     </div>
 </form>

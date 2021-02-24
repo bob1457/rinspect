@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,9 +10,14 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionGarbageParkingComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+
   @Input() rptId;
 
   addMore = false;
+
+  alreadyAdded = false;
+  existing;
 
   garbageParkingForm: FormGroup;
 
@@ -33,6 +38,20 @@ export class AddSectionGarbageParkingComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Garbage-Parking")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      if (this.alreadyAdded) {
+                        this.garbageParkingForm.disable();
+                      }
+
+                      console.log('garbage-parking added', this.alreadyAdded);
+                    })
     
     this.garbageParkingForm = this.formBuilder.group({
       name: [''],
@@ -41,13 +60,21 @@ export class AddSectionGarbageParkingComponent implements OnInit {
       // IN
       conditionIn: this.formBuilder.group({        
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''], 
+        otherCode: [''],
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       }),
       //- OUT 
 
       conditionOut: this.formBuilder.group({        
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       })
       
       

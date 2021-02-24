@@ -1,0 +1,157 @@
+<!-- <p>entry-view-item works!</p> -->
+<div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;" *ngIf="entrySectionDetails">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="8" style="vertical-align: top;width: 160px;">
+                    <span style="font-weight: bold;">J. ENTRY<br>
+                        <span style="font-weight: 500;font-size:.8em; margin-left:10px">{{entrySectionDetails.name}}</span>
+                    </span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Walls and Trim</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span>Ceilings</span> 
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Closets
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left; font-size: .8em; line-height:1.9">Lighting Fixtures/Ceiling Fan/Bulbs</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                   <span style="visibility:hidden;">Other</span>
+                </td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;" >
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionOut.wallTrimCmnts == ''">{{entrySectionDetails.conditionIn.wallTrimCmnts}}</span>
+                </td>                
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.wallTrimCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.cellingCmnts == ''">{{entrySectionDetails.conditionIn.cellingCmnts}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.cellingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.closetsCmnts == ''">{{entrySectionDetails.conditionIn.closetsCmnts}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.closetsCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.lightingCmnts == ''">{{entrySectionDetails.conditionIn.lightingCmnts}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.lightingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.windowsCmnts == ''">{{entrySectionDetails.conditionIn.windowsCmnts}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.electricCmnts == ''">{{entrySectionDetails.conditionIn.electricCmnts}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionIn.otherCmnts == ''">{{entrySectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionIn.otherCode}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>{{entrySectionDetails.conditionIn.otherCode | empty}}
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionOut.wallTrimCmnts == ''">{{entrySectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>                
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.wallTrimCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.wallTrimCode != 'G'">{{entrySectionDetails.conditionIn.wallTrimCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.cellingCmnts == ''">{{entrySectionDetails.conditionOut.cellingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.cellingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.cellingCode != 'G'">{{entrySectionDetails.conditionIn.cellingCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.closetsCmnts == ''">{{entrySectionDetails.conditionOut.closetsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.closetsCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.closetsCode != 'G'">{{entrySectionDetails.conditionIn.closetsCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.lightingCmnts == ''">{{entrySectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.lightingCode | code}}</td>
+                <!-- <td style="border: 1px solid black;text-align: center;" *ngIf="entrySectionDetails.conditionIn.lightingCode != 'G'">{{entrySectionDetails.conditionIn.lightingCode}}</td> -->
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.windowsCmnts == ''">{{entrySectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.windowsCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="entrySectionDetails.conditionOut.electricCmnts == ''">{{entrySectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;" >{{entrySectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;" >
+                    <span [class.hide]="entrySectionDetails.conditionOut.otherCmnts == ''">{{entrySectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{entrySectionDetails.conditionOut.otherCode}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>

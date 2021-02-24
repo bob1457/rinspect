@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,9 +10,13 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionUtilityRoomComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+  
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   utilityForm: FormGroup;
 
@@ -33,6 +37,20 @@ export class AddSectionUtilityRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Utility-Room")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('Utility room added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.utilityForm.disable();
+                      }
+                    })
     
     this.utilityForm = this.formBuilder.group({
       name: [''],
@@ -43,7 +61,9 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         washerDryerCode: [''],
         wahserDryerCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -51,7 +71,9 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         washerDryerCode: [''],
         wahserDryerCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       

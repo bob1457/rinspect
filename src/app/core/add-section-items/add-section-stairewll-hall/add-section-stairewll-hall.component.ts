@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,11 +10,15 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionStairewllHallComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+  
   stairForm: FormGroup;
 
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   codes = [
     { 'name': 'G'},
@@ -36,6 +40,20 @@ export class AddSectionStairewllHallComponent implements OnInit {
   ngOnInit(): void {
     console.log('report id:',this.rptId);
 
+    this.dataServie.getReportSectionByType(this.rptId, "Stairwell")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('Stairwell added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.stairForm.disable();
+                      }
+                    })
+
     this.stairForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -55,7 +73,9 @@ export class AddSectionStairewllHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -73,19 +93,21 @@ export class AddSectionStairewllHallComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
 
     });
   }
 
   submit() {
-    this.stairForm.get('type').setValue('Kitchen');
+    this.stairForm.get('type').setValue('Stairwell');
     console.log('add secton form', this.stairForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    // this.dataServie.createSection(this.kitchenForm.value, this.rptId);
+    this.dataServie.createSection(this.stairForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();

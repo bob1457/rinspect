@@ -48,6 +48,7 @@ export class InspectionKitchenComponent implements OnInit {
       
       name: [''],
       type: [''],
+      subtype: [''], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -83,7 +84,9 @@ export class InspectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -121,13 +124,16 @@ export class InspectionKitchenComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
 
     });
 
     this.kitchenSectionDetails.forEach(element => {
         this.kitchenForm.get('name').setValue(element.payload.doc.data().name);
+        this.kitchenForm.get('subtype').setValue(element.payload.doc.data().subtype);
         // this.kitchenForm.get('type').disable(element.paayload.doc().data().type);
       // Move In data
       this.kitchenForm.get('conditionIn').get('cellingCmnts').setValue(element.payload.doc.data().conditionIn.cellingCmnts);
@@ -213,6 +219,7 @@ export class InspectionKitchenComponent implements OnInit {
   // Update section
   submit() { 
     this.kitchenForm.get('type').setValue('Kitchen');
+    this.kitchenForm.get('subtype').setValue(this.kitchenForm.value.subtype);
     console.log('sec', this.kitchenForm.value);
     // this.router.navigate(['/home/addsection']);
     this.dataService.updateSection(this.reportId, this.sectionId, this.kitchenForm.value)

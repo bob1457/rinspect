@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionLivingRoomComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
   // constructor() { }
 
   // ngOnInit(): void {
@@ -20,7 +21,12 @@ export class AddSectionLivingRoomComponent implements OnInit {
 
   addMore = false;
 
+  livingroomExists = false;
+  familyExists = false;
+  alreadyAdded = false;
+
   livingForm: FormGroup;
+  livingRoomType = 'LivingRoom';
 
   codes = [
     { 'name': 'G'},
@@ -39,10 +45,58 @@ export class AddSectionLivingRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    let kitchenSubType = {
+      'M':'Livingroom', 
+      'S':'Familyroom'      
+    }
+
+    for (let [key, value] of Object.entries(kitchenSubType)) {
+      console.log('subtype of kitchen---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.livingroomExists = true;
+                  break;
+                case 'S':
+                  this.familyExists = true;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+              if( this.livingroomExists == true && this.familyExists == true) {
+                this.alreadyAdded = true;
+                this.livingForm.disable();
+              }
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.livingroomExists = false;
+                  break;
+                case 'S':
+                  this.familyExists = false;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
     
     this.livingForm = this.formBuilder.group({
       name: [''],
       type: [''],
+      subtype: ['Living Room'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -64,7 +118,9 @@ export class AddSectionLivingRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -88,7 +144,9 @@ export class AddSectionLivingRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       
@@ -97,7 +155,17 @@ export class AddSectionLivingRoomComponent implements OnInit {
   }
 
   submit() {
-    this.livingForm.get('type').setValue('Entry');
+    this.livingForm.get('type').setValue('Living-Room');
+
+    //Check if main entry
+    if(this.livingRoomType == 'LivingRoom') {
+      this.livingForm.get('subtype').setValue('Living Room');
+    }
+    else {
+      this.livingForm.get('subtype').setValue('Family Room');
+    }
+
+
     console.log('add secton form', this.livingForm.value);
     // call service to add section
     console.log(this.rptId);
@@ -120,6 +188,11 @@ export class AddSectionLivingRoomComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.livingRoomType = event.value;
   }
 
 }

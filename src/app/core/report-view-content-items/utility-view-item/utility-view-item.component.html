@@ -1,0 +1,82 @@
+<!-- <p>dinningroom-view-item works!</p> -->
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="3" style="vertical-align: top;width: 108px;">
+                    <span style="font-weight: bold;">S. UTILITY ROOM</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left;">
+                    Washer/Dryer</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Electrical Outlets
+                </td>                
+            </tr>            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionIn.wahserDryerCmnts == ''">{{utilityRoomectionDetails.conditionIn.wahserDryerCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionIn.washerDryerCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionIn.electricCmnts == ''">{{utilityRoomectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionIn.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionIn.otherCmnts == ''">{{utilityRoomectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionIn.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionOut.wahserDryerCmnts == ''">{{utilityRoomectionDetails.conditionOut.wahserDryerCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionOut.washerDryerCode | code}}</td>
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionOut.electricCmnts == ''">{{utilityRoomectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionOut.electricCode | code}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="utilityRoomectionDetails.conditionOut.otherCmnts == ''">{{utilityRoomectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                <td style="border: 1px solid black;text-align: center;">{{utilityRoomectionDetails.conditionOut.otherCode | code}}</td>
+            </tr>
+            <!-- <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">dfas dfgasd</td>
+                <td style="border: 1px solid black;text-align: center;">&#10003;</td>
+            </tr> -->
+
+        </table>
+    </div>
+</div>
+

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,9 +10,13 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionExteriorComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+  
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   exteriorForm: FormGroup;
 
@@ -33,11 +37,25 @@ export class AddSectionExteriorComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Exterior")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      if (this.alreadyAdded) {
+                        this.exteriorForm.disable();
+                      }
+
+                      console.log('exterior added', this.alreadyAdded);
+                    })
     
     this.exteriorForm = this.formBuilder.group({
       name: [''],
       type: [''],
-      isMaster: [false],
+      // isMaster: [false],
       // IN
       conditionIn: this.formBuilder.group({
         frontRearEmtranceCmnts: [''],
@@ -55,7 +73,9 @@ export class AddSectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -75,7 +95,9 @@ export class AddSectionExteriorComponent implements OnInit {
         groundsAndWallsCode: [''],
         groundsAndWallsCmnts: [''],
         electricCmnts: [''],
-        electricCode: ['']
+        electricCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       

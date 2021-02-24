@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,11 +10,16 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionBasementComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+
   @Input() rptId;
 
   addMore = false;
 
   basementForm: FormGroup;
+
+  existing;
+  alreadyAdded = false;;
 
   codes = [
     { 'name': 'G'},
@@ -33,6 +38,17 @@ export class AddSectionBasementComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Basement")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true; 
+                        this.basementForm.disable();
+                      }
+
+                      console.log('basement added', this.alreadyAdded);
+                    })
     
     this.basementForm = this.formBuilder.group({
       name: [''],
@@ -50,7 +66,9 @@ export class AddSectionBasementComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],        
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -66,7 +84,9 @@ export class AddSectionBasementComponent implements OnInit {
         lightingCmnts: [''],
         lightingCode: [''],        
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       

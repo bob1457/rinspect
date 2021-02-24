@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,9 +10,13 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionKeysControlsComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   keyControlForm: FormGroup;
 
@@ -35,6 +39,22 @@ export class AddSectionKeysControlsComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Key-Control")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('key control added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.keyControlForm.disable();
+                      }
+                    })
+
+    
     
     this.keyControlForm = this.formBuilder.group({
       name: [''],
@@ -48,7 +68,9 @@ export class AddSectionKeysControlsComponent implements OnInit {
         rentalUnityDeadBoltKey: [0],
         rentalUnityDeadBoltCmnts: [''],
         parkginRemoteControlKey: [0],
-        parkginRemoteControlCmnts: ['']
+        parkginRemoteControlCmnts: [''],
+        otherKey: [0],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -60,7 +82,9 @@ export class AddSectionKeysControlsComponent implements OnInit {
         rentalUnityDeadBoltKey: [0],
         rentalUnityDeadBoltCmnts: [''],
         parkginRemoteControlKey: [0],
-        parkginRemoteControlCmnts: ['']
+        parkginRemoteControlCmnts: [''],
+        otherKey: [0],
+        otherCmnts: ['']
       })
       
       

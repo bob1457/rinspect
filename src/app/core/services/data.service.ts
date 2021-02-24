@@ -50,6 +50,30 @@ export class DataService {
 
   }
 
+  getReportSectionBySubType(id, subtype) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('subtype', '==', subtype))
+          .snapshotChanges();
+
+  }
+
+  getReportViewSectionByType(id, type) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('type', '==', type))
+          .snapshotChanges();
+
+  }
+
+  getReportViewSectionBySubType(id, subtype) {
+    return this.firestore
+          .collection('report')
+          .doc(id).collection('section', ref => ref.where('subtype', '==', subtype))
+          .snapshotChanges();
+
+  }
+
   createReport(report: any) {
     return this.firestore.collection('report').add(report);
   }

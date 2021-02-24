@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,11 +10,16 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionDinningRoomComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+
   @Input() rptId;
 
   addMore = false;
 
   dinningForm: FormGroup;
+
+  existing;
+  alreadyAdded = false;
 
   codes = [
     { 'name': 'G'},
@@ -33,6 +38,17 @@ export class AddSectionDinningRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Dinning-Room")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;  
+                        this.dinningForm.disable();                      
+                      }
+
+                      console.log('dinningroomt added', this.alreadyAdded);
+                    })
     
     this.dinningForm = this.formBuilder.group({
       name: [''],
@@ -50,7 +66,9 @@ export class AddSectionDinningRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -66,7 +84,9 @@ export class AddSectionDinningRoomComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       
@@ -75,7 +95,7 @@ export class AddSectionDinningRoomComponent implements OnInit {
   }
 
   submit() {
-    this.dinningForm.get('type').setValue('Entry');
+    this.dinningForm.get('type').setValue('Dinning-Room');
     console.log('add secton form', this.dinningForm.value);
     // call service to add section
     console.log(this.rptId);

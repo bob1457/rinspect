@@ -37,11 +37,36 @@ export class ReportDetailsComponent implements OnInit {
   notAgree1 = '';
   agreeOk = false;
 
+  sectionMissing = false;
+
+  missingSections = [];
+
   type = '';
 
   // All sections
-  entrySection;
-  kitchenSection;
+  mainEntrySection;
+  secondaryEntrySection;
+  mainkitchenSection;
+  secondarykitchenSection;
+  livingRoomSection;
+  familyRoomSection;
+  diningRoomSEction;
+  stairwellSection;
+  bathroomSection;
+
+  bedroomSection2;
+  masterBedroomSection;
+  bedroomSection3;
+  bedroomSection4;
+  bedroomSection5;
+
+
+  exteriorSection;
+  utilitySection;
+  garbageParkingSection;
+  basementSection;
+  keyControlSection;
+  otherSection;
 
 
 
@@ -190,17 +215,200 @@ export class ReportDetailsComponent implements OnInit {
         });
 
     // Get each section
-    this.dataService.getReportSectionByType(this.id, 'Entry')
+
+    this.dataService.getReportSectionBySubType(this.id, 'MainEntry')
         .subscribe(res => {
-          this.entrySection = res;
-          console.log('entry-section', this.entrySection);
+          this.mainEntrySection = res;
+          if(this.mainEntrySection.length == 0) {
+            this.sectionMissing = true;
+            this.missingSections.push('Main Entry');
+          }
+          console.log('main-entry-section', this.mainEntrySection);
         })
 
-    this.dataService.getReportSectionByType(this.id, 'Kitchen')
+    this.dataService.getReportSectionBySubType(this.id, 'SecondaryEntry')
+    .subscribe(res => {
+      this.secondaryEntrySection = res;
+      console.log('-secondary-entry-section', this.secondaryEntrySection);
+    })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'MainEntry')
+    // .subscribe( res => {
+    //   res.map(a => {
+    //     const data = a.payload.doc.data();
+    //     const id = a.payload.doc.id;
+    //     this.mainEntrySection = data;
+    //     console.log('section view', this.mainEntrySection);
+    //     return {id, ...data}
+    //   } )
+    // })
+
+    this.dataService.getReportSectionBySubType(this.id, 'MainKitchen')
         .subscribe( res => {
-          this.kitchenSection = res;
-          console.log('kitchen-section', this.kitchenSection);
+          this.mainkitchenSection = res;
+          if(this.mainkitchenSection.length == 0) {
+            this.sectionMissing = true;
+            this.missingSections.push('Main Kitchen');
+          }
+          console.log('Main-kitchen-section', this.mainkitchenSection);
         })
+
+    this.dataService.getReportSectionBySubType(this.id, 'SecondaryKitchen')
+    .subscribe(res => {
+      this.secondarykitchenSection = res;
+      console.log('-secondary-kitchen-section', this.secondarykitchenSection);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'LivingRoom')
+    .subscribe( res => {
+      this.livingRoomSection = res;
+      if(this.livingRoomSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Living Room');
+      }
+      console.log('Living room section', this.livingRoomSection);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Family Room')
+    .subscribe( res => {
+      this.familyRoomSection = res;
+      console.log('Familyroom-section', this.familyRoomSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Dinning-Room')
+    .subscribe( res => {
+      this.diningRoomSEction = res;
+      if(this.diningRoomSEction.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Dinning Room');
+      }
+      console.log('Dinning-section', this.diningRoomSEction);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Stairwell')
+    .subscribe( res => {
+      this.stairwellSection = res;
+      console.log('Stair-section', this.stairwellSection);
+    })
+
+
+
+    
+
+    this.dataService.getReportSectionByType(this.id, 'Bathroom')
+    .subscribe( res => {
+      this.bathroomSection = res;
+      if(this.bathroomSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Bathroom');
+      }
+      console.log('Bath-section', this.bathroomSection);
+    })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+
+    // this.dataService.getReportSectionBySubType(this.id, 'Bathroom')
+    // .subscribe( res => {
+    //   this.bathroomSection = res;
+    //   console.log('Bath-section', this.bathroomSection);
+    // })
+    
+
+    this.dataService.getReportSectionBySubType(this.id, 'Fifth Bedroom')
+    .subscribe( res => {
+      this.bedroomSection5 = res;
+      console.log('Bed-section', this.bedroomSection5);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Master Bedroom')
+    .subscribe( res => {
+      this.masterBedroomSection = res;
+      if(this.masterBedroomSection.length == 0) {
+        this.sectionMissing = true;
+      }
+      console.log('Master Bed-section', this.masterBedroomSection);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Second Bedroom')
+    .subscribe( res => {
+      this.bedroomSection2 = res;
+      console.log('Bed-section', this.bedroomSection2);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Third Bedroom')
+    .subscribe( res => {
+      this.bedroomSection3 = res;
+      console.log('Bed-section', this.bedroomSection3);
+    })
+
+    this.dataService.getReportSectionBySubType(this.id, 'Forth Bedroom')
+    .subscribe( res => {
+      this.bedroomSection4 = res;
+      console.log('Bed-section', this.bedroomSection4);
+    })
+
+
+
+
+
+    this.dataService.getReportSectionByType(this.id, 'Exterior')
+    .subscribe( res => {
+      this.exteriorSection = res;
+      console.log('Exterior-section', this.exteriorSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Utility-Room')
+    .subscribe( res => {
+      this.utilitySection = res;
+      console.log('utility-section', this.utilitySection);
+    })
+
+
+    this.dataService.getReportSectionByType(this.id, 'Garbage-Parking')
+    .subscribe( res => {
+      this.garbageParkingSection = res;
+      console.log('garbage-section', this.garbageParkingSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Basement')
+    .subscribe( res => {
+      this.basementSection = res;
+      console.log('basement-section', this.basementSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Key-Control')
+    .subscribe( res => {
+      this.keyControlSection = res;
+      if(this.keyControlSection.length == 0) {
+        this.sectionMissing = true;
+        this.missingSections.push('Keys & Control');
+      }
+      console.log('key-section', this.keyControlSection);
+    })
+
+    this.dataService.getReportSectionByType(this.id, 'Other')
+    .subscribe( res => {
+      this.otherSection = res;
+      console.log('other-section', this.otherSection);
+    })
+
+    console.log('Missing Sections', this.missingSections);
   }
 
   submit() {
@@ -239,6 +447,8 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   clicked(event) {
+    // Need to check all required sections are done if changed to TRUE.
+
     console.log(event.checked);
     this.final = event.checked;
   }

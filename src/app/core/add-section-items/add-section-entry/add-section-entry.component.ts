@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -10,9 +10,20 @@ import { DataService } from '../../services/data.service';
 })
 export class AddSectionEntryComponent implements OnInit {
 
+  floatLabelControl = new FormControl('auto');
+  
   @Input() rptId;
 
   addMore = false;
+  
+  // newly added attributes
+  entryType = 'MainEntry'; 
+  // main = '';
+  // secondary = '';
+  mainEntryExists = false;
+  secEntryExists = false;
+
+  alreadyAdded = false
 
   entryForm: FormGroup;
 
@@ -33,10 +44,60 @@ export class AddSectionEntryComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    let sectionSubType = {
+      'M':'MainEntry', 
+      'S':'SecondaryEntry'      
+    }
+
+    for (let [key, value] of Object.entries(sectionSubType)) {
+      console.log('subtype of section---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.mainEntryExists = true;
+                  break;
+                case 'S':
+                  this.secEntryExists = true;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+              if( this.mainEntryExists == true && this.secEntryExists == true) {
+                this.alreadyAdded = true;
+                this.entryForm.disable();
+              }
+          
+              console.log('status:', this.alreadyAdded);
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.mainEntryExists = false;
+                  break;
+                case 'S':
+                  this.secEntryExists = false;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
     
     this.entryForm = this.formBuilder.group({
       name: [''],
-      type: [''],
+      type: [''], 
+      subtype: ['MainEntry'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -52,7 +113,9 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       }),
       //- OUT 
 
@@ -70,7 +133,9 @@ export class AddSectionEntryComponent implements OnInit {
         wallTrimCmnts: [''],
         wallTrimCode: [''],
         windowsCmnts: [''],
-        windowsCode: ['']
+        windowsCode: [''],
+        otherCode: [''],
+        otherCmnts: ['']
       })
       
       
@@ -79,12 +144,21 @@ export class AddSectionEntryComponent implements OnInit {
   }
 
   submit() {
+
     this.entryForm.get('type').setValue('Entry');
+    //Check if main entry
+    if(this.entryType == 'MainEntry') {
+      this.entryForm.get('subtype').setValue('MainEntry');
+    }
+    else {
+      this.entryForm.get('subtype').setValue('SecondaryEntry');
+    }
+    
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.entryForm.value, this.rptId);    
+    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
 
     if (this.addMore) {
       this.reloadComponent();
@@ -102,6 +176,11 @@ export class AddSectionEntryComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
+  }
+
+  onChange(event) {
+    console.log(event);
+    this.entryType = event.value;
   }
 
 }

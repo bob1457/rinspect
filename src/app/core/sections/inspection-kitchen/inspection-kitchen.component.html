@@ -5,7 +5,7 @@
         <mat-expansion-panel-header style="background-color: #5c6bc0">
         <mat-panel-title style="color:white">
             <mat-icon>kitchen</mat-icon> &nbsp;
-        Section Type: Kitchen 
+            Section Type: {{item.payload.doc.data().type}}: <span style="font-size: .9em;font-style: italic;color: yellow;"> - {{item.payload.doc.data().subtype}}</span> 
         </mat-panel-title>
         <mat-panel-description>
             <!-- {{entrySectionDetails.name}}  - {{entrySectionDetails[0].type}} {{item.type}}-->
@@ -93,7 +93,7 @@
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Cabinets and Doors</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="cabnetsAndDoorsCmnts">
+                                                <mat-select id="propertyType1" formControlName="cabnetsAndDoorsCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -101,14 +101,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="cabnetsAndDoorsCode">
+                                                <input matInput placeholder="Comments" formControlName="cabnetsAndDoorsCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Store/Stove Top</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="stoveAndStoveTopCmnts">
+                                                <mat-select id="propertyType1" formControlName="stoveAndStoveTopCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -116,14 +116,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="stoveAndStoveTopCode">
+                                                <input matInput placeholder="Comments" formControlName="stoveAndStoveTopCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Oven</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="ovenCmnts">
+                                                <mat-select id="propertyType1" formControlName="ovenCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -131,14 +131,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="ovenCode">
+                                                <input matInput placeholder="Comments" formControlName="ovenCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Exhaust Hood and Fan</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="exhaustHoodAndFanCmnts">
+                                                <mat-select id="propertyType1" formControlName="exhaustHoodAndFanCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -146,14 +146,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="exhaustHoodAndFanCode">
+                                                <input matInput placeholder="Comments" formControlName="exhaustHoodAndFanCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Taps, Sink and Stoppers</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="tapSinkCmnts">
+                                                <mat-select id="propertyType1" formControlName="tapSinkCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -161,7 +161,7 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="tapSinkCode">
+                                                <input matInput placeholder="Comments" formControlName="tapSinkCmnts">
                                             </mat-form-field>
                                         </div>
             
@@ -181,10 +181,10 @@
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
-                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Refrigerator: Criper/Shelves</p>
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Refrigerator: Freezer</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="frigeSelvesCode">
+                                                <mat-select id="propertyType1" formControlName="frigeFreezerCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -192,7 +192,7 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="frigeSelvesCmnts">
+                                                <input matInput placeholder="Comments" formControlName="frigeFreezerCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -283,6 +283,21 @@
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
                                                 <input matInput placeholder="Comments" formControlName="electricCmnts">
+                                            </mat-form-field>
+                                        </div>
+                                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                            <mat-form-field style="width: 15%;">
+                                                <mat-label>Code</mat-label>
+                                                <mat-select id="propertyType1" formControlName="otherCode">
+                                                    <mat-option *ngFor="let code of codes" [value]="code.name">
+                                                        {{ code.name }}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" style="width: 50%;">
+                                                <mat-label>Comments</mat-label>
+                                                <input matInput placeholder="Comments" formControlName="otherCmnts">
                                             </mat-form-field>
                                         </div>
                                     </mat-card-content>
@@ -358,7 +373,7 @@
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Cabinets and Doors</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="cabnetsAndDoorsCmnts">
+                                                <mat-select id="propertyType1" formControlName="cabnetsAndDoorsCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -366,14 +381,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="cabnetsAndDoorsCode">
+                                                <input matInput placeholder="Comments" formControlName="cabnetsAndDoorsCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Store/Stove Top</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="stoveAndStoveTopCmnts">
+                                                <mat-select id="propertyType1" formControlName="stoveAndStoveTopCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -381,14 +396,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="stoveAndStoveTopCode">
+                                                <input matInput placeholder="Comments" formControlName="stoveAndStoveTopCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Oven</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="ovenCmnts">
+                                                <mat-select id="propertyType1" formControlName="ovenCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -396,14 +411,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="ovenCode">
+                                                <input matInput placeholder="Comments" formControlName="ovenCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Exhaust Hood and Fan</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="exhaustHoodAndFanCmnts">
+                                                <mat-select id="propertyType1" formControlName="exhaustHoodAndFanCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -411,14 +426,14 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="exhaustHoodAndFanCode">
+                                                <input matInput placeholder="Comments" formControlName="exhaustHoodAndFanCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                             <p style="width: 35%;text-align: left;margin-left: 5px;">Taps, Sink and Stoppers</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="tapSinkCmnts">
+                                                <mat-select id="propertyType1" formControlName="tapSinkCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -426,7 +441,7 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="tapSinkCode">
+                                                <input matInput placeholder="Comments" formControlName="tapSinkCmnts">
                                             </mat-form-field>
                                         </div>
             
@@ -446,10 +461,10 @@
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
-                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Refrigerator: Criper/Shelves</p>
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Refrigerator: Freezer</p>
                                             <mat-form-field style="width: 15%;">
                                                 <mat-label>Code</mat-label>
-                                                <mat-select id="propertyType1" formControlName="frigeSelvesCode">
+                                                <mat-select id="propertyType1" formControlName="frigeFreezerCode">
                                                     <mat-option *ngFor="let code of codes" [value]="code.name">
                                                         {{ code.name }}
                                                     </mat-option>
@@ -457,7 +472,7 @@
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
-                                                <input matInput placeholder="Comments" formControlName="frigeSelvesCmnts">
+                                                <input matInput placeholder="Comments" formControlName="frigeFreezerCmnts">
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -548,6 +563,21 @@
                                             <mat-form-field appearance="outline" style="width: 50%;">
                                                 <mat-label>Comments</mat-label>
                                                 <input matInput placeholder="Comments" formControlName="electricCmnts">
+                                            </mat-form-field>
+                                        </div>
+                                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
+                                            <p style="width: 35%;text-align: left;margin-left: 5px;">Other</p>
+                                            <mat-form-field style="width: 15%;">
+                                                <mat-label>Code</mat-label>
+                                                <mat-select id="propertyType1" formControlName="otherCode">
+                                                    <mat-option *ngFor="let code of codes" [value]="code.name">
+                                                        {{ code.name }}
+                                                    </mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" style="width: 50%;">
+                                                <mat-label>Comments</mat-label>
+                                                <input matInput placeholder="Comments" formControlName="otherCmnts">
                                             </mat-form-field>
                                         </div>
                                     </mat-card-content>
