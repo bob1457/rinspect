@@ -15,12 +15,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
-
 
 @NgModule({
   declarations: [
@@ -60,4 +59,4 @@ import { AuthGuard } from './shared/auth.guard';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// AngularFireAuthGuard, 
+// AngularFireAuthGuard,

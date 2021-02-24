@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class AddSectionExteriorComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
@@ -63,7 +63,7 @@ export class AddSectionExteriorComponent implements OnInit {
         patioBalconyDoorsCode: [''],
         patioBalconyDoorsCmnts: [''],
         garbabageContainerCode: [''],
-        garbabageContainerCmnts: [''],        
+        garbabageContainerCmnts: [''],
         galssAndFramesCmnts: [''],
         galssAndFramesCode: [''],
         stucoAndSidingCmnts: [''],
@@ -77,7 +77,7 @@ export class AddSectionExteriorComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         frontRearEmtranceCmnts: [''],
@@ -85,7 +85,7 @@ export class AddSectionExteriorComponent implements OnInit {
         patioBalconyDoorsCode: [''],
         patioBalconyDoorsCmnts: [''],
         garbabageContainerCode: [''],
-        garbabageContainerCmnts: [''],        
+        garbabageContainerCmnts: [''],
         galssAndFramesCmnts: [''],
         galssAndFramesCode: [''],
         stucoAndSidingCmnts: [''],
@@ -99,8 +99,8 @@ export class AddSectionExteriorComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -111,7 +111,7 @@ export class AddSectionExteriorComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.exteriorForm.value, this.rptId);    
+    this.dataServie.createSection(this.exteriorForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
@@ -126,6 +126,6 @@ export class AddSectionExteriorComponent implements OnInit {
     this.router.navigate(['/home/addSection', this.rptId]);
   }
 
-  
+
 
 }

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<p>report-details works!</p>
-=======
 <!-- <p>report-details works!</p> -->
 <div fxLayout="column" fxLayoutAlign="center center">
     <mat-card class="details-card mat-elevation-z0" *ngIf="report">
@@ -11,7 +8,8 @@
                 {{report.tenant.address.city}}
                 {{report.tenant.address.province}}
                 {{report.tenant.address.postcode}}</span>
-            </span></mat-card-title>
+                </span>
+            </mat-card-title>
             <mat-card-subtitle>
                 <div fxLayout="row" fxLayoutAlign="start start">
                     <div fxFlex="80">
@@ -21,8 +19,8 @@
                         <span *ngIf="final" style="margin-left: 5px;"><button style="color: rgb(47, 82, 240);" mat-raised-button color="accent" (click)="viewReport()">View Report</button></span>
                     </div>
                 </div>
-                
-                
+
+
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content fxLayout="column" fxLayoutAlign="end center">
@@ -115,7 +113,7 @@
                                     </mat-form-field>
                                 </div>
                             </div>
-<!--  -->
+                            <!--  -->
                         </div>
                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="margin-bottom: 20px;" class="field-width">
                             <mat-form-field style="width: 25%;">
@@ -130,7 +128,7 @@
                                 <mat-label>Move-In Inspec. Date</mat-label>
                                 <input readonly matInput [matDatepicker]="picker2" formControlName="moveInInspectDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                                <mat-datepicker #picker2></mat-datepicker> 
+                                <mat-datepicker #picker2></mat-datepicker>
                                 <!--[matDatepicker]="picker2"-->
                             </mat-form-field>
                             <mat-form-field style="width: 25%;">
@@ -143,7 +141,7 @@
                                 <mat-label>Move-Out Inspec. Date</mat-label>
                                 <input [readonly]="!edit" matInput [matDatepicker]="picker4" formControlName="moveOutInspectDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-                                <mat-datepicker #picker4></mat-datepicker> 
+                                <mat-datepicker #picker4></mat-datepicker>
                             </mat-form-field>
                         </div>
                         <mat-checkbox [disabled]="sectionMissing" style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report <span style="color: orangered" *ngIf="sectionMissing"> - some sections are missing <mat-icon [matMenuTriggerFor]="details" matSuffix style="vertical-align: bottom;">remove_red_eye</mat-icon> DETAILS</span></mat-checkbox>
@@ -159,7 +157,7 @@
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
                                         <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="agreeAtStart" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
                                             <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
@@ -167,7 +165,7 @@
                                                 <textarea matInput formControlName="reasonNotAgreeAtStart"></textarea>
                                             </mat-form-field>
                                         </div>
-        
+
                                     </mat-tab>
                                     <mat-tab label="END OF TENANCY">
                                         <mat-form-field style="width: 95%;margin-top:20px;">
@@ -177,7 +175,7 @@
                                         <p>Do you agree that is treport fairly represent the condition of the rental unit?</p>
                                         <mat-radio-group aria-label="Select an option" (change)="onChange1($event)" formControlName="agreeAtEnd" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" name="after">
                                             <mat-radio-button value="agree" style="padding-right: 10px;">Agree</mat-radio-button>
-                                            <mat-radio-button value="notagree" >Not Agree</mat-radio-button>
+                                            <mat-radio-button value="notagree">Not Agree</mat-radio-button>
                                         </mat-radio-group>
                                         <div *ngIf="notAgree1 == 'notagree'">
                                             <mat-form-field style="width: 95%;margin-top:20px;">
@@ -242,9 +240,9 @@
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
-        
+
                                         </div>
-        
+
                                         <p>Landlord's Name & Address at End of Tenancy</p>
                                         <mat-form-field appearance="outline" style="width: 100%;">
                                             <mat-label>last name, first & middle names (if entry for landlord is a business name, enter full legale business name)</mat-label>
@@ -289,7 +287,7 @@
                                                 <!-- <mat-hint>Hint</mat-hint> -->
                                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                                             </mat-form-field>
-        
+
                                         </div>
                                     </mat-tab>
                                 </mat-tab-group>
@@ -319,27 +317,22 @@
                     </form>
                     <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" class="text-uppercase" style="margin-left: 30px;width: 95%;">
                         <div style="color: rgb(28, 18, 177);font-weight: bold;">inpection report sections</div>
-                        <!-- <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span> -->
+                        <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span>
                         <span class="spacer"></span>
                         <button mat-raised-button style="background-color: #26bf49;
                             color: wheat;
-                            margin-left: 40px;"
-                            [routerLink]="['/home/addSection/', id]">
+                            margin-left: 40px;" [routerLink]="['/home/addSection/', id]">
                             <span class="material-icons">
                             add
                             </span> &nbsp;
                             Add Inspection Section
                         </button>
                     </div>
-                    <!-- <mat-menu #help="matMenu" yPosition="above" >
+                    <mat-menu #help="matMenu" yPosition="above">
                         <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start" style="width: 250px;">
                             <div fxFlex="50%">
-                                <span  style="margin-left: 10px;margin-top: 10px;">
-                                    <span style="font-weight: bold;">Condition Codes</span><br>
-                                    &nbsp; G = Good<br>
-                                    &nbsp; F = Fair<br>
-                                    &nbsp;  P = Poor<br>
-                                    &nbsp;  M = Missing
+                                <span style="margin-left: 10px;margin-top: 10px;">
+                                    <span style="font-weight: bold;">Condition Codes</span><br> &nbsp; G = Good<br> &nbsp; F = Fair<br> &nbsp; P = Poor<br> &nbsp; M = Missing
                                 </span>
                             </div>
                             <div fxFlex="50%" style="margin-left: 10px;margin-top: 10px;">
@@ -348,14 +341,14 @@
                                     &nbsp; S = Scratched<br>
                                     &nbsp; B = Broken<br>
                                     &nbsp; DT = Dirty<br>
-                                    &nbsp; ST = Stained  
+                                    &nbsp; ST = Stained
                                  </span>
-                                
+
                             </div>
                         </div>
-                        
-                    </mat-menu> -->
-                     <!-- [matMenuTriggerFor]="menu" -->
+
+                    </mat-menu>
+                    <!-- [matMenuTriggerFor]="menu" -->
                     <mat-accordion class="form-width">
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
@@ -375,30 +368,30 @@
                             <app-inspection-entry *ngIf="secondaryEntrySection" [entrySectionDetails]="secondaryEntrySection" [reportId]='id'></app-inspection-entry>
                             <app-inspection-kitchen *ngIf="mainkitchenSection" [kitchenSectionDetails]="mainkitchenSection" [reportId]='id'></app-inspection-kitchen>
                             <app-inspection-kitchen *ngIf="secondarykitchenSection" [kitchenSectionDetails]="secondarykitchenSection" [reportId]='id'></app-inspection-kitchen>
-                            
+
                             <app-inspection-living-room *ngIf="livingRoomSection" [LivingroomSectionDetails]="livingRoomSection" [reportId]='id'></app-inspection-living-room>
                             <app-inspection-living-room *ngIf="familyRoomSection" [LivingroomSectionDetails]="familyRoomSection" [reportId]='id'></app-inspection-living-room>
 
                             <app-inspection-dinning-room *ngIf="diningRoomSEction" [dinningroomSectionDetails]="diningRoomSEction" [reportId]='id'></app-inspection-dinning-room>
                             <app-inspection-stairwell-hall *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-inspection-stairwell-hall>
-                            <app-inspection-main-bath-room  *ngIf="bathroomSection" [bathroomSectionDetails]="bathroomSection" [reportId]='id'></app-inspection-main-bath-room>
-                            
+                            <app-inspection-main-bath-room *ngIf="bathroomSection" [bathroomSectionDetails]="bathroomSection" [reportId]='id'></app-inspection-main-bath-room>
+
                             <app-inspection-master-bedroom *ngIf="masterBedroomSection" [bedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-inspection-master-bedroom>
-                            <app-inspection-master-bedroom *ngIf="bedroomSection2" [bedroomSectionDetails]="bedroomSection2" [reportId]='id'></app-inspection-master-bedroom>                            
-                            <app-inspection-master-bedroom *ngIf="bedroomSection3" [bedroomSectionDetails]="bedroomSection3" [reportId]='id'></app-inspection-master-bedroom>                            
-                            <app-inspection-master-bedroom *ngIf="bedroomSection4" [bedroomSectionDetails]="bedroomSection4" [reportId]='id'></app-inspection-master-bedroom>                            
+                            <app-inspection-master-bedroom *ngIf="bedroomSection2" [bedroomSectionDetails]="bedroomSection2" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection3" [bedroomSectionDetails]="bedroomSection3" [reportId]='id'></app-inspection-master-bedroom>
+                            <app-inspection-master-bedroom *ngIf="bedroomSection4" [bedroomSectionDetails]="bedroomSection4" [reportId]='id'></app-inspection-master-bedroom>
                             <app-inspection-master-bedroom *ngIf="bedroomSection5" [bedroomSectionDetails]="bedroomSection5" [reportId]='id'></app-inspection-master-bedroom>
-                            
-                            
+
+
                             <app-inspection-exterior *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-inspection-exterior>
                             <app-inspection-utility-room *ngIf="utilitySection" [utilityRoomSectionDetails]="utilitySection" [reportId]='id'></app-inspection-utility-room>
                             <app-inspection-garbage-parking *ngIf="garbageParkingSection" [garbageParkingSectionDetails]="garbageParkingSection" [reportId]='id'></app-inspection-garbage-parking>
-                            <app-inspection-basement *ngIf="basementSection" [basementSectionDetails]="basementSection"  [reportId]='id'></app-inspection-basement>
-                            <app-inspection-keys-controls *ngIf="keyControlSection" [keyControlSectionDetails]="keyControlSection"  [reportId]='id'></app-inspection-keys-controls>
-                            <app-inspection-other *ngIf="otherSection" [otherSectionDetails]="otherSection"  [reportId]='id'></app-inspection-other>
+                            <app-inspection-basement *ngIf="basementSection" [basementSectionDetails]="basementSection" [reportId]='id'></app-inspection-basement>
+                            <app-inspection-keys-controls *ngIf="keyControlSection" [keyControlSectionDetails]="keyControlSection" [reportId]='id'></app-inspection-keys-controls>
+                            <app-inspection-other *ngIf="otherSection" [otherSectionDetails]="otherSection" [reportId]='id'></app-inspection-other>
                         </div>
 
-                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"> 
+                        <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     Self aware panel
@@ -436,10 +429,11 @@
 
 
 
+
 </div>
 
 
-<<<<<<< HEAD
+
 
 <!-- <mat-form-field appearance="outline" style="width: 10%;">
   <mat-label>unit #</mat-label>
@@ -461,6 +455,5 @@
   <mat-label>postal code</mat-label>
   <input matInput placeholder="Report Title">
 </mat-form-field> -->
->>>>>>> dev
-=======
->>>>>>> dev
+
+
