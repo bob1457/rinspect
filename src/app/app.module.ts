@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
@@ -44,7 +45,8 @@ import { AuthGuard } from './shared/auth.guard';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
