@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-garbage-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./garbage-view-item.component.scss']
 })
 export class GarbageViewItemComponent implements OnInit {
+
+  @Input() garbageSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 

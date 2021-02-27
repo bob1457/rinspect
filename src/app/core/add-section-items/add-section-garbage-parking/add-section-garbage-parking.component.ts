@@ -16,6 +16,9 @@ export class AddSectionGarbageParkingComponent implements OnInit {
 
   addMore = false;
 
+  alreadyAdded = false;
+  existing;
+
   garbageParkingForm: FormGroup;
 
   codes = [
@@ -35,6 +38,20 @@ export class AddSectionGarbageParkingComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Garbage-Parking")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      if (this.alreadyAdded) {
+                        this.garbageParkingForm.disable();
+                      }
+
+                      console.log('garbage-parking added', this.alreadyAdded);
+                    })
     
     this.garbageParkingForm = this.formBuilder.group({
       name: [''],
@@ -45,7 +62,9 @@ export class AddSectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''], 
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       }),
       //- OUT 
 
@@ -53,7 +72,9 @@ export class AddSectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''],
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: [''],
+        other2Cmnts: ['']
       })
       
       

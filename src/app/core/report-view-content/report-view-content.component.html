@@ -203,11 +203,460 @@
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
         <app-livingroom-view-item *ngIf="livingRoomSection" [livingRoomSectionDetails]="livingRoomSection" [reportId]='id'></app-livingroom-view-item>
         <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>
+        <app-dinningroom-view-empty-item *ngIf="!diningRoomSEction"></app-dinningroom-view-empty-item>
         <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
-        <!-- id="page2el" -->
+        <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item>
+        <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id'></app-mainbathroom-view-item>
+        <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
         
+        <!-- this is for an empty bedroom in case only one bedroom -->
+        <!-- <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item> -->
+        <app-bedroom-view-empty-item *ngIf="!secondBedroomSection"></app-bedroom-view-empty-item>
         
+        <app-exterior-view-item *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-exterior-view-item>
+        <app-exterior-view-empty-item *ngIf="!exteriorSection"></app-exterior-view-empty-item>
+        <app-utility-view-item *ngIf="utilitySection" [utilityRoomectionDetails]="utilitySection" [reportId]='id'></app-utility-view-item>
+        <app-utility-view-empty-item *ngIf="!utilitySection"></app-utility-view-empty-item>
+        <app-garbage-view-item *ngIf="garbageParkingSection" [garbageSectionDetails]="garbageParkingSection" [reportId]='id'></app-garbage-view-item>
+        <app-garbage-view-empty-item *ngIf="!garbageParkingSection"></app-garbage-view-empty-item>
+        
+        <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+            <div style="width:50%;">
+                <span style="font-style: italic;">            
+                #RTB-27 (2011/03)
+                </span>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                <span style="font-weight:bold;font-style: italic;">page 2 of 4 pages</span>
+            </div>
+        </div>
+
+
+        <app-basement-view-item *ngIf="basementSection" [basementSectionDetails]="basementSection" [reportId]='id'></app-basement-view-item>
+        <app-basement-view-empty-item  *ngIf="!basementSection"></app-basement-view-empty-item>
+        <app-storage-view-item *ngIf="otherSection" [storageOtherSectionDetails]="otherSection" [reportId]='id'></app-storage-view-item>
+        <app-storage-view-empty-item *ngIf="!otherSection"></app-storage-view-empty-item>
+        <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
     </form>   
-    
+    <p style="margin-bottom: 0;">
+        START OF TENANCY
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">X. Repairs to be completed at start of tenancy:</span> <span style="font-size: .8em;">(list repairs)</span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-top: -10px;margin-bottom: 0;">
+        <span style="font-weight: bold;">Y.</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+        </span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-bottom: 0;margin-top: -10px;">
+        End OF TENANCY
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">Z. Damage to rental unit or residential property for which the tenant is responsible:</span>
+    </p>
+    <p style="width:100%;margin-top: -10px;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%; margin-top: -10px;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-bottom: 0;">
+        <span style="font-weight: bold;">1. &nbsp;</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    </p>
+    <p style="margin-bottom: 0;">
+        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+        </span>
+    </p>
+    <p style="width:100%;margin-bottom: -5px;">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="width:100%">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
+            <input matInput placeholder="">
+        </mat-form-field>
+    </p>
+    <p style="margin-top: -10px;">
+        <span style="font-weight: bold;">2. &nbsp;</span> I, ____________________________<span> agree to the following deductions from my security and/or pet damage deposit:
+        </span>
+    </p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="50%">
+            Security Deposit:______________________________________ 
+        </div>
+        <div fxFlex="50%">
+            Pet Damage Deposit: ____________________________________
+        </div>
+    </div>
+    <p ></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="50%">
+            Date (dd/mm/yy)______________________________________ 
+        </div>
+        <div fxFlex="50%">
+            Signature of Tenant: ____________________________________
+        </div>
+    </div>
+    <p></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="60%">
+            <span style="font-weight: bold;">3.  Landlord’s Signature: (on Move-In)</span> _______________________________
+        </div>        
+        <div fxFlex="45%">
+            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
+        </div>
+    </div>
+    <p></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="60%">
+            <span style="font-weight: bold;">4.  Tenant’s Signature: (on Move-In)</span> _______________________________
+        </div>
+        <div fxFlex="45%">
+            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
+        </div>
+    </div>
+    <p></p>
+    <p style="margin-bottom:-5px;">
+        <span style="font-weight: bold;">5. Tenant’s Forwarding Address:</span>
+    </p>
+    <div fxLayout="row" fxLayoutAlign="start start" >
+        <mat-form-field appearance="outline" style="width: 5%;">
+            <mat-label>unit #</mat-label>
+            <input matInput placeholder="Unit #" >            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 30%;">
+            <mat-label>street address</mat-label>
+            <input matInput placeholder="Street address" >            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>city</mat-label>
+            <input matInput placeholder="Street address">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>province</mat-label>
+            <input matInput placeholder="Province">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>postal code</mat-label>
+            <input matInput placeholder="Postal Code" >            
+        </mat-form-field>
+
+    </div>
+    <p style="margin-top:-20px;"></p>
+    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+        <div fxFlex="15%" style="line-height: 1.2;">
+            <span style="font-weight: bold;">Landlord Name<br>& Addresses at<br>End of Tenancy</span>
+        </div>
+        <div fxFlex="85%">
+            <mat-form-field appearance="outline" style="width:95%;margin-left: 15px;">            
+                <input matInput >
+            </mat-form-field>
+            <!-- <mat-label>Last Name, first & middle names  (if entry for landlord is a business name, enter full legal business name)</mat-label> -->
+            <div  style="margin-left: 20px;font-size: .9em;margin-top: -40px;color: grey;">
+                <span style="font-size:.8em ;"> last name, first & middle names <span font-style="italic">(if entry for landlord is a business name, enter full legal business name)</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start start" >
+        <!-- <form></form> -->
+        <mat-form-field appearance="outline" style="width: 5%;">
+            <mat-label>unit #</mat-label>
+            <input matInput placeholder="Unit #">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 30%;">
+            <mat-label>street address</mat-label>
+            <input matInput placeholder="Street address">            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>city</mat-label>
+            <input matInput placeholder="Street address" >            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>province</mat-label>
+            <input matInput placeholder="Province" >            
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 10%;">
+            <mat-label>postal code</mat-label>
+            <input matInput placeholder="Postal Code" >            
+        </mat-form-field>
+
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+        <div style="width:50%;">
+            <span style="font-style: italic;">            
+            #RTB-27 (2011/03)
+            </span>
+        </div>
+        <div class="spacer"></div>
+        <div>
+            <span style="font-weight:bold;font-style: italic;">page 3 of 4 pages</span>
+        </div>
+    </div>
+    <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 10px;">
+        INSTRUCTIONS FOR COMPLETING RENTAL UNIT CONDITION REPORT
+    </p>
+    <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+        <div fxFlex="50%" style="font-size:.95em;height: 100%;line-height: 1.4;">
+            <p>
+                The landlord and tenant or their representatives are to view the condition of the rental unit together and record the condition of the rental unit at the time of move-in and at the time of moveout by the tenant.
+            </p>
+            <p>
+                This form is provided as a sample only.  If this form is not used, landlords and tenants must ensure that their form complies with the Residential Tenancy Regulation (Part 3, sections 19 & 20).
+            </p>
+            <p >
+                If the landlord or tenant complete improvements, it is recommended that a new condition inspection report is completed or an addendum signed by both parties is attached to this report.
+            </p>
+            <p style="font-weight: bold;margin-bottom: 0;">
+                At the Start of the Tenancy: 
+            </p>
+            <div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex="5%">1.</div>
+                    <div fxFlex="95%">
+                        Box A: Insert the legal name of the landlord. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>2.</div>
+                    <div fxFlex=95%>
+                        Box B:  Insert the landlord's address for service at the start of the tenancy. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>3.</div>
+                    <div fxFlex=95%>
+                        Box C:  Insert the legal name of the tenant.  
+                    </div>
+                </div>
+                
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>4.</div>
+                    <div fxFlex=95%>
+                        Box D:  Insert the address of the rental unit, including suite or apartment number and street address as set out in the tenancy agreement. 
+                    </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>5.</div>
+                        <div fxFlex=95%>
+                            Box E: Insert the date the tenant is entitled to possession of the rental unit
+                        </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>6.</div>
+                        <div fxFlex=95%>
+                            Box F: Insert the date the move-in inspection is conducted. 
+                        </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>7.</div>
+                        <div fxFlex=95%>
+                            Box I: Insert the names of the person who carries out the inspection on behalf of the tenant, if not the tenant. 
+                        </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>8.</div>
+                        <div fxFlex=95%>
+                            Boxes J, K, L, M, N, O, P, Q, R, S, T, U and V:  Use the "Comment" and "Code" columns under the heading "Condition at Beginning of Tenancy" to record the code that best describes the condition of the premises at the beginning of the tenancy for each of the rooms or areas of the rental unit listed in these boxes. Under the Code column list the code for the word that best describes the state of repair or damage, and the code that best describes the state of cleanliness of the unit.  If condition and cleanliness are both good, use the .  If not, only one code for condition and one code for cleanliness (DT or ST), should be used. Use the comment column to provide details, if necessary, to better describe the condition described by the codes. FOR EXAMPLE: if the ceiling had 3 small holes in it and was clean,  on the "ceiling" line you would insert in the Code column the code letter "D" to indicate that the ceiling was damaged and would write the words "3 small holes" in the comment column to describe the damage.  If the ceiling was also dirty, you would also insert the letters DT in the Code column.  Blank lines should be used to add items such as furniture and electrical connections that are not specified on the form. Tenants can use the “comments” column to note any specific disagreement with the landlord’s assessment.  
+                        </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>9.</div>
+                        <div fxFlex=95%>
+                            Box W: Keys and Controls. Use this section to record the number of keys or controls given to the tenants at the beginning of the tenancy.  Keys and controls include metal or plastic door keys, and remote controls to open secured parking gates or garage doors. 
+                        </div>
+                    </div>
+                    <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                        <div fxFlex=5%>10.</div>
+                        <div fxFlex=95%>
+                            Box W: Keys and Controls. Use this section to record the number of keys or controls given to the tenants at the beginning of the tenancy.  Keys and controls include metal or plastic door keys, and remote controls to open secured parking gates or garage doors. 
+                        </div>
+                    </div>
+            </div>
+            
+        </div>
+        <div fxFlex="50%" style="font-size:.95em;height: 100%;line-height: 1.4;">
+            <div fxLayout="column" fxLayoutAlign="start" fxFlexFill>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex="5%">11.</div>
+                    <div fxFlex="95%">
+                        Box Y:  If the tenant disagrees with the report, check "disagree, for the following reasons", note the parts of the report that he or she disagrees with, if any, and set out the condition that he or she thinks best describes that part of the rental unit, and then sign and date this box.  If the tenant agrees with report, check "agree", and sign and date the box 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>12.</div>
+                    <div fxFlex=95%>
+                        Box 3: The landlord is to sign in this box on move-in, indicating that the report has been completed. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>13.</div>
+                    <div fxFlex=95%>
+                        Box 4: The tenant, or the tenant's agent, is to sign in this box on move-in, indicating that the report has been completed.  
+                    </div>
+                </div>
+                
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>14.</div>
+                    <div fxFlex=95%>
+                        The landlord should give the tenant a signed copy of this report immediately, if possible, or must provide a signed copy to the tenant within 7 days of the inspection. 
+                    </div>
+                </div>
+                <p style="margin-bottom: 0;font-weight: bold;margin-top:10px">
+                    At the End of the Tenancy: 
+                </p>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>15.</div>
+                    <div fxFlex=95%>
+                        Box G: Insert the date the tenant moves out of the rental unit. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>16.</div>
+                    <div fxFlex=95%>
+                        Box H:  Insert the date the move-out inspection is carried out
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>17.</div>
+                    <div fxFlex=95%>
+                        Box I:  Insert the names of the person who carries out the inspection on behalf of the tenant, if not the tenant
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>18.</div>
+                    <div fxFlex=95%>
+                        Boxes J, K, L, M, N, O, P, Q, R, S, T, U and V:  Following the procedure set out in (8), using the column for "Condition at End of Tenancy". 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>19.</div>
+                    <div fxFlex=95%>
+                        Box W:  Record the number of keys or controls returned by the tenants at the end of the tenancy. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>20.</div>
+                    <div fxFlex=95%>
+                        Box Z: Use this box to list all damage to the rental unit or residential property for which the tenant is responsible.  
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>21.</div>
+                    <div fxFlex=95%>
+                        Box 1:  If the tenant disagrees with the report, check "do not agree, for the following reasons", note the parts of the report that he or she disagrees with, if any, and set out the condition that he or she thinks best describes that part of the rental unit, and then sign and date this box..  If the tenant agrees with
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>22.</div>
+                    <div fxFlex=95%>
+                        Box 2: If, at the end of the tenancy, the tenant agrees that the landlord may retain all or a part of the security deposit or the pet damage deposit to pay a liability or obligation owed by the tenant to the landlord, the tenant should set out details of the amounts to be deducted, and what each amount is for.  The tenant's agent cannot agree to deductions from the security or pet damage deposit without authorization from the tenant. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>23.</div>
+                    <div fxFlex=95%>
+                        Box 3: The landlord is to sign in this box on move-out, indicating that the report has been completed. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>24.</div>
+                    <div fxFlex=95%>
+                        Box 4: The tenant, or the tenant's agent, is to sign in this box on move-out, indicating that the report has been completed. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>25.</div>
+                    <div fxFlex=95%>
+                        Box 5: The tenant, or the tenant's agent, is to insert the tenant's forwarding address in this space so that the landlord will have an address to forward the security deposit and mail, to the tenant. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>26.</div>
+                    <div fxFlex=95%>
+                        Box 6: The landlord is to insert his or her name and current mailing address in this space so that the tenant may know where and how to contact the landlord in the future. 
+                    </div>
+                </div>
+                <div div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+                    <div fxFlex=5%>27.</div>
+                    <div fxFlex=95%>
+                        The landlord should give the tenant a signed copy of this report immediately, if possible.  If the landlord needs to have a copy made, a signed copy must be provided to the tenant within 15 days after the later of, the date the inspection was completed, and the date the landlord receives the tenant’s forwarding address in writing.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start" fxFlexFill style="border-bottom: 8px solid #1150af;">
+        <div style="font-weight: bold;text-align:center;margin-top: 15px;">
+            FOR MORE INFORMATION 
+        </div>
+        <div style="font-weight: bold;text-align:center">
+            RTB website: www.gov.bc.ca/landlordtenant 
+        </div>
+        <div style="font-weight: bold;text-align:center;margin-bottom: 10px;">
+            Public Information Lines 1-800-665-8779 (toll-free)    Greater Vancouver 604-660-1020       Victoria 250-387-1602
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+        <div style="width:50%;">
+            <span style="font-style: italic;">            
+            #RTB-27 (2011/03)
+            </span>
+        </div>
+        <div class="spacer"></div>
+        <div>
+            <span style="font-weight:bold;font-style: italic;">page 4 of 4 pages</span>
+        </div>
+    </div>
 </div>
+<p style="margin-top: 40px;"></p>
+<app-report-view-additional-content
+ *ngIf="additionalSections"
+ [id]="id"
+ [secondBathroom]="secondBathroom"
+ [thirdBathRoom]="thirdBathRoom"
+ [forthBathroom]="forthBathroom"
+ [familyRoomSection]="familyRoomSection"
+ [secondKitchenSection]="secondKitchenSection"
+ [thirdBedroom]="thirdBedroom"
+ [forthBedroom]="forthBedroom"
+ [fiftBedroom]="fiftBedroom"
+ [secondEntrySection]="secondEntrySection"
+>
+</app-report-view-additional-content>

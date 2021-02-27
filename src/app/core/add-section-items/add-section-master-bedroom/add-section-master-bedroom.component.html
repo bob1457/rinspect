@@ -3,11 +3,11 @@
     <div [@.disabled]="true" style="width:100%">
         <p>Section Type: <span style="font-weight:bold;">Bedroom</span></p>
         <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
-            <mat-radio-button value="Master Bedroom" style="padding-right: 10px;">Master Bedroom</mat-radio-button>
-            <mat-radio-button value="Second Bedroom" style="padding-right: 10px;">2nd Bedroom</mat-radio-button>
-            <mat-radio-button value="Third Bedroom" style="padding-right: 10px;">3rd Bedroom</mat-radio-button>
-            <mat-radio-button value="Forth Bedroom" style="padding-right: 10px;">4th Bdedroom</mat-radio-button>
-            <mat-radio-button value="Fifth Bedroom" style="padding-right: 10px;">5th Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="maasterBedExists" value="Master Bedroom" style="padding-right: 10px;">Master Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="secondBedRoomExists" value="Second Bedroom" style="padding-right: 10px;">2nd Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="thirdBedRoomExists" value="Third Bedroom" style="padding-right: 10px;">3rd Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="forthBedRoomExists" value="Forth Bedroom" style="padding-right: 10px;">4th Bdedroom</mat-radio-button>
+            <mat-radio-button [disabled]="fifthBedRoomExists" value="Fifth Bedroom" style="padding-right: 10px;">5th Bedroom</mat-radio-button>
             <!-- <mat-radio-button value="Family Room" >Family Room</mat-radio-button>
             <mat-radio-button value="Living Room" style="padding-right: 10px;">Living Room</mat-radio-button> -->
             
@@ -320,7 +320,7 @@
                 </mat-tab>
             </mat-tab-group>
             <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="addMore">Add more section</mat-checkbox>
-            <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
+            <button [disabled]="alreadyAdded" type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
         <!-- </form> -->
     </div>
 </form>

@@ -15,6 +15,10 @@ export class AddSectionKitchenComponent implements OnInit {
   kitchenType = 'MainKitchen';
   kitchenForm: FormGroup;
 
+  mainKitchenExists = false;
+  secKitchenExists = false;
+  alreadyAdded = false;
+
   @Input() rptId;
 
   addMore = false;
@@ -38,6 +42,53 @@ export class AddSectionKitchenComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('report id:',this.rptId);
+
+    let kitchenSubType = {
+      'M':'MainKitchen', 
+      'S':'SecondaryKitchen'      
+    }
+
+    for (let [key, value] of Object.entries(kitchenSubType)) {
+      console.log('subtype of kitchen---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.mainKitchenExists = true;
+                  break;
+                case 'S':
+                  this.secKitchenExists = true;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+              if( this.mainKitchenExists == true && this.secKitchenExists == true) {
+                this.alreadyAdded = true;
+                this.kitchenForm.disable();
+              }
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.mainKitchenExists = false;
+                  break;
+                case 'S':
+                  this.secKitchenExists = false;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
 
     this.kitchenForm = this.formBuilder.group({
       name: [''],

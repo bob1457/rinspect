@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exterior-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exterior-view-item.component.scss']
 })
 export class ExteriorViewItemComponent implements OnInit {
+
+  @Input() exteriorSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 

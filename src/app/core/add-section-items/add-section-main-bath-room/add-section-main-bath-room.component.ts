@@ -19,6 +19,14 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   mainBathForm: FormGroup;
   bathroomType = 'Main Bathrooom';
 
+  alreadyAdded = false;
+
+  mainBathExists = false;  
+  secondBathExists = false;
+  thirdBathExists = false;
+  forthBathExists = false;
+  fifthBathExists = false;
+
   codes = [
     { 'name': 'G'},
     { 'name': 'F'},
@@ -36,6 +44,67 @@ export class AddSectionMainBathRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    let bathroomSubType = {
+      'M':'Main Bathroom', 
+      'S':'Second Bathroom',
+      'T':'Third Bathroom',
+      'F':'Forth Bathroom'//,
+      // 'V':'Fifth Bathroom'
+    }
+
+
+    for (let [key, value] of Object.entries(bathroomSubType)) {
+      console.log('subtype of bedrrom---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.mainBathExists = true;
+                  break;
+                case 'S':
+                  this.secondBathExists = true;
+                  break;
+                case 'T':
+                  this.thirdBathExists = true;
+                  break;
+                case 'F':
+                  this.forthBathExists = true;
+                  break;                
+                default:
+                  break;
+              }
+              if( this.mainBathExists == true && this.secondBathExists == true && this.thirdBathExists == true && this.forthBathExists) {
+                this.alreadyAdded = true;
+                this.mainBathForm.disable();
+              }
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.mainBathExists = false;
+                  break;
+                case 'S':
+                  this.secondBathExists = false;
+                  break;
+                case 'T':
+                  this.thirdBathExists = false;
+                  break;
+                case 'F':
+                  this.forthBathExists = false;
+                  break;                
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
     
     this.mainBathForm = this.formBuilder.group({
       name: [''],

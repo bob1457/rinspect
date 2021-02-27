@@ -18,6 +18,9 @@ export class AddSectionDinningRoomComponent implements OnInit {
 
   dinningForm: FormGroup;
 
+  existing;
+  alreadyAdded = false;
+
   codes = [
     { 'name': 'G'},
     { 'name': 'F'},
@@ -35,6 +38,17 @@ export class AddSectionDinningRoomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Dinning-Room")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;  
+                        this.dinningForm.disable();                      
+                      }
+
+                      console.log('dinningroomt added', this.alreadyAdded);
+                    })
     
     this.dinningForm = this.formBuilder.group({
       name: [''],

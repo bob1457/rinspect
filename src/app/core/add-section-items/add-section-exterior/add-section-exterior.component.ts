@@ -15,6 +15,8 @@ export class AddSectionExteriorComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   exteriorForm: FormGroup;
 
@@ -35,6 +37,20 @@ export class AddSectionExteriorComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Exterior")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;
+                      }
+
+                      if (this.alreadyAdded) {
+                        this.exteriorForm.disable();
+                      }
+
+                      console.log('exterior added', this.alreadyAdded);
+                    })
 
     this.exteriorForm = this.formBuilder.group({
       name: [''],

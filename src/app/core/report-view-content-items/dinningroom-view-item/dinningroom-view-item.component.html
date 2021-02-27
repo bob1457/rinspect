@@ -33,7 +33,8 @@
                 
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;">Other</td>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
                 
             </tr>
             
@@ -42,32 +43,46 @@
     <div fxFlex="33%">
         <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.cellingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.cellingCmnts == ''">{{dinningRoomSectionDetails.conditionIn.cellingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.cellingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.wallTrimCmnts}}/td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.wallTrimCmnts == ''">{{dinningRoomSectionDetails.conditionIn.wallTrimCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.wallTrimCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.floorCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.floorCmnts == ''">{{dinningRoomSectionDetails.conditionIn.floorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.floorCode | code}}</td>
             </tr>
             
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.lightingCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.lightingCmnts == ''">{{dinningRoomSectionDetails.conditionIn.lightingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.lightingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.windowsCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.windowsCmnts == ''">{{dinningRoomSectionDetails.conditionIn.windowsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.electricCmnts}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.electricCmnts == ''">{{dinningRoomSectionDetails.conditionIn.electricCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionIn.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionIn.otherCmnts == ''">{{dinningRoomSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionIn.otherCode | code}}</td>
             </tr>
             <!-- <tr>
@@ -80,32 +95,46 @@
     <div fxFlex="33">
         <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.cellingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.cellingCmnts == ''">{{dinningRoomSectionDetails.conditionOut.cellingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.cellingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.wallTrimCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.wallTrimCmnts == ''">{{dinningRoomSectionDetails.conditionOut.wallTrimCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.wallTrimCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.floorCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.floorCmnts == ''">{{dinningRoomSectionDetails.conditionOut.floorCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.floorCode | code}}</td>
             </tr>
             
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.lightingCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.lightingCmnts == ''">{{dinningRoomSectionDetails.conditionOut.lightingCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.lightingCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.windowsCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.windowsCmnts == ''">{{dinningRoomSectionDetails.conditionOut.windowsCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.windowsCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.electricCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.electricCmnts == ''">{{dinningRoomSectionDetails.conditionOut.electricCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.electricCode | code}}</td>
             </tr>
             <tr>
-                <td style="border: 1px solid black;text-align: left;width: 151px;">{{dinningRoomSectionDetails.conditionOut.otherCmnts | empty}}</td>
+                <td style="border: 1px solid black;text-align: left;width: 151px;">
+                    <span [class.hide]="dinningRoomSectionDetails.conditionOut.otherCmnts == ''">{{dinningRoomSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
                 <td style="border: 1px solid black;text-align: center;">{{dinningRoomSectionDetails.conditionOut.otherCode | code}}</td>
             </tr>
             <!-- <tr>

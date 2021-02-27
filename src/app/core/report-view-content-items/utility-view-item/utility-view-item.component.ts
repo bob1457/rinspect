@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-utility-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./utility-view-item.component.scss']
 })
 export class UtilityViewItemComponent implements OnInit {
+  
+  @Input() utilityRoomectionDetails;
+  @Input() reportId;
 
   constructor() { }
 

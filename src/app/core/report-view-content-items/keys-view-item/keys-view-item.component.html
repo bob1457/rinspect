@@ -1,1 +1,114 @@
-<p>keys-view-item works!</p>
+<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+    <div fxFlex="34%">
+        <table style="width: 100%;margin-top: 3px;">
+            <tr>
+                <td rowspan="6" style="vertical-align: top;width: 108px;">
+                    <span style="font-weight: bold;">W. KEYS OR CONTROL</span>
+                </td>
+                <td style="widows: 100%;border: 1px solid black;text-align: left; font-weight: bold;">
+                    TYPE OF KEY OR CONTROL
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Building Entrance Keys
+                </td>                
+            </tr>
+            
+            <tr>
+                <td style="border: 1px solid black;text-align: left;font-size: .85em;line-height: 1.8;">
+                    Rental Unit Entrance Main Locks
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Rental Unit Deadbolt
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    Parking Remote Control
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: left;">
+                    <span style="visibility: hidden;">Other</span></td>
+                
+            </tr>
+            
+        </table>
+    </div>
+    <div fxFlex="33%">
+        <table style="width: 100%;margin-top: 3px;margin-left: -1px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;font-weight: bold;text-align: center;">
+                    # ISSUED AT START OF TENANCY
+                </td>                
+            <tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionIn.buildingEntrandeKey == ''">{{keyAndControlSectionDetails.conditionIn.buildingEntrandeKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionIn.buildingEntrandeKey == ''">{{keyAndControlSectionDetails.conditionIn.buildingEntrandeKey | empty}}</span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionIn.rentalUnityDeadBoltKey == ''">{{keyAndControlSectionDetails.conditionIn.rentalUnityDeadBoltKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionIn.parkginRemoteControlKey == ''">{{keyAndControlSectionDetails.conditionIn.parkginRemoteControlKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionIn.othe2Cmnts == ''">{{keyAndControlSectionDetails.conditionIn.otherCmnts | empty}}</span>
+                </td>
+                
+            </tr>
+
+        </table>
+    </div>
+    <div fxFlex="33">
+        <table style="width: 100%;margin-top: 3px;margin-left: -3px;">
+            <tr>
+                <td style="border: 1px solid black;text-align: left;width: 151px;font-weight: bold;text-align: center;">
+                    # ISSUED AT END OF TENANCY
+                </td>                
+            <tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionOut.buildingEntrandeKey == ''">{{keyAndControlSectionDetails.conditionOut.buildingEntrandeKey | empty}}</span>
+                </td>                
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionOut.buildingEntrandeKey == ''">{{keyAndControlSectionDetails.conditionOut.buildingEntrandeKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionOut.rentalUnityDeadBoltKey == ''">{{keyAndControlSectionDetails.conditionOut.rentalUnityDeadBoltKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionOut.parkginRemoteControlKey == ''">{{keyAndControlSectionDetails.conditionOut.parkginRemoteControlKey | empty}}</span>
+                </td>                
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;text-align: center;width: 151px;">
+                    <span [class.hide]="keyAndControlSectionDetails.conditionOut.otherCmnts == ''">{{keyAndControlSectionDetails.conditionOut.otherCmnts | empty}}</span>
+                </td>
+                
+            </tr>
+
+        </table>
+    </div>
+</div>
+

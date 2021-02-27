@@ -53,7 +53,9 @@ export class InspectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''], 
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: ['N/A'],
+        other2Cmnts: ['N/A']
       }),
       //- OUT 
 
@@ -61,7 +63,9 @@ export class InspectionGarbageParkingComponent implements OnInit {
         electricCmnts: [''],
         electricCode: [''], 
         otherCode: [''],
-        otherCmnts: ['']
+        otherCmnts: [''],
+        other2Code: ['N/A'],
+        other2Cmnts: ['N/A']
       })
 
     });
@@ -74,6 +78,8 @@ export class InspectionGarbageParkingComponent implements OnInit {
       this.garbageParkingForm.get('conditionIn').get('electricCode').setValue(element.payload.doc.data().conditionIn.electricCode);
       this.garbageParkingForm.get('conditionIn').get('otherCode').setValue(element.payload.doc.data().conditionIn.otherCode);
       this.garbageParkingForm.get('conditionIn').get('otherCmnts').setValue(element.payload.doc.data().conditionIn.otherCmnts);
+      this.garbageParkingForm.get('conditionIn').get('other2Code').setValue(element.payload.doc.data().conditionIn.other2Code);
+      this.garbageParkingForm.get('conditionIn').get('other2Cmnts').setValue(element.payload.doc.data().conditionIn.other2Cmnts);
 
       
       
@@ -81,6 +87,8 @@ export class InspectionGarbageParkingComponent implements OnInit {
       // Move Out data      
       this.garbageParkingForm.get('conditionOut').get('otherCode').setValue(element.payload.doc.data().conditionOut.otherCode);
       this.garbageParkingForm.get('conditionOut').get('otherCmnts').setValue(element.payload.doc.data().conditionOut.otherCmnts);
+      this.garbageParkingForm.get('conditionOut').get('other2Code').setValue(element.payload.doc.data().conditionOut.other2Code);
+      this.garbageParkingForm.get('conditionOut').get('other2Cmnts').setValue(element.payload.doc.data().conditionOut.other2Cmnts);
       this.garbageParkingForm.get('conditionOut').get('electricCmnts').setValue(element.payload.doc.data().conditionOut.electricCmnts);
       this.garbageParkingForm.get('conditionOut').get('electricCode').setValue(element.payload.doc.data().conditionOut.electricCode); 
      

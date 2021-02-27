@@ -18,6 +18,23 @@ export class AddSectionMasterBedroomComponent implements OnInit {
 
   bedroomForm: FormGroup;
   bedroomType = 'Master Bedrooom';
+  alreadyAdded = false;
+
+  maasterBedExists = false;  
+  secondBedRoomExists = false;
+  thirdBedRoomExists = false;
+  forthBedRoomExists = false;
+  fifthBedRoomExists = false;
+
+  queryResult;
+
+  // bedroomSubType = {
+  //   'M':'Master Bedrooom', 
+  //   'S':'Second Bedroom',
+  //   'T':'Third Bedroom',
+  //   'F':'Forth Bedroom',
+  //   'V':'Fifth Bedroom'
+  // }
 
   codes = [
     { 'name': 'G'},
@@ -36,6 +53,84 @@ export class AddSectionMasterBedroomComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    // Find out if any of the bedrrom already fifthBedRoomExists
+
+    let bedroomSubType = {
+      'M':'Master Bedroom', 
+      'S':'Second Bedroom',
+      'T':'Third Bedroom',
+      'F':'Forth Bedroom',
+      'V':'Fifth Bedroom'
+    }
+
+    console.log('reptID:', this.rptId);
+
+    // this.dataServie.getReportSectionBySubType(this.rptId, 'Master Bedroom')
+    // .subscribe( res => {
+      
+    //   console.log('Master Bed-section check:', res);
+    // })
+
+    for (let [key, value] of Object.entries(bedroomSubType)) {
+      console.log('subtype of bedrrom---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.maasterBedExists = true;
+                  break;
+                case 'S':
+                  this.secondBedRoomExists = true;
+                  break;
+                case 'T':
+                  this.thirdBedRoomExists = true;
+                  break;
+                case 'F':
+                  this.forthBedRoomExists = true;
+                  break;
+                case 'V':
+                  this.fifthBedRoomExists = true;
+                  break;
+                default:
+                  break;
+              }
+              if( this.maasterBedExists == true && this.secondBedRoomExists == true && this.thirdBedRoomExists == true && this.forthBedRoomExists == true && this.fifthBedRoomExists == true) {
+                this.alreadyAdded = true;
+                this.bedroomForm.disable();
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.maasterBedExists = false;
+                  break;
+                case 'S':
+                  this.secondBedRoomExists = false;
+                  break;
+                case 'T':
+                  this.thirdBedRoomExists = false;
+                  break;
+                case 'F':
+                  this.forthBedRoomExists = false;
+                  break;
+                case 'V':
+                  this.fifthBedRoomExists = false;
+                  break;
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+           
+          })
+    }
     
     this.bedroomForm = this.formBuilder.group({
       name: [''],

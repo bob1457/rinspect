@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-basement-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basement-view-item.component.scss']
 })
 export class BasementViewItemComponent implements OnInit {
+
+  @Input() basementSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 

@@ -55,6 +55,16 @@ import { MainbathroomViewItemComponent } from './report-view-content-items/mainb
 import { MaasterbedroomViewItemComponent } from './report-view-content-items/maasterbedroom-view-item/maasterbedroom-view-item.component';
 import { StairwellViewItemComponent } from './report-view-content-items/stairwell-view-item/stairwell-view-item.component';
 import { UtilityViewItemComponent } from './report-view-content-items/utility-view-item/utility-view-item.component';
+import { StorageViewItemComponent } from './report-view-content-items/storage-view-item/storage-view-item.component';
+import { GarbageViewEmptyItemComponent } from './report-view-content-items/garbage-view-empty-item/garbage-view-empty-item.component';
+import { BasementViewEmptyItemComponent } from './report-view-content-items/basement-view-empty-item/basement-view-empty-item.component';
+import { DinningroomViewEmptyItemComponent } from './report-view-content-items/dinningroom-view-empty-item/dinningroom-view-empty-item.component';
+import { ExteriorViewEmptyItemComponent } from './report-view-content-items/exterior-view-empty-item/exterior-view-empty-item.component';
+import { StairwellViewEmptyItemComponent } from './report-view-content-items/stairwell-view-empty-item/stairwell-view-empty-item.component';
+import { StorageViewEmptyItemComponent } from './report-view-content-items/storage-view-empty-item/storage-view-empty-item.component';
+import { UtilityViewEmptyItemComponent } from './report-view-content-items/utility-view-empty-item/utility-view-empty-item.component';
+import { BedroomViewEmptyItemComponent } from './report-view-content-items/bedroom-view-empty-item/bedroom-view-empty-item.component';
+import { ReportViewAdditionalContentComponent } from './report-view-additional-content/report-view-additional-content.component';
 
 
 @NgModule({
@@ -107,7 +117,17 @@ import { UtilityViewItemComponent } from './report-view-content-items/utility-vi
     MainbathroomViewItemComponent,
     MaasterbedroomViewItemComponent,
     StairwellViewItemComponent,
-    UtilityViewItemComponent
+    UtilityViewItemComponent,
+    StorageViewItemComponent,
+    GarbageViewEmptyItemComponent,
+    BasementViewEmptyItemComponent,
+    DinningroomViewEmptyItemComponent,
+    ExteriorViewEmptyItemComponent,
+    StairwellViewEmptyItemComponent,
+    StorageViewEmptyItemComponent,
+    UtilityViewEmptyItemComponent,
+    BedroomViewEmptyItemComponent,
+    ReportViewAdditionalContentComponent
   ],
   imports: [
     AppMaterialModule,

@@ -18,8 +18,12 @@ export class AddSectionEntryComponent implements OnInit {
 
   // newly added attributes
   entryType = 'MainEntry';
-  main = '';
-  secondary = '';
+  // main = '';
+  // secondary = '';
+  mainEntryExists = false;
+  secEntryExists = false;
+
+  alreadyAdded = false
 
   entryForm: FormGroup;
 
@@ -40,6 +44,55 @@ export class AddSectionEntryComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    let sectionSubType = {
+      'M':'MainEntry',
+      'S':'SecondaryEntry'
+    }
+
+    for (let [key, value] of Object.entries(sectionSubType)) {
+      console.log('subtype of section---', value);
+
+      this.dataServie.getReportSectionBySubType(this.rptId, value)
+          .subscribe( res => {
+            if(res.length > 0) {
+              // key = key + "Y";
+              switch (key) {
+                case 'M':
+                  this.mainEntryExists = true;
+                  break;
+                case 'S':
+                  this.secEntryExists = true;
+                  break;
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' exists');
+              if( this.mainEntryExists == true && this.secEntryExists == true) {
+                this.alreadyAdded = true;
+                this.entryForm.disable();
+              }
+
+              console.log('status:', this.alreadyAdded);
+            } else {
+              // key = key + "N";
+              switch (key) {
+                case 'M':
+                  this.mainEntryExists = false;
+                  break;
+                case 'S':
+                  this.secEntryExists = false;
+                  break;
+                default:
+                  break;
+              }
+              // console.log('status:', key);
+              // console.log(value + ' not exists');
+            }
+
+          })
+    }
 
     this.entryForm = this.formBuilder.group({
       name: [''],

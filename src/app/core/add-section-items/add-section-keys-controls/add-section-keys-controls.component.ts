@@ -15,6 +15,8 @@ export class AddSectionKeysControlsComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   keyControlForm: FormGroup;
 
@@ -37,6 +39,22 @@ export class AddSectionKeysControlsComponent implements OnInit {
               private dataServie: DataService) { }
 
   ngOnInit(): void {
+
+    this.dataServie.getReportSectionByType(this.rptId, "Key-Control")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      console.log('key control added', this.alreadyAdded);
+
+                      if (this.alreadyAdded) {
+                        this.keyControlForm.disable();
+                      }
+                    })
+
+    
     
     this.keyControlForm = this.formBuilder.group({
       name: [''],

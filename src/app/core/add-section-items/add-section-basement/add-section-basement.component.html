@@ -1,7 +1,8 @@
 <!-- <p>add-section-basement works!</p> -->
 <form style="width: 100%;" [formGroup]="basementForm" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()">
     <div [@.disabled]="true" style="width:100%">
-        <p>Section Type: <span style="font-weight:bold;">Basement</span></p>
+        <p>Section Type: <span style="font-weight:bold;">Basement</span><span style="font-weight:bold;color:red;" *ngIf="alreadyAdded"><mat-icon style="vertical-align: bottom;margin-left: 15px;">warning</mat-icon> Basedment section already exists!</span></p>
+    
         <mat-form-field appearance="outline" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
             <input matInput placeholder="Specify type and description of the area" formControlName="name">
@@ -247,7 +248,8 @@
                 </mat-tab>
             </mat-tab-group>
             <!-- <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="addMore">Add more section</mat-checkbox> -->
-            <button type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
+            <button [disabled]="alreadyAdded" type="submit" mat-raised-button color="primary" style="margin-top:20px; width: 100%;margin-bottom: 20px;">SAVE & CONTINUE</button>
         <!-- </form> -->
+    
     </div>
 </form>

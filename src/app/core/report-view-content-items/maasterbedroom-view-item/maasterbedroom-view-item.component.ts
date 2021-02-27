@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-maasterbedroom-view-item',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./maasterbedroom-view-item.component.scss']
 })
 export class MaasterbedroomViewItemComponent implements OnInit {
+
+  @Input() masterBedroomSectionDetails;
+  @Input() reportId;
 
   constructor() { }
 

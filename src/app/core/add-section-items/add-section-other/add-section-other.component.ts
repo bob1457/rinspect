@@ -17,6 +17,8 @@ export class AddSectionOtherComponent implements OnInit {
   @Input() rptId;
 
   addMore = false;
+  alreadyAdded = false;
+  existing;
 
   codes = [
     { 'name': 'G'},
@@ -37,6 +39,20 @@ export class AddSectionOtherComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('report id:',this.rptId);
+
+    this.dataServie.getReportSectionByType(this.rptId, "Other")
+                    .subscribe(result => {
+                      this.existing = result;
+                      if(this.existing.length !=0) {
+                        this.alreadyAdded = true;                        
+                      }
+
+                      if (this.alreadyAdded) {
+                        this.otherForm.disable();
+                      }
+
+                      console.log('exterior added', this.alreadyAdded);
+                    })
 
     this.otherForm = this.formBuilder.group({
       name: [''],

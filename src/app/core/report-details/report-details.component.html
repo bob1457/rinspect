@@ -144,7 +144,7 @@
                                 <mat-datepicker #picker4></mat-datepicker>
                             </mat-form-field>
                         </div>
-                        <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report</mat-checkbox>
+                        <mat-checkbox [disabled]="sectionMissing" style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report <span style="color: orangered" *ngIf="sectionMissing"> - some sections are missing <mat-icon [matMenuTriggerFor]="details" matSuffix style="vertical-align: bottom;">remove_red_eye</mat-icon> DETAILS</span></mat-checkbox>
                         <div *ngIf="final" style="width: 100%;">
                             <div [@.disabled]="true">
                                 <mat-tab-group>
@@ -294,6 +294,16 @@
                             </div>
                         </div>
 
+                        <mat-menu #details="matMenu" yPosition="above">
+                            <p style="margin-top:10px; margin-left:15px; font-weight: bold;">
+                                Sections required:
+                            </p>
+                            <ul style="margin-right: 20px;">
+                                <li style="color:red" *ngFor="let section of missingSections" >
+                                    {{section}}
+                                </li>
+                            </ul>
+                        </mat-menu>
 
                         <div *ngIf="edit || final" style="width: 100%;
                         margin-top: 20px;
