@@ -29,6 +29,11 @@ $rinspect-theme: mat-light-theme($rinspect-primary, $rinspect-accent, $rinspect-
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
+    
+}
+html {
+    overflow-y: hidden;
 }
 
 body {
@@ -42,6 +47,7 @@ body {
 // img {
 //     width: 100%;
 //     height: auto;
+
 // }
 
 .snackbar-success {
@@ -51,3 +57,13 @@ body {
 .snackbar-error {
     background-color: rgb(212, 73, 18);
 }
+
+@media only screen and (min-width: 1000px) {
+    body {        
+            width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: hidden;
+          }
+    
+  }
