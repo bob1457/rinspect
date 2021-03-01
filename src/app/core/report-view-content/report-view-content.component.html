@@ -246,32 +246,32 @@
     <p style="margin-bottom: 0;">
         <span style="font-weight: bold;">X. Repairs to be completed at start of tenancy:</span> <span style="font-size: .8em;">(list repairs)</span>
     </p>
-    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;" *ngIf="report">
         <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
-            <input matInput placeholder="">
+            <input matInput placeholder="" [value]="report.repairAtStart">
         </mat-form-field>
     </p>
     <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;" *ngIf="report">            
             <input matInput placeholder="">
         </mat-form-field>
     </p>
-    <p style="margin-top: -10px;margin-bottom: 0;">
-        <span style="font-weight: bold;">Y.</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    <p style="margin-top: -10px;margin-bottom: 0;" *ngIf="report">
+        <span style="font-weight: bold;">Y.</span> I, {{report.tenant.legalName}}<span style="font-size: .8em;"> (Tenant's name)</span><span></span>
     </p>
-    <p style="margin-bottom: 0;">
-        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    <p style="margin-bottom: 0;" *ngIf="report">
+        <input type="checkbox" [checked]="report.agreeAtStart=='agree'"><span>agree that this report fairly represents the condition of the rental unit </span>
     </p>
-    <p style="margin-bottom: 0;">
-        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+    <p style="margin-bottom: 0;" *ngIf="report">
+        <input type="checkbox" [checked]="report.agreeAtStart !='agree'"><span>do not agree that this report fairly represents the condition of the rental unit for the following reasons:
         </span>
     </p>
-    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;">
+    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;" *ngIf="report">
         <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
+            <input matInput placeholder="" [value]="report.reasonNotAgreeAtStart">
         </mat-form-field>
     </p>
-    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
+    <p style="width:100%;margin-top: -10px;margin-bottom: 0;" *ngIf="report">
         <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
             <input matInput placeholder="">
         </mat-form-field>
@@ -282,52 +282,52 @@
     <p style="margin-bottom: 0;">
         <span style="font-weight: bold;">Z. Damage to rental unit or residential property for which the tenant is responsible:</span>
     </p>
-    <p style="width:100%;margin-top: -10px;margin-bottom: -5px;">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
+    <p style="width:100%;margin-top: -10px;margin-bottom: -5px;" *ngIf="report">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;" *ngIf="report">            
+            <input matInput placeholder="" [value]="report.damageAtEnd">
         </mat-form-field>
     </p>
-    <p style="width:100%; margin-top: -10px;margin-bottom: -5px;">
+    <p style="width:100%; margin-top: -10px;margin-bottom: -5px;" *ngIf="report">
         <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
+            <input matInput placeholder=""> <!-- if the description is long, consider split it and populate this part, similar to the other one! -->
         </mat-form-field>
     </p>
-    <p style="margin-bottom: 0;">
-        <span style="font-weight: bold;">1. &nbsp;</span> I, <span style="font-size: .8em;">(Tenant's name)</span><span></span>
+    <p style="margin-bottom: 0;" *ngIf="report">
+        <span style="font-weight: bold;">1. &nbsp;</span> I, {{report.tenant.legalName}}, <span style="font-size: .8em;"> (Tenant's name)</span><span></span>
     </p>
-    <p style="margin-bottom: 0;">
-        <input type="checkbox"><span>agree that this report fairly represents the condition of the rental unit </span>
+    <p style="margin-bottom: 0;" *ngIf="report">
+        <input type="checkbox" [checked]="report.agreeAtEnd=='agree'"><span>agree that this report fairly represents the condition of the rental unit </span>
     </p>
-    <p style="margin-bottom: 0;">
-        <input type="checkbox"><span>ado not agree that this report fairly represents the condition of the rental unit for the following reasons:
+    <p style="margin-bottom: 0;" *ngIf="report">
+        <input type="checkbox" [checked]="report.agreeAtEnd !='agree'"><span>do not agree that this report fairly represents the condition of the rental unit for the following reasons:
         </span>
     </p>
-    <p style="width:100%;margin-bottom: -5px;">
+    <p style="width:100%;margin-bottom: -5px;" *ngIf="report">
         <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
+            <input matInput placeholder="" [value]="report.reasonNotAgreeAtEnd">
         </mat-form-field>
     </p>
     <p style="width:100%">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
+        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;" *ngIf="report">            
+            <input matInput placeholder=""> <!-- if the description is long, consider split it and populate this part, similar to the other one! -->
         </mat-form-field>
     </p>
-    <p style="margin-top: -10px;">
-        <span style="font-weight: bold;">2. &nbsp;</span> I, ____________________________<span> agree to the following deductions from my security and/or pet damage deposit:
+    <p style="margin-top: -10px;" *ngIf="report">
+        <span style="font-weight: bold;">2. &nbsp;</span> I, <span *ngIf="report.depositDeducted">{{report.tenant.legalName}}, </span> <span *ngIf="!report.depositDeducted">____________________________</span><span> agree to the following deductions from my security and/or pet damage deposit:
         </span>
     </p>
     <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="50%">
-            Security Deposit:______________________________________ 
+        <div fxFlex="50%" *ngIf="report">
+            Security Deposit:<span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.depositDeducted">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {{report.depositDeductedAmt | currency: 'CAD'}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="!report.depositDeducted">______________________________________ </span>
         </div>
-        <div fxFlex="50%">
-            Pet Damage Deposit: ____________________________________
+        <div fxFlex="50%" *ngIf="report">
+            Pet Damage Deposit: <span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.petDepositDeductedAmt !=0">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {{report.petDepositDeductedAmt | currency: 'CAD'}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="report.petDepositDeductedAmt == 0">______________________________________ </span> 
         </div>
     </div>
     <p ></p>
     <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="50%">
-            Date (dd/mm/yy)______________________________________ 
+        <div fxFlex="50%" *ngIf="report">
+            Date (dd/mm/yy) <span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.depositDeducted">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{currentDate | date: 'M/d/yy'}}  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="!report.depositDeducted">______________________________________</span>
         </div>
         <div fxFlex="50%">
             Signature of Tenant: ____________________________________
@@ -355,26 +355,26 @@
     <p style="margin-bottom:-5px;">
         <span style="font-weight: bold;">5. Tenant’s Forwarding Address:</span>
     </p>
-    <div fxLayout="row" fxLayoutAlign="start start" >
+    <div fxLayout="row" fxLayoutAlign="start start" *ngIf="report">
         <mat-form-field appearance="outline" style="width: 5%;">
             <mat-label>unit #</mat-label>
-            <input matInput placeholder="Unit #" >            
+            <input matInput placeholder="Unit #" [value]="report.tenantForwardingAddressUnit">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 30%;">
             <mat-label>street address</mat-label>
-            <input matInput placeholder="Street address" >            
+            <input matInput placeholder="Street address" [value]="report.tenantForwardingAddressStreet">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>city</mat-label>
-            <input matInput placeholder="Street address">            
+            <input matInput placeholder="Street address" [value]="report.tenantForwardingAddressCity">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>province</mat-label>
-            <input matInput placeholder="Province">            
+            <input matInput placeholder="Province" [value]="report.tenantForwardingAddressProvince">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>postal code</mat-label>
-            <input matInput placeholder="Postal Code" >            
+            <input matInput placeholder="Postal Code" [value]="report.tenantForwardingAddressPostCode">            
         </mat-form-field>
 
     </div>
@@ -383,9 +383,9 @@
         <div fxFlex="15%" style="line-height: 1.2;">
             <span style="font-weight: bold;">Landlord Name<br>& Addresses at<br>End of Tenancy</span>
         </div>
-        <div fxFlex="85%">
+        <div fxFlex="85%" *ngIf="report">
             <mat-form-field appearance="outline" style="width:95%;margin-left: 15px;">            
-                <input matInput >
+                <input matInput [value]="report.landlord.legalName">
             </mat-form-field>
             <!-- <mat-label>Last Name, first & middle names  (if entry for landlord is a business name, enter full legal business name)</mat-label> -->
             <div  style="margin-left: 20px;font-size: .9em;margin-top: -40px;color: grey;">
@@ -394,27 +394,27 @@
             </div>
         </div>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start start" >
+    <div fxLayout="row" fxLayoutAlign="start start" *ngIf="report">
         <!-- <form></form> -->
         <mat-form-field appearance="outline" style="width: 5%;">
             <mat-label>unit #</mat-label>
-            <input matInput placeholder="Unit #">            
+            <input matInput placeholder="Unit #" [value]="report.landlord.address.unit">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 30%;">
             <mat-label>street address</mat-label>
-            <input matInput placeholder="Street address">            
+            <input matInput placeholder="Street address" [value]="report.landlord.address.street">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>city</mat-label>
-            <input matInput placeholder="Street address" >            
+            <input matInput placeholder="City" [value]="report.landlord.address.city">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>province</mat-label>
-            <input matInput placeholder="Province" >            
+            <input matInput placeholder="Province" [value]="report.landlord.address.province">            
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 10%;">
             <mat-label>postal code</mat-label>
-            <input matInput placeholder="Postal Code" >            
+            <input matInput placeholder="Postal Code" [value]="report.landlord.address.postcode">            
         </mat-form-field>
 
     </div>
