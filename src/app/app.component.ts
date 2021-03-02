@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationService } from './shared/notification.service';
+import { AppUpdateService } from './shared/services/app-update.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent {
   title = 'rinspect';
 
   constructor(private notificaiotnService: NotificationService,
-    private snackBar: MatSnackBar) {
+              private sw: AppUpdateService,
+              private snackBar: MatSnackBar) {
       this.notificaiotnService.notification$.subscribe(message => {
         this.snackBar.open(message, 'close', {
           duration: 3000,
@@ -24,6 +26,8 @@ export class AppComponent {
           duration: 3000,
           panelClass: ['snackbar-error']
         })
-      })
+      });
+
+      this.sw.checkForUpdates();
     }
 }
