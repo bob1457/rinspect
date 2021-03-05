@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AboutComponent } from './about/about.component';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 
@@ -27,8 +28,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   declarations: [
     AppComponent,
     SigninComponent,
-    ForgotPasswordComponent//,
-    // SectionItemComponent
+    ForgotPasswordComponent,
+    AboutComponent    
   ],
   imports: [
     AppRoutingModule,

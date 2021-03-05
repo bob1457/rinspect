@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppUpdateService } from '../shared/services/app-update.service';
 import { AuthService } from '../user/services/auth.service';
 
 @Component({
@@ -17,16 +18,20 @@ export class SigninComponent implements OnInit {
   forgotpassword = false;
 
   constructor(private formBuilder: FormBuilder,
+              private sw: AppUpdateService,
               private authService: AuthService,
               private router: Router) { }
 
   ngOnInit(): void {
 
+    // debugger;
     this.signinForm = this.formBuilder.group({
       email: [''],
       password: [''],
       rememberMe: [false]
     });
+
+    this.sw.checkForUpdates();
   }
 
   submit() {

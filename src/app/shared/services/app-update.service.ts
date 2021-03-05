@@ -20,6 +20,7 @@ export class AppUpdateService {
   //     })
   // } 
 
+  // debugger;
   constructor(public updates: SwUpdate) {
     updates.available.subscribe(event => {
       console.log('current version is', event.current);
@@ -32,6 +33,7 @@ export class AppUpdateService {
   }
 
   public checkForUpdates(): void {
+    // debugger;
     this.updates.available.subscribe(event => this.promptUser());
   }
 

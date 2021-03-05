@@ -5,6 +5,7 @@
     {
       "name": "app",
       "installMode": "prefetch",
+      "updateMode": "prefetch",
       "resources": {
         "files": [
           "/favicon.ico",
@@ -12,6 +13,11 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css?family=Roboto:400,700",
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap",          
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
         ]
       }
     }, {
@@ -25,5 +31,8 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+
   ]
 }

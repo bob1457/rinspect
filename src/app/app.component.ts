@@ -11,6 +11,7 @@ import { AppUpdateService } from './shared/services/app-update.service';
 export class AppComponent {
   title = 'rinspect';
 
+debugger;
   constructor(private notificaiotnService: NotificationService,
               private sw: AppUpdateService,
               private snackBar: MatSnackBar) {
@@ -28,6 +29,10 @@ export class AppComponent {
         })
       });
 
-      this.sw.checkForUpdates();
+      // this.sw.checkForUpdates();
     }
+
+  ngOnInit() {
+    this.sw.checkForUpdates();
+  }
 }
