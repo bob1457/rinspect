@@ -21,7 +21,7 @@ export class AppUpdateService {
   // } 
 
   // debugger;
-  constructor(public updates: SwUpdate) {
+  constructor(public updates: SwUpdate, private snackbar: MatSnackBar) {
     updates.available.subscribe(event => {
       console.log('current version is', event.current);
       console.log('available version is', event.available);
@@ -34,7 +34,15 @@ export class AppUpdateService {
 
   public checkForUpdates(): void {
     // debugger;
-    this.updates.available.subscribe(event => this.promptUser());
+    // this.updates.available.subscribe(event => this.promptUser());
+    this.updates.available.subscribe(event => {
+      const snack = this.snackbar.open('Update Available', 'Reload');
+      snack
+        .onAction()
+        .subscribe(() => {
+          window.location.reload();
+        });
+    })
   }
 
   private promptUser(): void {
