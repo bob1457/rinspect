@@ -44,8 +44,9 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     UserModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),    
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireModule,
     AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
