@@ -111,7 +111,7 @@ export class AddReportComponent implements OnInit {
           this.router.navigate(['/home/report-details/', doc.id]);
         });
     // this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
-    // this.router.navigate(['/home/report']); ${id}
+    this.router.navigate(['/home/report']); //${id}
 
   }
 
