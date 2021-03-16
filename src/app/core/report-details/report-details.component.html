@@ -299,7 +299,7 @@
                                 Sections required:
                             </p>
                             <ul style="margin-right: 20px;">
-                                <li style="color:red" *ngFor="let section of missingSections" >
+                                <li style="color:red" *ngFor="let section of missingSections">
                                     {{section}}
                                 </li>
                             </ul>
@@ -349,7 +349,7 @@
 
                     </mat-menu>
                     <!-- [matMenuTriggerFor]="menu" -->
-                    <mat-accordion class="form-width">
+                    <mat-accordion class="form-width" *ngIf="sections">
                         <!-- <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
@@ -363,7 +363,7 @@
                         </mat-expansion-panel>  *ngIf="entrySection" -->
 
                         <!-- <div *ngIf="sections.length > 0"> -->
-                        <div *ngIf="mainEntrySection?.length > 0">
+                        <div *ngIf="sections.length > 0">
                             <app-inspection-entry *ngIf="mainEntrySection" [entrySectionDetails]="mainEntrySection" [reportId]='id'></app-inspection-entry>
                             <app-inspection-entry *ngIf="secondaryEntrySection" [entrySectionDetails]="secondaryEntrySection" [reportId]='id'></app-inspection-entry>
                             <app-inspection-kitchen *ngIf="mainkitchenSection" [kitchenSectionDetails]="mainkitchenSection" [reportId]='id'></app-inspection-kitchen>
@@ -455,5 +455,3 @@
   <mat-label>postal code</mat-label>
   <input matInput placeholder="Report Title">
 </mat-form-field> -->
-
-

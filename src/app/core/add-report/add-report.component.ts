@@ -105,8 +105,14 @@ export class AddReportComponent implements OnInit {
       updated: new Date()
     })
     console.log('form data', this.addForm.value);
-    this.dataService.createReport(this.addForm.value);
-    this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
+    this.dataService.createReport(this.addForm.value)
+        .then( doc => {
+          console.log('new report id', doc.id);
+          this.router.navigate(['/home/report-details/', doc.id]);
+        });
+    // this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
+    // this.router.navigate(['/home/report']); ${id}
+
   }
 
 }
