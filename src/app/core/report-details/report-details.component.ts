@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { report } from 'process';
+
 import { NotificationService } from 'src/app/shared/notification.service';
 import { formatDate } from '@angular/common';
+
 
 @Component({
   selector: 'app-report-details',

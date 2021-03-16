@@ -11,13 +11,13 @@ import { DataService } from '../../services/data.service';
 export class AddSectionEntryComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
-  
+
   // newly added attributes
-  entryType = 'MainEntry'; 
+  entryType = 'MainEntry';
   // main = '';
   // secondary = '';
   mainEntryExists = false;
@@ -46,8 +46,8 @@ export class AddSectionEntryComponent implements OnInit {
   ngOnInit(): void {
 
     let sectionSubType = {
-      'M':'MainEntry', 
-      'S':'SecondaryEntry'      
+      'M':'MainEntry',
+      'S':'SecondaryEntry'
     }
 
     for (let [key, value] of Object.entries(sectionSubType)) {
@@ -63,7 +63,7 @@ export class AddSectionEntryComponent implements OnInit {
                   break;
                 case 'S':
                   this.secEntryExists = true;
-                  break;                
+                  break;
                 default:
                   break;
               }
@@ -73,7 +73,7 @@ export class AddSectionEntryComponent implements OnInit {
                 this.alreadyAdded = true;
                 this.entryForm.disable();
               }
-          
+
               console.log('status:', this.alreadyAdded);
             } else {
               // key = key + "N";
@@ -83,20 +83,20 @@ export class AddSectionEntryComponent implements OnInit {
                   break;
                 case 'S':
                   this.secEntryExists = false;
-                  break;                
+                  break;
                 default:
                   break;
               }
               // console.log('status:', key);
               // console.log(value + ' not exists');
             }
-           
+
           })
     }
-    
+
     this.entryForm = this.formBuilder.group({
       name: [''],
-      type: [''], 
+      type: [''],
       subtype: ['MainEntry'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
@@ -117,13 +117,13 @@ export class AddSectionEntryComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
         cellingCode: [''],
         closetsCode: [''],
-        closetsCmnts: [''],      
+        closetsCmnts: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -137,8 +137,8 @@ export class AddSectionEntryComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -153,12 +153,12 @@ export class AddSectionEntryComponent implements OnInit {
     else {
       this.entryForm.get('subtype').setValue('SecondaryEntry');
     }
-    
+
     console.log('add secton form', this.entryForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input 
+    this.dataServie.createSection(this.entryForm.value, this.rptId);   // comment out for testing data input
 
     if (this.addMore) {
       this.reloadComponent();

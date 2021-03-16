@@ -21,6 +21,9 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
+
+      { path: 'report-details', component: ReportDetailsComponent},
+
       { path: 'report-details/:id', component: ReportDetailsComponent},
       { path: 'addsection', component: AddSectionComponent},
       { path: 'user/:id', component:UserProfileComponent},
@@ -31,6 +34,7 @@ const routes: Routes = [
       { path: 'report', component: ReportComponent, canActivate: [AuthGuard]},
       { path: 'report-view/:id', component: ReeportViewComponent},
       { path: 'addSection/:id', component: AddSectionComponent}
+
     ]
   }
 ];

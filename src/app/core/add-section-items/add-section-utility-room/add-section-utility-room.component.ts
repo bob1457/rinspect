@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class AddSectionUtilityRoomComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
@@ -42,7 +42,7 @@ export class AddSectionUtilityRoomComponent implements OnInit {
                     .subscribe(result => {
                       this.existing = result;
                       if(this.existing.length !=0) {
-                        this.alreadyAdded = true;                        
+                        this.alreadyAdded = true;
                       }
 
                       console.log('Utility room added', this.alreadyAdded);
@@ -51,7 +51,7 @@ export class AddSectionUtilityRoomComponent implements OnInit {
                         this.utilityForm.disable();
                       }
                     })
-    
+
     this.utilityForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -65,7 +65,7 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         washerDryerCode: [''],
@@ -75,8 +75,8 @@ export class AddSectionUtilityRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -87,7 +87,7 @@ export class AddSectionUtilityRoomComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.utilityForm.value, this.rptId);    
+    this.dataServie.createSection(this.utilityForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();

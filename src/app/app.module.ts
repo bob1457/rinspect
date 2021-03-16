@@ -15,7 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
-import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
@@ -23,10 +23,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AboutComponent } from './about/about.component';
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
+
     SigninComponent,
     ForgotPasswordComponent,
     AboutComponent    
@@ -40,7 +40,8 @@ import { AboutComponent } from './about/about.component';
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    FormsModule,
+    FormsModule,    
+
     ReactiveFormsModule,
     UserModule,
     SharedModule,
@@ -54,4 +55,4 @@ import { AboutComponent } from './about/about.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// AngularFireAuthGuard, 
+// AngularFireAuthGuard,
