@@ -24,9 +24,16 @@ import { AuthGuard } from './shared/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
+
     SigninComponent,
+
+    // SigninComponent//,
+
+    // SigninComponent,
     ForgotPasswordComponent//,
+
     // SectionItemComponent
+
   ],
   imports: [
     AppRoutingModule,
@@ -37,13 +44,16 @@ import { AuthGuard } from './shared/auth.guard';
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    FormsModule,
+    FormsModule,    
+
     ReactiveFormsModule,
     UserModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),    
+
     AngularFirestoreModule,
     AngularFireAuthModule
+
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

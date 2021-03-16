@@ -1,3 +1,4 @@
+// import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -53,17 +54,22 @@ export class ReportViewContentComponent implements OnInit {
 
   secondEntrySection;
 
-
+  currentDate = new Date();
+  
   
   constructor(private actRoute: ActivatedRoute,
-              public dataService: DataService) {
+                // private datePipe: DatePipe,
+                public dataService: DataService) {
                 this.actRoute.paramMap.subscribe(params => {
                   this.id = params.get('id');
                   console.log('id in view',params.get('id'));
+                  // this.cDate = this.datePipe.transform(this.currentDate, 'dd/MM/yy');
                 });
                }
 
   ngOnInit(): void {
+
+    
 
     let additionalSubType = {       
       'S':'Second Bathroom',

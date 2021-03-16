@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
+
 import { DataService } from '../services/data.service';
+
 import { UserService } from 'src/app/user/services/user.service';
+
 
 @Component({
   selector: 'app-add-report',
