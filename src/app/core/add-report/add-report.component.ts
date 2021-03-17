@@ -108,7 +108,7 @@ export class AddReportComponent implements OnInit {
     this.dataService.createReport(this.addForm.value)
         .then( doc => {
           console.log('new report id', doc.id);
-          this.router.navigate(['/home/report-details/', doc.id]);
+          this.router.navigate(['/home/report-details/', doc.id]); // Improvement: check if online then use differnet if offline.
         });
     // this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
     this.router.navigate(['/home/report']); //${id}
