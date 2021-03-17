@@ -17,7 +17,7 @@ const rediretUnauthoirzedToLogin = () => redirectUnauthorizedTo(['']);
 // canActivate: [AuthGuard]
 const routes: Routes = [
   { path: 'home',
-    component: HomeComponent,
+    component: HomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin},
     children: [
       { path: '', redirectTo: 'report', pathMatch: 'full'},
       { path: 'add', component: AddReportComponent},
@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'settings', component: UserSettingsComponent},
       { path: 'about', component: AboutComponent},
       // { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
-      { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
+      { path: 'report', component: ReportComponent},
       { path: 'report-view/:id', component: ReeportViewComponent},
       { path: 'addSection/:id', component: AddSectionComponent}
 
