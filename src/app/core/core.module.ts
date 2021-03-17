@@ -65,6 +65,7 @@ import { StorageViewEmptyItemComponent } from './report-view-content-items/stora
 import { UtilityViewEmptyItemComponent } from './report-view-content-items/utility-view-empty-item/utility-view-empty-item.component';
 import { BedroomViewEmptyItemComponent } from './report-view-content-items/bedroom-view-empty-item/bedroom-view-empty-item.component';
 import { ReportViewAdditionalContentComponent } from './report-view-additional-content/report-view-additional-content.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 
 @NgModule({
@@ -138,6 +139,9 @@ import { ReportViewAdditionalContentComponent } from './report-view-additional-c
     FormsModule,
     SharedModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    AngularFireAuthGuard
   ]
 })
 export class CoreModule { }
