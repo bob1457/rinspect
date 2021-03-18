@@ -28,8 +28,14 @@ export class AuthService {
   async signIn(email: string, password: string) {
     // debugger;
     var result = await this.afAuth.signInWithEmailAndPassword(email, password);
-    console.log('login result', result);
-    this.router.navigate(['home']);
+    console.log('login email verified', result.user.emailVerified);
+    // if(result.user.emailVerified) {
+    //   this.router.navigate(['home']);
+    // } else {
+    //   alert('Your account is not confirmed');
+    // }
+    return result
+    
   }
 
   ForgotPassword(email:string) {

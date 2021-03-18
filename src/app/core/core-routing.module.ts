@@ -9,12 +9,16 @@ import { UserSettingsComponent } from '../user/user-settings/user-settings.compo
 import { AddSectionComponent } from './add-section/add-section.component';
 
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
-import { AuthGuard } from '../shared/auth.guard';
+// import { AuthGuard } from '../shared/auth.guard';
 import { ReeportViewComponent } from './reeport-view/reeport-view.component';
 import { AboutComponent } from '../about/about.component';
+import { map } from 'rxjs/operators';
 
 const rediretUnauthoirzedToLogin = () => redirectUnauthorizedTo(['']);
 // canActivate: [AuthGuard]
+const onlyAllowSelf = next => {
+  map( user => (!!user && next.params.id == (user as any).uid) || ['']);
+}
 const routes: Routes = [
   { path: 'home',
     component: HomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin},
@@ -36,7 +40,12 @@ const routes: Routes = [
       { path: 'addSection/:id', component: AddSectionComponent}
 
     ]
-  }
+  }//,
+  // { path: 'home', component: HomeComponent,
+  //       children: [
+  //         { path: 'user/:id', component:UserProfileComponent}
+  //       ]
+  // }
 ];
 // , canActivate: [AngularFireAuthGuard],
       // data: { authGuardPipe: rediretUnauthoirzedToLogin},

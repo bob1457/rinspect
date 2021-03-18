@@ -43,9 +43,20 @@ export class SigninComponent implements OnInit {
       this.loading = true;
       return this.authService.signIn(this.signinForm.value.email, this.signinForm.value.password)
       .then( res => {
+        //**** For futher implementation */
+        // if(res.user.emailVerified) {
+        //   this.loading = false;
+        //   console.log('loggedIn Ok');
+        //   this.router.navigateByUrl('home');
+        // } else {
+        //   this.loading = false;
+        //   this.errMsg = 'Your account is not confirmed';
+        //   this.router.navigateByUrl('');
+        // }
         this.loading = false;
         console.log('loggedIn Ok');
         this.router.navigateByUrl('home');
+        
       })
       .catch(
         error => {this.errMsg = 'Incorrect username or passwrod. Please try again.';
