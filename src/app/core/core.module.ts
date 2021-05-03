@@ -66,6 +66,8 @@ import { UtilityViewEmptyItemComponent } from './report-view-content-items/utili
 import { BedroomViewEmptyItemComponent } from './report-view-content-items/bedroom-view-empty-item/bedroom-view-empty-item.component';
 import { ReportViewAdditionalContentComponent } from './report-view-additional-content/report-view-additional-content.component';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { ReportViewContentItemsHeaderComponent } from './report-view-content-items-header/report-view-content-items-header.component';
+import { ReportViewContentHeaderComponent } from './report-view-content-header/report-view-content-header.component';
 
 
 @NgModule({
@@ -128,7 +130,9 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     StorageViewEmptyItemComponent,
     UtilityViewEmptyItemComponent,
     BedroomViewEmptyItemComponent,
-    ReportViewAdditionalContentComponent
+    ReportViewAdditionalContentComponent,
+    ReportViewContentItemsHeaderComponent,
+    ReportViewContentHeaderComponent
   ],
   imports: [
     AppMaterialModule,
