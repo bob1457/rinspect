@@ -6,3 +6,11 @@ table, td, th {
     width: 100%;
     border-collapse: collapse;
   }
+
+  tr.address td {
+      border-top: 0;
+  }
+
+  tr.address-title td {
+    border-bottom: 0;
+  }
