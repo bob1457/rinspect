@@ -104,7 +104,7 @@ export class ReportViewContentComponent implements OnInit {
             this.moveOutDate = "";
           }
           
-          console.log('rpt', this.report)
+          console.log('rpt in report view', this.report)
           console.log('possesiion date', this.possessionDate);
           
         })

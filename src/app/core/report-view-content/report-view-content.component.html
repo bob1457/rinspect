@@ -1,5 +1,5 @@
 <!-- <p>report-view-content works!</p> -->
-<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;">
+<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;" *ngIf="report">
     <!-- <div class="container2" fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
         <div fxFlex=20%></div>
         <div fxFlex=70% style="margin-top: -5px;font-weight: bold;color:#1150af;">
@@ -9,7 +9,9 @@
             #RTB – 27 
         </div>
     </div> -->
-    <app-report-view-content-header style="width:100%"></app-report-view-content-header>
+
+    <app-report-view-content-header [report]="report" style="width:100%"></app-report-view-content-header>
+
     <form style="width: 100%;" *ngIf="report">        
         <app-report-view-content-items-header></app-report-view-content-items-header>
         <!-- ************************* -->
@@ -55,185 +57,10 @@
         <app-storage-view-empty-item *ngIf="!otherSection"></app-storage-view-empty-item>
         <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
-    </form>   
-    <p style="margin-bottom: 0;">
-        START OF TENANCY
-    </p>
-    <p style="margin-bottom: 0;">
-        <span style="font-weight: bold;">X. Repairs to be completed at start of tenancy:</span> <span style="font-size: .8em;">(list repairs)</span>
-    </p>
-    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;">            
-            <input matInput placeholder="" [value]="report.repairAtStart">
-        </mat-form-field>
-    </p>
-    <p style="width:100%;margin-top: -10px;margin-bottom: 0;">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;" *ngIf="report">            
-            <input matInput placeholder="">
-        </mat-form-field>
-    </p>
-    <p style="margin-top: -10px;margin-bottom: 0;" *ngIf="report">
-        <span style="font-weight: bold;">Y.</span> I, {{report.tenant.legalName}}<span style="font-size: .8em;"> (Tenant's name)</span><span></span>
-    </p>
-    <p style="margin-bottom: 0;" *ngIf="report">
-        <input type="checkbox" [checked]="report.agreeAtStart=='agree'"><span>agree that this report fairly represents the condition of the rental unit </span>
-    </p>
-    <p style="margin-bottom: 0;" *ngIf="report">
-        <input type="checkbox" [checked]="report.agreeAtStart !='agree'"><span>do not agree that this report fairly represents the condition of the rental unit for the following reasons:
-        </span>
-    </p>
-    <p style="width:100%;margin-bottom: -5px;margin-top: -10px;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="" [value]="report.reasonNotAgreeAtStart">
-        </mat-form-field>
-    </p>
-    <p style="width:100%;margin-top: -10px;margin-bottom: 0;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="">
-        </mat-form-field>
-    </p>
-    <p style="margin-bottom: 0;margin-top: -10px;">
-        End OF TENANCY
-    </p>
-    <p style="margin-bottom: 0;">
-        <span style="font-weight: bold;">Z. Damage to rental unit or residential property for which the tenant is responsible:</span>
-    </p>
-    <p style="width:100%;margin-top: -10px;margin-bottom: -5px;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;" *ngIf="report">            
-            <input matInput placeholder="" [value]="report.damageAtEnd">
-        </mat-form-field>
-    </p>
-    <p style="width:100%; margin-top: -10px;margin-bottom: -5px;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder=""> <!-- if the description is long, consider split it and populate this part, similar to the other one! -->
-        </mat-form-field>
-    </p>
-    <p style="margin-bottom: 0;" *ngIf="report">
-        <span style="font-weight: bold;">1. &nbsp;</span> I, {{report.tenant.legalName}}, <span style="font-size: .8em;"> (Tenant's name)</span><span></span>
-    </p>
-    <p style="margin-bottom: 0;" *ngIf="report">
-        <input type="checkbox" [checked]="report.agreeAtEnd=='agree'"><span>agree that this report fairly represents the condition of the rental unit </span>
-    </p>
-    <p style="margin-bottom: 0;" *ngIf="report">
-        <input type="checkbox" [checked]="report.agreeAtEnd !='agree'"><span>do not agree that this report fairly represents the condition of the rental unit for the following reasons:
-        </span>
-    </p>
-    <p style="width:100%;margin-bottom: -5px;" *ngIf="report">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;">            
-            <input matInput placeholder="" [value]="report.reasonNotAgreeAtEnd">
-        </mat-form-field>
-    </p>
-    <p style="width:100%">
-        <mat-form-field appearance="legacy" style="width:95%;margin-left: 15px;margin-top: -10px;" *ngIf="report">            
-            <input matInput placeholder=""> <!-- if the description is long, consider split it and populate this part, similar to the other one! -->
-        </mat-form-field>
-    </p>
-    <p style="margin-top: -10px;" *ngIf="report">
-        <span style="font-weight: bold;">2. &nbsp;</span> I, <span *ngIf="report.depositDeducted">{{report.tenant.legalName}}, </span> <span *ngIf="!report.depositDeducted">____________________________</span><span> agree to the following deductions from my security and/or pet damage deposit:
-        </span>
-    </p>
-    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="50%" *ngIf="report">
-            Security Deposit:<span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.depositDeducted">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {{report.depositDeductedAmt | currency: 'CAD'}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="!report.depositDeducted">______________________________________ </span>
-        </div>
-        <div fxFlex="50%" *ngIf="report">
-            Pet Damage Deposit: <span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.petDepositDeductedAmt !=0">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {{report.petDepositDeductedAmt | currency: 'CAD'}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="report.petDepositDeductedAmt == 0">______________________________________ </span> 
-        </div>
-    </div>
-    <p ></p>
-    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="50%" *ngIf="report">
-            Date (dd/mm/yy) <span style="text-decoration-line: underline;text-decoration-style: solid;" *ngIf="report.depositDeducted">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{currentDate | date: 'M/d/yy'}}  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span *ngIf="!report.depositDeducted">______________________________________</span>
-        </div>
-        <div fxFlex="50%">
-            Signature of Tenant: ____________________________________
-        </div>
-    </div>
-    <p></p>
-    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="60%">
-            <span style="font-weight: bold;">3.  Landlord’s Signature: (on Move-In)</span> _______________________________
-        </div>        
-        <div fxFlex="45%">
-            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
-        </div>
-    </div>
-    <p></p>
-    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="60%">
-            <span style="font-weight: bold;">4.  Tenant’s Signature: (on Move-In)</span> _______________________________
-        </div>
-        <div fxFlex="45%">
-            <span style="font-weight: bold;">(on Move-Out)</span> _________________________________
-        </div>
-    </div>
-    <p></p>
-    <p style="margin-bottom:-5px;">
-        <span style="font-weight: bold;">5. Tenant’s Forwarding Address:</span>
-    </p>
-    <div fxLayout="row" fxLayoutAlign="start start" *ngIf="report">
-        <mat-form-field appearance="outline" style="width: 5%;">
-            <mat-label>unit #</mat-label>
-            <input matInput placeholder="Unit #" [value]="report.tenantForwardingAddressUnit">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 30%;">
-            <mat-label>street address</mat-label>
-            <input matInput placeholder="Street address" [value]="report.tenantForwardingAddressStreet">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>city</mat-label>
-            <input matInput placeholder="Street address" [value]="report.tenantForwardingAddressCity">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>province</mat-label>
-            <input matInput placeholder="Province" [value]="report.tenantForwardingAddressProvince">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>postal code</mat-label>
-            <input matInput placeholder="Postal Code" [value]="report.tenantForwardingAddressPostCode">            
-        </mat-form-field>
-
-    </div>
-    <p style="margin-top:-20px;"></p>
-    <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
-        <div fxFlex="15%" style="line-height: 1.2;">
-            <span style="font-weight: bold;">Landlord Name<br>& Addresses at<br>End of Tenancy</span>
-        </div>
-        <div fxFlex="85%" *ngIf="report">
-            <mat-form-field appearance="outline" style="width:95%;margin-left: 15px;">            
-                <input matInput [value]="report.landlord.legalName">
-            </mat-form-field>
-            <!-- <mat-label>Last Name, first & middle names  (if entry for landlord is a business name, enter full legal business name)</mat-label> -->
-            <div  style="margin-left: 20px;font-size: .9em;margin-top: -40px;color: grey;">
-                <span style="font-size:.8em ;"> last name, first & middle names <span font-style="italic">(if entry for landlord is a business name, enter full legal business name)</span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start start" *ngIf="report">
-        <!-- <form></form> -->
-        <mat-form-field appearance="outline" style="width: 5%;">
-            <mat-label>unit #</mat-label>
-            <input matInput placeholder="Unit #" [value]="report.landlord.address.unit">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 30%;">
-            <mat-label>street address</mat-label>
-            <input matInput placeholder="Street address" [value]="report.landlord.address.street">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>city</mat-label>
-            <input matInput placeholder="City" [value]="report.landlord.address.city">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>province</mat-label>
-            <input matInput placeholder="Province" [value]="report.landlord.address.province">            
-        </mat-form-field>
-        <mat-form-field appearance="outline" style="width: 10%;">
-            <mat-label>postal code</mat-label>
-            <input matInput placeholder="Postal Code" [value]="report.landlord.address.postcode">            
-        </mat-form-field>
-
-    </div>
+    </form>  
+    
+    
+    <app-report-view-content-footer [report]="report" style="width:100%"></app-report-view-content-footer>
     <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
         <div style="width:50%;">
             <span style="font-style: italic;">            

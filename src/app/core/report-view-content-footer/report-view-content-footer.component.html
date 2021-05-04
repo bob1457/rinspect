@@ -1,0 +1,159 @@
+<form>
+    <table style="width:100%">    
+        <tr>
+            <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
+                X. Start of Tenancy
+            </th>            
+        </tr>
+        <tr style="line-height: 1.25;">
+            <td style="border-bottom: 0;">List Repairs to be complete at the start of the tenancy:</td>
+            <!-- <td style="border-bottom: 0;">last name </td> -->
+        </tr>
+        <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
+            <td style="height:100px"></td>        
+        </tr>
+        <tr style="line-height: 1.5;">
+            <td style="border-bottom: 0;">Y. I (tenant's name) </td>        
+        </tr> 
+        <tr>
+            <td style="height:25px">
+                <input type="checkbox" [checked]="report.agreeAtStart=='agree'" style="vertical-align: bottom;"><span>&nbsp; Agree that this report fairly represents the condition of the rental unit </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="height:25px">
+                <input type="checkbox" [checked]="report.agreeAtStart !='agree'" style="vertical-align: bottom;"><span>&nbsp; Do not agree that this report fairly represents the condition of the rental until for the following reasons:</span>
+            </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
+            <td style="height:100px"></td>        
+        </tr>
+        <tr>
+            <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
+                Z. End of Tenancy
+            </th>            
+        </tr>
+        <tr style="line-height: 1.25;">
+            <td style="border-bottom: 0;">List Damage to the rental unit or residential property for which the tenant is responsible:</td>
+            <!-- <td style="border-bottom: 0;">last name </td> -->
+        </tr>
+        <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
+            <td style="height:100px"></td>        
+        </tr>
+        <tr style="line-height: 1.5;">
+            <td style="border-bottom: 0;">1. I (tenant's name) </td>        
+        </tr> 
+        <tr>
+            <td style="height:25px">
+                <input type="checkbox" [checked]="report.agreeAtEnd=='agree'" style="vertical-align: bottom;"><span>&nbsp; Agree that this report fairly represents the condition of the rental unit </span>
+            </td>
+        </tr>
+        <tr>
+            <td style="height:25px">
+                <input type="checkbox" [checked]="report.agreeAtEnd !='agree'" style="vertical-align: bottom;"><span>&nbsp; Do not agree that this report fairly represents the condition of the rental until for the following reasons:</span>
+            </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
+            <td style="height:100px"></td>        
+        </tr>      
+    </table>
+    <table>
+        <tr>
+            <td style="width:35%;vertical-align: top;">
+                2. I, (tenant’s name)
+            </td>
+            <td>
+                agree to the following deductions from my security and/or pet damage deposit:
+            </td>
+        </tr>
+        <tr style="height: 35px;">
+            <td style="width:50%">
+                Security Deposit:
+            </td>
+            <td>
+                Pet Damage Deposit:
+            </td>
+        </tr>
+        <tr style="height: 35px;">
+            <td style="width:50%">
+                Date: DD/MM/YYYY
+            </td>
+            <td>
+                Signature of Tenant:
+            </td>
+        </tr>
+        <tr style="border-top: 1px solid;">
+            <td style="width:35%;vertical-align: top;border-right: 1px solid;">
+                3. Landlord’s signature (on move-in)
+            </td>
+            <td>
+                <span style="color:white">' '</span>Landlord’s signature (on move-out)
+            </td>
+        </tr>
+        <tr style="height: 35px;">
+            <td style="width:50%;border-right: 1px solid;">                
+            </td>
+            <td>                
+            </td>
+        </tr>
+        <tr style="border-top: 1px solid;">
+            <td style="width:35%;vertical-align: top;border-right: 1px solid;">
+                4. LandTenant’slord’s signature (on move-in)
+            </td>
+            <td>
+                <span style="color:white">' '</span>Tenant’s signature (on move-out)
+            </td>
+        </tr>
+        <tr style="height: 35px;">
+            <td style="width:50%;border-right: 1px solid;">                
+            </td>
+            <td>                
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th colspan="5" style="text-align: left;font-weight: normal;">
+                5. Tenant’s forwarding address:
+            </th>
+        </tr>
+        <tr class="address-title" style="line-height: 1.25;">
+            <td style="width: 10%;border-bottom: 0;">suite/unit #</td>
+            <td  style="width: 40%;border-bottom: 0;">street # and name</td>
+            <td style="width: 23%;border-bottom: 0;">city</td>
+            <td>province</td>
+            <td> postal code</td>
+        </tr>
+        <tr class="address" style="background: #f0eff9;height:35px;">
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th colspan="5" style="text-align: left;font-weight: normal;height:20px">
+                Email address for service:
+            </th>
+        </tr>
+        <tr>
+            <th colspan="5" style="text-align: left;font-weight: normal;">
+                6. Landlord’s name and address at the end of the tenancy:
+            </th>
+        </tr>
+        <tr class="address-title" style="line-height: 1.25;">
+            <td style="width: 10%;border-bottom: 0;">suite/unit #</td>
+            <td  style="width: 40%;border-bottom: 0;">street # and name</td>
+            <td style="width: 23%;border-bottom: 0;">city</td>
+            <td>province</td>
+            <td> postal code</td>
+        </tr>
+        <tr class="address" style="background: #f0eff9;height:35px;">
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</form>
