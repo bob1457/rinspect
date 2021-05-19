@@ -40,32 +40,29 @@ label {
     font-size: .75em;
 }
 
-table, th, td {
+table {
     border: 1px solid;
     border-collapse: collapse;
     border-spacing: 0;
+    padding: 0px;
 }
 
 td, th {
-    // height: 21px;
+    // height: 15px;
     // padding-top: 0;
     // padding-bottom: 0;
     padding: 0px;
-    line-height: 1.5;
+    line-height:1.5;
 }
 
-th {
-    height: 21px;
-}
+// th {
+//     height: 15px;
+// }
 
 
 .spacer {
     flex: 1 1 auto;
 }
-
-// .check {
-//     content: "\2713";
-// }
 
 .hide {
     visibility: hidden;

@@ -31,6 +31,7 @@ export class ReportViewContentComponent implements OnInit {
   entrySection;
   kitchenSection;
   livingRoomSection;
+  familyRoomSection;
   diningRoomSEction;
   stairwellSection;
   mainBathroomSection;
@@ -46,7 +47,7 @@ export class ReportViewContentComponent implements OnInit {
   secondBathroom;
   thirdBathRoom;
   forthBathroom;
-  familyRoomSection;
+  
   secondKitchenSection;
   thirdBedroom;
   forthBedroom;

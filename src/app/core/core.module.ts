@@ -71,6 +71,8 @@ import { ReportViewContentHeaderComponent } from './report-view-content-header/r
 import { ReportViewContentFooterComponent } from './report-view-content-footer/report-view-content-footer.component';
 import { EntryViewEmptyItemComponent } from './report-view-content-items/entry-view-empty-item/entry-view-empty-item.component';
 import { LivingroomViewEmptyItemComponent } from './report-view-content-items/livingroom-view-empty-item/livingroom-view-empty-item.component';
+import { FamilyroomViewEmptyItemComponent } from './report-view-content-items/familyroom-view-empty-item/familyroom-view-empty-item.component';
+import { FamilyroomViewItemComponent } from './report-view-content-items/familyroom-view-item/familyroom-view-item.component';
 
 
 @NgModule({
@@ -138,7 +140,9 @@ import { LivingroomViewEmptyItemComponent } from './report-view-content-items/li
     ReportViewContentHeaderComponent,
     ReportViewContentFooterComponent,
     EntryViewEmptyItemComponent,
-    LivingroomViewEmptyItemComponent
+    LivingroomViewEmptyItemComponent,
+    FamilyroomViewEmptyItemComponent,
+    FamilyroomViewItemComponent
   ],
   imports: [
     AppMaterialModule,

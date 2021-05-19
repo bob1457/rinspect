@@ -18,12 +18,15 @@
         <!-- Sections -->
         <!-- ************************* -->
         <app-entry-view-item *ngIf="entrySection" [entrySectionDetails]="entrySection" [reportId]='id'></app-entry-view-item>
+        <app-entry-view-empty-item *ngIf="!entrySection"></app-entry-view-empty-item>
         <app-entry-view-item *ngIf="secondEntrySection" [entrySectionDetails]="secondEntrySection" [reportId]="id" ></app-entry-view-item>
         <app-entry-view-empty-item *ngIf="!secondEntrySection"></app-entry-view-empty-item>
         
         <app-livingroom-view-item *ngIf="livingRoomSection" [livingRoomSectionDetails]="livingRoomSection" [reportId]='id'></app-livingroom-view-item>
         <app-entry-view-empty-item *ngIf="!livingRoomSection"></app-entry-view-empty-item>
-        
+        <app-familyroom-view-item *ngIf="familyRoomSection" [familyRoomSectionDetails]="livingRoomSection" [reportId]='id'></app-familyroom-view-item>
+        <app-familyroom-view-empty-item *ngIf="!familyRoomSection"></app-familyroom-view-empty-item>
+
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
         
         <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>

@@ -46,13 +46,13 @@ export class AddSectionLivingRoomComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let kitchenSubType = {
+    let livingroomSubType = {
       'M':'Livingroom', 
       'S':'Familyroom'      
     }
 
-    for (let [key, value] of Object.entries(kitchenSubType)) {
-      console.log('subtype of kitchen---', value);
+    for (let [key, value] of Object.entries(livingroomSubType)) {
+      console.log('subtype of living room---', value);
 
       this.dataServie.getReportSectionBySubType(this.rptId, value)
           .subscribe( res => {
