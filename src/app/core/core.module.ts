@@ -73,6 +73,7 @@ import { EntryViewEmptyItemComponent } from './report-view-content-items/entry-v
 import { LivingroomViewEmptyItemComponent } from './report-view-content-items/livingroom-view-empty-item/livingroom-view-empty-item.component';
 import { FamilyroomViewEmptyItemComponent } from './report-view-content-items/familyroom-view-empty-item/familyroom-view-empty-item.component';
 import { FamilyroomViewItemComponent } from './report-view-content-items/familyroom-view-item/familyroom-view-item.component';
+import { KitchenViewEmptyItemComponent } from './report-view-content-items/kitchen-view-empty-item/kitchen-view-empty-item.component';
 
 
 @NgModule({
@@ -142,7 +143,8 @@ import { FamilyroomViewItemComponent } from './report-view-content-items/familyr
     EntryViewEmptyItemComponent,
     LivingroomViewEmptyItemComponent,
     FamilyroomViewEmptyItemComponent,
-    FamilyroomViewItemComponent
+    FamilyroomViewItemComponent,
+    KitchenViewEmptyItemComponent
   ],
   imports: [
     AppMaterialModule,

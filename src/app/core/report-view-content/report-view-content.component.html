@@ -28,7 +28,8 @@
         <app-familyroom-view-empty-item *ngIf="!familyRoomSection"></app-familyroom-view-empty-item>
 
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
-        
+        <app-kitchen-view-empty-item *ngIf="!secondKitchenSection"></app-kitchen-view-empty-item>
+
         <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>
         <app-dinningroom-view-empty-item *ngIf="!diningRoomSEction"></app-dinningroom-view-empty-item>
         <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
