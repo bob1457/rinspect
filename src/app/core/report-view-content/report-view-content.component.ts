@@ -49,6 +49,7 @@ export class ReportViewContentComponent implements OnInit {
   forthBathroom;
   
   secondKitchenSection;
+  secondDiningRoomSection;
   thirdBedroom;
   forthBedroom;
   fiftBedroom;
@@ -152,6 +153,17 @@ export class ReportViewContentComponent implements OnInit {
             const id = a.payload.doc.id;
             this.diningRoomSEction = data;
             console.log('Dinning room view', this.diningRoomSEction);
+            return {id, ...data}
+          } )
+        })
+
+    this.dataService.getReportViewSectionByType(this.id, 'Second-Dinning-Room')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.secondDiningRoomSection = data;
+            console.log('2nd Dinning room view', this.secondDiningRoomSection);
             return {id, ...data}
           } )
         })
