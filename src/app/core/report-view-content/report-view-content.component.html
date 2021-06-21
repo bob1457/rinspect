@@ -97,6 +97,8 @@
         
         <app-exterior-view-item *ngIf="exteriorSection" [exteriorSectionDetails]="exteriorSection" [reportId]='id'></app-exterior-view-item>
         <app-exterior-view-empty-item *ngIf="!exteriorSection"></app-exterior-view-empty-item>
+        <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
+        <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item>
         <app-utility-view-item *ngIf="utilitySection" [utilityRoomectionDetails]="utilitySection" [reportId]='id'></app-utility-view-item>
         <app-utility-view-empty-item *ngIf="!utilitySection"></app-utility-view-empty-item>
         <app-garbage-view-item *ngIf="garbageParkingSection" [garbageSectionDetails]="garbageParkingSection" [reportId]='id'></app-garbage-view-item>
@@ -117,10 +119,28 @@
 
         <app-basement-view-item *ngIf="basementSection" [basementSectionDetails]="basementSection" [reportId]='id'></app-basement-view-item>
         <app-basement-view-empty-item  *ngIf="!basementSection"></app-basement-view-empty-item>
+        <app-basement-view-empty-item  ></app-basement-view-empty-item> <!-- Basement additions -->
         <app-storage-view-item *ngIf="otherSection" [storageOtherSectionDetails]="otherSection" [reportId]='id'></app-storage-view-item>
         <app-storage-view-empty-item *ngIf="!otherSection"></app-storage-view-empty-item>
         <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
         
+
+        <p style="margin-top:240px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
+        <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
+            <div style="width:50%;">
+                <span style="font-weight:bold;font-style: italic;">
+                    Residential Tenancy Branch
+                </span><br>
+                <span style="font-style:italic;">
+                Office of Housing and Construction Standards<br>
+                #RTB-27 (2011/03)
+                </span>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                <span style="font-weight:bold;font-style: italic;">page 6 of 8 pages</span>
+            </div> 
+        </div>
     </form>  
     
     
@@ -133,7 +153,7 @@
         </div>
         <div class="spacer"></div>
         <div>
-            <span style="font-weight:bold;font-style: italic;">page 3 of 4 pages</span>
+            <span style="font-weight:bold;font-style: italic;">page 7 of 8 pages</span>
         </div>
     </div>
     <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 10px;">
@@ -348,7 +368,7 @@
         </div>
         <div class="spacer"></div>
         <div>
-            <span style="font-weight:bold;font-style: italic;">page 4 of 4 pages</span>
+            <span style="font-weight:bold;font-style: italic;">page 8 of 8 pages</span>
         </div>
     </div>
 </div>
