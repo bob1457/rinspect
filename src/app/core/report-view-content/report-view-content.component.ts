@@ -29,14 +29,16 @@ export class ReportViewContentComponent implements OnInit {
 
   // All sections
   entrySection;
+  secondEntrySection;
+
   kitchenSection;
+
   livingRoomSection;
   familyRoomSection;
+
   diningRoomSEction;
+
   stairwellSection;
-  mainBathroomSection;
-  masterBedroomSection;
-  secondBedroomSection;
   exteriorSection;
   utilitySection;
   garbageParkingSection;
@@ -44,17 +46,21 @@ export class ReportViewContentComponent implements OnInit {
   keyControlSection;
   otherSection;
 
+  mainBathroomSection;
   secondBathroom;
   thirdBathRoom;
   forthBathroom;
   
   secondKitchenSection;
   secondDiningRoomSection;
+
+  masterBedroomSection;
+  secondBedroomSection;
   thirdBedroom;
   forthBedroom;
   fiftBedroom;
 
-  secondEntrySection;
+  
 
   currentDate = new Date();
   
