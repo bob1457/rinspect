@@ -190,6 +190,8 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
+// Extract all bedrooms to find out how many hedrooms are avaiable
+
         this.dataService.getReportViewSectionBySubType(this.id, 'Master Bedroom')
         .subscribe( res => {
           res.map(a => {
@@ -212,7 +214,40 @@ export class ReportViewContentComponent implements OnInit {
           } )
         })
 
-        // Extract all bedrooms to find out how many hedrooms are avaiable
+        
+
+        this.dataService.getReportViewSectionBySubType(this.id, 'Third Bedroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.secondBedroomSection = data;
+            console.log('Third Bedroom view', this.secondBedroomSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionBySubType(this.id, 'Fourth Bedroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.secondBedroomSection = data;
+            console.log('Fourth Bedroom view', this.secondBedroomSection);
+            return {id, ...data}
+          } )
+        })
+
+        this.dataService.getReportViewSectionBySubType(this.id, 'Fifth Bedroom')
+        .subscribe( res => {
+          res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            this.secondBedroomSection = data;
+            console.log('Fifth Bedroom view', this.secondBedroomSection);
+            return {id, ...data}
+          } )
+        })
 
         //
 

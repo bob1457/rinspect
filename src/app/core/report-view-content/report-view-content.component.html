@@ -38,11 +38,21 @@
         
         
         
-        <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
-        <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item>
-        <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id'></app-mainbathroom-view-item>
+        <!-- <app-stairwell-view-item *ngIf="stairwellSection" [stairwellSectionDetails]="stairwellSection" [reportId]='id'></app-stairwell-view-item>
+        <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item> -->
+        
         <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
         
+        
+        
+        
+        
+        <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id'></app-mainbathroom-view-item>
+
+
+
+
+
         <!-- this is for an empty bedroom in case only one bedroom -->
         <!-- <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item> -->
         <app-bedroom-view-empty-item *ngIf="!secondBedroomSection"></app-bedroom-view-empty-item>
