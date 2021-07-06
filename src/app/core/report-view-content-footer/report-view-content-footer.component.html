@@ -13,7 +13,7 @@
             <td style="height:100px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
-            <td style="border-bottom: 0;">Y. I (tenant's name) </td>        
+            <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
         </tr> 
         <tr>
             <td style="height:25px">
@@ -41,7 +41,7 @@
             <td style="height:100px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
-            <td style="border-bottom: 0;">1. I (tenant's name) </td>        
+            <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
         </tr> 
         <tr>
             <td style="height:25px">
@@ -68,7 +68,7 @@
         </tr>
         <tr style="height: 35px;">
             <td style="width:50%">
-                Security Deposit:
+                Security Deposit: {{report.depositDeductedAmt}}
             </td>
             <td>
                 Pet Damage Deposit:

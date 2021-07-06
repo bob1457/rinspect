@@ -21,6 +21,8 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AuthGuard } from './shared/auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AboutComponent } from './about/about.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
+
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 @NgModule({
@@ -41,7 +43,7 @@ import { AboutComponent } from './about/about.component';
     CoreModule,
     FlexLayoutModule,
     FormsModule,    
-
+    SignaturePadModule,
     ReactiveFormsModule,
     UserModule,
     SharedModule,
