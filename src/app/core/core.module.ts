@@ -78,6 +78,7 @@ import { SecondDiningroomViewItemComponent } from './report-view-content-items/s
 import { SecondDiningroomViewEmptyItemComponent } from './report-view-content-items/second-diningroom-view-empty-item/second-diningroom-view-empty-item.component';
 import { BathroomViewEmptyItemComponent } from './report-view-content-items/bathroom-view-empty-item/bathroom-view-empty-item.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureComponent } from './signature/signature.component';
 
 
 @NgModule({
@@ -151,7 +152,8 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     KitchenViewEmptyItemComponent,
     SecondDiningroomViewItemComponent,
     SecondDiningroomViewEmptyItemComponent,
-    BathroomViewEmptyItemComponent
+    BathroomViewEmptyItemComponent,
+    SignatureComponent
   ],
   imports: [
     AppMaterialModule,

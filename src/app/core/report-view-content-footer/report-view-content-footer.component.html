@@ -84,24 +84,24 @@
         </tr>
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                3. Landlord’s signature (on move-in)
+                3. Landlord’s signature (on move-in) <span><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveIn" mat-button  target="_blank" mat-button  target="_blank">Sign here</a></span> <span><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
             </td>
             <td>
-                <span style="color:white">' '</span>Landlord’s signature (on move-out)<a style="width: 250px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
+                <span style="color:white"></span>Tenant’s signature (on move-in)<span><a style="width: 250px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a></span> <span><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
             </td>
         </tr>
-        <tr style="height: 35px;">
+        <!-- <tr style="height: 35px;">
             <td style="width:50%;border-right: 1px solid;">                
             </td>
             <td>                
             </td>
-        </tr>
+        </tr> -->
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                4. LandTenant’slord’s signature (on move-in)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
+                4. Landlord’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
             </td>
             <td>
-                <span style="color:white">' '</span>Tenant’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
+                <span style="color:white"></span>Tenant’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
             </td>
         </tr>
         <tr style="height: 35px;">
@@ -158,14 +158,45 @@
     </table>
 
     <mat-menu #tenantSign="matMenu" >
-        <p style="width: 200px;padding-left: 10px;">Please Sign Here....</p>
+        <!-- <p style="width: 200px;padding-left: 10px;">Please Sign Here....</p>
         <div class="signature-container">
             <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
         </div>
         <div>
             <button mat-button (click)="savePad()">Save</button>
-            <button mat-button (click)="clearSignature()">Clear</button>
-        </div>
+            <button mat-button (click)="clearSignature();$event.stopPropagation()">Clear</button>
+        </div> -->
+        <app-signature  (sign)="signed($event)"></app-signature>
         
     </mat-menu>
+
+    <mat-menu #landlordSignMoveIn="matMenu">        
+        <app-signature (sign)="signed3($event)"></app-signature>
+        
+    </mat-menu>
+
+    <mat-menu #tenantSignMoveOut="matMenu">        
+        <app-signature (sign)="signed2($event)"></app-signature>
+        
+    </mat-menu>
+
+    <mat-menu #tenantSignMoveIn="matMenu">        
+        <app-signature (sign)="signed1($event)"></app-signature>
+        
+    </mat-menu>
+
+    <mat-menu #landlordSignMoveOut="matMenu" >
+        <!-- <p style="width: 200px;padding-left: 10px;">Please Sign Here....</p>
+        <div class="signature-container">
+            <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+        </div>
+        <div>
+            <button mat-button (click)="savePad()">Save</button>
+            <button mat-button (click)="clearSignature();$event.stopPropagation()">Clear</button>
+        </div> -->
+        <app-signature (sign)="signed4($event)"></app-signature>
+        
+    </mat-menu>
+
+
 </form>

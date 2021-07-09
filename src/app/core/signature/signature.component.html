@@ -1,0 +1,8 @@
+<p style="width: 200px;padding-left: 10px;">Please Sign Here....</p>
+<div class="signature-container">
+    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+</div>
+<div>
+    <button mat-button (click)="savePad()"><mat-icon style="color: green;">check</mat-icon> &nbsp;Save</button>
+    <button mat-button (click)="clearSignature();$event.stopPropagation()"><mat-icon style="color: orangered;">clear</mat-icon> &nbsp;Clear</button>
+</div>
