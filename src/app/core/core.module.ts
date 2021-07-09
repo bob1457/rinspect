@@ -77,6 +77,7 @@ import { KitchenViewEmptyItemComponent } from './report-view-content-items/kitch
 import { SecondDiningroomViewItemComponent } from './report-view-content-items/second-diningroom-view-item/second-diningroom-view-item.component';
 import { SecondDiningroomViewEmptyItemComponent } from './report-view-content-items/second-diningroom-view-empty-item/second-diningroom-view-empty-item.component';
 import { BathroomViewEmptyItemComponent } from './report-view-content-items/bathroom-view-empty-item/bathroom-view-empty-item.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 
 @NgModule({
@@ -160,6 +161,7 @@ import { BathroomViewEmptyItemComponent } from './report-view-content-items/bath
     FlexLayoutModule,
     FormsModule,
     SharedModule,
+    SignaturePadModule,
     ReactiveFormsModule
   ],
   providers: [

@@ -10,7 +10,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:100px"></td>        
+            <td style="height:70px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:100px"></td>        
+            <td style="height:70px"></td>        
         </tr>
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
@@ -38,7 +38,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:100px"></td>        
+            <td style="height:70px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -54,13 +54,13 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:100px"></td>        
+            <td style="height:70px"></td>        
         </tr>      
     </table>
     <table>
         <tr>
             <td style="width:35%;vertical-align: top;">
-                2. I, (tenant’s name)
+                2. I, (tenant’s name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}
             </td>
             <td>
                 agree to the following deductions from my security and/or pet damage deposit:
@@ -68,10 +68,10 @@
         </tr>
         <tr style="height: 35px;">
             <td style="width:50%">
-                Security Deposit: {{report.depositDeductedAmt}}
+                Security Deposit: &nbsp;&nbsp; ${{report.depositDeductedAmt}}
             </td>
             <td>
-                Pet Damage Deposit:
+                Pet Damage Deposit: &nbsp;&nbsp; ${{report.petDepositDeductedAmt}}
             </td>
         </tr>
         <tr style="height: 35px;">
@@ -79,7 +79,7 @@
                 Date: DD/MM/YYYY
             </td>
             <td>
-                Signature of Tenant:
+                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
             </td>
         </tr>
         <tr style="border-top: 1px solid;">
@@ -87,7 +87,7 @@
                 3. Landlord’s signature (on move-in)
             </td>
             <td>
-                <span style="color:white">' '</span>Landlord’s signature (on move-out)
+                <span style="color:white">' '</span>Landlord’s signature (on move-out)<a style="width: 250px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
             </td>
         </tr>
         <tr style="height: 35px;">
@@ -98,10 +98,10 @@
         </tr>
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                4. LandTenant’slord’s signature (on move-in)
+                4. LandTenant’slord’s signature (on move-in)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
             </td>
             <td>
-                <span style="color:white">' '</span>Tenant’s signature (on move-out)
+                <span style="color:white">' '</span>Tenant’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
             </td>
         </tr>
         <tr style="height: 35px;">
@@ -156,4 +156,16 @@
             <td></td>
         </tr>
     </table>
+
+    <mat-menu #tenantSign="matMenu" >
+        <p style="width: 200px;padding-left: 10px;">Please Sign Here....</p>
+        <div class="signature-container">
+            <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+        </div>
+        <div>
+            <button mat-button (click)="savePad()">Save</button>
+            <button mat-button (click)="clearSignature()">Clear</button>
+        </div>
+        
+    </mat-menu>
 </form>
