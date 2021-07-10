@@ -10,7 +10,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:70px"></td>        
+            <td style="height:75px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:70px"></td>        
+            <td style="height:75px"></td>        
         </tr>
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
@@ -38,7 +38,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:70px"></td>        
+            <td style="height:75px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -54,7 +54,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:70px"></td>        
+            <td style="height:75px"></td>        
         </tr>      
     </table>
     <table>
@@ -79,15 +79,15 @@
                 Date: DD/MM/YYYY
             </td>
             <td>
-                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
+                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="40px"/></span>
             </td>
         </tr>
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                3. Landlord’s signature (on move-in) <span><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveIn" mat-button  target="_blank" mat-button  target="_blank">Sign here</a></span> <span><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
+                3. Landlord’s signature (on move-in) <span *ngIf="!signatureImg3"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveIn" mat-button  target="_blank" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg3"><img style="margin-left: 25px;" src='{{ signatureImg3 }}' height="40px" width="250px" /></span>
             </td>
             <td>
-                <span style="color:white"></span>Tenant’s signature (on move-in)<span><a style="width: 250px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a></span> <span><img style="margin-left: 25px;" src='{{ signatureImg }}' height="20px"/></span>
+                <span style="color:white"></span>Tenant’s signature (on move-in)<span *ngIf="!signatureImg1"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveIn" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg1"><img style="margin-left: 25px;" src='{{ signatureImg1 }}' height="40px" width="250px"/></span>
             </td>
         </tr>
         <!-- <tr style="height: 35px;">
@@ -98,10 +98,10 @@
         </tr> -->
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                4. Landlord’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
+                4. Landlord’s signature (on move-out) <span *ngIf="!signatureImg4"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveOut" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg4"><img style="margin-left: 25px;" src='{{ signatureImg4 }}' height="40px" width="250px" /></span>
             </td>
             <td>
-                <span style="color:white"></span>Tenant’s signature (on move-out)<a style="width: 350px;color: gainsboro;" mat-button href="https://www.google.com/" target="_blank">Sign here</a>
+                <span style="color:white"></span>Tenant’s signature (on move-out)<span *ngIf="!signatureImg2"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveOut" mat-button  target="_blank">Sign here</a></span><span *ngIf="signatureImg2"><img style="margin-left: 25px;" src='{{ signatureImg2 }}' height="40px" width="250px" /></span>
             </td>
         </tr>
         <tr style="height: 35px;">
