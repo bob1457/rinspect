@@ -10,7 +10,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:75px"></td>        
+            <td style="height:80px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:75px"></td>        
+            <td style="height:80px"></td>        
         </tr>
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
@@ -38,7 +38,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:75px"></td>        
+            <td style="height:80px"></td>        
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
@@ -54,7 +54,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:75px"></td>        
+            <td style="height:80px"></td>        
         </tr>      
     </table>
     <table>
@@ -78,8 +78,8 @@
             <td style="width:50%">
                 Date: DD/MM/YYYY
             </td>
-            <td>
-                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="40px"/></span>
+            <td style="position: relative;">
+                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span style="position: absolute; top:-2px" *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="40px"/></span>
             </td>
         </tr>
         <tr style="border-top: 1px solid;">
