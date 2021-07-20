@@ -18,7 +18,7 @@ export class ReportViewContentFooterComponent implements OnInit {
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
-  signaturePadOptions: Object = { 
+  signaturePadOptions: Object = {
     'minWidth': 2,
     'canvasWidth': 250,
     'canvasHeight': 80
@@ -26,30 +26,8 @@ export class ReportViewContentFooterComponent implements OnInit {
 
   constructor() { }
 
-  // ngAfterViewInit() {
-  //   // this.signaturePad is now available
-  //   this.signaturePad.set('minWidth', 2); 
-  //   this.signaturePad.clear(); 
-  // }
-
-  // drawComplete() {
-  //   console.log(this.signaturePad.toDataURL());
-  // }
-
-  // drawStart() {
-  //   console.log('begin drawing');
-  // }
-
-  // clearSignature() {
-  //   this.signaturePad.clear();
-  // }
-
-  // savePad() {
-  //   const base64Data = this.signaturePad.toDataURL();
-  //   this.signatureImg = base64Data;
-  // }
-
   ngOnInit(): void {
+    console.log('rpt in content footer', this.report);
   }
 
   signed(event) {

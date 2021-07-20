@@ -1,20 +1,20 @@
 <form>
-    <table style="width:100%">    
+    <table style="width:100%">
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
                 X. Start of Tenancy
-            </th>            
+            </th>
         </tr>
         <tr style="line-height: 1.25;">
             <td style="border-bottom: 0;">List Repairs to be complete at the start of the tenancy:</td>
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>        
+            <td style="height:80px"></td>
         </tr>
         <tr style="line-height: 1.5;">
-            <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
-        </tr> 
+            <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>
+        </tr>
         <tr>
             <td style="height:25px">
                 <input type="checkbox" [checked]="report.agreeAtStart=='agree'" style="vertical-align: bottom;"><span>&nbsp; Agree that this report fairly represents the condition of the rental unit </span>
@@ -26,23 +26,23 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>        
+            <td style="height:80px"></td>
         </tr>
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
                 Z. End of Tenancy
-            </th>            
+            </th>
         </tr>
         <tr style="line-height: 1.25;">
             <td style="border-bottom: 0;">List Damage to the rental unit or residential property for which the tenant is responsible:</td>
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>        
+            <td style="height:80px"></td>
         </tr>
         <tr style="line-height: 1.5;">
-            <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>        
-        </tr> 
+            <td style="border-bottom: 0;">1. I (tenant's name)  &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>
+        </tr>
         <tr>
             <td style="height:25px">
                 <input type="checkbox" [checked]="report.agreeAtEnd=='agree'" style="vertical-align: bottom;"><span>&nbsp; Agree that this report fairly represents the condition of the rental unit </span>
@@ -54,8 +54,8 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>        
-        </tr>      
+            <td style="height:80px"></td>
+        </tr>
     </table>
     <table>
         <tr>
@@ -91,9 +91,9 @@
             </td>
         </tr>
         <!-- <tr style="height: 35px;">
-            <td style="width:50%;border-right: 1px solid;">                
+            <td style="width:50%;border-right: 1px solid;">
             </td>
-            <td>                
+            <td>
             </td>
         </tr> -->
         <tr style="border-top: 1px solid;">
@@ -105,9 +105,9 @@
             </td>
         </tr>
         <tr style="height: 35px;">
-            <td style="width:50%;border-right: 1px solid;">                
+            <td style="width:50%;border-right: 1px solid;">
             </td>
-            <td>                
+            <td>
             </td>
         </tr>
     </table>
@@ -166,23 +166,23 @@
             <button mat-button (click)="savePad()">Save</button>
             <button mat-button (click)="clearSignature();$event.stopPropagation()">Clear</button>
         </div> -->
-        <app-signature  (sign)="signed($event)"></app-signature>
-        
+        <app-signature [rptId]="report.id" (sign)="signed($event)"></app-signature>
+
     </mat-menu>
 
-    <mat-menu #landlordSignMoveIn="matMenu">        
+    <mat-menu #landlordSignMoveIn="matMenu">
         <app-signature (sign)="signed3($event)"></app-signature>
-        
+
     </mat-menu>
 
-    <mat-menu #tenantSignMoveOut="matMenu">        
+    <mat-menu #tenantSignMoveOut="matMenu">
         <app-signature (sign)="signed2($event)"></app-signature>
-        
+
     </mat-menu>
 
-    <mat-menu #tenantSignMoveIn="matMenu">        
+    <mat-menu #tenantSignMoveIn="matMenu">
         <app-signature (sign)="signed1($event)"></app-signature>
-        
+
     </mat-menu>
 
     <mat-menu #landlordSignMoveOut="matMenu" >
@@ -195,7 +195,7 @@
             <button mat-button (click)="clearSignature();$event.stopPropagation()">Clear</button>
         </div> -->
         <app-signature (sign)="signed4($event)"></app-signature>
-        
+
     </mat-menu>
 
 

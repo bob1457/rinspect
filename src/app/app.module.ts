@@ -22,16 +22,21 @@ import { AuthGuard } from './shared/auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AboutComponent } from './about/about.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask//,
+  // StorageBucket
+} from "@angular/fire/storage";
 
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SigninComponent,
     ForgotPasswordComponent,
-    AboutComponent    
+    AboutComponent
   ],
   imports: [
     AppRoutingModule,
@@ -42,12 +47,13 @@ import { SignaturePadModule } from 'angular2-signaturepad';
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    FormsModule,    
+    FormsModule,
     SignaturePadModule,
     ReactiveFormsModule,
     UserModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),    
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule,
     AngularFireAuthModule,
