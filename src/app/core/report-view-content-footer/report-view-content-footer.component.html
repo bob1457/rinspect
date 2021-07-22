@@ -79,7 +79,7 @@
                 Date: DD/MM/YYYY
             </td>
             <td style="position: relative;">
-                Signature of Tenant: <span *ngIf="!signatureImg"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span style="position: absolute; top:-2px" *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="40px"/></span>
+                Signature of Tenant: <span *ngIf="!signatureImg && !report.tenantSig"><a style="width: 200px;color: gainsboro;" [matMenuTriggerFor]="tenantSign" mat-button  target="_blank">Sign here</a></span> <span style="position: absolute; top:-2px" *ngIf="signatureImg"><img style="margin-left: 25px;" src='{{ signatureImg }}' height="40px"/></span><span style="position: absolute; top:-2px" *ngIf="report.tenantSig"><img style="margin-left: 25px;" src='{{ report.tenantSig }}' height="40px"/></span>
             </td>
         </tr>
         <tr style="border-top: 1px solid;">

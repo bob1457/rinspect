@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { SignaturePad } from 'angular2-signaturepad';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-report-view-content-footer',
@@ -24,15 +26,22 @@ export class ReportViewContentFooterComponent implements OnInit {
     'canvasHeight': 80
   };
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore,
+              private dataService: DataService)
+              { }
 
   ngOnInit(): void {
     console.log('rpt in content footer', this.report);
   }
 
   signed(event) {
+    debugger;
     this.signatureImg = event;
     console.log('signature returned: ', this.signatureImg);
+    // update report with signature URL
+    // this.firestore.collection('report').document(this.report).update({'tenantSig': this.signatureImg});
+    // this.firestore.collection('report', ref => ref.where('id', '==', this.report.id)).doc().update({'tenantSig': this.signatureImg});
+    this.firestore.collection('report').doc(this.report.id).update({'tenantSig': this.signatureImg});
   }
 
   signed1(event) {

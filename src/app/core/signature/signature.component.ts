@@ -53,6 +53,7 @@ export class SignatureComponent implements OnInit {
 
     this.uploadImg(img).then(link => {
       this.signatureImg = link;
+      console.log('link from private function', this.signatureImg);
     });
 
     this.sign.emit(this.signatureImg);
