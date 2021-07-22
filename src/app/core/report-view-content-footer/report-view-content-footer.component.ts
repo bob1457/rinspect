@@ -46,22 +46,30 @@ export class ReportViewContentFooterComponent implements OnInit {
 
   signed1(event) {
     this.signatureImg1 = event;
-    console.log('signature returned: ', this.signatureImg);
+    console.log('signature returned: ', this.signatureImg1);
+    this.firestore.collection('report').doc(this.report.id).update({'tenantInSig': this.signatureImg1});
+    this.signatureImg1 = null
   }
 
   signed2(event) {
     this.signatureImg2 = event;
-    console.log('signature returned: ', this.signatureImg);
+    console.log('signature returned: ', this.signatureImg2);
+    this.firestore.collection('report').doc(this.report.id).update({'tenantOutSig': this.signatureImg2});
+    this.signatureImg2 = null;
   }
 
   signed3(event) {
     this.signatureImg3 = event;
-    console.log('signature returned: ', this.signatureImg);
+    console.log('signature returned: ', this.signatureImg3);
+    this.firestore.collection('report').doc(this.report.id).update({'landlordInSig': this.signatureImg3});
+    this.signatureImg3 = null;
   }
 
   signed4(event) {
     this.signatureImg4 = event;
-    console.log('signature returned: ', this.signatureImg);
+    console.log('signature returned: ', this.signatureImg4);
+    this.firestore.collection('report').doc(this.report.id).update({'landlordOutSig': this.signatureImg4});
+    this.signatureImg4 = null;
   }
 
 }

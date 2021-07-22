@@ -84,10 +84,10 @@
         </tr>
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                3. Landlord’s signature (on move-in) <span *ngIf="!signatureImg3"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveIn" mat-button  target="_blank" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg3"><img style="margin-left: 25px;" src='{{ signatureImg3 }}' height="40px" width="250px" /></span>
+                3. Landlord’s signature (on move-in) <span *ngIf="!signatureImg3 && !report.landlordInSig"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveIn" mat-button  target="_blank" mat-button  target="_blank">Sign here</a></span> <span *ngIf="signatureImg3"><img style="margin-left: 25px;" src='{{ signatureImg3 }}' height="40px" width="250px" /></span><span *ngIf="report.landlordInSig"><img style="margin-left: 25px;" src='{{ report.landlordInSig }}' height="40px" width="250px" /></span>
             </td>
             <td>
-                <span style="color:white"></span>Tenant’s signature (on move-in)<span *ngIf="!signatureImg1"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveIn" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg1"><img style="margin-left: 25px;" src='{{ signatureImg1 }}' height="40px" width="250px"/></span>
+                <span style="color:white"></span>Tenant’s signature (on move-in)<span *ngIf="!signatureImg1 && !report.tenantInSig"><a style="width: 250px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveIn" mat-button target="_blank">Sign here</a></span> <span *ngIf="report.tenantInSig"><img style="margin-left: 25px;" src='{{ report.tenantInSig }}' height="40px" width="250px"/></span> <span *ngIf="signatureImg1"><img style="margin-left: 25px;" src='{{ signatureImg1 }}' height="40px" width="250px"/></span>
             </td>
         </tr>
         <!-- <tr style="height: 35px;">
@@ -98,10 +98,10 @@
         </tr> -->
         <tr style="border-top: 1px solid;">
             <td style="width:35%;vertical-align: top;border-right: 1px solid;">
-                4. Landlord’s signature (on move-out) <span *ngIf="!signatureImg4"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveOut" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg4"><img style="margin-left: 25px;" src='{{ signatureImg4 }}' height="40px" width="250px" /></span>
+                4. Landlord’s signature (on move-out) <span *ngIf="!signatureImg4 && !report.landlordOutSig"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveOut" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg4"><img style="margin-left: 25px;" src='{{ signatureImg4 }}' height="40px" width="250px" /></span> <span *ngIf="report.landlordOutSig"><img style="margin-left: 25px;" src='{{ report.landlordOutSig }}' height="40px" width="250px" /></span>
             </td>
             <td>
-                <span style="color:white"></span>Tenant’s signature (on move-out)<span *ngIf="!signatureImg2"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveOut" mat-button  target="_blank">Sign here</a></span><span *ngIf="signatureImg2"><img style="margin-left: 25px;" src='{{ signatureImg2 }}' height="40px" width="250px" /></span>
+                <span style="color:white"></span>Tenant’s signature (on move-out)<span *ngIf="!signatureImg2 && !report.tenantOutSig"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveOut" mat-button  target="_blank">Sign here</a></span><span *ngIf="signatureImg2"><img style="margin-left: 25px;" src='{{ signatureImg2 }}' height="40px" width="250px" /></span> <span *ngIf="report.tenantOutSig"><img style="margin-left: 25px;" src='{{ report.tenantOutSig }}' height="40px" width="250px" /></span>
             </td>
         </tr>
         <tr style="height: 35px;">
