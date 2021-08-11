@@ -19,7 +19,7 @@ export class ReportComponent implements OnInit {
   ngOnInit(): void {
     // debugger;
     // Get current user
-    this.userService.getCurrentUser() 
+    this.userService.getCurrentUser()
                     .subscribe( res => {
                       if(res) {
                         this.userId = res.uid;
@@ -29,10 +29,10 @@ export class ReportComponent implements OnInit {
                               this.reports = rpts;
                           })
                       }
-                      
-                    })   
 
-    
+                    })
+
+
     // debugger;
     // this.dataService.getAllReports()
     //     .subscribe(res => {

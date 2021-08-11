@@ -14,7 +14,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
   // constructor() { }
 
   // ngOnInit(): void {
-    
+
   // }
 
   @Input() rptId;
@@ -47,8 +47,8 @@ export class AddSectionLivingRoomComponent implements OnInit {
   ngOnInit(): void {
 
     let livingroomSubType = {
-      'M':'Livingroom', 
-      'S':'Familyroom'      
+      'M':'Livingroom',
+      'S':'Familyroom'
     }
 
     for (let [key, value] of Object.entries(livingroomSubType)) {
@@ -64,7 +64,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
                   break;
                 case 'S':
                   this.familyExists = true;
-                  break;                
+                  break;
                 default:
                   break;
               }
@@ -82,17 +82,17 @@ export class AddSectionLivingRoomComponent implements OnInit {
                   break;
                 case 'S':
                   this.familyExists = false;
-                  break;                
+                  break;
                 default:
                   break;
               }
               // console.log('status:', key);
               // console.log(value + ' not exists');
             }
-           
+
           })
     }
-    
+
     this.livingForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -122,7 +122,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -134,7 +134,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
         AirConditioningCmnts: [''],
         AirConditioningCode: [''],
         FireplaceCmnts: [''],
-        FireplaceCode: [''],      
+        FireplaceCode: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -148,8 +148,8 @@ export class AddSectionLivingRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -159,10 +159,10 @@ export class AddSectionLivingRoomComponent implements OnInit {
 
     //Check if main entry
     if(this.livingRoomType == 'LivingRoom') {
-      this.livingForm.get('subtype').setValue('Living Room');
+      this.livingForm.get('subtype').setValue('LivingRoom');
     }
     else {
-      this.livingForm.get('subtype').setValue('Family Room');
+      this.livingForm.get('subtype').setValue('FamilyRoom');
     }
 
 
@@ -170,7 +170,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.livingForm.value, this.rptId);    
+    this.dataServie.createSection(this.livingForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
