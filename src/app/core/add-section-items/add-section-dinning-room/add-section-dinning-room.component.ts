@@ -43,20 +43,19 @@ export class AddSectionDinningRoomComponent implements OnInit {
                     .subscribe(result => {
                       this.existing = result;
                       if(this.existing.length !=0) {
-                        this.alreadyAdded = true;  
-                        this.dinningForm.disable();                      
+                        this.alreadyAdded = true;
+                        this.dinningForm.disable();
                       }
-
-                      console.log('dinningroomt added', this.alreadyAdded);
+                      // console.log('dinningroomt added', this.alreadyAdded);
                     })
-    
+
     this.dinningForm = this.formBuilder.group({
       name: [''],
       type: [''],
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
-        cellingCode: [''],        
+        cellingCode: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -70,11 +69,11 @@ export class AddSectionDinningRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
-        cellingCode: [''],              
+        cellingCode: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -88,8 +87,8 @@ export class AddSectionDinningRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -100,7 +99,7 @@ export class AddSectionDinningRoomComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.dinningForm.value, this.rptId);    
+    this.dataServie.createSection(this.dinningForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();

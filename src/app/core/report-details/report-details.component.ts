@@ -127,7 +127,7 @@ export class ReportDetailsComponent implements OnInit {
       agreeAtStart: ['agree'],
       reasonNotAgreeAtStart: [''],
       agreeAtEnd: ['agree'],
-      reasonNotAgreeAtEnd: [''] ,   
+      reasonNotAgreeAtEnd: [''] ,
       tenantForwardingAddressUnit: [''],
       tenantForwardingAddressStreet: [''],
       tenantForwardingAddressCity: [''],
@@ -173,11 +173,11 @@ export class ReportDetailsComponent implements OnInit {
           if (this.report.moveOutInspectDate) {
             this.detailForm.get('moveOutDate').setValue(this.report.moveOutDate.toDate());
           }
-          
+
           if (this.report.moveOutInspectDate) {
              this.detailForm.get('moveOutInspectDate').setValue(this.report.moveOutInspectDate.toDate());
           }
-         
+
           // this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate().toDateString());
           this.detailForm.get('possesionDate').setValue(this.report.possesionDate.toDate());
           // console.log('date', this.report.possesionDate);
@@ -285,7 +285,7 @@ export class ReportDetailsComponent implements OnInit {
 
 
 
-    
+
 
     this.dataService.getReportSectionByType(this.id, 'Bathroom')
     .subscribe( res => {
@@ -320,7 +320,7 @@ export class ReportDetailsComponent implements OnInit {
     //   this.bathroomSection = res;
     //   console.log('Bath-section', this.bathroomSection);
     // })
-    
+
 
     this.dataService.getReportSectionBySubType(this.id, 'Fifth Bedroom')
     .subscribe( res => {
@@ -404,7 +404,7 @@ export class ReportDetailsComponent implements OnInit {
   }
 
   submit() {
-    let date = new Date();  
+    let date = new Date();
 
     let isFinal = false;
 
@@ -466,6 +466,10 @@ export class ReportDetailsComponent implements OnInit {
     let url = '/home/report-view/' + this.id;
 
     this.router.navigateByUrl(url);
+  }
+
+  back(){
+    this.router.navigateByUrl('/home/report');
   }
 
 }

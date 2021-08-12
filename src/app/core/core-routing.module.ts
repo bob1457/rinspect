@@ -8,13 +8,14 @@ import { UserProfileComponent } from '../user/user-profile/user-profile.componen
 import { UserSettingsComponent } from '../user/user-settings/user-settings.component';
 import { AddSectionComponent } from './add-section/add-section.component';
 
-import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
 // import { AuthGuard } from '../shared/auth.guard';
 import { ReeportViewComponent } from './reeport-view/reeport-view.component';
 import { AboutComponent } from '../about/about.component';
 import { map } from 'rxjs/operators';
 
 const rediretUnauthoirzedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToContent = () => redirectLoggedInTo(['home/report']);
 // canActivate: [AuthGuard]
 const onlyAllowSelf = next => {
   map( user => (!!user && next.params.id == (user as any).uid) || ['']);
