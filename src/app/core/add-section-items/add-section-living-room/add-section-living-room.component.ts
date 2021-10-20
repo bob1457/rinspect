@@ -47,12 +47,12 @@ export class AddSectionLivingRoomComponent implements OnInit {
   ngOnInit(): void {
 
     let livingroomSubType = {
-      'M':'Livingroom',
+      'M':'LivingRoom',
       'S':'Familyroom'
     }
 
     for (let [key, value] of Object.entries(livingroomSubType)) {
-      console.log('subtype of living room---', value);
+      // console.log('subtype of living room---', value);
 
       this.dataServie.getReportSectionBySubType(this.rptId, value)
           .subscribe( res => {
@@ -61,6 +61,8 @@ export class AddSectionLivingRoomComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.livingroomExists = true;
+                  // console.log('living room:', this.livingroomExists);
+                  this.livingRoomType = 'Familyroom';
                   break;
                 case 'S':
                   this.familyExists = true;
@@ -96,7 +98,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
     this.livingForm = this.formBuilder.group({
       name: [''],
       type: [''],
-      subtype: ['Living Room'], // new attribute
+      subtype: ['LivingRoom'], // new attribute
       // IN
       conditionIn: this.formBuilder.group({
         cellingCmnts: [''],
@@ -157,7 +159,7 @@ export class AddSectionLivingRoomComponent implements OnInit {
   submit() {
     this.livingForm.get('type').setValue('Living-Room');
 
-    //Check if main entry
+    //Check if living room or family room
     if(this.livingRoomType == 'LivingRoom') {
       this.livingForm.get('subtype').setValue('LivingRoom');
     }

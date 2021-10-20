@@ -51,7 +51,7 @@ export class AddSectionEntryComponent implements OnInit {
     }
 
     for (let [key, value] of Object.entries(sectionSubType)) {
-      console.log('subtype of section---', value);
+      // console.log('subtype of section---', value);
 
       this.dataServie.getReportSectionBySubType(this.rptId, value)
           .subscribe( res => {
@@ -60,6 +60,7 @@ export class AddSectionEntryComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.mainEntryExists = true;
+                  this.entryType = "SecondaryEntry";
                   break;
                 case 'S':
                   this.secEntryExists = true;

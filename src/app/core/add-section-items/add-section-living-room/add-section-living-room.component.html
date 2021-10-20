@@ -3,12 +3,12 @@
     <div [@.disabled]="true" style="width:100%">
         <p>Section Type: <span style="font-weight:bold;">Living Room</span><span style="font-weight:bold;color:red;" *ngIf="alreadyAdded"> &nbsp; <mat-icon style="vertical-align: bottom;margin-left: 15px;">warning</mat-icon> Both living room and family room section already exists!</span></p>
         <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
-            <mat-radio-button value="Living Room" style="padding-right: 10px;">Living Room</mat-radio-button>
-            <mat-radio-button value="Family Room" >Family Room</mat-radio-button>
+            <mat-radio-button [disabled]="livingroomExists" value="LivingRoom" style="padding-right: 10px;">Living Room</mat-radio-button>
+            <mat-radio-button [disabled]="familyExists" value="FamilyRoom" [checked]="livingroomExists" >Family Room</mat-radio-button>
         </mat-radio-group>
         <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" [floatLabel]="floatLabelControl.value" [floatLabel]="floatLabelControl.value" [floatLabel]="floatLabelControl.value" style="width:100%">
             <!-- <mat-label>Description</mat-label> -->
-            <input matInput placeholder="Specify type and description of the area" formControlName="name">           
+            <input matInput placeholder="Specify type and description of the area" formControlName="name">
         </mat-form-field>
         <!-- <form style="width: 100%;" fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="submit()"> -->
             <mat-tab-group style="width: 100%;">
@@ -109,7 +109,7 @@
                                     </mat-form-field>
                                 </div>
                                 <!-- <app-section-item style="width: 100%;" [codes]="codes" [sectionTitle]="sectionTitle[0]" [entryForm]="entryForm" [code]="controlCodes[0]" [comments]="controlComments[0]"></app-section-item> -->
-                                
+
                                 <!-- <app-section-item style="width: 100%;" [codes]="codes" [sectionTitle]="sectionTitle[1]" [entryForm]="entryForm" [code]="controlCodes[0]" [comments]="controlComments[0]"></app-section-item>
                                 -->
                                 <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -187,13 +187,13 @@
                                         <input matInput  placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                     </mat-form-field>
                                 </div>
-                                
+
                             </mat-card-content>
                         </div>
-                        
+
                     </mat-card>
                 </mat-tab>
-                <mat-tab label="END OF TENANCY">                    
+                <mat-tab label="END OF TENANCY">
                     <mat-card class="section-card mat-elevation-z0">
                     <div formGroupName="conditionOut">
                         <mat-card-content fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
@@ -289,7 +289,7 @@
                                 </mat-form-field>
                             </div>
                             <!-- <app-section-item style="width: 100%;" [codes]="codes" [sectionTitle]="sectionTitle[0]" [entryForm]="entryForm" [code]="controlCodes[0]" [comments]="controlComments[0]"></app-section-item> -->
-                            
+
                             <!-- <app-section-item style="width: 100%;" [codes]="codes" [sectionTitle]="sectionTitle[1]" [entryForm]="entryForm" [code]="controlCodes[0]" [comments]="controlComments[0]"></app-section-item>
                             -->
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
@@ -368,8 +368,8 @@
                                 </mat-form-field>
                             </div>
                         </mat-card-content>
-                    </div>    
-                        
+                    </div>
+
                     </mat-card>
                 </mat-tab>
             </mat-tab-group>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-section',
@@ -30,7 +31,8 @@ export class AddSectionComponent implements OnInit {
   ]
 
   constructor(private actRoute: ActivatedRoute,
-              private dataService: DataService) { 
+              private location: Location,
+              private dataService: DataService) {
     this.actRoute.paramMap.subscribe(params => {
       this.id = params.get('id');
       console.log(params.get('id'));
@@ -43,7 +45,7 @@ export class AddSectionComponent implements OnInit {
           if(res){
             this.report = res;
           }
-          
+
 
         })
   }
@@ -51,6 +53,10 @@ export class AddSectionComponent implements OnInit {
   changeType(value) {
     this.type = value;
     console.log('type', this.type)
+  }
+
+  back(){
+    this.location.back();
   }
 
 }

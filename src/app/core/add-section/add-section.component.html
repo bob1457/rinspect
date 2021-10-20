@@ -1,4 +1,16 @@
 <!-- <p>add-section works!</p> -->
+<div>
+  <div style="width: 90%;margin-left: 30px;">
+    <a (click)="back()">
+    <mat-icon style="vertical-align: bottom;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: green;">
+      arrow_circle_left
+    </mat-icon>Back to report details
+  </a>
+  </div>
+</div>
 <div fxLayout="row" fxLayoutAlign="start center">
     <span class="material-icons" style="padding:5px; color:#ff5722; font-size: 3em; margin-left: 27px;">
       table_view
@@ -71,15 +83,15 @@
         <mat-icon style="color:#2477f5;">account_tree</mat-icon>
           Basement
       </button>
-        <mat-divider></mat-divider>        
+        <mat-divider></mat-divider>
       <button mat-menu-item (click)="type='key'">
         <mat-icon style="color:#2477f5;">control_camera</mat-icon>
           Keys and Controls
-      </button> 
+      </button>
       <button mat-menu-item (click)="type='other'">
         <mat-icon style="color:#2477f5;">add_task</mat-icon>
           Other
-      </button>       
+      </button>
     </mat-menu>
 
     <mat-menu #help="matMenu" yPosition="above" >
@@ -99,10 +111,10 @@
                   &nbsp; S = Scratched<br>
                   &nbsp; B = Broken<br>
                   &nbsp; DT = Dirty<br>
-                  &nbsp; ST = Stained  
-               </span>              
+                  &nbsp; ST = Stained
+               </span>
           </div>
-      </div>      
+      </div>
     </mat-menu>
 </div>
 <p style="margin-top: 20px;"></p>
@@ -111,21 +123,21 @@
         <ul style="list-style: none; width: 90%;" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="2%">
           <li *ngFor="let button of addButtons">
             <mat-card style="margin-top: 10px;text-align: center;" class="section-card" (click)="changeType(button.type)" >
-              
+
                 <!-- <mat-icon style="color: black;">add_to_home_screen</mat-icon> "../../../assets/images/entry.png"-->
                 <img attr.src="{{button.img}}" width="50px" height="50px">
-              
+
               <div fxLayout="row" fxLayoutAlign="center center">
                   <!-- <mat-icon>add</mat-icon> -->
                   <p style="margin-top: 10px;">
                     {{button.caption}}
                   </p>
-                
+
               </div>
             </mat-card>
           </li>
-          
-          
+
+
         </ul>
     <!-- </section> -->
 </div>
@@ -135,7 +147,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 25px;width: 100%;">
     <app-add-section-entry *ngIf="type==='entry'" [rptId]="id" style="width:90%"></app-add-section-entry>
     <!-- <app-inspection-kitchen *ngIf="type==='kitchen'" style="width:90%"></app-inspection-kitchen> -->
-    <app-add-section-kitchen  *ngIf="type==='kitchen'" [rptId]="id" style="width:90%"></app-add-section-kitchen>    
+    <app-add-section-kitchen  *ngIf="type==='kitchen'" [rptId]="id" style="width:90%"></app-add-section-kitchen>
     <app-add-section-keys-living-room *ngIf="type==='livingroom'" [rptId]="id" style="width:90%"></app-add-section-keys-living-room>
     <app-add-section-dinning-room *ngIf="type==='dinning'" [rptId]="id" style="width:90%"></app-add-section-dinning-room>
     <app-add-section-stairewll-hall  *ngIf="type==='stair'" [rptId]="id" style="width:90%"></app-add-section-stairewll-hall>

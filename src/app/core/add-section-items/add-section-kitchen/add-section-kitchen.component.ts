@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class AddSectionKitchenComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   kitchenType = 'MainKitchen';
   kitchenForm: FormGroup;
 
@@ -44,8 +44,8 @@ export class AddSectionKitchenComponent implements OnInit {
     console.log('report id:',this.rptId);
 
     let kitchenSubType = {
-      'M':'MainKitchen', 
-      'S':'SecondaryKitchen'      
+      'M':'MainKitchen',
+      'S':'SecondaryKitchen'
     }
 
     for (let [key, value] of Object.entries(kitchenSubType)) {
@@ -58,10 +58,11 @@ export class AddSectionKitchenComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.mainKitchenExists = true;
+                  this.kitchenType = 'SecondaryKitchen';
                   break;
                 case 'S':
                   this.secKitchenExists = true;
-                  break;                
+                  break;
                 default:
                   break;
               }
@@ -79,14 +80,14 @@ export class AddSectionKitchenComponent implements OnInit {
                   break;
                 case 'S':
                   this.secKitchenExists = false;
-                  break;                
+                  break;
                 default:
                   break;
               }
               // console.log('status:', key);
               // console.log(value + ' not exists');
             }
-           
+
           })
     }
 
