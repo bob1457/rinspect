@@ -11,16 +11,16 @@ import { DataService } from '../../services/data.service';
 export class AddSectionMasterBedroomComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
 
   bedroomForm: FormGroup;
-  bedroomType = 'Master Bedrooom';
+  bedroomType = 'Master Bedroom';
   alreadyAdded = false;
 
-  maasterBedExists = false;  
+  maasterBedExists = false;
   secondBedRoomExists = false;
   thirdBedRoomExists = false;
   forthBedRoomExists = false;
@@ -29,7 +29,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   queryResult;
 
   // bedroomSubType = {
-  //   'M':'Master Bedrooom', 
+  //   'M':'Master Bedrooom',
   //   'S':'Second Bedroom',
   //   'T':'Third Bedroom',
   //   'F':'Forth Bedroom',
@@ -57,7 +57,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
     // Find out if any of the bedrrom already fifthBedRoomExists
 
     let bedroomSubType = {
-      'M':'Master Bedroom', 
+      'M':'Master Bedroom',
       'S':'Second Bedroom',
       'T':'Third Bedroom',
       'F':'Forth Bedroom',
@@ -68,7 +68,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
 
     // this.dataServie.getReportSectionBySubType(this.rptId, 'Master Bedroom')
     // .subscribe( res => {
-      
+
     //   console.log('Master Bed-section check:', res);
     // })
 
@@ -82,6 +82,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.maasterBedExists = true;
+                  this.bedroomType = "Second Bedroom";
                   break;
                 case 'S':
                   this.secondBedRoomExists = true;
@@ -128,10 +129,10 @@ export class AddSectionMasterBedroomComponent implements OnInit {
               // console.log('status:', key);
               // console.log(value + ' not exists');
             }
-           
+
           })
     }
-    
+
     this.bedroomForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -144,7 +145,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
         closetsCode: [''],
         closetsCmnts: [''],
         doorCode: [''],
-        doorCmnts: [''],        
+        doorCmnts: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -158,7 +159,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -166,7 +167,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
         closetsCode: [''],
         closetsCmnts: [''],
         doorCode: [''],
-        doorCmnts: [''],        
+        doorCmnts: [''],
         electricCmnts: [''],
         electricCode: [''],
         floorCmnts: [''],
@@ -180,8 +181,8 @@ export class AddSectionMasterBedroomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -189,38 +190,38 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   submit() {
     this.bedroomForm.get('type').setValue('Bedroom');
 
-    switch(this.bedroomType) { 
-      case 'Master Bedroom': { 
+    switch(this.bedroomType) {
+      case 'Master Bedroom': {
         this.bedroomForm.get('subtype').setValue('Master Bedroom');
-         break; 
-      } 
-      case 'Second Bdedroom': { 
+         break;
+      }
+      case 'Second Bedroom': {
         this.bedroomForm.get('subtype').setValue('Second Bedroom');
-         break; 
-      } 
-      case 'Third Bedroom': { 
+         break;
+      }
+      case 'Third Bedroom': {
         this.bedroomForm.get('subtype').setValue('Third Bedroom');
-         break; 
-      } 
-      case 'Forth Bedroom': { 
+         break;
+      }
+      case 'Forth Bedroom': {
         this.bedroomForm.get('subtype').setValue('Forth Bedroom');
-         break; 
-      } 
-      case 'Fifth Bedroom': { 
+         break;
+      }
+      case 'Fifth Bedroom': {
         this.bedroomForm.get('subtype').setValue('Fifth Bedroom');
-         break; 
-      } 
-      default: { 
-        this.bedroomForm.get('subtype').setValue('Master Bdedroom'); 
-         break; 
-      } 
-   } 
+         break;
+      }
+      default: {
+        this.bedroomForm.get('subtype').setValue('Master Bedroom');
+         break;
+      }
+   }
 
     console.log('add secton form', this.bedroomForm.value);
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.bedroomForm.value, this.rptId);    
+    this.dataServie.createSection(this.bedroomForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();
@@ -238,11 +239,12 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   clicked(event) {
     this.addMore = event.checked;
     console.log(this.addMore);
-  }  
+  }
 
   onChange(event) {
-    console.log(event);
+    console.log('checked', event);
     this.bedroomType = event.value;
+    console.log('bedroom type', this.bedroomType);
   }
 
 }

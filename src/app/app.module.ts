@@ -11,7 +11,7 @@ import { SigninComponent } from './signin/signin.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/common.module';
@@ -59,7 +59,10 @@ import {
     AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {provide: SETTINGS, useValue: environment.emulator ? {host: 'localhost:8080', ssl: false}: undefined}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

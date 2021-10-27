@@ -11,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class AddSectionMainBathRoomComponent implements OnInit {
 
   floatLabelControl = new FormControl('auto');
-  
+
   @Input() rptId;
 
   addMore = false;
@@ -21,7 +21,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
 
   alreadyAdded = false;
 
-  mainBathExists = false;  
+  mainBathExists = false;
   secondBathExists = false;
   thirdBathExists = false;
   forthBathExists = false;
@@ -46,7 +46,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   ngOnInit(): void {
 
     let bathroomSubType = {
-      'M':'Main Bathroom', 
+      'M':'Main Bathroom',
       'S':'Second Bathroom',
       'T':'Third Bathroom',
       'F':'Forth Bathroom'//,
@@ -64,16 +64,19 @@ export class AddSectionMainBathRoomComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.mainBathExists = true;
+                  this.bathroomType = 'Second Bathroom';
                   break;
                 case 'S':
                   this.secondBathExists = true;
+                  this.bathroomType = 'Third Bathroom';
                   break;
                 case 'T':
                   this.thirdBathExists = true;
                   break;
                 case 'F':
                   this.forthBathExists = true;
-                  break;                
+                  this.bathroomType = 'Forth Bathroom';
+                  break;
                 default:
                   break;
               }
@@ -89,23 +92,26 @@ export class AddSectionMainBathRoomComponent implements OnInit {
                   break;
                 case 'S':
                   this.secondBathExists = false;
+                  this.bathroomType = 'Second Bathroom';
                   break;
                 case 'T':
                   this.thirdBathExists = false;
+                  this.bathroomType = 'Third Bathroom';
                   break;
                 case 'F':
                   this.forthBathExists = false;
-                  break;                
+                  this.bathroomType = 'Forth Bathroom';
+                  break;
                 default:
                   break;
               }
               // console.log('status:', key);
               // console.log(value + ' not exists');
             }
-           
+
           })
     }
-    
+
     this.mainBathForm = this.formBuilder.group({
       name: [''],
       type: [''],
@@ -138,7 +144,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       }),
-      //- OUT 
+      //- OUT
 
       conditionOut: this.formBuilder.group({
         cellingCmnts: [''],
@@ -166,8 +172,8 @@ export class AddSectionMainBathRoomComponent implements OnInit {
         otherCode: [''],
         otherCmnts: ['']
       })
-      
-      
+
+
 
     })
   }
@@ -175,31 +181,31 @@ export class AddSectionMainBathRoomComponent implements OnInit {
   submit() {
     this.mainBathForm.get('type').setValue('Bathroom');
 
-    switch(this.bathroomType) { 
-      case 'Main Bathroom': { 
+    switch(this.bathroomType) {
+      case 'Main Bathroom': {
         this.mainBathForm.get('subtype').setValue('Main Bathroom');
-         break; 
-      } 
-      case 'Second Bathroom': { 
+         break;
+      }
+      case 'Second Bathroom': {
         this.mainBathForm.get('subtype').setValue('Second Bathroom');
-         break; 
-      } 
-      case 'Third Bathroom': { 
+         break;
+      }
+      case 'Third Bathroom': {
         this.mainBathForm.get('subtype').setValue('Third Bathroom');
-         break; 
-      } 
-      case 'Forth Bathroom': { 
+         break;
+      }
+      case 'Forth Bathroom': {
         this.mainBathForm.get('subtype').setValue('Forth Bathroom');
-         break; 
-      } 
-      // case 'Fifth Bedroom': { 
+         break;
+      }
+      // case 'Fifth Bedroom': {
       //   this.mainBathForm.get('subtype').setValue('Fifth Bedroom');
-      //    break; 
-      // } 
-      default: { 
-        this.mainBathForm.get('subtype').setValue('Main Bathroom'); 
-         break; 
-      } 
+      //    break;
+      // }
+      default: {
+        this.mainBathForm.get('subtype').setValue('Main Bathroom');
+         break;
+      }
    }
 
 
@@ -207,7 +213,7 @@ export class AddSectionMainBathRoomComponent implements OnInit {
     // call service to add section
     console.log(this.rptId);
 
-    this.dataServie.createSection(this.mainBathForm.value, this.rptId);    
+    this.dataServie.createSection(this.mainBathForm.value, this.rptId);
 
     if (this.addMore) {
       this.reloadComponent();

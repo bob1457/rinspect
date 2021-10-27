@@ -4,13 +4,13 @@
         <p>Section Type: <span style="font-weight:bold;">Bedroom</span></p>
         <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="subtype" style="margin-top: 13px;margin-left: 25px;padding-right: 5px;margin-bottom:20px;" nam="before">
             <mat-radio-button [disabled]="maasterBedExists" value="Master Bedroom" style="padding-right: 10px;">Master Bedroom</mat-radio-button>
-            <mat-radio-button [disabled]="secondBedRoomExists" value="Second Bedroom" style="padding-right: 10px;">2nd Bedroom</mat-radio-button>
-            <mat-radio-button [disabled]="thirdBedRoomExists" value="Third Bedroom" style="padding-right: 10px;">3rd Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="secondBedRoomExists" [checked]="maasterBedExists" value="Second Bedroom" style="padding-right: 10px;">2nd Bedroom</mat-radio-button>
+            <mat-radio-button [disabled]="thirdBedRoomExists" [checked]="maasterBedExists && secondBedRoomExists" value="Third Bedroom" style="padding-right: 10px;">3rd Bedroom</mat-radio-button>
             <mat-radio-button [disabled]="forthBedRoomExists" value="Forth Bedroom" style="padding-right: 10px;">4th Bdedroom</mat-radio-button>
             <mat-radio-button [disabled]="fifthBedRoomExists" value="Fifth Bedroom" style="padding-right: 10px;">5th Bedroom</mat-radio-button>
             <!-- <mat-radio-button value="Family Room" >Family Room</mat-radio-button>
             <mat-radio-button value="Living Room" style="padding-right: 10px;">Living Room</mat-radio-button> -->
-            
+
         </mat-radio-group>
         <mat-form-field appearance="outline" [floatLabel]="floatLabelControl.value" style="width:100%; margin-top: 10px;">
             <!-- <mat-label>Description</mat-label> -->
@@ -88,7 +88,7 @@
                                         <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="closetsCmnts">
                                     </mat-form-field>
                                 </div>
-                                
+
                                 <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                     <p style="width: 35%;text-align: left;margin-left: 5px;">Door</p>
                                     <mat-form-field style="width: 15%;">
@@ -165,13 +165,13 @@
                                         <input matInput  placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="otherCmnts">
                                     </mat-form-field>
                                 </div>
-                                
+
                             </mat-card-content>
                         </div>
-                        
+
                     </mat-card>
                 </mat-tab>
-                <mat-tab label="END OF TENANCY">                    
+                <mat-tab label="END OF TENANCY">
                     <mat-card class="section-card mat-elevation-z0">
                     <div formGroupName="conditionOut">
                         <mat-card-content fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
@@ -236,7 +236,7 @@
                                     <input matInput placeholder="Comments: Max. 25 chars" maxlength="25" formControlName="closetsCmnts">
                                 </mat-form-field>
                             </div>
-                            
+
                             <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="center center" style="width:100%;border:1px solid;padding-left: 5px;padding-right: 5px;padding-top: 5px;">
                                 <p style="width: 35%;text-align: left;margin-left: 5px;">Door</p>
                                 <mat-form-field style="width: 15%;">
@@ -314,8 +314,8 @@
                                 </mat-form-field>
                             </div>
                         </mat-card-content>
-                    </div>    
-                        
+                    </div>
+
                     </mat-card>
                 </mat-tab>
             </mat-tab-group>
