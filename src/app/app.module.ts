@@ -60,8 +60,7 @@ import {
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    AuthGuard,
-    {provide: SETTINGS, useValue: environment.emulator ? {host: 'localhost:8080', ssl: false}: undefined}
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
