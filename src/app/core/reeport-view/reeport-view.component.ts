@@ -17,7 +17,7 @@ export class ReeportViewComponent implements OnInit {
 
   @ViewChild('pdfdoc', {static: false}) pdfdoc: ElementRef;
 
-  constructor(private actRoute: ActivatedRoute) { 
+  constructor(private actRoute: ActivatedRoute) {
                 this.id = this.actRoute.snapshot.params.id;
                 console.log('rept_ID',this.id);
   }
@@ -32,7 +32,7 @@ export class ReeportViewComponent implements OnInit {
     const element = document.getElementById('pdfdoc');
 
     const options = {
-      margin:       0.2,
+      margin:       0.15,
       filename:     'Inspection_Report', // this.contract.managementContractTitle + '_' + timestamp + '_contract.pdf',
       image:        { type: 'jpeg', quality: 0.99 },
       // pagebreak:    { mode: '', before: '#page2el'},
