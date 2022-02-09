@@ -1,15 +1,15 @@
 <!-- <p>report-details works!</p> -->
 <div fxLayout="column" fxLayoutAlign="center center">
-  <div style="width: 90%;">
-    <a (click)="back()">
-    <mat-icon style="vertical-align: bottom;
+    <div style="width: 90%;">
+        <a (click)="back()">
+            <mat-icon style="vertical-align: bottom;
     margin-right: 10px;
     margin-top: 5px;
     color: green;">
-      arrow_circle_left
-    </mat-icon>Back to report list
-  </a>
-  </div>
+                arrow_circle_left
+            </mat-icon>Back to report list
+        </a>
+    </div>
     <mat-card class="details-card mat-elevation-z0" *ngIf="report">
         <mat-card-header>
             <div mat-card-avatar class="details-header-image"></div>
@@ -23,7 +23,8 @@
             <mat-card-subtitle>
                 <div fxLayout="row" fxLayoutAlign="start start">
                     <div fxFlex="80">
-                        Completed: {{report.completed | trueFalse}} <span> &nbsp; &nbsp;Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span>
+                        <span>Created on: {{report.created.seconds * 1000 | date:'yyyy-MM-dd'}}, Last Updated on: {{report.updated.seconds * 1000 | date:'yyyy-MM-dd'}}</span>
+                        <br> Completed: {{report.completed | trueFalse}}
                     </div>
                     <div fxFlex="15">
                         <span *ngIf="final" style="margin-left: 5px;"><button style="color: rgb(47, 82, 240);" mat-raised-button color="accent" (click)="viewReport()">View Report</button></span>
@@ -154,7 +155,7 @@
                                 <mat-datepicker #picker4></mat-datepicker>
                             </mat-form-field>
                         </div>
-                        <mat-checkbox [disabled]="sectionMissing" style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report <span style="color: orangered" *ngIf="sectionMissing"> - some sections are missing <mat-icon [matMenuTriggerFor]="details" matSuffix style="vertical-align: bottom;">remove_red_eye</mat-icon> DETAILS</span></mat-checkbox>
+                        <mat-checkbox [disabled]="sectionMissing" style="margin-bottom: 20px;width: 100%;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report <span style="color: orangered" *ngIf="sectionMissing"> - some sections are missing <mat-icon [matMenuTriggerFor]="details" matSuffix style="vertical-align: bottom;">source</mat-icon></span></mat-checkbox>
                         <div *ngIf="final" style="width: 100%;">
                             <div [@.disabled]="true">
                                 <mat-tab-group>
@@ -305,7 +306,7 @@
                         </div>
 
                         <mat-menu #details="matMenu" yPosition="above">
-                            <p style="margin-top:10px; margin-left:15px; font-weight: bold;">
+                            <p style="margin-top:10px; margin-left:15px; margin-right: 15px; font-weight: bold;">
                                 Sections required:
                             </p>
                             <ul style="margin-right: 20px;">
