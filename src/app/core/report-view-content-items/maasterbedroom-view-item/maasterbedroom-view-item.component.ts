@@ -9,6 +9,8 @@ export class MaasterbedroomViewItemComponent implements OnInit {
 
   @Input() masterBedroomSectionDetails;
   @Input() reportId;
+  @Input() isMaster;
+  @Input() bedroomNo;
 
   constructor() { }
 

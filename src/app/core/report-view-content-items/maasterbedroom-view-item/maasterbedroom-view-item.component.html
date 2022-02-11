@@ -1,10 +1,10 @@
-<div  fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
+<div fxLayout="row" fxLayoutAlign="start start" fxFlexFill style=" font-size: .8em;">
     <div fxFlex="34%">
         <table style="width: 100%;margin-top: 3px;">
             <tr>
                 <td rowspan="9" style="vertical-align: top;width: 160px;">
-                    <span style="font-weight: bold;">P. MASTER BEDROOM (1)<br>
-                        <span style="font-weight: 500;font-size:.8em; margin-left:10px">{{masterBedroomSectionDetails.name}}</span>
+                    <span style="font-weight: bold;"><span *ngIf="isMaster">P. MASTER BEDROOM</span><span *ngIf="!isMaster">Q. BEDROOM ({{bedroomNo}})</span><br>
+                    <span style="font-weight: 500;font-size:.8em; margin-left:10px">{{masterBedroomSectionDetails.name}}</span>
                     </span>
                 </td>
                 <td style="widows: 100%;border: 1px solid black;text-align: left;">
@@ -14,41 +14,41 @@
                 <td style="border: 1px solid black;text-align: left;">
                     Walls and Trim
                 </td>
-                
+
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
                     Floor/Carpet
-                </td>                        
+                </td>
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
                     Closet(s)
-                </td>                        
-            </tr>             
+                </td>
+            </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
                     Door
-                </td>                        
-            </tr>           
+                </td>
+            </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left; font-size: .8em;line-height: 1.9;">Lighting Fixtures/Ceiling Fan/Bulbs</td>
-                
+
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">Windows/Coverings/Screens</td>
-                
+
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">Electrical Outlets</td>
-                
+
             </tr>
             <tr>
                 <td style="border: 1px solid black;text-align: left;">
                     <span style="visibility: hidden;">Other</span></td>
-                
+
             </tr>
-            
+
         </table>
     </div>
     <div fxFlex="33%">
@@ -146,7 +146,7 @@
                 </td>
                 <td style="border: 1px solid black;text-align: center;">{{masterBedroomSectionDetails.conditionOut.doorCode | code}}</td>
             </tr>
-            
+
             <tr>
                 <td style="border: 1px solid black;text-align: left;width: 151px;">
                     <span [class.hide]="masterBedroomSectionDetails.conditionOut.lightingCmnts == ''">{{masterBedroomSectionDetails.conditionOut.lightingCmnts | empty}}</span>
@@ -179,4 +179,3 @@
         </table>
     </div>
 </div>
-
