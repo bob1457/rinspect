@@ -42,10 +42,18 @@
         <app-stairwell-view-empty-item *ngIf="!stairwellSection"></app-stairwell-view-empty-item> -->
 
         <app-maasterbedroom-view-item *ngIf="masterBedroomSection" [masterBedroomSectionDetails]="masterBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
-        <app-bedroom-view-empty-item></app-bedroom-view-empty-item>
-        <app-bedroom-view-empty-item></app-bedroom-view-empty-item>
-        <app-bedroom-view-empty-item></app-bedroom-view-empty-item>
-        <app-bedroom-view-empty-item></app-bedroom-view-empty-item>
+
+        <app-maasterbedroom-view-item *ngIf="secondBedroomSection" [masterBedroomSectionDetails]="secondBedroomSection" [reportId]='id'></app-maasterbedroom-view-item>
+        <app-bedroom-view-empty-item *ngIf="!secondBedroomSection"></app-bedroom-view-empty-item>
+
+        <app-bedroom-view-empty-item *ngIf="thirdBedroom"></app-bedroom-view-empty-item>
+        <app-bedroom-view-empty-item *ngIf="!thirdBedroom"></app-bedroom-view-empty-item>
+
+        <app-bedroom-view-empty-item *ngIf="forthBedroom"></app-bedroom-view-empty-item>
+        <app-bedroom-view-empty-item *ngIf="!forthBedroom"></app-bedroom-view-empty-item>
+
+        <app-bedroom-view-empty-item *ngIf="fiftBedroom"></app-bedroom-view-empty-item>
+        <app-bedroom-view-empty-item *ngIf="!fiftBedroom"></app-bedroom-view-empty-item>
 
         <p style="margin-top:280px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
         <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
