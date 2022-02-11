@@ -330,7 +330,7 @@
                         <div style="color: rgb(28, 18, 177);font-weight: bold;">inpection report sections</div>
                         <mat-icon [matMenuTriggerFor]="help" matSuffix style="color: rgb(48, 228, 41);margin-top: -3px;margin-left: 8px;vertical-align: bottom;">help</mat-icon> <span>Help</span>
                         <span class="spacer"></span>
-                        <button mat-raised-button style="background-color: #26bf49;
+                        <button *ngIf="!report.completed" mat-raised-button style="background-color: #26bf49;
                             color: wheat;
                             margin-left: 40px;" [routerLink]="['/home/addSection/', id]">
                             <span class="material-icons">

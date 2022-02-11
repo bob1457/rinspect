@@ -236,14 +236,14 @@ export class ReportDetailsComponent implements OnInit {
     // })
 
     this.dataService.getReportSectionBySubType(this.id, 'MainKitchen')
-        .subscribe( res => {
-          this.mainkitchenSection = res;
-          if(this.mainkitchenSection.length == 0) {
-            this.sectionMissing = true;
-            this.missingSections.push('Main Kitchen');
-          }
-          console.log('Main-kitchen-section', this.mainkitchenSection);
-        })
+      .subscribe(res => {
+        this.mainkitchenSection = res;
+        if (this.mainkitchenSection.length == 0) {
+          this.sectionMissing = true;
+          this.missingSections.push('Main Kitchen');
+        }
+        console.log('Main-kitchen-section', this.mainkitchenSection);
+      });
 
     this.dataService.getReportSectionBySubType(this.id, 'SecondaryKitchen')
     .subscribe(res => {

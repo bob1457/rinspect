@@ -25,9 +25,10 @@ export class ReportComponent implements OnInit {
                         this.userId = res.uid;
                         console.log('current uid in report', this.userId);
                         this.dataService.getAllReportsByUser(this.userId)
-                          .subscribe( rpts => {
-                              this.reports = rpts;
-                          })
+                          .subscribe(rpts => {
+                            this.reports = rpts;
+                            console.log('reports', this.reports);
+                          });
                       }
 
                     })

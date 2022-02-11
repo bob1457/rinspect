@@ -37,15 +37,15 @@ export class AddSectionMasterBedroomComponent implements OnInit {
   // }
 
   codes = [
-    { 'name': 'G'},
-    { 'name': 'F'},
-    { 'name': 'P'},
-    { 'name': 'M'},
-    { 'name': 'D'},
-    { 'name': 'S'},
-    { 'name': 'B'},
-    { 'name': 'DT'},
-    { 'name': 'ST'}
+    { name: 'G'},
+    { name: 'F'},
+    { name: 'P'},
+    { name: 'M'},
+    { name: 'D'},
+    { name: 'S'},
+    { name: 'B'},
+    { name: 'DT'},
+    { name: 'ST'}
   ]
 
   constructor(private router: Router,
@@ -56,13 +56,13 @@ export class AddSectionMasterBedroomComponent implements OnInit {
 
     // Find out if any of the bedrrom already fifthBedRoomExists
 
-    let bedroomSubType = {
-      'M':'Master Bedroom',
-      'S':'Second Bedroom',
-      'T':'Third Bedroom',
-      'F':'Forth Bedroom',
-      'V':'Fifth Bedroom'
-    }
+    const bedroomSubType = {
+      M: 'Master Bedroom',
+      S: 'Second Bedroom',
+      T: 'Third Bedroom',
+      F: 'Forth Bedroom',
+      V: 'Fifth Bedroom'
+    };
 
     console.log('reptID:', this.rptId);
 
@@ -82,7 +82,7 @@ export class AddSectionMasterBedroomComponent implements OnInit {
               switch (key) {
                 case 'M':
                   this.maasterBedExists = true;
-                  this.bedroomType = "Second Bedroom";
+                  this.bedroomType = 'Second Bedroom';
                   break;
                 case 'S':
                   this.secondBedRoomExists = true;

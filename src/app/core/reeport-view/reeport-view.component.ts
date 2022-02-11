@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import * as html2pdf from 'html2pdf.js';
@@ -17,12 +18,20 @@ export class ReeportViewComponent implements OnInit {
 
   @ViewChild('pdfdoc', {static: false}) pdfdoc: ElementRef;
 
-  constructor(private actRoute: ActivatedRoute) {
-                this.id = this.actRoute.snapshot.params.id;
-                console.log('rept_ID',this.id);
+  constructor(
+    private router: Router,
+    private location: Location,
+    private actRoute: ActivatedRoute
+  ) {
+    this.id = this.actRoute.snapshot.params.id;
+    console.log('rept_ID',this.id);
   }
 
   ngOnInit(): void {
+  }
+
+  back() {
+    this.location.back();
   }
 
 
