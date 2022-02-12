@@ -51,6 +51,8 @@ export class ReportViewContentComponent implements OnInit {
   thirdBathRoom;
   forthBathroom;
 
+
+
   secondKitchenSection;
   secondDiningRoomSection;
 

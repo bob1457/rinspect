@@ -9,6 +9,8 @@ export class MainbathroomViewItemComponent implements OnInit {
 
   @Input() mainBathroomSectionDetails: any;
   @Input() reportId: any;
+  @Input() isMain;
+  @Input() bathNo;
 
   constructor() { }
 
