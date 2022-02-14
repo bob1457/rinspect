@@ -75,7 +75,8 @@
 
 
         <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id' [isMain]="true"></app-mainbathroom-view-item>
-        <app-bathroom-view-empty-item></app-bathroom-view-empty-item>
+        <app-mainbathroom-view-item *ngIf="secondBathroom" [mainBathroomSectionDetails]="secondBathroom" [reportId]='id' [isMain]="false"></app-mainbathroom-view-item>
+        <app-bathroom-view-empty-item *ngIf="!secondBathroom"></app-bathroom-view-empty-item>
         <app-bathroom-view-empty-item></app-bathroom-view-empty-item>
         <app-bathroom-view-empty-item></app-bathroom-view-empty-item>
 

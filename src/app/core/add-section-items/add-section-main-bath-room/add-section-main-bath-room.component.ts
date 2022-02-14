@@ -72,10 +72,10 @@ export class AddSectionMainBathRoomComponent implements OnInit {
                   break;
                 case 'T':
                   this.thirdBathExists = true;
+                  this.bathroomType = 'Forth Bathroom';
                   break;
                 case 'F':
                   this.forthBathExists = true;
-                  this.bathroomType = 'Forth Bathroom';
                   break;
                 default:
                   break;
