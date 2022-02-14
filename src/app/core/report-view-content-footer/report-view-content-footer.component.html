@@ -109,11 +109,15 @@
         </tr> -->
         <tr style="border-top: 1px solid;">
             <td style="position: relative; width:35%;vertical-align: top;border-right: 1px solid;">
-                4. Landlord’s signature (on move-out) <span *ngIf="!signatureImg4 && !report.landlordOutSig"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveOut" mat-button target="_blank">Sign here</a></span> <span *ngIf="signatureImg4"><img style="margin-left: 25px;" src='{{ signatureImg4 }}' height="40px" width="250px" /></span>                <span *ngIf="report.landlordOutSig"><img style="margin-left: -100px; margin-top: 18px;" src='{{ report.landlordOutSig }}' height="40px" width="250px" /></span>
+                4. Landlord’s signature (on move-out)
+                <span *ngIf="!signatureImg4 && !report.landlordOutSig"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="landlordSignMoveOut" mat-button target="_blank">Sign here</a></span>
+                <span style="position: absolute; top:-2px" *ngIf="signatureImg4"><img style="margin-left: 25px;" src='{{ signatureImg4 }}' height="40px" width="250px" /></span>
+                <span style="position: absolute; top:-2px" *ngIf="report.landlordOutSig"><img style="margin-left: -100px; margin-top: 18px;" src='{{ report.landlordOutSig }}' height="40px" width="250px" /></span>
             </td>
             <td style="position: relative;">
                 <span style="color:white"></span>Tenant’s signature (on move-out)<span *ngIf="!signatureImg2 && !report.tenantOutSig"><a style="width: 350px;color: gainsboro;" [matMenuTriggerFor]="tenantSignMoveOut" mat-button  target="_blank">Sign here</a></span>
-                <span *ngIf="signatureImg2"><img style="margin-left: 25px;" src='{{ signatureImg2 }}' height="40px" width="250px" /></span> <span *ngIf="report.tenantOutSig"><img style="margin-left: 25px;" src='{{ report.tenantOutSig }}' height="40px" width="250px" /></span>
+                <span *ngIf="signatureImg2"><img style="margin-left: 25px;" src='{{ signatureImg2 }}' height="40px" width="250px" /></span>
+                <span *ngIf="report.tenantOutSig"><img style="margin-left: 25px;" src='{{ report.tenantOutSig }}' height="40px" width="250px" /></span>
             </td>
         </tr>
         <tr style="height: 35px;">
