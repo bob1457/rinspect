@@ -77,8 +77,13 @@
         <app-mainbathroom-view-item *ngIf="mainBathroomSection" [mainBathroomSectionDetails]="mainBathroomSection" [reportId]='id' [isMain]="true"></app-mainbathroom-view-item>
         <app-mainbathroom-view-item *ngIf="secondBathroom" [mainBathroomSectionDetails]="secondBathroom" [reportId]='id' [isMain]="false"></app-mainbathroom-view-item>
         <app-bathroom-view-empty-item *ngIf="!secondBathroom"></app-bathroom-view-empty-item>
-        <app-bathroom-view-empty-item></app-bathroom-view-empty-item>
-        <app-bathroom-view-empty-item></app-bathroom-view-empty-item>
+
+        <app-mainbathroom-view-item *ngIf="thirdBathRoom" [mainBathroomSectionDetails]="thirdBathRoom" [reportId]='id' [isMain]="false"></app-mainbathroom-view-item>
+        <app-bathroom-view-empty-item *ngIf="!thirdBathRoom"></app-bathroom-view-empty-item>
+
+        <app-mainbathroom-view-item *ngIf="forthBathroom" [mainBathroomSectionDetails]="forthBathroom" [reportId]='id' [isMain]="false"></app-mainbathroom-view-item>
+        <app-bathroom-view-empty-item *ngIf="!forthBathroom"></app-bathroom-view-empty-item>
+
 
         <p style="margin-top:230px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
         <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
