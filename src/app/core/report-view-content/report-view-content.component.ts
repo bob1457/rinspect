@@ -63,7 +63,6 @@ export class ReportViewContentComponent implements OnInit {
   fiftBedroom;
 
 
-
   currentDate = new Date();
 
 
@@ -264,7 +263,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.exteriorSection = data;
           console.log('Exterior view', this.exteriorSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -275,7 +274,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.utilitySection = data;
           console.log('Utility room view', this.utilitySection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -286,7 +285,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.garbageParkingSection = data;
           console.log('Utility room view', this.garbageParkingSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -297,7 +296,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.basementSection = data;
           console.log('Basement view', this.basementSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -308,7 +307,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.otherSection = data;
           console.log('Storage/Other view', this.otherSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -319,7 +318,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.keyControlSection = data;
           console.log('Storage/Other view', this.keyControlSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -331,98 +330,98 @@ export class ReportViewContentComponent implements OnInit {
 
     for (let [key, value] of Object.entries(additionalSubType)) {
       this.dataService.getReportSectionBySubType(this.id, value)
-          .subscribe( res => {
-            if(res.length > 0) {
-              // key = key + "Y";
-              this.additionalSections = true;
-              switch (key) {
-                case 'S':
-                  res.map(a => {
-                    const data = a.payload.doc.data();
-                    const id = a.payload.doc.id;
-                    this.secondBathroom = data;
-                    console.log('2nd Bathroom view', this.secondBathroom);
-                    return {id, ...data}
-                  } )
-                  break;
-                case 'T':
-                  res.map(a => {
-                    const data = a.payload.doc.data();
-                    const id = a.payload.doc.id;
-                    this.thirdBathRoom = data;
-                    console.log('3rd Bathroom view', this.thirdBathRoom);
-                    return {id, ...data}
-                  } )
-                  break;
-                case 'F':
-                  res.map(a => {
-                    const data = a.payload.doc.data();
-                    const id = a.payload.doc.id;
-                    this.forthBathroom = data;
-                    console.log('4th Bathroom view', this.forthBathroom);
-                    return {id, ...data}
-                  } )
-                  break;
-                  case 'E':
-                    res.map(a => {
-                      const data = a.payload.doc.data();
-                      const id = a.payload.doc.id;
-                      this.secondEntrySection = data;
-                      console.log('2nd Entry view', this.secondEntrySection);
-                      return {id, ...data}
-                    } )
-                    break;
-                    case 'L':
-                      res.map(a => {
-                        const data = a.payload.doc.data();
-                        const id = a.payload.doc.id;
-                        this.familyRoomSection = data;
-                        console.log('Family room view', this.familyRoomSection);
-                        return {id, ...data}
-                      } )
-                      break;
-                    case 'K':
-                      res.map(a => {
-                        const data = a.payload.doc.data();
-                        const id = a.payload.doc.id;
-                        this.secondKitchenSection = data;
-                        console.log('2nd Kitchen view', this.secondKitchenSection);
-                        return {id, ...data}
-                      } )
-                      break;
-                    case 'D':
-                      res.map(a => {
-                        const data = a.payload.doc.data();
-                        const id = a.payload.doc.id;
-                        this.thirdBedroom = data;
-                        console.log('3rdd Bedroom view', this.thirdBedroom);
-                        return {id, ...data}
-                      } )
-                      break;
-                    case 'U':
-                      res.map(a => {
-                        const data = a.payload.doc.data();
-                        const id = a.payload.doc.id;
-                        this.forthBedroom = data;
-                        console.log('4thd Bedroom view', this.forthBathroom);
-                        return {id, ...data}
-                      } )
-                      break;
-                    case 'V':
-                      res.map(a => {
-                        const data = a.payload.doc.data();
-                        const id = a.payload.doc.id;
-                        this.fiftBedroom = data;
-                        console.log('5thd Bedroom view', this.fiftBedroom);
-                        return {id, ...data}
-                      } )
-                      break;
-                default:
-                  break;
-              }
-              // if(this.secondEntrySection || this.secondBathroom || this.thirdBathRoom  || this.forthBathroom) {
-              //   this.additionalSections = true;
-              // }
+        .subscribe(res => {
+          if (res.length > 0) {
+            // key = key + "Y";
+            this.additionalSections = true;
+            switch (key) {
+              case 'S':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.secondBathroom = data;
+                  console.log('2nd Bathroom view', this.secondBathroom);
+                  return { id, ...data };
+                })
+                break;
+              case 'T':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.thirdBathRoom = data;
+                  console.log('3rd Bathroom view', this.thirdBathRoom);
+                  return { id, ...data };
+                })
+                break;
+              case 'F':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.forthBathroom = data;
+                  console.log('4th Bathroom view', this.forthBathroom);
+                  return { id, ...data };
+                })
+                break;
+              case 'E':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.secondEntrySection = data;
+                  console.log('2nd Entry view', this.secondEntrySection);
+                  return { id, ...data };
+                })
+                break;
+              case 'L':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.familyRoomSection = data;
+                  console.log('Family room view', this.familyRoomSection);
+                  return { id, ...data };
+                })
+                break;
+              case 'K':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.secondKitchenSection = data;
+                  console.log('2nd Kitchen view', this.secondKitchenSection);
+                  return { id, ...data }
+                })
+                break;
+              case 'D':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.thirdBedroom = data;
+                  console.log('3rdd Bedroom view', this.thirdBedroom);
+                  return { id, ...data };
+                })
+                break;
+              case 'U':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.forthBedroom = data;
+                  console.log('4thd Bedroom view', this.forthBathroom);
+                  return { id, ...data };
+                })
+                break;
+              case 'V':
+                res.map(a => {
+                  const data = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                  this.fiftBedroom = data;
+                  console.log('5thd Bedroom view', this.fiftBedroom);
+                  return { id, ...data };
+                })
+                break;
+              default:
+                break;
+            }
+            // if(this.secondEntrySection || this.secondBathroom || this.thirdBathRoom  || this.forthBathroom) {
+            //   this.additionalSections = true;
+            // }
             // } else {
             //   // key = key + "N";
             //   switch (key) {
@@ -441,11 +440,11 @@ export class ReportViewContentComponent implements OnInit {
             //     default:
             //       break;
             //   }
-              // console.log('status:', key);
-              // console.log(value + ' not exists');
-            }
+            // console.log('status:', key);
+            // console.log(value + ' not exists');
+          }
 
-          })
+        });
     }
 
     // if(this.secondEntrySection || this.secondBathroom || this.thirdBathRoom  || this.forthBathroom) {

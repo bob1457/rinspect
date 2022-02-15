@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 import { TrueFalsePipe } from './true-false.pipe';
 import { CodePipe } from './code.pipe';
 import { EmptyPipe } from './empty.pipe';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
 @NgModule({
-  declarations: [TrueFalsePipe, CodePipe, EmptyPipe],
+  declarations: [TrueFalsePipe, CodePipe, EmptyPipe, LoadingComponent],
   imports: [
     CommonModule
   ],
   exports: [
     TrueFalsePipe,
     CodePipe,
-    EmptyPipe
+    EmptyPipe,
+    LoadingComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,5 @@
 <!-- <p>report-view-content works!</p> -->
-<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;" *ngIf="report">
+<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;" *ngIf="report; else loading">
     <!-- <div class="container2" fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
         <div fxFlex=20%></div>
         <div fxFlex=70% style="margin-top: -5px;font-weight: bold;color:#1150af;">
@@ -413,3 +413,6 @@
  [secondEntrySection]="secondEntrySection"
 >
 </app-report-view-additional-content> -->
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
