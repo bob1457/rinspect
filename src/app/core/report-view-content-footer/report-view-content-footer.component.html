@@ -10,7 +10,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>
+            <td style="height:80px;vertical-align: top;">{{report.repairAtStart}}</td>
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">Y. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>
@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>
+            <td style="height:80px; vertical-align: top;">{{report.reasonNotAgreeAtStart}}</td>
         </tr>
         <tr>
             <th style="background: #426890;color: white;text-align: left;vertical-align:bottom;">
@@ -38,7 +38,7 @@
             <!-- <td style="border-bottom: 0;">last name </td> -->
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>
+            <td style="height:80px; vertical-align: top;">{{report.damageAtEnd}}</td>
         </tr>
         <tr style="line-height: 1.5;">
             <td style="border-bottom: 0;">1. I (tenant's name) &nbsp;&nbsp;&nbsp;{{report.tenant.legalName}}</td>
@@ -54,7 +54,7 @@
             </td>
         </tr>
         <tr style="border-bottom: 1px solid #426890; background: #f0eff9;">
-            <td style="height:80px"></td>
+            <td style="height:80px;vertical-align: top;">{{report.reasonNotAgreeAtEnd}}</td>
         </tr>
     </table>
     <table>
@@ -141,20 +141,21 @@
             <td> postal code</td>
         </tr>
         <tr class="address" style="background: #f0eff9;height:35px;">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{report.tenantForwardingAddressUnit}}</td>
+            <td>{{report.tenantForwardingAddressStreet}}</td>
+            <td>{{report.tenantForwardingAddressCity}}</td>
+            <td>{{report.tenantForwardingAddressProvince}}</td>
+            <td>{{report.tenantForwardingAddressPostCode}}</td>
         </tr>
         <tr>
             <th colspan="5" style="text-align: left;font-weight: normal;height:20px">
-                Email address for service:
+                Email address for service: &nbsp; &nbsp; {{report.tenantServiceEmail}}
+                <!--bob.yuan@yahoo.com-->
             </th>
         </tr>
         <tr>
             <th colspan="5" style="text-align: left;font-weight: normal;">
-                6. Landlord’s name and address at the end of the tenancy:
+                6. Landlord’s name and address at the end of the tenancy: &nbsp; &nbsp; {{report.landloardNameAddress}}
             </th>
         </tr>
         <tr class="address-title" style="line-height: 1.25;">
@@ -165,11 +166,11 @@
             <td> postal code</td>
         </tr>
         <tr class="address" style="background: #f0eff9;height:35px;">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{report.landlordAddressEndTenancyUnit}}</td>
+            <td>{{report.landlordAddressEndTenancyStreet}}</td>
+            <td>{{report.landlordAddressEndTenancyCity}}</td>
+            <td>{{report.landlordAddressEndTenancyProvince}}</td>
+            <td>{{report.landlordAddressEndTenancyPostCode}}</td>
         </tr>
     </table>
 

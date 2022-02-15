@@ -136,6 +136,14 @@ export class ReportDetailsComponent implements OnInit {
       tenantForwardingAddressCity: [''],
       tenantForwardingAddressProvince: [''],
       tenantForwardingAddressPostCode: [''],
+      tenantServiceEmail: [''],
+
+      landlordAddressEndTenancyUnit: [''],
+      landlordAddressEndTenancyStreet: [''],
+      landlordAddressEndTenancyCity: [''],
+      landlordAddressEndTenancyProvince: [''],
+      landlordAddressEndTenancyPostCode: [''],
+
       landloardNameAddress: ['']
     });
 
@@ -193,6 +201,20 @@ export class ReportDetailsComponent implements OnInit {
           }
           this.detailForm.get('depositDeductedAmt').setValue(this.report.depositDeductedAmt);
           this.detailForm.get('petDepositDeductedAmt').setValue(this.report.petDepositDeductedAmt);
+
+          this.detailForm.get('tenantForwardingAddressUnit').setValue(this.report.tenantForwardingAddressUnit);
+          this.detailForm.get('tenantForwardingAddressStreet').setValue(this.report.tenantForwardingAddressStreet);
+          this.detailForm.get('tenantForwardingAddressCity').setValue(this.report.tenantForwardingAddressCity);
+          this.detailForm.get('tenantForwardingAddressProvince').setValue(this.report.tenantForwardingAddressProvince);
+          this.detailForm.get('tenantForwardingAddressPostCode').setValue(this.report.tenantForwardingAddressPostCode);
+
+          this.detailForm.get('landlordAddressEndTenancyUnit').setValue(this.report.landlordAddressEndTenancyUnit);
+          this.detailForm.get('landlordAddressEndTenancyStreet').setValue(this.report.landlordAddressEndTenancyStreet);
+          this.detailForm.get('landlordAddressEndTenancyCity').setValue(this.report.landlordAddressEndTenancyCity);
+          this.detailForm.get('landlordAddressEndTenancyProvince').setValue(this.report.landlordAddressEndTenancyProvince);
+          this.detailForm.get('landlordAddressEndTenancyPostCode').setValue(this.report.landlordAddressEndTenancyPostCode);
+
+          this.detailForm.get('tenantServiceEmail').setValue(this.report.tenantServiceEmail);
 
           if(this.report.completed) {
             this.final = true;
