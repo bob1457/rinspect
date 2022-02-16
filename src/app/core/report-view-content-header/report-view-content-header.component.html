@@ -102,9 +102,9 @@
     </tr>
     <tr style="line-height: 1.25;height: 40px;vertical-align: top;">
         <td style="border-bottom: 0;width: 15%;">DD/MM/YYYY</td>
-        <td style="border-bottom: 0;width: 35%;"></td>
+        <td style="border-bottom: 0;width: 35%;text-align: center;">{{report.possesionDate.seconds * 1000 | date:'dd/MM/yyyy'}}</td>
         <td style="border-bottom: 0;width: 15%;">DD/MM/YYYY</td>
-        <td style="border-bottom: 0;width: 35%;"></td>
+        <td style="border-bottom: 0;width: 35%;text-align: center;">{{report.moveInInspectDate.seconds * 1000 | date:'dd/MM/yyyy'}}</td>
     </tr>
 </table>
 <table>
@@ -118,9 +118,9 @@
     </tr>
     <tr style="line-height: 1.25;height: 40px;vertical-align: top;">
         <td style="border-bottom: 0;width: 15%;">DD/MM/YYYY</td>
-        <td style="border-bottom: 0;width: 35%;"></td>
+        <td style="border-bottom: 0;width: 35%;text-align: center;">{{report.moveOutDate.seconds * 1000 | date:'dd/MM/yyyy'}}</td>
         <td style="border-bottom: 0;width: 15%;">DD/MM/YYYY</td>
-        <td style="border-bottom: 0;width: 35%;"></td>
+        <td style="border-bottom: 0;width: 35%;text-align: center;">{{report.moveOutInspectDate.seconds * 1000 | date:'dd/MM/yyyy'}}</td>
     </tr>
 </table>
 <table>

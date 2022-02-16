@@ -12,6 +12,9 @@ export class ReportViewContentHeaderComponent implements OnInit {
   t_firstName;
   t_lastName;
 
+  pDate;
+  convertedPossessionDate;
+
   @Input() report;
 
   constructor() { }
