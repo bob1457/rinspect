@@ -28,6 +28,7 @@
         <app-familyroom-view-empty-item *ngIf="!familyRoomSection"></app-familyroom-view-empty-item>
 
         <app-kitchen-view-item *ngIf="kitchenSection" [kitchenSectionDetails]="kitchenSection" [reportId]='id'></app-kitchen-view-item>
+        <app-kitchen-view-item *ngIf="secondKitchenSection" [kitchenSectionDetails]="secondKitchenSection" [reportId]='id'></app-kitchen-view-item>
         <app-kitchen-view-empty-item *ngIf="!secondKitchenSection"></app-kitchen-view-empty-item>
 
         <app-dinningroom-view-item *ngIf="diningRoomSEction" [dinningRoomSectionDetails]="diningRoomSEction" [reportId]='id'></app-dinningroom-view-item>
@@ -171,7 +172,7 @@
             <span style="font-weight:bold;font-style: italic;">page 7 of 8 pages</span>
         </div>
     </div>
-    <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 30px;">
+    <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 50px;">
         INSTRUCTIONS FOR COMPLETING RENTAL UNIT CONDITION REPORT
     </p>
     <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
