@@ -1,5 +1,5 @@
 <!-- <p>report-view-content works!</p> -->
-<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;" *ngIf="report; else loading">
+<div fxLayout="column" fxLayoutAlign="start start" fxFlexFill class="container" style="margin-top: 5px; font-size: .9em;" *ngIf="report">
     <!-- <div class="container2" fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
         <div fxFlex=20%></div>
         <div fxFlex=70% style="margin-top: -5px;font-weight: bold;color:#1150af;">
@@ -9,7 +9,7 @@
             #RTB – 27
         </div>
     </div> -->
-
+    <app-report-view-header [note]="''"></app-report-view-header>
     <app-report-view-content-header [report]="report" style="width:100%;margin-bottom: 15px;"></app-report-view-content-header>
 
     <form style="width: 100%;" *ngIf="report">
@@ -413,6 +413,8 @@
  [secondEntrySection]="secondEntrySection"
 >
 </app-report-view-additional-content> -->
-<ng-template #loading>
-    <app-loading></app-loading>
-</ng-template>
+<div *ngIf="!report" style="text-align:center; height: 100vh; margin-top: 500px;">
+    <!-- <app-loading></app-loading> -->
+    <img class="pl-2" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+    />
+</div>

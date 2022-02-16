@@ -38,11 +38,11 @@
         <td> postal code</td>
     </tr>
     <tr class="address" style="background: #f0eff9;height:35px;">
-        <td style="border-top: 0;"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td style="border-top: 0;">{{report.landlord.address.unit}}</td>
+        <td>{{report.landlord.address.street}}</td>
+        <td>{{report.landlord.address.city}}</td>
+        <td>{{report.landlord.address.province}}</td>
+        <td>{{report.landlord.address.postcode}}</td>
     </tr>
 </table>
 <table>
@@ -73,7 +73,7 @@
 <table>
     <tr>
         <th colspan="5" style="border-right: 0; background: #426890;color: white;text-align: left;height:30px;vertical-align:bottom;">
-            B. Landlord’s address for service:
+            D.Tenant’s address for service:
         </th>
     </tr>
     <tr class="address-title" style="line-height: 1.25;">
@@ -84,11 +84,11 @@
         <td> postal code</td>
     </tr>
     <tr class="address" style="background: #f0eff9;height:35px;">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{report.tenant.address.unit}}</td>
+        <td>{{report.tenant.address.street}}</td>
+        <td>{{report.tenant.address.city}}</td>
+        <td>{{report.tenant.address.province}}</td>
+        <td>{{report.tenant.address.postcode}}</td>
     </tr>
 </table>
 <table>
