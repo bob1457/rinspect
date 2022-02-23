@@ -79,6 +79,7 @@ import { SecondDiningroomViewEmptyItemComponent } from './report-view-content-it
 import { BathroomViewEmptyItemComponent } from './report-view-content-items/bathroom-view-empty-item/bathroom-view-empty-item.component';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { SignatureComponent } from './signature/signature.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -109,7 +110,7 @@ import { SignatureComponent } from './signature/signature.component';
     AddSectionExteriorComponent,
     AddSectionGarbageParkingComponent,
     AddSectionKeysControlsComponent,
-    AddSectionLivingRoomComponent,    
+    AddSectionLivingRoomComponent,
     AddSectionStairewllHallComponent,
     AddSectionMasterBedroomComponent,
     AddSectionUtilityRoomComponent,
@@ -162,6 +163,7 @@ import { SignatureComponent } from './signature/signature.component';
     RouterModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     SharedModule,
     SignaturePadModule,
     ReactiveFormsModule
