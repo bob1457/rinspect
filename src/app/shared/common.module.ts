@@ -4,25 +4,22 @@ import { TrueFalsePipe } from './true-false.pipe';
 import { CodePipe } from './code.pipe';
 import { EmptyPipe } from './empty.pipe';
 import { LoadingComponent } from './loading/loading.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { RouterModule } from '@angular/router';
+
+// import { RouterModule } from '@angular/router';
 // import { Ng7MatBreadcrumbModule } from 'ng7-mat-breadcrumb';
 
 
 
 @NgModule({
-  declarations: [TrueFalsePipe, CodePipe, EmptyPipe, LoadingComponent, BreadcrumbComponent],
+  declarations: [TrueFalsePipe, CodePipe, EmptyPipe, LoadingComponent],
   imports: [
-    CommonModule,
-    RouterModule
-    // Ng7MatBreadcrumbModule
+    CommonModule
   ],
   exports: [
     TrueFalsePipe,
     CodePipe,
     EmptyPipe,
-    LoadingComponent,
-    BreadcrumbComponent
+    LoadingComponent
   ]
 })
 export class SharedModule { }
