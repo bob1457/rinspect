@@ -41,7 +41,7 @@ const routes: Routes = [
         path: 'report',
         component: ReportComponent,
         data: {
-          breadcrumb: 'HOME'
+          breadcrumb: 'HOME/REPORTS'
         }
       },
       { path: 'report-view/:id', component: ReeportViewComponent},
