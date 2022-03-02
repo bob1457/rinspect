@@ -27,7 +27,9 @@ import {
   AngularFireStorageReference,
   AngularFireUploadTask//,
   // StorageBucket
-} from "@angular/fire/storage";
+} from '@angular/fire/storage';
+
+// import { Ng7MatBreadcrumbModule } from 'ng7-mat-breadcrumb';
 
 // import { SectionItemComponent } from './core/sections/section-item/section-item.component';
 
@@ -48,6 +50,7 @@ import {
     CoreModule,
     FlexLayoutModule,
     FormsModule,
+    // Ng7MatBreadcrumbModule,
     SignaturePadModule,
     ReactiveFormsModule,
     UserModule,

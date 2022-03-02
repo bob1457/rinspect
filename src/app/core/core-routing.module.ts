@@ -13,6 +13,7 @@ import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from
 import { ReeportViewComponent } from './reeport-view/reeport-view.component';
 import { AboutComponent } from '../about/about.component';
 import { map } from 'rxjs/operators';
+// import { Ng7MatBreadcrumbModule } from 'ng7-mat-breadcrumb';
 
 const rediretUnauthoirzedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToContent = () => redirectLoggedInTo(['home/report']);
@@ -36,7 +37,13 @@ const routes: Routes = [
       { path: 'settings', component: UserSettingsComponent},
       { path: 'about', component: AboutComponent},
       // { path: 'report', component: ReportComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: rediretUnauthoirzedToLogin}},
-      { path: 'report', component: ReportComponent},
+      {
+        path: 'report',
+        component: ReportComponent,
+        data: {
+          breadcrumb: 'HOME'
+        }
+      },
       { path: 'report-view/:id', component: ReeportViewComponent},
       { path: 'addSection/:id', component: AddSectionComponent}
 
@@ -51,7 +58,10 @@ const routes: Routes = [
 // , canActivate: [AngularFireAuthGuard],
       // data: { authGuardPipe: rediretUnauthoirzedToLogin},
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    // Ng7MatBreadcrumbModule,
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule]
 })
 export class CoreRoutingModule { }

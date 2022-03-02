@@ -96,14 +96,14 @@ export class AddReportComponent implements OnInit {
     debugger;
     // this.router.navigateByUrl('/home/report-details');
     // this.router.navigate(['/home/report-details', 1]);
-    var uid = this.user.uid;
+    const uid = this.user.uid;
     // console.log('uid in report', this.user.uid);
 
     this.addForm.patchValue({
       reportOwnerId: uid,
       created: new Date(),
       updated: new Date()
-    })
+    });
     console.log('form data', this.addForm.value);
     this.dataService.createReport(this.addForm.value)
         .then( doc => {

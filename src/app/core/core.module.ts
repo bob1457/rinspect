@@ -80,6 +80,8 @@ import { BathroomViewEmptyItemComponent } from './report-view-content-items/bath
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { SignatureComponent } from './signature/signature.component';
 
+// import { Ng7MatBreadcrumbModule } from 'ng7-mat-breadcrumb';
+
 
 @NgModule({
   declarations: [
@@ -109,7 +111,7 @@ import { SignatureComponent } from './signature/signature.component';
     AddSectionExteriorComponent,
     AddSectionGarbageParkingComponent,
     AddSectionKeysControlsComponent,
-    AddSectionLivingRoomComponent,    
+    AddSectionLivingRoomComponent,
     AddSectionStairewllHallComponent,
     AddSectionMasterBedroomComponent,
     AddSectionUtilityRoomComponent,
@@ -162,6 +164,7 @@ import { SignatureComponent } from './signature/signature.component';
     RouterModule,
     FlexLayoutModule,
     FormsModule,
+    // Ng7MatBreadcrumbModule,
     SharedModule,
     SignaturePadModule,
     ReactiveFormsModule
