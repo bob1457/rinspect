@@ -103,7 +103,7 @@ export class AddReportComponent implements OnInit {
       reportOwnerId: uid,
       created: new Date(),
       updated: new Date()
-    })
+    });
     console.log('form data', this.addForm.value);
     this.dataService.createReport(this.addForm.value)
         .then( doc => {

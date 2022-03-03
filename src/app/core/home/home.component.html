@@ -1,64 +1,65 @@
 <!-- <p>core home works!</p>
 <a routerLink="report">Report</a> -->
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" style="color:greenyellow">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" style="color:greenyellow">
    <mat-icon>add_task</mat-icon>
   </button>
-  <span style="text-transform: uppercase;">    
+    <span style="text-transform: uppercase;">
     <span style="color: #bdbdbd;">inspect</span>
     <span style="color: red; font-weight: bold;">r</span>
-</span>
-  <span class="spacer"></span>
-  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    </span>
+    <span class="spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button> -->
-  <button mat-button [matMenuTriggerFor]="menu">
+    <button mat-button [matMenuTriggerFor]="menu">
     <img src="../../../assets/images/user.png" class="avatar" width="35px" height="35px" title="bob"> <!-- size can be removed when the images are in right size-->
   </button>
-<!--  [routerLink]="['/home/user',rpt.payload.doc.id]"-->
-  <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
-    <button mat-menu-item (click)="getUser()"> <!-- passing parameters for testing only [routerLink]="['/home/user', 'TrLS9eN8HnKQbhbcqiOU']"-->
+    <!--  [routerLink]="['/home/user',rpt.payload.doc.id]"-->
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before">
+        <button mat-menu-item (click)="getUser()"> <!-- passing parameters for testing only [routerLink]="['/home/user', 'TrLS9eN8HnKQbhbcqiOU']"-->
       <mat-icon style="color: black;">account_circle</mat-icon>
       Account
     </button>
-    <!-- <button mat-menu-item [routerLink]="['/home/settings']">
+        <!-- <button mat-menu-item [routerLink]="['/home/settings']">
       <mat-icon style="color:#2477f5;">settings_applications</mat-icon>
                 Settings
     </button> -->
-    <mat-divider></mat-divider>    
-    <button mat-menu-item (click)="signOut()"> 
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="signOut()">
       <mat-icon style="color: rgb(97, 8, 8);">subdirectory_arrow_righte</mat-icon>
       Singout
     </button>
-  </mat-menu>
+    </mat-menu>
 
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"></button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"></button>
 
-  <!-- [routerLink]="['/']" -->
-  <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with share icon">
+    <!-- [routerLink]="['/']" -->
+    <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with share icon">
     <mat-icon>more_vert</mat-icon>
   </button>
 
-  <mat-menu #menu2="matMenu" [overlapTrigger]="false" xPosition="before">
-    <button mat-menu-item  [routerLink]="['/home/report']"> 
+    <mat-menu #menu2="matMenu" [overlapTrigger]="false" xPosition="before">
+        <button mat-menu-item [routerLink]="['/home/report']">
       <mat-icon style="color: black;">assignment</mat-icon>
       Reports
     </button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item  [routerLink]="['/home/about']"> 
+        <mat-divider></mat-divider>
+        <button mat-menu-item [routerLink]="['/home/about']">
       <mat-icon style="color: black;">open_with</mat-icon>
       About
     </button>
-    <!-- <button mat-menu-item [routerLink]="['/home/settings']">
+        <!-- <button mat-menu-item [routerLink]="['/home/settings']">
       <mat-icon style="color:#2477f5;">settings_applications</mat-icon>
                 Settings
       </button>
-    <mat-divider></mat-divider>    
-    <button mat-menu-item (click)="signOut()"> 
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="signOut()">
       <mat-icon style="color: rgb(97, 8, 8);">subdirectory_arrow_righte</mat-icon>
       Singout
     </button> -->
-  </mat-menu>
+    </mat-menu>
 </mat-toolbar>
+<!-- <app-breadcrumb></app-breadcrumb> -->
 
 <router-outlet></router-outlet>

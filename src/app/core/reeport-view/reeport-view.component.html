@@ -1,4 +1,19 @@
 <!-- <p>reeport-view works!</p> -->
+<div fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="end center" class="button" style="margin-top: 10px;width: 100%;">
+    <div style="width: 100%;margin-top: -30px;margin-left: 10px;">
+        <a (click)="back()">
+            <mat-icon style="vertical-align: bottom;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  color: green;">
+                arrow_circle_left
+            </mat-icon>Back to report details
+        </a>
+    </div>
+    <!-- <button style="margin-top: -10px;margin-bottom: 20px;" type="button" mat-raised-button color="primary" (click)="download()">Download PDF &nbsp; &nbsp;&nbsp;&nbsp;</button> -->
+    <!-- <button mat-raised-button color="accent" (click)="Ok()">Ok</button> -->
+</div>
 <div class="">
     <div id="pdfdoc" #pdfdoc>
         <!-- <app-report-view-header [note]="''"></app-report-view-header> -->

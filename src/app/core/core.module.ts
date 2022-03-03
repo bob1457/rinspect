@@ -81,6 +81,8 @@ import { SignaturePadModule } from 'angular2-signaturepad';
 import { SignatureComponent } from './signature/signature.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// import { Ng7MatBreadcrumbModule } from 'ng7-mat-breadcrumb';
+
 
 @NgModule({
   declarations: [
