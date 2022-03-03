@@ -10,4 +10,9 @@ export class BackendService {
 
   constructor(private httoClient: HttpClient) { }
 
+  saveReport(data) {
+    // Save report on remote server
+    return data;
+  }
+
 }
