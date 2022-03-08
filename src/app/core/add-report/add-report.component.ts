@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { DataService } from '../services/data.service';
 
 import { UserService } from 'src/app/user/services/user.service';
+import { BackendService } from '../services/backend.service';
 
 
 @Component({
@@ -20,18 +21,31 @@ export class AddReportComponent implements OnInit {
   notAgree1 = '';
   agreeOk = false;
   user;
+  leaseList;
+  leaseDetails;
+  tenantFullName;
+  landlordFullName;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private userService: UserService,
+              private backendService: BackendService,
               private dataService: DataService) { }
+
+  // leases: any[] = [
+  //   { value: '1', viewValue: 'Steak' },
+  //   { value: '2', viewValue: 'Pizza' },
+  //   { value: '3', viewValue: 'Tacos' },
+  // ];
 
   ngOnInit(): void {
 
     this.userService.getCurrentUser()
-        .subscribe(res => {
-          this.user = res;
-        })
+      .subscribe(res => {
+        this.user = res;
+      });
+
+    this.getLeaseList();
 
     this.addForm = this.formBuilder.group({
       // title: ['', Validators.required],
@@ -69,8 +83,29 @@ export class AddReportComponent implements OnInit {
     });
   }
 
+  onSelectChange(event) {
+    console.log(event);
+    return this.backendService.getLeaseDetails(event)
+      .subscribe(details => {
+        this.leaseDetails = details;
+        console.log('details', this.leaseDetails);
+        this.landlordFullName = this.leaseDetails.owners[0].firstName + ' ' + this.leaseDetails.owners[0].lastName;
+        this.tenantFullName = this.leaseDetails.tenants[0].firstName + ' ' + this.leaseDetails.tenants[0].lastName;
+        console.log('fn', this.tenantFullName);
+      });
+  }
+
   Created() {
     // this.router.navigateByUrl('/home/report-details')
+  }
+
+  getLeaseList(){
+    return this.backendService.getAllLeaseList()
+      .subscribe(list => {
+          this.leaseList = list;
+          console.log('leases', this.leaseList);
+        }
+      );
   }
 
   clicked(event) {

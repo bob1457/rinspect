@@ -25,11 +25,28 @@
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <div formGroupName="landlord">
-                    <mat-form-field appearance="outline">                        
-                            <mat-label class="text-uppercase">legal name of landlord</mat-label>
-                                <input matInput placeholder="Legal name of landlord" formControlName="legalName">
-                            <mat-icon matSuffix>person</mat-icon>
+                <mat-form-field appearance="fill">
+
+                    <mat-label>Select lease agreement</mat-label>
+                    <mat-select #myAppSelect (selectionChange)="onSelectChange(myAppSelect.value)">
+                        <div *ngIf="leaseList; else loading">
+                            <mat-option *ngFor="let lease of leaseList" [value]="lease.leaseId">
+                                {{lease.leaseTitle}} - {{lease.propertyName}}
+                            </mat-option>
+                        </div>
+                        <ng-template #loading>
+                            <mat-option>
+                                <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==">
+                            </mat-option>
+                        </ng-template>
+                    </mat-select>
+                </mat-form-field>
+
+                <div formGroupName="landlord" *ngIf="leaseDetails">
+                    <mat-form-field appearance="outline">
+                        <mat-label class="text-uppercase">legal name of landlord</mat-label>
+                        <input matInput placeholder="Legal name of landlord" formControlName="legalName" [(ngModel)]="landlordFullName">
+                        <mat-icon matSuffix>person</mat-icon>
                         <!-- <mat-hint>Hint</mat-hint> -->
                         <!-- <mat-hint align="end">hint</mat-hint> -->
                     </mat-form-field>
@@ -45,28 +62,28 @@
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 30%;">
                                 <mat-label>street address</mat-label>
-                                <input matInput placeholder="Street address" formControlName="street">
+                                <input matInput placeholder="Street address" formControlName="street" [(ngModel)]="leaseDetails.ownerAddress.streetNumber">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 30%;">
                                 <mat-label>city</mat-label>
-                                <input matInput placeholder="Street address" formControlName="city">
+                                <input matInput placeholder="City" formControlName="city" [(ngModel)]="leaseDetails.ownerAddress.stateProvince">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 15%;">
                                 <mat-label>province</mat-label>
-                                <input matInput placeholder="Province" formControlName="province">
+                                <input matInput placeholder="Province" formControlName="province" [(ngModel)]="leaseDetails.ownerAddress.stateProvince">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 20%;">
                                 <mat-label>postal code</mat-label>
-                                <input matInput placeholder="Postal Code" formControlName="postcode">
+                                <input matInput placeholder="Postal Code" formControlName="postcode" [(ngModel)]="leaseDetails.ownerAddress.zipPostCode">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -75,10 +92,10 @@
                         </div>
                     </div>
                 </div>
-                <div formGroupName="tenant">
+                <div formGroupName="tenant" *ngIf="leaseDetails">
                     <mat-form-field appearance="outline">
                         <mat-label class="text-uppercase">legal name of tenant</mat-label>
-                        <input matInput placeholder="Legal name of tenant" formControlName="legalName">
+                        <input matInput placeholder="Legal name of tenant" formControlName="legalName" [(ngModel)]="tenantFullName">
                         <mat-icon matSuffix>person</mat-icon>
                         <!-- <mat-hint>Hint</mat-hint> -->
                         <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -95,28 +112,28 @@
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 30%;">
                                 <mat-label>street address</mat-label>
-                                <input matInput placeholder="Street address" formControlName="street">
+                                <input matInput placeholder="Street address" formControlName="street" [(ngModel)]="leaseDetails.rentalPropertyAddress.streetNum">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 25%;">
                                 <mat-label>city</mat-label>
-                                <input matInput placeholder="City" formControlName="city">
+                                <input matInput placeholder="City" formControlName="city" [(ngModel)]="leaseDetails.rentalPropertyAddress.city">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 15%;">
                                 <mat-label>province</mat-label>
-                                <input matInput placeholder="Province" formControlName="province">
+                                <input matInput placeholder="Province" formControlName="province" [(ngModel)]="leaseDetails.rentalPropertyAddress.stateProvince">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
                             </mat-form-field>
                             <mat-form-field appearance="outline" style="width: 20%;">
                                 <mat-label>postal code</mat-label>
-                                <input matInput placeholder="Post Code" formControlName="postcode">
+                                <input matInput placeholder="Post Code" formControlName="postcode" [(ngModel)]="leaseDetails.rentalPropertyAddress.zipPostCode">
                                 <!-- <mat-icon matSuffix>person</mat-icon> -->
                                 <!-- <mat-hint>Hint</mat-hint> -->
                                 <!-- <mat-hint align="end">hint</mat-hint> -->
@@ -125,8 +142,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <p><span class="text-uppercase">legal name of tenant's agent</span><span style="font-style:italic;">(if applicable)</span></p>
                 <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start start">
                     <mat-form-field appearance="outline" style="width: 50%;">
