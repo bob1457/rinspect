@@ -104,13 +104,13 @@ export class ReeportViewComponent implements OnInit {
     // formData.append('file', this.uploadForm.get('document').value);
     console.log('upload form', this.uploadForm.value);
 
-    // this.backendService.saveReport(this.uploadForm.value).subscribe(
-    //   res => {
-    //     // this.saving = false;
-    //     // this.done = true;
-    //     // setTimeout(() => { this.done = false; }, 2000);
-    //     // console.log('response', res);
-    //   });
+    this.backendService.saveReport(this.uploadForm.value).subscribe(
+      res => {
+        this.saving = false;
+        this.done = true;
+        setTimeout(() => { this.done = false; }, 2000);
+        console.log('response', res);
+      });
 
   }
 
