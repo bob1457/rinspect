@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import * as html2pdf from 'html2pdf.js';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BackendService } from '../services/backend.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-reeport-view',
@@ -15,11 +16,17 @@ import { BackendService } from '../services/backend.service';
 export class ReeportViewComponent implements OnInit {
 
   id: number;
-  reportDetails;
+  // reportDetails;
+  report;
   report$: Observable<any>;
   saving = false;
   done = false;
   uploadForm: FormGroup;
+
+  possessionDate;
+  moveOutDate;
+  moveInInsDate;
+  moveOutInsDaste;
 
   @ViewChild('pdfdoc', {static: false}) pdfdoc: ElementRef;
 
@@ -28,6 +35,7 @@ export class ReeportViewComponent implements OnInit {
     private location: Location,
     private actRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
+    public dataService: DataService,
     private backendService: BackendService
   ) {
     this.id = this.actRoute.snapshot.params.id;
@@ -39,6 +47,29 @@ export class ReeportViewComponent implements OnInit {
       leaseId: [0],
       encodedFile: ['']
     });
+
+    this.dataService.getReportDetails(this.id)
+      .subscribe(res => {
+        this.report = res;
+        // this.possessionDate = this.report.possesionDate.toDate().getDate() + "          " + this.report.possesionDate.toDate().getMonth() +  "             " +  this.report.possesionDate.toDate().getFullYear();
+        this.possessionDate = "  " + this.getDate(this.report.possesionDate) + "       " + this.getMonth(this.report.possesionDate) + "        " + this.report.possesionDate.toDate().getFullYear();
+
+        if (this.report.moveOutInspectDate) {
+          this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate) + "       " + this.getMonth(this.report.moveOutInspectDate) + "        " + this.report.moveOutInspectDate.toDate().getFullYear();
+        } else {
+          this.moveOutInsDaste = "";
+        }
+
+        this.moveInInsDate = "  " + this.getDate(this.report.moveInInspectDate) + "       " + this.getMonth(this.report.moveInInspectDate) + "        " + this.report.moveInInspectDate.toDate().getFullYear();
+
+        if (this.report.moveOutDate) {
+          this.moveOutDate = "  " + this.getDate(this.report.moveOutDate) + "       " + this.getMonth(this.report.moveOutDate) + "        " + this.report.moveOutDate.toDate().getFullYear();
+        } else {
+          this.moveOutDate = '';
+        }
+        console.log('rpt in report view', this.report);
+        console.log('possesiion date', this.possessionDate);
+      });
   }
 
   back() {
@@ -96,7 +127,7 @@ export class ReeportViewComponent implements OnInit {
     this.uploadForm.get('encodedFile').setValue(file);
     this.uploadForm.patchValue({
       // leaseId: this.lease.id
-      leaseId: 1
+      leaseId: Number(this.report.leaseId)
     });
 
     // const formData = new FormData();
@@ -112,6 +143,20 @@ export class ReeportViewComponent implements OnInit {
         console.log('response', res);
       });
 
+  }
+
+  private getDate(date: any): string {
+    const d = date.toDate().getDate().toString();
+    const formatedDate = d.length < 2 ? '0' + d : d;
+
+    return formatedDate;
+  }
+
+  private getMonth(date: any): string {
+    const m = date.toDate().getMonth().toString();
+    const formatedM = m.length < 2 ? '0' + m : m;
+
+    return formatedM;
   }
 
 }

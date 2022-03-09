@@ -26,6 +26,7 @@ export class AddReportComponent implements OnInit {
   tenantFullName;
   landlordFullName;
 
+
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private userService: UserService,
@@ -49,6 +50,7 @@ export class AddReportComponent implements OnInit {
 
     this.addForm = this.formBuilder.group({
       // title: ['', Validators.required],
+      leaseId: [0],
       active: [true],
       agentName: [''],
       title: [''],
@@ -88,6 +90,7 @@ export class AddReportComponent implements OnInit {
     return this.backendService.getLeaseDetails(event)
       .subscribe(details => {
         this.leaseDetails = details;
+
         console.log('details', this.leaseDetails);
         this.landlordFullName = this.leaseDetails.owners[0].firstName + ' ' + this.leaseDetails.owners[0].lastName;
         this.tenantFullName = this.leaseDetails.tenants[0].firstName + ' ' + this.leaseDetails.tenants[0].lastName;
@@ -135,6 +138,7 @@ export class AddReportComponent implements OnInit {
     // console.log('uid in report', this.user.uid);
 
     this.addForm.patchValue({
+      leaseId: this.leaseDetails.leaseId,
       reportOwnerId: uid,
       created: new Date(),
       updated: new Date()

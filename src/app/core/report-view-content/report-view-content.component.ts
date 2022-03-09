@@ -1,5 +1,5 @@
 // import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
 export class ReportViewContentComponent implements OnInit {
 
   id;
-  report;
+  @Input() report;
   sections;
   additionalSections = false;
 
@@ -93,28 +93,28 @@ export class ReportViewContentComponent implements OnInit {
     }
 
     // Get report details
-    this.dataService.getReportDetails(this.id)
-      .subscribe(res => {
-        this.report = res;
-        // this.possessionDate = this.report.possesionDate.toDate().getDate() + "          " + this.report.possesionDate.toDate().getMonth() +  "             " +  this.report.possesionDate.toDate().getFullYear();
-        this.possessionDate = "  " + this.getDate(this.report.possesionDate) + "       " + this.getMonth(this.report.possesionDate) + "        " + this.report.possesionDate.toDate().getFullYear();
+    // this.dataService.getReportDetails(this.id)
+    //   .subscribe(res => {
+    //     this.report = res;
+    //     // this.possessionDate = this.report.possesionDate.toDate().getDate() + "          " + this.report.possesionDate.toDate().getMonth() +  "             " +  this.report.possesionDate.toDate().getFullYear();
+    //     this.possessionDate = "  " + this.getDate(this.report.possesionDate) + "       " + this.getMonth(this.report.possesionDate) + "        " + this.report.possesionDate.toDate().getFullYear();
 
-        if (this.report.moveOutInspectDate) {
-          this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate) + "       " + this.getMonth(this.report.moveOutInspectDate) + "        " + this.report.moveOutInspectDate.toDate().getFullYear();
-        } else {
-          this.moveOutInsDaste = "";
-        }
+    //     if (this.report.moveOutInspectDate) {
+    //       this.moveOutInsDaste = "  " + this.getDate(this.report.moveOutInspectDate) + "       " + this.getMonth(this.report.moveOutInspectDate) + "        " + this.report.moveOutInspectDate.toDate().getFullYear();
+    //     } else {
+    //       this.moveOutInsDaste = "";
+    //     }
 
-        this.moveInInsDate = "  " + this.getDate(this.report.moveInInspectDate) + "       " + this.getMonth(this.report.moveInInspectDate) + "        " + this.report.moveInInspectDate.toDate().getFullYear();
+    //     this.moveInInsDate = "  " + this.getDate(this.report.moveInInspectDate) + "       " + this.getMonth(this.report.moveInInspectDate) + "        " + this.report.moveInInspectDate.toDate().getFullYear();
 
-        if (this.report.moveOutDate) {
-          this.moveOutDate = "  " + this.getDate(this.report.moveOutDate) + "       " + this.getMonth(this.report.moveOutDate) + "        " + this.report.moveOutDate.toDate().getFullYear();
-        } else {
-          this.moveOutDate = "";
-        }
-        console.log('rpt in report view', this.report)
-        console.log('possesiion date', this.possessionDate);
-      });
+    //     if (this.report.moveOutDate) {
+    //       this.moveOutDate = "  " + this.getDate(this.report.moveOutDate) + "       " + this.getMonth(this.report.moveOutDate) + "        " + this.report.moveOutDate.toDate().getFullYear();
+    //     } else {
+    //       this.moveOutDate = "";
+    //     }
+    //     console.log('rpt in report view', this.report)
+    //     console.log('possesiion date', this.possessionDate);
+    //   });
 
     // Get each section
 
@@ -136,7 +136,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.kitchenSection = data;
           console.log('main kitchen view', this.kitchenSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -147,7 +147,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.livingRoomSection = data;
           console.log('Livingroom view', this.livingRoomSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -158,7 +158,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.diningRoomSEction = data;
           console.log('Dinning room view', this.diningRoomSEction);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -169,7 +169,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.secondDiningRoomSection = data;
           console.log('2nd Dinning room view', this.secondDiningRoomSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -180,7 +180,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.stairwellSection = data;
           console.log('Stairewell view', this.stairwellSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -191,7 +191,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.mainBathroomSection = data;
           console.log('Main Bathroom view', this.mainBathroomSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -204,7 +204,7 @@ export class ReportViewContentComponent implements OnInit {
           const id = a.payload.doc.id;
           this.masterBedroomSection = data;
           console.log('Master Bedroom view', this.masterBedroomSection);
-          return { id, ...data }
+          return { id, ...data };
         });
       });
 
@@ -454,18 +454,18 @@ export class ReportViewContentComponent implements OnInit {
 
   }
 
-  private getDate(date:any): string {
-    const d = date.toDate().getDate().toString();
-    const formatedDate = d.length < 2 ? '0' + d : d;
+  // private getDate(date:any): string {
+  //   const d = date.toDate().getDate().toString();
+  //   const formatedDate = d.length < 2 ? '0' + d : d;
 
-    return formatedDate;
-  }
+  //   return formatedDate;
+  // }
 
-  private getMonth(date:any): string {
-    const m = date.toDate().getMonth().toString();
-    const formatedM = m.length < 2 ? '0' + m : m;
+  // private getMonth(date:any): string {
+  //   const m = date.toDate().getMonth().toString();
+  //   const formatedM = m.length < 2 ? '0' + m : m;
 
-    return formatedM;
-  }
+  //   return formatedM;
+  // }
 
 }
