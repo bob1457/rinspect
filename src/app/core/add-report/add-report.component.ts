@@ -137,12 +137,22 @@ export class AddReportComponent implements OnInit {
     const uid = this.user.uid;
     // console.log('uid in report', this.user.uid);
 
-    this.addForm.patchValue({
+    if (this.leaseDetails) {
+      this.addForm.patchValue({
       leaseId: this.leaseDetails.leaseId,
       reportOwnerId: uid,
       created: new Date(),
       updated: new Date()
     });
+    } else {
+      this.addForm.patchValue({
+        leaseId: 0,
+        reportOwnerId: uid,
+        created: new Date(),
+        updated: new Date()
+      });
+    }
+
     console.log('form data', this.addForm.value);
     this.dataService.createReport(this.addForm.value)
         .then( doc => {
@@ -150,7 +160,7 @@ export class AddReportComponent implements OnInit {
           this.router.navigate(['/home/report-details/', doc.id]); // Improvement: check if online then use differnet if offline.
         });
     // this.router.navigate(['/home/addsection']); // after saving the new report, get the report id from response
-    this.router.navigate(['/home/report']); //${id}
+    this.router.navigate(['/home/report']); // ${id}
 
   }
 
