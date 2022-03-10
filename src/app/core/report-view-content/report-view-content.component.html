@@ -56,7 +56,7 @@
         <app-maasterbedroom-view-item *ngIf="fiftBedroom" [masterBedroomSectionDetails]="fiftBedroom" [reportId]='id' [isMaster]="false" [bedroomNo]="5"></app-maasterbedroom-view-item>
         <app-bedroom-view-empty-item *ngIf="!fiftBedroom"></app-bedroom-view-empty-item>
 
-        <p style="margin-top:280px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
+        <p style="margin-top:250px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
         <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
             <div style="width:50%;">
                 <span style="font-weight:bold;font-style: italic;">
@@ -72,6 +72,7 @@
                 <span style="font-weight:bold;font-style: italic;">page 4 of 8 pages</span>
             </div>
         </div>
+        <div class="html2pdf__page-break"></div>
 
 
 
@@ -86,7 +87,7 @@
         <app-bathroom-view-empty-item *ngIf="!forthBathroom"></app-bathroom-view-empty-item>
 
 
-        <p style="margin-top:230px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
+        <p style="border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
         <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
             <div style="width:50%;">
                 <span style="font-weight:bold;font-style: italic;">
@@ -102,7 +103,7 @@
                 <span style="font-weight:bold;font-style: italic;">page 5 of 8 pages</span>
             </div>
         </div>
-
+        <div class="html2pdf__page-break"></div>
 
 
 
@@ -141,7 +142,7 @@
         <app-keys-view-item *ngIf="keyControlSection" [keyAndControlSectionDetails]="keyControlSection" [reportId]='id'></app-keys-view-item>
 
 
-        <p style="margin-top:250px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
+        <p style="margin-top:240px;border-bottom: 10px solid #426890;margin-bottom: 2px;"></p>
         <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
             <div style="width:50%;">
                 <span style="font-weight:bold;font-style: italic;">
@@ -158,7 +159,7 @@
             </div>
         </div>
     </form>
-
+    <div class="html2pdf__page-break"></div>
 
     <app-report-view-content-footer [report]="report" style="width:100%"></app-report-view-content-footer>
     <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
@@ -172,7 +173,8 @@
             <span style="font-weight:bold;font-style: italic;">page 7 of 8 pages</span>
         </div>
     </div>
-    <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 50px;">
+    <div class="html2pdf__page-break"></div>
+    <p style="font-weight: bold;width: 100%;text-align:center;margin-top: 30px;">
         INSTRUCTIONS FOR COMPLETING RENTAL UNIT CONDITION REPORT
     </p>
     <div fxLayout="row" fxLayoutAlign="start" fxFlexFill>
