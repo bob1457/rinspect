@@ -25,7 +25,10 @@
                     <!-- <mat-hint>Hint</mat-hint> -->
                     <!-- <mat-hint align="end">hint</mat-hint> -->
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <div>
+                    <mat-checkbox style="margin-bottom: 20px;width: 100%;" (change)="onSelect($event)">Select exsting lease agreement</mat-checkbox>
+                </div>
+                <mat-form-field *ngIf="selectLease" appearance="fill">
 
                     <mat-label>Select lease agreement</mat-label>
                     <mat-select #myAppSelect (selectionChange)="onSelectChange(myAppSelect.value)">
@@ -286,7 +289,6 @@
                         <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                         <mat-datepicker touchUi #picker4></mat-datepicker>
                     </mat-form-field>
-
                 </div>
                 <!-- this section should be only on details page? -->
                 <!-- <mat-checkbox style="margin-bottom: 20px;" (change)="clicked($event)" [checked]="final">Finalize condition inspection report</mat-checkbox> -->

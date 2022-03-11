@@ -25,6 +25,7 @@ export class AddReportComponent implements OnInit {
   leaseDetails;
   tenantFullName;
   landlordFullName;
+  selectLease = false;
 
 
   constructor(private router: Router,
@@ -112,7 +113,7 @@ export class AddReportComponent implements OnInit {
   }
 
   clicked(event) {
-    console.log(event.checked);
+    // console.log(event.checked);
     this.final = event.checked;
   }
 
@@ -121,13 +122,18 @@ export class AddReportComponent implements OnInit {
   }
 
   onChange(event) {
-    console.log(event);
+    // console.log(event);
     this.notAgree = event.value;
   }
 
   onChange1(event) {
-    console.log(event);
+    // console.log(event);
     this.notAgree1 = event.value;
+  }
+
+  onSelect(event) {
+    // console.log('checked', event.checked);
+    this.selectLease = event.checked;
   }
 
   submit() {
