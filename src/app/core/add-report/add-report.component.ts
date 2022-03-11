@@ -132,8 +132,12 @@ export class AddReportComponent implements OnInit {
   }
 
   onSelect(event) {
-    // console.log('checked', event.checked);
+
     this.selectLease = event.checked;
+    if (this.leaseDetails && event.checked === false) {
+      this.leaseDetails.leaseId = 0;
+      console.log('leaseId ', this.leaseDetails.leaseId);
+    }
   }
 
   submit() {
@@ -143,13 +147,15 @@ export class AddReportComponent implements OnInit {
     const uid = this.user.uid;
     // console.log('uid in report', this.user.uid);
 
+
+
     if (this.leaseDetails) {
       this.addForm.patchValue({
-      leaseId: this.leaseDetails.leaseId,
-      reportOwnerId: uid,
-      created: new Date(),
-      updated: new Date()
-    });
+        leaseId: this.leaseDetails.leaseId,
+        reportOwnerId: uid,
+        created: new Date(),
+        updated: new Date()
+      });
     } else {
       this.addForm.patchValue({
         leaseId: 0,
@@ -159,6 +165,14 @@ export class AddReportComponent implements OnInit {
       });
     }
 
+    // if (!this.selectLease) {
+    //   this.addForm.patchValue({
+    //     leaseId: 0,
+    //     reportOwnerId: uid,
+    //     created: new Date(),
+    //     updated: new Date()
+    //   });
+    // }
     console.log('form data', this.addForm.value);
     this.dataService.createReport(this.addForm.value)
         .then( doc => {
